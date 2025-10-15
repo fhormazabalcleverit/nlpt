@@ -1,0 +1,377 @@
+{
+  "navbar": {
+    "team": "Conoce al equipo",
+    "useCases": "Casos de Uso",
+    "contact": "Contáctanos"
+  },
+  "team": {
+    "titleA": "Tecnología con",
+    "titleHighlightA":"propósito",
+    "titleB": ", personas con ",
+    "titleHighlightB":"visión",
+    
+    "description": "En CleverIT creemos que detrás de cada solución tecnológica exitosa hay un equipo apasionado, creativo y comprometido.",
+    "cta": "Call to action",
+    "quote": "La tecnología evoluciona cada día, pero lo que realmente marca la diferencia son las personas que la impulsan. Nuestro propósito es transformar la innovación en resultados tangibles",
+    "member": {
+      "name": "Carlos Gallardo",
+      "position": "Chief Product Officer - Product Development and Innovation - Cleverit Group"
+    },
+    "about": {
+      "title": "Somos CleverIT, combinamos tecnología, innovación y seguridad para hacer crecer a las empresas en LATAM y el mundo.",
+      "description": "Nuestra propuesta de valor está basada en acelerar la productividad y maximizar el impacto de la transformación digital."
+    },
+    "boxB": {
+      "title": "Un equipo cohesionado que colabora bajo una misma cultura.",
+      "description": "Nuestro grupo de especialistas en GitHub, Cloud, DevOps y experiencia digital trabaja codo a codo con los clientes para transformar sus desafíos en oportunidades de crecimiento."
+    },
+    "skills": {
+      "title": "Habilidades unidas por la tecnología",
+      "skill1": "Ingeniería de software",
+      "skill2": "Especialistas en GitHub",
+      "skill3": "Product Designer",
+      "skill4": "Equipos comerciales"
+    },
+    "ctaCard": {
+      "title": "¿Quieres conversar con nuestro equipo?",
+      "description": "Estamos listos para escuchar tus necesidades y construir la solución que tu negocio merece.",
+      "button": "Hablemos ahora"
+    },
+    "achievements": {
+      "title": "Logros y diferenciadores",
+      "subtitle": "¿Por qué elegir a CleverIT como partner tecnológico?",
+      "achievement1": {
+        "title": "Certificaciones y especializaciones avanzadas",
+        "description": "Partner de Microsoft, especialistas en GitHub, Cloud y DevOps."
+      },
+      "achievement2": {
+        "title": "Casos de éxito comprobados",
+        "description": "Implementación de soluciones escalables en empresas líderes de LATAM."
+      },
+      "achievement3": {
+        "title": "Innovación propia",
+        "description": "Creación de productos como Groowcity, Pulzen y Nxt, que resuelven problemas reales en gestión de talento, engagement y productividad."
+      },
+      "achievement4": {
+        "title": "Metodología comprobada",
+        "description": "Combinamos design thinking, data-driven design y metodologías ágiles para asegurar resultados medibles."
+      }
+    }
+  },
+  "hero": {
+    "badge": "Soluciones de IA avanzadas",
+    "title": "Carga, memoriza y",
+    "titleHighlight": "conversa",
+    "titleEnd": "con tus datos",
+    "description": "Transformamos tu negocio con LLM Apps y potencian la productividad y automatización de tu negocio.",
+    "ctaPrimary": "Cotiza con nosotros",
+    "ctaSecondary": "Ver caso de uso"
+  },
+  "chatInterface": {
+    "placeholder1": "¿Cuando puedo tener falta de stock?",
+    "placeholder2": "¿Cuáles son mis productos más vendidos?",
+    "placeholder3": "¿Qué cliente compró más el mes pasado?",
+    "metricsLabel": "Métricas",
+    "dashboardLabel": "Dashboard",
+    "reportsLabel": "Reportes",
+    "statusOnline": "LLMApps está en línea y listo para ayudarte"
+  },
+  "newProcess": {
+    "badge": "Proceso",
+    "title": "Cómo transformamos tus datos en insights",
+    "step1": {
+      "title": "Sube tus datos",
+      "description": "Carga archivos, conecta bases de datos o APIs de manera segura y eficiente para alimentar tu sistema de IA."
+    },
+    "step2": {
+      "title": "Procesamiento inteligente",
+      "description": "Nuestra IA organiza, estructura y procesa tu información automáticamente con los más altos estándares de seguridad."
+    },
+    "step3": {
+      "title": "Conversa y obtén insights",
+      "description": "Haz preguntas en lenguaje natural y recibe respuestas precisas, reportes automáticos y visualizaciones."
+    }
+  },
+  "benefits": {
+    "badge": "Beneficios",
+    "benefit1": {
+      "title": "Decisiones más rápidas",
+      "description": "Pregunta y obtén respuestas inmediatas."
+    },
+    "benefit2": {
+      "title": "Visión clara",
+      "description": "Reportes y dashboards automáticos."
+    },
+    "benefit3": {
+      "title": "Acceso seguro",
+      "description": "Control de roles y permisos."
+    },
+    "benefit4": {
+      "title": "Flexible",
+      "description": "Se adapta a cualquier industria o modelo de negocio."
+    },
+    "benefit5": {
+      "title": "Escalable",
+      "description": "Desde pequeñas empresas hasta grandes corporaciones."
+    }
+  },
+  "mastraHighlight": {
+    "badge": "Open Source Framework",
+    "description1": "En",
+    "company": "LLMApps by CleverIT",
+    "description2": "construimos nuestras soluciones sobre",
+    "mastra": "Mastra",
+    "description3": ", un framework open-source en TypeScript diseñado para agentes de IA.",
+    "description4": "Nos permite entregar aplicaciones",
+    "highlight": "seguras, monitoreadas y confiables",
+    "description5": ", listas para escalar en entornos corporativos.",
+    "feature1": "TypeScript",
+    "feature2": "Seguras",
+    "feature3": "Monitoreadas",
+    "feature4": "Escalables"
+  },
+  "process": {
+    "badge": "Valor con IA",
+    "title": "¿Por qué",
+    "titleHighlight": "Mastra",
+    "titleEnd": "suma valor?",
+    "step1": {
+      "title": "Seguridad y trazabilidad total",
+      "description": "Cada decisión, herramienta y resultado del agente es trazado, auditado y puede ser revisado o controlado manualmente (human-in-the-loop)."
+    },
+    "step2": {
+      "title": "Monitoreo en tiempo real y evaluaciones automáticas",
+      "description": "El comportamiento de los agentes se observa en vivo, con métricas y *evals* que garantizan calidad, relevancia y seguridad de las respuestas."
+    },
+    "step3": {
+      "title": "Flexibilidad tecnológica",
+      "description": "Integración con múltiples modelos (OpenAI, Anthropic, Gemini, etc.) a través de una API unificada, sin necesidad de reescribir lógica."
+    },
+    "step4": {
+      "title": "Eficiencia en desarrollo",
+      "description": "Entorno amigable para equipos JavaScript/TypeScript, con CLI y playground que aceleran el ciclo de desarrollo y pruebas."
+    },
+    "step5": {
+      "title": "Workflows y memoria persistente",
+      "description": "Flujos durables, telemetría integrada y soporte nativo para RAG (Retrieval-Augmented Generation) que aseguran consistencia y escalabilidad."
+    }
+  },
+  "testimonials": {
+    "badge": "Testimoniales",
+    "title": "Revisa lo que opinan nuestros clientes",
+    "testimonial1": {
+      "text": "La implementación de LLM Apps transformó completamente nuestra operación. Ahora podemos procesar consultas de clientes 10 veces más rápido y con mayor precisión. Es increíble cómo la IA entiende el contexto de nuestro negocio.",
+      "name": "María González",
+      "position": "CEO, TechSolutions"
+    },
+    "testimonial2": {
+      "text": "Desde que implementamos la solución de LLM Apps, nuestro equipo de ventas ha aumentado su productividad en un 300%. La capacidad de obtener insights inmediatos de nuestros datos es revolucionaria.",
+      "name": "Carlos Mendoza",
+      "position": "Director de Ventas, InnovateCorp"
+    },
+    "testimonial3": {
+      "text": "La seguridad y facilidad de uso de la plataforma nos convenció desde el primer día. Nuestros empleados adoptaron la herramienta inmediatamente y los resultados han superado todas nuestras expectativas.",
+      "name": "Ana Rodríguez",
+      "position": "CTO, DataFlow Systems"
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Respuestas a preguntas comunes",
+    "subtitle": "Resolvemos las dudas más comunes sobre nuestros servicios de LLM Apps y cómo pueden transformar tu negocio.",
+    "certBadge": "Expertos verificados",
+    "certTitle": "Certificados en IA",
+    "certDescription": "En Cleverit contamos con la certificación de",
+    "certName": "Microsoft Solutions Partner | Digital & App Innovation",
+    "certFooter": "Tu negocio en manos de un especialista reconocido por Microsoft.",
+    "certFeature1": "Modernizar y migrar tus aplicaciones empresariales a la nube",
+    "certFeature2": "Impulsar la productividad de tus desarrolladores con Microsoft Azure",
+    "question1": {
+      "q": "¿Qué son exactamente las LLM Apps?",
+      "a": "Las LLM Apps son aplicaciones inteligentes que utilizan modelos de lenguaje grandes para procesar, analizar y generar contenido de manera natural. Permiten a las empresas automatizar tareas complejas de comunicación y análisis de datos."
+    },
+    "question2": {
+      "q": "¿Cuáles son las características principales de LLMApps?",
+      "a": "Nuestras LLM Apps incluyen procesamiento de lenguaje natural avanzado, integración con bases de datos existentes, personalización según tu industria, escalabilidad automática y interfaces intuitivas para usuarios no técnicos."
+    },
+    "question3": {
+      "q": "¿Mis datos están seguros al usar LLM Apps?",
+      "a": "Absolutamente. Implementamos encriptación de extremo a extremo, cumplimos con estándares internacionales de seguridad como ISO 27001, y tus datos nunca se comparten con terceros. Además, ofrecemos opciones de despliegue on-premise para máxima seguridad."
+    },
+    "question4": {
+      "q": "¿Qué diferencia a sus LLM Apps de otras soluciones de IA?",
+      "a": "Nos especializamos en soluciones personalizadas para cada negocio, ofrecemos integración completa con sistemas existentes, soporte en español, y un enfoque consultivo que garantiza que la IA realmente resuelva tus problemas específicos."
+    },
+    "question5": {
+      "q": "¿Cuál es el costo de desarrollar una LLM App?",
+      "a": "El costo varía según la complejidad y características específicas. Ofrecemos planes desde $2,000 USD mensuales para soluciones básicas, hasta proyectos enterprise personalizados. Contacta con nosotros para una cotización detallada."
+    },
+    "question6": {
+      "q": "¿Qué tipo de soporte ofrecen después del lanzamiento?",
+      "a": "Proporcionamos soporte técnico 24/7, actualizaciones regulares del modelo, monitoreo de rendimiento, capacitación para tu equipo, y mejoras continuas basadas en el uso real de tu aplicación."
+    }
+  },
+  "pricing": {
+    "badge": "Planes",
+    "title": "Elige el plan perfecto para tu negocio",
+    "subtitle": "Desde startups hasta grandes corporaciones, tenemos la solución de IA que se adapta a tus necesidades y presupuesto.",
+    "popularBadge": "Más Popular",
+    "starter": {
+      "name": "Starter",
+      "price": "$2,000",
+      "period": "USD/mes",
+      "description": "Perfecto para pequeñas empresas que inician con IA",
+      "feature1": "Hasta 10,000 consultas mensuales",
+      "feature2": "1 fuente de datos",
+      "feature3": "Chat básico con IA",
+      "feature4": "Reportes estándar",
+      "feature5": "Soporte por email",
+      "feature6": "Integración básica",
+      "notIncluded1": "APIs personalizadas",
+      "notIncluded2": "Análisis avanzado",
+      "notIncluded3": "Soporte 24/7",
+      "cta": "Comenzar ahora"
+    },
+    "professional": {
+      "name": "Professional",
+      "price": "$5,000",
+      "period": "USD/mes",
+      "description": "Ideal para empresas en crecimiento con necesidades avanzadas",
+      "feature1": "Hasta 50,000 consultas mensuales",
+      "feature2": "5 fuentes de datos",
+      "feature3": "Chat avanzado con IA",
+      "feature4": "Dashboards personalizados",
+      "feature5": "APIs personalizadas",
+      "feature6": "Análisis predictivo",
+      "feature7": "Soporte prioritario",
+      "feature8": "Integraciones múltiples",
+      "notIncluded1": "Despliegue on-premise",
+      "notIncluded2": "Consultor dedicado",
+      "cta": "Más popular"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "Personalizado",
+      "period": "",
+      "description": "Solución completa para grandes corporaciones",
+      "feature1": "Consultas ilimitadas",
+      "feature2": "Fuentes de datos ilimitadas",
+      "feature3": "IA completamente personalizada",
+      "feature4": "Dashboards enterprise",
+      "feature5": "APIs ilimitadas",
+      "feature6": "Análisis avanzado y ML",
+      "feature7": "Despliegue on-premise",
+      "feature8": "Consultor dedicado",
+      "feature9": "Soporte 24/7",
+      "feature10": "SLA garantizado",
+      "feature11": "Capacitación del equipo",
+      "cta": "Contactar ventas"
+    }
+  },
+  "quote": {
+    "badge": "Cotización",
+    "title": "Cotiza con nosotros",
+    "subtitle": "Cuéntanos sobre tu proyecto y te ayudaremos a encontrar la solución perfecta de IA para tu negocio.",
+    "form": {
+      "name": "Nombre completo",
+      "namePlaceholder": "Ingresa tu nombre completo",
+      "industry": "Rubro o industria",
+      "industryPlaceholder": "Ej: Tecnología, Retail, Salud, etc.",
+      "email": "Email",
+      "emailPlaceholder": "tu@empresa.com",
+      "contactMethod": "¿Cómo prefieres que te contactemos?",
+      "contactEmail": "Email",
+      "contactPhone": "Teléfono",
+      "contactWhatsApp": "WhatsApp",
+      "submit": "Enviar cotización",
+      "successMessage": "¡Gracias por tu interés! Te contactaremos pronto."
+    },
+    "footerNote": "Nos pondremos en contacto contigo en un plazo máximo de 24 horas"
+  },
+  "footer": {
+    "description": "Transformamos datos en conversaciones inteligentes. Potencia tu negocio con IA conversacional de última generación.",
+    "product": "Producto",
+    "features": "Características",
+    "pricing": "Precios",
+    "docs": "Documentación",
+    "api": "API",
+    "company": "Empresa",
+    "about": "Sobre nosotros",
+    "blog": "Blog",
+    "careers": "Carreras",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "Cookies",
+    "rights": "Todos los derechos reservados."
+  },
+  "useCases": {
+    "badge": "Casos de Uso",
+    "title": "Casos de uso reales de IA",
+    "subtitle": "Descubre cómo diferentes industrias están transformando sus operaciones con LLM Apps y soluciones de IA personalizadas.",
+    "readMore": "Leer más",
+    "backToUseCases": "Volver a Casos de Uso",
+    "notFound": "Caso de uso no encontrado",
+    "challengeTitle": "El Desafío",
+    "solutionTitle": "La Solución",
+    "resultsTitle": "Los Resultados",
+    "featuresTitle": "Características Clave",
+    "ctaTitle": "¿Listo para transformar tu negocio?",
+    "ctaSubtitle": "Contáctanos y descubre cómo podemos crear una solución personalizada para tu industria.",
+    "ctaButton": "Cotiza ahora",
+    "detailCtaTitle": "¿Te interesa una solución similar?",
+    "detailCtaSubtitle": "Hablemos sobre cómo podemos adaptar esta solución a las necesidades específicas de tu negocio.",
+    "case1": {
+      "title": "Production Insight",
+      "category": "Manufactura",
+      "excerpt": "Optimización de líneas de producción mediante análisis en tiempo real con IA, permitiendo decisiones informadas y reducción de desperdicios.",
+      "fullContent": "En la industria manufacturera moderna, la capacidad de tomar decisiones informadas en tiempo real es fundamental para mantener la competitividad. Production Insight es una solución de IA que transforma datos de producción en insights accionables, permitiendo a los gerentes de planta optimizar operaciones, reducir desperdicios y maximizar la eficiencia.",
+      "challenge": "Las plantas de manufactura generan enormes cantidades de datos de sensores, máquinas y procesos, pero carecen de herramientas para analizarlos efectivamente en tiempo real. Los gerentes necesitan respuestas inmediatas sobre rendimiento de líneas, predicción de fallas y oportunidades de optimización, pero los sistemas tradicionales requieren análisis manual que toma días o semanas.",
+      "solution": "Production Insight utiliza LLM Apps para conectarse directamente a sistemas de producción, bases de datos SCADA y sensores IoT. La IA procesa automáticamente todos los datos en tiempo real, permitiendo a los gerentes hacer preguntas en lenguaje natural como '¿Qué línea tiene mayor desperdicio hoy?' o '¿Cuándo debería programar mantenimiento para la máquina X?' y recibir respuestas instantáneas con visualizaciones.",
+      "features": [
+        "Análisis en tiempo real de datos de producción",
+        "Predicción de fallas de maquinaria con machine learning",
+        "Optimización automática de líneas de producción",
+        "Alertas proactivas de problemas de calidad",
+        "Dashboards personalizados para diferentes roles",
+        "Integración con sistemas ERP y MES existentes"
+      ],
+      "results": "Las empresas que implementan Production Insight reportan una reducción del 25-30% en desperdicios, un aumento del 15-20% en eficiencia de producción y una disminución del 40% en tiempo de inactividad no planificado. Los gerentes toman decisiones más rápidas y basadas en datos, resultando en ahorros significativos y mejor calidad de producto."
+    },
+    "case2": {
+      "title": "Mining Intelligence",
+      "category": "Minería",
+      "excerpt": "Gestión inteligente de operaciones mineras con análisis predictivo de seguridad, optimización de recursos y monitoreo ambiental en tiempo real.",
+      "fullContent": "La industria minera enfrenta desafíos únicos en términos de seguridad, eficiencia operativa y cumplimiento ambiental. Mining Intelligence es una plataforma de IA diseñada específicamente para operaciones mineras que transforma datos complejos de múltiples fuentes en información accionable para mejorar la seguridad, optimizar la extracción y garantizar el cumplimiento normativo.",
+      "challenge": "Las operaciones mineras generan datos de múltiples fuentes: sensores geológicos, equipamiento pesado, monitoreo ambiental, reportes de seguridad y sistemas logísticos. Los gerentes de mina necesitan consolidar toda esta información para tomar decisiones críticas sobre seguridad, productividad y cumplimiento, pero los sistemas existentes están fragmentados y requieren análisis manual extenso.",
+      "solution": "Mining Intelligence integra datos de todas las fuentes operativas en una plataforma unificada de IA. Los supervisores pueden consultar en lenguaje natural sobre condiciones de seguridad, rendimiento de equipos, proyecciones de producción o impacto ambiental. La IA proporciona análisis predictivo para prevenir accidentes, optimizar rutas de transporte y anticipar problemas de mantenimiento.",
+      "features": [
+        "Monitoreo predictivo de seguridad y prevención de accidentes",
+        "Optimización de rutas y logística de transporte",
+        "Análisis geológico asistido por IA para mejor extracción",
+        "Monitoreo ambiental continuo y alertas de cumplimiento",
+        "Gestión predictiva de mantenimiento de maquinaria pesada",
+        "Reportes automáticos de producción y KPIs operativos"
+      ],
+      "results": "Las operaciones mineras que adoptan Mining Intelligence experimentan una reducción del 35% en incidentes de seguridad, un aumento del 20% en productividad de extracción y una disminución del 30% en costos de mantenimiento. La plataforma también ayuda a cumplir con regulaciones ambientales mediante monitoreo continuo y reportes automáticos."
+    },
+    "case3": {
+      "title": "Development Metrics",
+      "category": "Tecnología",
+      "excerpt": "Análisis avanzado de productividad de equipos de desarrollo con métricas de código, velocidad de entrega y predicción de cuellos de botella.",
+      "fullContent": "Los equipos de desarrollo de software modernos generan una cantidad masiva de datos a través de commits, pull requests, issues, y métricas de CI/CD. Development Metrics es una solución de IA que convierte estos datos en insights accionables para líderes técnicos, permitiéndoles mejorar la productividad del equipo, identificar cuellos de botella y optimizar procesos de desarrollo.",
+      "challenge": "Los CTOs y líderes de ingeniería necesitan visibilidad sobre la productividad real de sus equipos, la calidad del código, y los obstáculos que ralentizan la entrega. Sin embargo, los datos están dispersos en múltiples herramientas (GitHub, Jira, Jenkins, etc.) y analizar manualmente esta información consume tiempo valioso. Además, las métricas tradicionales como líneas de código no reflejan la verdadera productividad.",
+      "solution": "Development Metrics se integra con GitHub, GitLab, Jira, y otras herramientas de desarrollo para consolidar todos los datos en una plataforma unificada. La IA analiza patrones de trabajo, calidad de código, velocidad de entrega y colaboración del equipo. Los líderes pueden preguntar '¿Dónde están los cuellos de botella en el sprint actual?' o '¿Qué desarrolladores necesitan soporte?' y recibir análisis detallados con recomendaciones accionables.",
+      "features": [
+        "Análisis de velocidad de desarrollo y ciclo de entrega",
+        "Detección automática de cuellos de botella y bloqueos",
+        "Métricas de calidad de código y deuda técnica",
+        "Análisis de colaboración y comunicación del equipo",
+        "Predicción de fechas de entrega basada en velocidad histórica",
+        "Dashboards personalizados para diferentes roles técnicos"
+      ],
+      "results": "Los equipos que implementan Development Metrics reportan un aumento del 30% en velocidad de entrega, una reducción del 25% en bugs de producción y una mejora del 40% en la precisión de estimaciones. Los líderes técnicos obtienen visibilidad clara de la salud del equipo y pueden intervenir proactivamente antes de que los problemas afecten la entrega."
+    }
+  }
+}
