@@ -52,7 +52,7 @@ const Footer = () => {
             <div className="mb-6">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center space-x-2 bg-gray-800 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-all duration-200 font-medium w-full justify-center"
+                className="flex items-center space-x-2 bg-gray-800 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 text-gray-300 hover:text-white px-4 py-2 rounded-full transition-all duration-200 font-medium w-full justify-center"
               >
                 <Globe className="w-4 h-4" />
                 <span>{language === 'es' ? 'English' : 'Español'}</span>

@@ -1,7 +1,7 @@
 {
   "navbar": {
     "team": "Conoce al equipo",
-    "useCases": "Casos de Uso",
+    "useCases": "Casos de uso",
     "contact": "Contáctanos"
   },
   "team": {
@@ -59,7 +59,7 @@
     }
   },
   "hero": {
-    "badge": "Soluciones de IA avanzadas",
+    "badge": "SOLUCIONES DE IA AVANZADAS",
     "title": "Carga, memoriza y",
     "titleHighlight": "conversa",
     "titleEnd": "con tus datos",
@@ -74,7 +74,8 @@
     "metricsLabel": "Métricas",
     "dashboardLabel": "Dashboard",
     "reportsLabel": "Reportes",
-    "statusOnline": "LLMApps está en línea y listo para ayudarte"
+    "statusOnline": "LLMApps está en línea y listo para ayudarte",
+    "sendButton": "Enviar"
   },
   "newProcess": {
     "badge": "Proceso",
@@ -270,7 +271,7 @@
   },
   "quote": {
     "badge": "Cotización",
-    "title": "Cotiza con nosotros",
+    "title": "Estemos en contacto",
     "subtitle": "Cuéntanos sobre tu proyecto y te ayudaremos a encontrar la solución perfecta de IA para tu negocio.",
     "form": {
       "name": "Nombre completo",
@@ -307,11 +308,11 @@
     "rights": "Todos los derechos reservados."
   },
   "useCases": {
-    "badge": "Casos de Uso",
+    "badge": "Casos de uso",
     "title": "Casos de uso reales de IA",
     "subtitle": "Descubre cómo diferentes industrias están transformando sus operaciones con LLM Apps y soluciones de IA personalizadas.",
     "readMore": "Leer más",
-    "backToUseCases": "Volver a Casos de Uso",
+    "backToUseCases": "Volver a Casos de uso",
     "notFound": "Caso de uso no encontrado",
     "challengeTitle": "El Desafío",
     "solutionTitle": "La Solución",

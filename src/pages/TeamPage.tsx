@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import SEO from '../components/SEO';
 
 
 const TeamPage = () => {
   const { t } = useLanguage();
+  const skillsTitle = useScrollAnimation();
   const achievementsTitle = useScrollAnimation();
   const achievement1 = useScrollAnimation();
   const achievement2 = useScrollAnimation();
@@ -13,6 +15,11 @@ const TeamPage = () => {
 
   return (
     <div className="min-h-screen bg-backblack relative overflow-hidden">
+      <SEO 
+        title="Conoce al Equipo"
+        description="Conoce al equipo de CleverIT. Tecnología con propósito, personas con visión. Especialistas en GitHub, Cloud, DevOps y experiencia digital."
+        keywords="CleverIT, equipo, tecnología, desarrolladores, GitHub, Cloud, DevOps, experiencia digital, Microsoft Partner"
+      />
       {/* Background SVG */}
       <div className="absolute inset-0 bg-no-repeat bg-center bg-[length:150%_auto] md:bg-cover"
         style={{ backgroundImage: 'url(/weare.svg)' }}></div>
@@ -34,7 +41,7 @@ const TeamPage = () => {
             </h1>
 
             {/*
-            <button className="px-8 py-3 border-2 border-gray-300 text-gray-300 hover:border-white hover:text-white rounded-lg transition-all duration-200 font-medium">
+            <button className="px-8 py-3 border-2 border-gray-300 text-gray-300 hover:border-white hover:text-white rounded-full transition-all duration-200 font-medium">>
               {t.team.cta}
             </button>
             */}
@@ -73,9 +80,11 @@ const TeamPage = () => {
 
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-          {t.team.skills.title}
-        </h2>
+        <div ref={skillsTitle.ref} className={`fade-in-up ${skillsTitle.isVisible ? 'animate' : ''}`}>
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+            {t.team.skills.title}
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 animate-slide-up">
           <div

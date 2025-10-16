@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { Factory, Pickaxe, BarChart3, ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 const UseCasesPage = () => {
   const { t } = useLanguage();
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: casesRef, isVisible: casesVisible } = useScrollAnimation();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   const useCases = [
     {
@@ -41,6 +43,11 @@ const UseCasesPage = () => {
 
   return (
     <section className="bg-backblack py-20 min-h-screen">
+      <SEO 
+        title="Casos de Uso"
+        description="Descubre cómo diferentes industrias están transformando sus operaciones con LLM Apps y soluciones de IA personalizadas."
+        keywords="casos de uso, IA industrial, manufactura, minería, desarrollo, métricas, Production Insight, Mining Intelligence"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className={`text-center mb-16 fade-in-up ${headerVisible ? 'animate' : ''}`}>
@@ -109,7 +116,7 @@ const UseCasesPage = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center">
+        <div ref={ctaRef} className={`mt-20 text-center fade-in-up ${ctaVisible ? 'animate' : ''}`}>
           <div className="bg-gradient-to-r from-pink-500/20 via-purple-600/10 to-pink-500/20 border border-pink-500/50 rounded-3xl p-12 backdrop-blur-sm">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               {t.useCases.ctaTitle}
@@ -119,7 +126,7 @@ const UseCasesPage = () => {
             </p>
             <Link
               to="/quote"
-              className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25"
+              className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25"
             >
               {t.useCases.ctaButton}
             </Link>

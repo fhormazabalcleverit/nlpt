@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mic, Send, BarChart3, LayoutDashboard, FileText } from 'lucide-react';
+import { Mic, BarChart3, LayoutDashboard, FileText } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const ChatInterface = () => {
@@ -10,14 +10,14 @@ const ChatInterface = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
 
-  const phrases = [
-    t.chatInterface.placeholder1,
-    t.chatInterface.placeholder2,
-    t.chatInterface.placeholder3
-  ];
-
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    const phrases = [
+      t.chatInterface.placeholder1,
+      t.chatInterface.placeholder2,
+      t.chatInterface.placeholder3
+    ];
+
+    let timeout: ReturnType<typeof setTimeout>;
 
     if (isTyping) {
       // Typing effect
@@ -45,7 +45,14 @@ const ChatInterface = () => {
     }
 
     return () => clearTimeout(timeout);
-  }, [currentPlaceholder, currentIndex, isTyping, phrases]);
+  }, [currentPlaceholder, currentIndex, isTyping, t]);
+
+  // Reset animation when language changes
+  useEffect(() => {
+    setCurrentPlaceholder('');
+    setCurrentIndex(0);
+    setIsTyping(true);
+  }, [t]);
 
   const handleSendMessage = () => {
     if (message.trim()) {
@@ -66,7 +73,7 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-16 mb-8">
+    <div className="max-w-3xl mx-auto mt-16 mb-8 relative z-20">
       {/* Chat Interface Container */}
       <div className="bg-gradient-to-r from-pink-500/20 via-purple-600 to-pink-500 p-1 rounded-3xl backdrop-blur-sm">
         <div className="bg-backblack rounded-3xl p-6 border border-gray-700/30">
@@ -92,7 +99,7 @@ const ChatInterface = () => {
               </div>
               <button
                 onClick={toggleListening}
-                className={`p-2 rounded-xl transition-all duration-200 ${
+                className={`p-2 rounded-full transition-all duration-200 ${
                   isListening
                     ? 'bg-pink-500 text-gray-700'
                     : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
@@ -102,9 +109,9 @@ const ChatInterface = () => {
               </button>
               <button
                 onClick={handleSendMessage}
-                className="hidden md:flex bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+                className="hidden md:flex bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 transform hover:scale-105"
               >
-                Enviar
+                {t.chatInterface.sendButton}
               </button>
             </div>
           </div>

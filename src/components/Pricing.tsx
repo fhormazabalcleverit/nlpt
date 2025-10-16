@@ -148,7 +148,7 @@ const Pricing = () => {
               </div>
 
               {/* CTA Button */}
-              <button className={`w-full font-semibold px-6 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 ${plan.buttonStyle}`}>
+              <button className={`w-full font-semibold px-6 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 ${plan.buttonStyle}`}>
                 {plan.buttonText}
               </button>
             </div>

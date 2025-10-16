@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
+import SEO from './components/SEO';
 import Hero from './components/Hero';
 import Process from './components/Process';
 import NewProcess from './components/NewProcess';
@@ -18,6 +19,11 @@ import UseCaseDetailPage from './pages/UseCaseDetailPage';
 
 const HomePage = () => (
   <>
+    <SEO 
+      title="Inicio"
+      description="Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente."
+      keywords="IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos, Inicio"
+    />
     <Hero />
     <NewProcess />
     <Benefits />

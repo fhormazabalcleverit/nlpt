@@ -59,7 +59,7 @@
     }
   },
   "hero": {
-    "badge": "Advanced AI Solutions",
+    "badge": "ADVANCED AI SOLUTIONS",
     "title": "Load, memorize and",
     "titleHighlight": "chat",
     "titleEnd": "with your data",
@@ -74,7 +74,8 @@
     "metricsLabel": "Metrics",
     "dashboardLabel": "Dashboard",
     "reportsLabel": "Reports",
-    "statusOnline": "LLMApps is online and ready to help you"
+    "statusOnline": "LLMApps is online and ready to help you",
+    "sendButton": "Send"
   },
   "newProcess": {
     "badge": "Process",
@@ -270,7 +271,7 @@
   },
   "quote": {
     "badge": "Quote",
-    "title": "Get a quote with us",
+    "title": "Let's get in touch",
     "subtitle": "Tell us about your project and we'll help you find the perfect AI solution for your business.",
     "form": {
       "name": "Full name",

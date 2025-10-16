@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium"
+              className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium"
             >
               <Globe className="w-5 h-5" />
               <span>{language === 'es' ? 'EN' : 'ES'}</span>
@@ -94,7 +94,7 @@ const Navbar = () => {
                     toggleLanguage();
                     setIsOpen(false);
                   }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium"
                 >
                   <Globe className="w-5 h-5" />
                   <span>{language === 'es' ? 'EN' : 'ES'}</span>

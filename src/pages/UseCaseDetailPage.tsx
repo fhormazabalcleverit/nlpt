@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, Tag, Factory, Pickaxe, BarChart3 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import SEO from '../components/SEO';
 
 const UseCaseDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -66,6 +67,10 @@ const UseCaseDetailPage = () => {
   if (!useCase) {
     return (
       <div className="bg-backblack min-h-screen flex items-center justify-center">
+        <SEO 
+          title="Caso de Uso No Encontrado"
+          description="El caso de uso solicitado no fue encontrado. Explora otros casos de uso de IA."
+        />
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">{t.useCases.notFound}</h1>
           <Link to="/use-cases" className="text-pink-400 hover:text-pink-300 transition-colors">
@@ -78,6 +83,12 @@ const UseCaseDetailPage = () => {
 
   return (
     <section className="bg-backblack py-20 min-h-screen">
+      <SEO 
+        title={useCase.title}
+        description={useCase.excerpt}
+        keywords={`${useCase.category}, caso de uso, IA, ${useCase.title}, automatización, CleverIT`}
+        type="article"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <Link
@@ -208,7 +219,7 @@ const UseCaseDetailPage = () => {
           </p>
           <Link
             to="/quote"
-            className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
             {t.useCases.ctaButton}
           </Link>
