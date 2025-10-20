@@ -30,7 +30,7 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case1.features,
       icon: Factory,
       gradient: 'from-blue-500 to-cyan-500',
-      image: 'articles/Manufacturing.png'
+      image: 'AppModernizationwithAI.png'
     },
     'mining': {
       title: t.useCases.case2.title,
@@ -44,7 +44,7 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case2.features,
       icon: Pickaxe,
       gradient: 'from-orange-500 to-yellow-500',
-      image: 'articles/Mining.png'
+      image: 'AppModernizationwithAI.png'
     },
     'development-metrics': {
       title: t.useCases.case3.title,
@@ -58,7 +58,7 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case3.features,
       icon: BarChart3,
       gradient: 'from-purple-500 to-pink-500',
-      image: 'articles/Technology.png'
+      image: 'AppModernizationwithAI.png'
     }
   };
 
