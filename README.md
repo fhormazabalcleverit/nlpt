@@ -8,6 +8,11 @@ Una aplicación web moderna construida con React, TypeScript y Vite que presenta
 ![Vite](https://img.shields.io/badge/Vite-5.4.2-orange)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.1-teal)
 
+[![Deploy Vite site to GitHub Pages](https://github.com/CleveritDemo/LLMApps-by-CleverIT/actions/workflows/deploy.yml/badge.svg)](https://github.com/CleveritDemo/LLMApps-by-CleverIT/actions/workflows/deploy.yml)
+[![GitHub Pages](https://img.shields.io/github/deployments/CleveritDemo/LLMApps-by-CleverIT/github-pages?label=pages%20deploy)](https://github.com/CleveritDemo/LLMApps-by-CleverIT/deployments/github-pages)
+
+**🌐 Sitio en vivo:** https://cleveritdemo.github.io/LLMApps-by-CleverIT/
+
 ## 🌟 Características Principales
 
 - **🎨 Diseño Moderno**: Interfaz elegante con efectos visuales aurora y gradientes dinámicos
