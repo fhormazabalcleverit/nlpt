@@ -67,7 +67,7 @@ const NewProcess = () => {
               <div
                 className="group relative border border-gray-800 hover:border-pink-500/50 rounded-2xl p-0 transition-all duration-500 ease-in-out min-h-[200px] flex items-center justify-center mb-6"
                 style={{
-                  backgroundImage: 'url(card.svg)',
+                  backgroundImage: `url(${import.meta.env.BASE_URL}card.svg)`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -94,7 +94,7 @@ const NewProcess = () => {
                 ) : (
                   /* SVG Images for first and third cards */
                   <img
-                    src={`step${index + 1}.svg`}
+                    src={`${import.meta.env.BASE_URL}step${index + 1}.svg`}
                     alt={`Step ${index + 1}`}
                     className="max-w-sm w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />

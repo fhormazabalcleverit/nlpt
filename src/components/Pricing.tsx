@@ -106,7 +106,7 @@ const Pricing = () => {
                   : 'border-gray-700 hover:border-pink-500/50'
               }`}
               style={{
-                backgroundImage: 'url(card.svg)',
+                backgroundImage: `url(${import.meta.env.BASE_URL}card.svg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'

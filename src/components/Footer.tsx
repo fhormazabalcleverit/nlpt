@@ -9,14 +9,14 @@ const Footer = () => {
   return (
     <footer className="bg-backblack py-16 relative overflow-hidden pt-40">
       {/* Background SVG */}
-      <div className="absolute inset-0 max-w-7xl mx-auto bg-no-repeat bg-bottom bg-[length:100%_auto] md:bg-cover" style={{ backgroundImage: 'url(footer.svg)' }}></div>
+      <div className="absolute inset-0 max-w-7xl mx-auto bg-no-repeat bg-bottom bg-[length:100%_auto] md:bg-cover" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}footer.svg)` }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Logo and Description */}
           <div className="space-y-6">
             <div className="flex items-center">
-              <img src="logotipo.svg" alt="LLMApp by CleverIT" className="h-8" />
+              <img src={`${import.meta.env.BASE_URL}logotipo.svg`} alt="LLMApp by CleverIT" className="h-8" />
             </div>
             <p className="text-gray-300 leading-relaxed max-w-sm">
               {t.footer.description}

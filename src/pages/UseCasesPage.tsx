@@ -80,7 +80,7 @@ const UseCasesPage = () => {
                   to={`/use-cases/${useCase.id}`}
                   className="block group bg-gray-900/50 border border-gray-700 rounded-3xl hover:border-pink-500/50 transition-all duration-300 hover:bg-gray-800/50 hover:scale-105 relative"
                   style={{
-                    backgroundImage: 'url(card.svg)',
+                    backgroundImage: `url(${import.meta.env.BASE_URL}card.svg)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}
