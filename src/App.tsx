@@ -37,7 +37,7 @@ const HomePage = () => (
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/LLMApps-by-CleverIT">
         <div className="min-h-screen bg-backblack">
           <Navbar />
           <Routes>

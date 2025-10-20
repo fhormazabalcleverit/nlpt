@@ -49,7 +49,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="animate-slide-up-delay-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/cotizar" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25">
+            <Link to="/quote" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25">
               {t.hero.ctaPrimary}
             </Link>
             <a href="https://interfaz-de-agente-i-7lya.bolt.host" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-600 hover:border-pink-500 text-white hover:text-pink-400 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 bg-transparent hover:bg-pink-500/10">
