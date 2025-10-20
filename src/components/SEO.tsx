@@ -18,7 +18,7 @@ const defaultSEO = {
   title: 'LLMApps by CleverIT - Soluciones de IA Avanzadas',
   description: 'Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente.',
   keywords: 'IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos',
-  ogImage: '/meta/thumbnail.png',
+  ogImage: 'meta/thumbnail.png',
   twitterCard: 'summary_large_image' as const,
   robots: 'index, follow',
   type: 'website' as const,
@@ -84,7 +84,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="revisit-after" content="7 days" />
       
       {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/svg+xml" href="favicon.svg" />
       
       {/* Theme color for mobile browsers */}
       <meta name="theme-color" content="#ec4899" />

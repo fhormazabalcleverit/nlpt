@@ -94,7 +94,7 @@ const NewProcess = () => {
                 ) : (
                   /* SVG Images for first and third cards */
                   <img
-                    src={`/step${index + 1}.svg`}
+                    src={`step${index + 1}.svg`}
                     alt={`Step ${index + 1}`}
                     className="max-w-sm w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />
