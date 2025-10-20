@@ -11,7 +11,7 @@ const Hero = () => {
     <section className="bg-backblack min-h-screen flex items-center relative overflow-hidden -top-16">
       {/* Background SVG */}
       <div className="absolute inset-0 bg-no-repeat bg-center bg-[length:150%_auto] md:bg-cover"
-        style={{ backgroundImage: 'url(/background01.svg)' }}></div>
+        style={{ backgroundImage: 'url(./background01.svg)' }}></div>
       
       {/* Aurora Effect */}
       <div className="absolute top-0 left-0 right-0 h-full opacity-40">
@@ -64,7 +64,7 @@ const Hero = () => {
             {/* Screen SVG - overlapping below ChatInterface */}
             <div className="relative -mt-8 md:-mt-36 z-0 hidden md:block">
               <img 
-                src="/screen.svg" 
+                src="./screen.svg" 
                 alt="Screen mockup" 
                 className="mx-auto w-full max-w-5xl h-auto opacity-90"
               />

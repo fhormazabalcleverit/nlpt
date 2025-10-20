@@ -22,7 +22,7 @@ const TeamPage = () => {
       />
       {/* Background SVG */}
       <div className="absolute inset-0 bg-no-repeat bg-center bg-[length:150%_auto] md:bg-cover"
-        style={{ backgroundImage: 'url(/weare.svg)' }}></div>
+        style={{ backgroundImage: 'url(./weare.svg)' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center mb-20">
@@ -59,7 +59,7 @@ const TeamPage = () => {
 
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0 animate-slide-up overflow-hidden">
-                  <img src="/carlosgallador.png" alt="Carlos Gallador" className="w-full h-full object-cover" />
+                  <img src="./carlosgallador.png" alt="Carlos Gallador" className="w-full h-full object-cover" />
                 </div>
 
                 <div>
@@ -90,7 +90,7 @@ const TeamPage = () => {
           <div
             className="flex items-center justify-center aspect-square border-2 border-gray-700 rounded-full hover:border-gray-500 transition-all duration-300"
             style={{
-              backgroundImage: 'url(/card.svg)',
+              backgroundImage: 'url(./card.svg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -104,7 +104,7 @@ const TeamPage = () => {
           <div
             className="flex items-center justify-center aspect-square border-2 border-gray-700 rounded-full hover:border-gray-500 transition-all duration-300"
             style={{
-              backgroundImage: 'url(/card.svg)',
+              backgroundImage: 'url(./card.svg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -118,7 +118,7 @@ const TeamPage = () => {
           <div
             className="flex items-center justify-center aspect-square border-2 border-gray-700 rounded-full hover:border-gray-500 transition-all duration-300"
             style={{
-              backgroundImage: 'url(/card.svg)',
+              backgroundImage: 'url(./card.svg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -132,7 +132,7 @@ const TeamPage = () => {
           <div
             className="flex items-center justify-center aspect-square border-2 border-gray-700 rounded-full hover:border-gray-500 transition-all duration-300"
             style={{
-              backgroundImage: 'url(/card.svg)',
+              backgroundImage: 'url(./card.svg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -150,7 +150,7 @@ const TeamPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 animate-slide-up">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="w-full h-96 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl flex items-center justify-center overflow-hidden">
-            <img src="/SomosCleverIT.png" alt="Somos CleverIT" className="w-full h-full object-cover" />
+            <img src="./SomosCleverIT.png" alt="Somos CleverIT" className="w-full h-full object-cover" />
           </div>
 
           <div className="space-y-6">
@@ -179,7 +179,7 @@ const TeamPage = () => {
             </p>
           </div>
           <div className="w-full h-96 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl flex items-center justify-center overflow-hidden">
-            <img src="/cohesionado.png" alt="Equipo Cohesionado" className="w-full h-full object-cover" />
+            <img src="./cohesionado.png" alt="Equipo Cohesionado" className="w-full h-full object-cover" />
           </div>
           
         </div>

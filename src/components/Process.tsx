@@ -44,7 +44,7 @@ const Process = () => {
   return (
     <section className="bg-backblack py-20 relative overflow-hidden">
       {/* Background SVG */}
-      <div className="absolute max-w-7xl mx-auto   inset-0 bg-no-repeat bg-center opacity-100 bg-[length:100%_auto] md:bg-cover" style={{ backgroundImage: 'url(/mastra.svg)' }}></div>
+      <div className="absolute max-w-7xl mx-auto   inset-0 bg-no-repeat bg-center opacity-100 bg-[length:100%_auto] md:bg-cover" style={{ backgroundImage: 'url(./mastra.svg)' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
