@@ -92,7 +92,7 @@ const FAQ = () => {
               <div className="flex-shrink-0">
                 <div className="relative">
                   <img
-                    src="./AppModernizationwithAI.png"
+                    src={`${import.meta.env.BASE_URL}AppModernizationwithAI.png`}
                     alt="AI Certification"
                     className="w-60 h-82 rounded-3xl object-cover transform rotate-0 hover:rotate-2 transition-all duration-300 hover:shadow-2xl"
                   />
