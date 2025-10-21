@@ -30,7 +30,7 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case1.features,
       icon: Factory,
       gradient: 'from-blue-500 to-cyan-500',
-      image: 'https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSW8yVndJPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e0158c5a9e73947138e70439d5bf55b0334443eb//Manufacturing.png'
+      image: '/articles/Manufacturing.png'
     },
     'mining': {
       title: t.useCases.case2.title,
@@ -44,7 +44,7 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case2.features,
       icon: Pickaxe,
       gradient: 'from-orange-500 to-yellow-500',
-      image: 'https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSXcyVndJPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--da416d3074dc0cc8ae9cdd0d9c02b4b4949e4e5f//Mining.png'
+      image: '/articles/Mining.png'
     },
     'development-metrics': {
       title: t.useCases.case3.title,
@@ -58,7 +58,7 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case3.features,
       icon: BarChart3,
       gradient: 'from-purple-500 to-pink-500',
-      image: 'https://stackblitz.com/storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSXMyVndJPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--16e675fbc5198e6d952287944d3a532d68191773//Technology.png'
+      image: '/articles/Technology.png'
     }
   };
 
