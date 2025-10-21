@@ -1,10 +1,9 @@
-import React from 'react';
-import { Mail, Globe } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <footer className="bg-backblack py-16 relative overflow-hidden pt-40">
@@ -77,7 +76,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
-            <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-1 text-gray-400 text-sm order-2 md:order-1">
+            <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-1 text-gray-400 text-sm order-2 md:order-1 mt-12 md:mt-0">
               <span>{language === 'es' ? 'Creado por' : 'Created by'}</span>
               <div className="flex items-center space-x-1">
                
@@ -90,7 +89,7 @@ const Footer = () => {
               </div>
               <span className="block sm:inline">{t.footer.rights}</span>
             </div>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-6 order-1 md:order-2">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 order-1 md:order-2 mb-6 md:mb-0">
               <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-sm underline">
                 {t.footer.terms}
               </a>

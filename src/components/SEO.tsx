@@ -18,7 +18,7 @@ const defaultSEO = {
   title: 'LLMApps by CleverIT - Soluciones de IA Avanzadas',
   description: 'Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente.',
   keywords: 'IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos',
-  ogImage: `${import.meta.env.BASE_URL}meta/thumbnail.png`,
+  ogImage: 'https://llmapps.cleveritgroup.ai/meta/thumbnail.png',
   twitterCard: 'summary_large_image' as const,
   robots: 'index, follow',
   type: 'website' as const,
