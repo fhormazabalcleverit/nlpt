@@ -58,7 +58,7 @@ const Hero = () => {
           </div>
 
           {/* Chat Interface */}
-          <div className="animate-slide-up-delay-3 relative mt-8 md:mt-16">
+          <div className="animate-slide-up-delay-3 relative">
             <div className="px-2 md:px-0">
               <ChatInterface />
             </div>

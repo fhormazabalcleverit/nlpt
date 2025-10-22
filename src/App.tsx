@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import SEO from './components/SEO';
 import Hero from './components/Hero';
 import Process from './components/Process';
@@ -38,6 +39,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-backblack">
           <Navbar />
           <Routes>
