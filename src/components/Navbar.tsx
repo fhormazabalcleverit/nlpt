@@ -48,7 +48,7 @@ const Navbar = () => {
               {t.navbar.contact}
             </Link>
             <a 
-              href="https://phoenix.cleveritgroup.ai/" 
+              href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
