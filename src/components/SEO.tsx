@@ -17,7 +17,7 @@ interface SEOProps {
 // Valores por defecto
 const defaultSEO = {
   title: 'LLMApps by CleverIT | Generative AI and Business Automation Solutions',
-  description: 'Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente.',
+  description: 'Boost your business with LLMApps by CleverIT — intelligent assistants that combine generative AI, automation, and data-driven insights. Chat with your information and enhance productivity through AI-powered solutions.',
   keywords: 'IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos',
   ogImage: 'https://llmapps.cleveritgroup.ai/meta/thumbnail.png',
   twitterCard: 'summary_large_image' as const,

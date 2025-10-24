@@ -97,23 +97,24 @@ const Navbar = () => {
               ? 'bg-backblack/90 backdrop-blur-md border-gray-700/50'
               : 'bg-backblack/95 backdrop-blur-sm border-gray-800'
           }`}>
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link to="/team" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200" onClick={() => setIsOpen(false)}>
+            <div className="px-2 pt-2 pb-3 space-y-1 text-center">
+              <Link to="/team" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
                 {t.navbar.team}
               </Link>
-              <Link to="/use-cases" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200" onClick={() => setIsOpen(false)}>
+              <Link to="/use-cases" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
                 {t.navbar.useCases}
               </Link>
-              <Link to="/quote" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200" onClick={() => setIsOpen(false)}>
+              <Link to="/quote" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
                 {t.navbar.contact}
               </Link>
-              <a 
-                href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative inline-block p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-500 ease-out mx-3 my-1 group"
-                onClick={() => setIsOpen(false)}
-              >
+              <div className="px-3 py-2">
+                <a 
+                  href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="relative block w-full p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-500 ease-out group"
+                  onClick={() => setIsOpen(false)}
+                >
                 {/* Estrellas animadas */}
                 <div className="absolute inset-0 pointer-events-none">
                   <div className="absolute -top-2 -left-2 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out group-hover:animate-pulse"></div>
@@ -123,11 +124,12 @@ const Navbar = () => {
                   <div className="absolute top-1 -right-4 w-1 h-1 bg-pink-300 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-650 ease-in-out delay-150 group-hover:animate-pulse"></div>
                   <div className="absolute bottom-0 -left-3 w-0.5 h-0.5 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-550 ease-in-out delay-250 group-hover:animate-pulse"></div>
                 </div>
-                <span className="block bg-black text-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-600 hover:to-pink-500 hover:text-white transition-all duration-500 ease-out font-medium px-4 py-2 rounded-full">
-                  {t.navbar.quoteWithAI}
-                </span>
-              </a>
-              <div className="flex items-center justify-between px-3 py-2 border-t border-gray-700 mt-4 pt-4">
+                  <span className="block bg-backblack/80 text-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-600 hover:to-pink-500 hover:text-white transition-all duration-500 ease-out font-medium px-4 py-2 rounded-full text-center">
+                    {t.navbar.quoteWithAI}
+                  </span>
+                </a>
+              </div>
+              <div className="flex items-center justify-center px-3 py-2 border-t border-gray-700 mt-4 pt-4">
                 <button
                   onClick={() => {
                     toggleLanguage();
