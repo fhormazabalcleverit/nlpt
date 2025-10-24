@@ -53,7 +53,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
             >
-              Cotiza con AI
+              {t.navbar.aiQuote}
             </a>
           </div>
 
@@ -97,13 +97,13 @@ const Navbar = () => {
                 {t.navbar.contact}
               </Link>
               <a 
-                href="https://phoenix.cleveritgroup.ai/" 
+                href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Cotiza con AI
+                {t.navbar.aiQuote}
               </a>
               <div className="flex items-center justify-between px-3 py-2 border-t border-gray-700 mt-4 pt-4">
                 <button
