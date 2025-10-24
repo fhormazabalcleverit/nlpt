@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
-import SEO from './components/SEO';
+import DynamicSEO from './components/DynamicSEO';
 import Hero from './components/Hero';
 import Process from './components/Process';
 import NewProcess from './components/NewProcess';
@@ -20,13 +20,12 @@ import UseCaseDetailPage from './pages/UseCaseDetailPage';
 
 const HomePage = () => (
   <>
-    <SEO 
-      title="Inicio"
+    <DynamicSEO 
+      title="LLMApps by CleverIT - Soluciones de IA Avanzadas"
       description="Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente."
+      image="/meta/thumbnail.jpg"
       keywords="IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos, Inicio"
-      ogImage="/meta/home-thumbnail.png"
-      ogUrl={window.location.href}
-      dynamic={true}
+      url={window.location.href}
     />
     <Hero />
     <NewProcess />
