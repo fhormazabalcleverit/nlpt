@@ -52,7 +52,7 @@ const Hero = () => {
             <Link to="/quote" className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25 text-center">
               {t.hero.ctaPrimary}
             </Link>
-            <a href="https://phoenix.cleveritgroup.ai/" target="_blank" rel="noopener noreferrer" className="relative w-full sm:w-auto border-2 border-gray-600 hover:border-pink-500 text-white hover:text-pink-400 font-medium px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 bg-transparent hover:bg-pink-500/10 text-center flex items-center justify-center gap-2 group">
+            <a href="https://phoenix.cleveritgroup.ai/?offering=llmapps" target="_blank" rel="noopener noreferrer" className="relative w-full sm:w-auto border-2 border-gray-600 hover:border-pink-500 text-white hover:text-pink-400 font-medium px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 bg-transparent hover:bg-pink-500/10 text-center flex items-center justify-center gap-2 group">
               {/* Estrellas animadas */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-2 -left-2 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out group-hover:animate-pulse"></div>
