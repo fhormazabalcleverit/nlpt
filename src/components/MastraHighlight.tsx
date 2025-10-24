@@ -9,7 +9,7 @@ const MastraHighlight = () => {
 
   return (
     <section className="bg-backblack py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         {/* Open Source Badge */}
         <div className="mt-8 mb-4">
@@ -21,7 +21,7 @@ const MastraHighlight = () => {
 
 
         <div ref={sectionRef} className={`fade-in-up ${sectionVisible ? 'animate' : ''}`}>
-          <div className="relative bg-gradient-to-r from-blue-500/20 via-purple-600/10 to-pink-500/20 border border-blue-500/50 rounded-3xl p-8 md:p-12 backdrop-blur-sm overflow-hidden">
+          <div className="relative bg-gradient-to-r from-blue-500/10 via-purple-600/30 to-pink-500/10 border border-blue-500/0 rounded-3xl p-8 md:p-12 backdrop-blur-sm overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_10%,_rgba(59,130,246,0.15)_0%,_transparent_0%)] pointer-events-none"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_10%,_rgba(147,51,234,0.15)_0%,_transparent_0%)] pointer-events-none"></div>

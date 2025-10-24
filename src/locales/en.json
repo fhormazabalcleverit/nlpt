@@ -2,7 +2,8 @@
   "navbar": {
     "team": "Meet the team",
     "useCases": "Use Cases",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "quoteWithAI": "Quote with AI"
   },
   "team": {
     "titleA": "Technology with ",

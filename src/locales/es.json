@@ -2,7 +2,8 @@
   "navbar": {
     "team": "Conoce al equipo",
     "useCases": "Casos de uso",
-    "contact": "Contáctanos"
+    "contact": "Contáctanos",
+    "quoteWithAI": "Cotiza con IA"
   },
   "team": {
     "titleA": "Tecnología con",

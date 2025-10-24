@@ -51,9 +51,20 @@ const Navbar = () => {
               href="https://phoenix.cleveritgroup.ai/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+              className="relative p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-900 ease-out group"
             >
-              Cotiza con AI
+              {/* Estrellas animadas */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-2 -left-2 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out group-hover:animate-pulse"></div>
+                <div className="absolute -top-3 right-2 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-700 ease-in-out delay-100 group-hover:animate-pulse"></div>
+                <div className="absolute -bottom-2 -right-2 w-1 h-1 bg-pink-500 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-600 ease-in-out delay-200 group-hover:animate-pulse"></div>
+                <div className="absolute -bottom-3 left-1 w-0.5 h-0.5 bg-purple-300 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out delay-300 group-hover:animate-pulse"></div>
+                <div className="absolute top-1 -right-4 w-1 h-1 bg-pink-300 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-650 ease-in-out delay-150 group-hover:animate-pulse"></div>
+                <div className="absolute bottom-0 -left-3 w-0.5 h-0.5 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-550 ease-in-out delay-250 group-hover:animate-pulse"></div>
+              </div>
+              <span className="block bg-backblack/80 text-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-600 hover:to-pink-500 hover:text-white transition-all duration-900 ease-out font-medium px-4 py-2 rounded-full">
+                {t.navbar.quoteWithAI}
+              </span>
             </a>
           </div>
 
@@ -100,10 +111,21 @@ const Navbar = () => {
                 href="https://phoenix.cleveritgroup.ai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                className="relative inline-block p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-500 ease-out mx-3 my-1 group"
                 onClick={() => setIsOpen(false)}
               >
-                Cotiza con AI
+                {/* Estrellas animadas */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute -top-2 -left-2 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out group-hover:animate-pulse"></div>
+                  <div className="absolute -top-3 right-2 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-700 ease-in-out delay-100 group-hover:animate-pulse"></div>
+                  <div className="absolute -bottom-2 -right-2 w-1 h-1 bg-pink-500 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-600 ease-in-out delay-200 group-hover:animate-pulse"></div>
+                  <div className="absolute -bottom-3 left-1 w-0.5 h-0.5 bg-purple-300 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out delay-300 group-hover:animate-pulse"></div>
+                  <div className="absolute top-1 -right-4 w-1 h-1 bg-pink-300 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-650 ease-in-out delay-150 group-hover:animate-pulse"></div>
+                  <div className="absolute bottom-0 -left-3 w-0.5 h-0.5 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-550 ease-in-out delay-250 group-hover:animate-pulse"></div>
+                </div>
+                <span className="block bg-black/ text-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-600 hover:to-pink-500 hover:text-white transition-all duration-500 ease-out font-medium px-4 py-2 rounded-full">
+                  {t.navbar.quoteWithAI}
+                </span>
               </a>
               <div className="flex items-center justify-between px-3 py-2 border-t border-gray-700 mt-4 pt-4">
                 <button

@@ -9,7 +9,7 @@ import Process from './components/Process';
 import NewProcess from './components/NewProcess';
 import Benefits from './components/Benefits';
 import MastraHighlight from './components/MastraHighlight';
-import Testimonials from './components/Testimonials';
+// import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PricingPage from './pages/PricingPage';
@@ -30,7 +30,7 @@ const HomePage = () => (
     <Benefits />
     <MastraHighlight />
     <Process />
-    <Testimonials />
+    {/*<Testimonials />*/}
     <FAQ />
   </>
 );

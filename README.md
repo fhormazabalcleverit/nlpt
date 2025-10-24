@@ -282,7 +282,7 @@ Este proyecto es propiedad de CleverIT Group. Todos los derechos reservados.
 
 - **Email**: info@llmaps.com
 - **Website**: [CleverIT Group](https://www.cleveritgroup.com)
-- **Demo**: [LLMApps Demo](https://interfaz-de-agente-i-7lya.bolt.host)
+- **Demo**: [LLMApps Demo](https://phoenix.cleveritgroup.ai/)
 
 ---
 

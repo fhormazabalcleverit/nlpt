@@ -143,6 +143,30 @@ html {
   background: linear-gradient(to right, #db2777, #7c3aed);
 }
 
+/* Gradient animation for buttons */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 200% 50%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Slow gradient animation class */
+.animate-gradient-slow {
+  animation: gradient 15s ease-in-out infinite;
+}
+
 
 
 @layer base {

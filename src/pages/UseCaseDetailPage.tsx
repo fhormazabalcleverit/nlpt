@@ -85,7 +85,7 @@ const UseCaseDetailPage = () => {
     <section className="bg-backblack py-20 min-h-screen">
       <SEO 
         title={useCase.title}
-        description={useCase.excerpt}
+        // description={useCase.excerpt}
         keywords={`${useCase.category}, caso de uso, IA, ${useCase.title}, automatización, CleverIT`}
         type="article"
       />
