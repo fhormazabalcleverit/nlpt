@@ -3,7 +3,8 @@
     "team": "Meet the team",
     "useCases": "Use Cases",
     "contact": "Contact Us",
-    "quoteWithAI": "Quote with AI"
+    "quoteWithAI": "Quote with AI",
+    "aiQuote": "Quote with AI"
   },
   "team": {
     "titleA": "Technology with ",

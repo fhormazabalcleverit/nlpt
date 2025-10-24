@@ -48,7 +48,7 @@ const Navbar = () => {
               {t.navbar.contact}
             </Link>
             <a 
-              href="https://phoenix.cleveritgroup.ai/" 
+              href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
               target="_blank" 
               rel="noopener noreferrer"
               className="relative p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-900 ease-out group"
@@ -108,7 +108,7 @@ const Navbar = () => {
                 {t.navbar.contact}
               </Link>
               <a 
-                href="https://phoenix.cleveritgroup.ai/" 
+                href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative inline-block p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-500 ease-out mx-3 my-1 group"
@@ -123,7 +123,7 @@ const Navbar = () => {
                   <div className="absolute top-1 -right-4 w-1 h-1 bg-pink-300 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-650 ease-in-out delay-150 group-hover:animate-pulse"></div>
                   <div className="absolute bottom-0 -left-3 w-0.5 h-0.5 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transform scale-0 group-hover:scale-100 transition-all duration-550 ease-in-out delay-250 group-hover:animate-pulse"></div>
                 </div>
-                <span className="block bg-black/ text-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-600 hover:to-pink-500 hover:text-white transition-all duration-500 ease-out font-medium px-4 py-2 rounded-full">
+                <span className="block bg-black text-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-600 hover:to-pink-500 hover:text-white transition-all duration-500 ease-out font-medium px-4 py-2 rounded-full">
                   {t.navbar.quoteWithAI}
                 </span>
               </a>

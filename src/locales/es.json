@@ -3,7 +3,8 @@
     "team": "Conoce al equipo",
     "useCases": "Casos de uso",
     "contact": "Contáctanos",
-    "quoteWithAI": "Cotiza con IA"
+    "quoteWithAI": "Cotiza con IA",
+    "aiQuote": "Cotiza con AI"
   },
   "team": {
     "titleA": "Tecnología con",
