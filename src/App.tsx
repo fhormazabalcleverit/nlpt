@@ -21,7 +21,11 @@ import UseCaseDetailPage from './pages/UseCaseDetailPage';
 const HomePage = () => (
   <>
     <DynamicSEO 
+      title="LLMApps by CleverIT | Generative AI and Business Automation Solutions"
+      description="Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente."
       image="/meta/thumbnail.jpg"
+      keywords="IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos, Inicio"
+      url={window.location.href}
     />
     <Hero />
     <NewProcess />

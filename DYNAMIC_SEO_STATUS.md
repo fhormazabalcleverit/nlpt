@@ -50,7 +50,7 @@ Tu componente `DynamicSEO` ha sido revisado, optimizado y ahora está funcionand
 
 ```tsx
 <DynamicSEO 
-  title="LLMApps by CleverIT - Generative AI and Business Automation Solutions"
+  title="LLMApps by CleverIT | Generative AI and Business Automation Solutions"
   description="Transformamos tu negocio con LLM Apps..."
   image="/meta/thumbnail.jpg"
   keywords="IA, Inteligencia Artificial, LLM, ChatGPT..."
