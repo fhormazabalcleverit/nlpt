@@ -24,6 +24,9 @@ const HomePage = () => (
       title="Inicio"
       description="Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente."
       keywords="IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos, Inicio"
+      ogImage="/meta/home-thumbnail.png"
+      ogUrl={window.location.href}
+      dynamic={true}
     />
     <Hero />
     <NewProcess />

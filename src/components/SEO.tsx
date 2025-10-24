@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
@@ -11,6 +11,7 @@ interface SEOProps {
   robots?: string;
   canonical?: string;
   type?: 'website' | 'article' | 'product' | 'profile';
+  dynamic?: boolean; // New prop to enable dynamic meta tag updates
 }
 
 // Valores por defecto
@@ -34,6 +35,7 @@ const SEO: React.FC<SEOProps> = ({
   robots = defaultSEO.robots,
   canonical,
   type = defaultSEO.type,
+  dynamic = false,
 }) => {
   // Construir título completo
   const fullTitle = title 
@@ -47,6 +49,51 @@ const SEO: React.FC<SEOProps> = ({
   
   // URL canónica - usar la prop o construir desde window.location
   const canonicalUrl = canonical || ogUrl || (typeof window !== 'undefined' ? window.location.href : '');
+
+  // Function to update meta tags dynamically
+  const updateMetaTag = (selector: string, attribute: string, content: string) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.setAttribute(attribute, content);
+    }
+  };
+
+  // Dynamic meta tag updates (only when dynamic prop is true)
+  useEffect(() => {
+    if (!dynamic || typeof window === 'undefined') return;
+
+    // Update document title
+    document.title = fullTitle;
+
+    // Update meta description
+    updateMetaTag('meta[name="description"]', 'content', seoDescription);
+
+    // Update Open Graph meta tags
+    updateMetaTag('meta[property="og:title"]', 'content', fullTitle);
+    updateMetaTag('meta[property="og:description"]', 'content', seoDescription);
+    updateMetaTag('meta[property="og:image"]', 'content', seoImage);
+    if (canonicalUrl) {
+      updateMetaTag('meta[property="og:url"]', 'content', canonicalUrl);
+    }
+
+    // Update Twitter Card meta tags
+    updateMetaTag('meta[name="twitter:title"]', 'content', fullTitle);
+    updateMetaTag('meta[name="twitter:description"]', 'content', seoDescription);
+    updateMetaTag('meta[name="twitter:image"]', 'content', seoImage);
+
+    // Update keywords if provided
+    if (keywords) {
+      updateMetaTag('meta[name="keywords"]', 'content', seoKeywords);
+    }
+
+    // Update canonical URL
+    if (canonicalUrl) {
+      const canonicalElement = document.querySelector('link[rel="canonical"]');
+      if (canonicalElement) {
+        canonicalElement.setAttribute('href', canonicalUrl);
+      }
+    }
+  }, [fullTitle, seoDescription, seoImage, canonicalUrl, seoKeywords, keywords, dynamic]);
 
   return (
     <Helmet>

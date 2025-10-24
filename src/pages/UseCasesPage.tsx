@@ -47,6 +47,9 @@ const UseCasesPage = () => {
         title="Casos de Uso"
         description="Descubre cómo diferentes industrias están transformando sus operaciones con LLM Apps y soluciones de IA personalizadas."
         keywords="casos de uso, IA industrial, manufactura, minería, desarrollo, métricas, Production Insight, Mining Intelligence"
+        ogImage="/meta/use-cases-thumbnail.png"
+        ogUrl={window.location.href}
+        dynamic={true}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

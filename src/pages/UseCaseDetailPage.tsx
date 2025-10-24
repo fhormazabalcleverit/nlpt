@@ -70,6 +70,7 @@ const UseCaseDetailPage = () => {
         <SEO 
           title="Caso de Uso No Encontrado"
           description="El caso de uso solicitado no fue encontrado. Explora otros casos de uso de IA."
+          dynamic={true}
         />
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">{t.useCases.notFound}</h1>
@@ -85,9 +86,12 @@ const UseCaseDetailPage = () => {
     <section className="bg-backblack py-20 min-h-screen">
       <SEO 
         title={useCase.title}
-        // description={useCase.excerpt}
+        description={useCase.content.substring(0, 160) + '...'}
         keywords={`${useCase.category}, caso de uso, IA, ${useCase.title}, automatización, CleverIT`}
         type="article"
+        ogImage={useCase.image}
+        ogUrl={window.location.href}
+        dynamic={true}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}

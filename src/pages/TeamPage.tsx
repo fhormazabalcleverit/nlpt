@@ -19,6 +19,9 @@ const TeamPage = () => {
         title="Conoce al Equipo"
         description="Conoce al equipo de CleverIT. Tecnología con propósito, personas con visión. Especialistas en GitHub, Cloud, DevOps y experiencia digital."
         keywords="CleverIT, equipo, tecnología, desarrolladores, GitHub, Cloud, DevOps, experiencia digital, Microsoft Partner"
+        ogImage="/meta/team-thumbnail.png"
+        ogUrl={window.location.href}
+        dynamic={true}
       />
       {/* Background SVG */}
       <div className="absolute inset-0 bg-no-repeat bg-center bg-[length:150%_auto] md:bg-cover"
