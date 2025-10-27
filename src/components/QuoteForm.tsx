@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MessageCircle, Send, User, Building, AtSign } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useLanguage } from '../context/LanguageContext';
+import React, { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MessageCircle,
+  Send,
+  User,
+  Building,
+  AtSign,
+} from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useLanguage } from "../context/LanguageContext";
 
 const QuoteForm = () => {
   const { t } = useLanguage();
@@ -9,37 +17,103 @@ const QuoteForm = () => {
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation();
 
   const [formData, setFormData] = useState({
-    nombre: '',
-    rubro: '',
-    email: '',
-    contactMethod: 'email'
+    nombre: "",
+    rubro: "",
+    email: "",
+    contactMethod: "email",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert(t.quote.form.successMessage);
+    setIsSubmitting(true);
+
+    try {
+      // Build the email HTML content
+      const emailHtml = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #ec4899; margin-bottom: 20px;">New Quote Request</h2>
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px;">
+            <p style="margin: 10px 0;"><strong>Name:</strong> ${formData.nombre}</p>
+            <p style="margin: 10px 0;"><strong>Industry:</strong> ${formData.rubro}</p>
+            <p style="margin: 10px 0;"><strong>Email:</strong> ${formData.email}</p>
+            <p style="margin: 10px 0;"><strong>Preferred Contact Method:</strong> ${formData.contactMethod}</p>
+          </div>
+          <p style="margin-top: 20px; color: #6b7280; font-size: 14px;">This lead was submitted from llmapps.cleveritgroup.com</p>
+        </div>
+      `;
+
+      const response = await fetch(
+        "https://regis.groowcity.com/common/send-email",
+        {
+          method: "POST",
+          headers: {
+            "x-api-key": "550e8400-e29b-41d4-a716-446655440000",
+            origin: "https://llmapps.cleveritgroup.com",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "no-reply@ndrz.io",
+            to: "comercial@cleveritgroup.com",
+            subject: `New Lead - Quote Request from ${formData.nombre}`,
+            html: emailHtml,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Success
+      alert(t.quote.form.successMessage);
+
+      // Reset form
+      setFormData({
+        nombre: "",
+        rubro: "",
+        email: "",
+        contactMethod: "email",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Error al enviar el formulario. Por favor intente nuevamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
-    { value: 'email', label: t.quote.form.contactEmail, icon: Mail },
-    { value: 'telefono', label: t.quote.form.contactPhone, icon: Phone },
-    { value: 'whatsapp', label: t.quote.form.contactWhatsApp, icon: MessageCircle }
+    { value: "email", label: t.quote.form.contactEmail, icon: Mail },
+    { value: "telefono", label: t.quote.form.contactPhone, icon: Phone },
+    {
+      value: "whatsapp",
+      label: t.quote.form.contactWhatsApp,
+      icon: MessageCircle,
+    },
   ];
 
   return (
     <section className="bg-backblack py-20 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className={`text-center mb-16 fade-in-up ${headerVisible ? 'animate' : ''}`}>
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 fade-in-up ${
+            headerVisible ? "animate" : ""
+          }`}
+        >
           <div className="inline-block bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
             {t.quote.badge}
           </div>
@@ -52,12 +126,18 @@ const QuoteForm = () => {
         </div>
 
         {/* Form */}
-        <div ref={formRef} className={`fade-in-up-delay ${formVisible ? 'animate' : ''}`}>
+        <div
+          ref={formRef}
+          className={`fade-in-up-delay ${formVisible ? "animate" : ""}`}
+        >
           <div className="bg-gray-900/50 border border-gray-700 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Nombre */}
               <div>
-                <label htmlFor="nombre" className="block text-white text-lg font-semibold mb-3">
+                <label
+                  htmlFor="nombre"
+                  className="block text-white text-lg font-semibold mb-3"
+                >
                   {t.quote.form.name}
                 </label>
                 <div className="relative">
@@ -77,7 +157,10 @@ const QuoteForm = () => {
 
               {/* Rubro */}
               <div>
-                <label htmlFor="rubro" className="block text-white text-lg font-semibold mb-3">
+                <label
+                  htmlFor="rubro"
+                  className="block text-white text-lg font-semibold mb-3"
+                >
                   {t.quote.form.industry}
                 </label>
                 <div className="relative">
@@ -97,7 +180,10 @@ const QuoteForm = () => {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-white text-lg font-semibold mb-3">
+                <label
+                  htmlFor="email"
+                  className="block text-white text-lg font-semibold mb-3"
+                >
                   {t.quote.form.email}
                 </label>
                 <div className="relative">
@@ -128,8 +214,8 @@ const QuoteForm = () => {
                         key={method.value}
                         className={`relative flex items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
                           formData.contactMethod === method.value
-                            ? 'border-pink-500 bg-pink-500/10'
-                            : 'border-gray-600 bg-gray-800 hover:border-pink-500/50'
+                            ? "border-pink-500 bg-pink-500/10"
+                            : "border-gray-600 bg-gray-800 hover:border-pink-500/50"
                         }`}
                       >
                         <input
@@ -141,12 +227,20 @@ const QuoteForm = () => {
                           className="sr-only"
                         />
                         <div className="flex flex-col items-center space-y-2">
-                          <IconComponent className={`w-6 h-6 ${
-                            formData.contactMethod === method.value ? 'text-pink-400' : 'text-gray-400'
-                          }`} />
-                          <span className={`text-sm font-medium ${
-                            formData.contactMethod === method.value ? 'text-pink-400' : 'text-gray-300'
-                          }`}>
+                          <IconComponent
+                            className={`w-6 h-6 ${
+                              formData.contactMethod === method.value
+                                ? "text-pink-400"
+                                : "text-gray-400"
+                            }`}
+                          />
+                          <span
+                            className={`text-sm font-medium ${
+                              formData.contactMethod === method.value
+                                ? "text-pink-400"
+                                : "text-gray-300"
+                            }`}
+                          >
                             {method.label}
                           </span>
                         </div>
@@ -160,10 +254,13 @@ const QuoteForm = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25 flex items-center justify-center space-x-3"
                 >
                   <Send className="w-5 h-5" />
-                  <span>{t.quote.form.submit}</span>
+                  <span>
+                    {isSubmitting ? "Enviando..." : t.quote.form.submit}
+                  </span>
                 </button>
               </div>
             </form>
@@ -172,9 +269,7 @@ const QuoteForm = () => {
 
         {/* Additional Info */}
         <div className="text-center mt-12">
-          <p className="text-gray-400 text-sm">
-            {t.quote.footerNote}
-          </p>
+          <p className="text-gray-400 text-sm">{t.quote.footerNote}</p>
         </div>
       </div>
     </section>
