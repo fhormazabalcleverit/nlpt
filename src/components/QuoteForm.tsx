@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Mail,
   Phone,
@@ -7,6 +7,9 @@ import {
   User,
   Building,
   AtSign,
+  CheckCircle,
+  AlertCircle,
+  X,
 } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { useLanguage } from "../context/LanguageContext";
@@ -24,6 +27,18 @@ const QuoteForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+
+  // Auto-dismiss notification after 5 seconds
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => setNotification(null), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -77,7 +92,10 @@ const QuoteForm = () => {
       }
 
       // Success
-      alert(t.quote.form.successMessage);
+      setNotification({
+        type: "success",
+        message: t.quote.form.successMessage,
+      });
 
       // Reset form
       setFormData({
@@ -88,7 +106,10 @@ const QuoteForm = () => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      alert("Error al enviar el formulario. Por favor intente nuevamente.");
+      setNotification({
+        type: "error",
+        message: "Error al enviar el formulario. Por favor intente nuevamente.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -107,6 +128,68 @@ const QuoteForm = () => {
   return (
     <section className="bg-backblack py-20 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Notification Toast */}
+        {notification && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+              onClick={() => setNotification(null)}
+            />
+
+            {/* Toast Content */}
+            <div
+              className={`relative rounded-2xl p-8 shadow-2xl max-w-md w-full transform transition-all duration-300 animate-in fade-in zoom-in ${
+                notification.type === "success"
+                  ? "bg-gradient-to-br from-green-500/20 to-emerald-600/20 border border-green-400/50"
+                  : "bg-gradient-to-br from-red-500/20 to-rose-600/20 border border-red-400/50"
+              }`}
+            >
+              <div className="flex items-start space-x-4">
+                <div
+                  className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center ${
+                    notification.type === "success"
+                      ? "bg-green-500/20"
+                      : "bg-red-500/20"
+                  }`}
+                >
+                  {notification.type === "success" ? (
+                    <CheckCircle className="w-6 h-6 text-green-400" />
+                  ) : (
+                    <AlertCircle className="w-6 h-6 text-red-400" />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className={`font-bold text-lg ${
+                      notification.type === "success"
+                        ? "text-green-300"
+                        : "text-red-300"
+                    }`}
+                  >
+                    {notification.type === "success" ? "¡Éxito!" : "Error"}
+                  </h3>
+                  <p
+                    className={`text-sm mt-1 ${
+                      notification.type === "success"
+                        ? "text-green-200/80"
+                        : "text-red-200/80"
+                    }`}
+                  >
+                    {notification.message}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setNotification(null)}
+                  className="text-gray-400 hover:text-gray-200 transition-colors flex-shrink-0"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Header */}
         <div
           ref={headerRef}
