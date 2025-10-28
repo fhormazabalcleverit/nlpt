@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, Tag, Factory, Pickaxe, BarChart3 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -93,7 +93,7 @@ const UseCaseDetailPage = () => {
         ogUrl={window.location.href}
         dynamic={true}
       />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <Link
           to="/use-cases"
@@ -108,6 +108,19 @@ const UseCaseDetailPage = () => {
           ref={headerAnim.ref}
           className={`mb-12 fade-in-up ${headerAnim.isVisible ? 'animate' : ''}`}
         >
+
+
+          <div className="flex items-center gap-6 mb-6">
+            {/* Icon Circle */}
+            <div className={`w-20 h-20 bg-gradient-to-r ${useCase.gradient} rounded-full flex items-center justify-center border-4 border-gray-900/50 flex-shrink-0`}>
+              <useCase.icon className="w-10 h-10 text-white" />
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              {useCase.title}
+            </h1>
+          </div>
+
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <span className="inline-flex items-center space-x-2 bg-pink-500/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium">
               <Tag className="w-4 h-4" />
@@ -123,16 +136,7 @@ const UseCaseDetailPage = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-6">
-            {/* Icon Circle */}
-            <div className={`w-20 h-20 bg-gradient-to-r ${useCase.gradient} rounded-full flex items-center justify-center border-4 border-gray-900/50 flex-shrink-0`}>
-              <useCase.icon className="w-10 h-10 text-white" />
-            </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              {useCase.title}
-            </h1>
-          </div>
         </div>
 
         {/* Content */}
@@ -159,55 +163,151 @@ const UseCaseDetailPage = () => {
             </p>
           </div>
 
-          {/* Challenge */}
-          <div
-            ref={challengeAnim.ref}
-            className={`mb-12 px-16 fade-in-up ${challengeAnim.isVisible ? 'animate' : ''}`}
-          >
-            <h2 className="text-xl font-semibold text-white mb-6">{t.useCases.challengeTitle}</h2>
-            <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/50 rounded-2xl p-8">
-              <p className="text-gray-300 leading-relaxed text-lg">
-                {useCase.challenge}
-              </p>
+          {/* Challenge - Only for non-mining cases */}
+          {id !== 'mining' && (
+            <div
+              ref={challengeAnim.ref}
+              className={`mb-12 px-16 fade-in-up ${challengeAnim.isVisible ? 'animate' : ''}`}
+            >
+              <h2 className="text-xl font-semibold text-white mb-6">{t.useCases.challengeTitle}</h2>
+              <div className="">
+                <p className="text-gray-300 leading-relaxed text-lg">
+                  {useCase.challenge}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Solution */}
-          <div
-            ref={solutionAnim.ref}
-            className={`mb-12 px-16 fade-in-up ${solutionAnim.isVisible ? 'animate' : ''}`}
-          >
-            <h2 className="text-xl font-semibold text-white mb-6">{t.useCases.solutionTitle}</h2>
-            <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/50 rounded-2xl p-8">
-              <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                {useCase.solution}
-              </p>
+          {/* Solution - Only for non-mining cases */}
+          {id !== 'mining' && (
+            <div
+              ref={solutionAnim.ref}
+              className={`mb-12 px-16 fade-in-up ${solutionAnim.isVisible ? 'animate' : ''}`}
+            >
+              <h2 className="text-xl font-semibold text-white mb-6">{t.useCases.solutionTitle}</h2>
+              <div className="">
+                <p className="text-gray-300 leading-relaxed text-lg mb-6">
+                  {useCase.solution}
+                </p>
 
-              {/* Features List */}
-              <h3 className="text-lg font-semibold text-white mb-4">{t.useCases.featuresTitle}</h3>
-              <ul className="space-y-3">
-                {useCase.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Standard Features List for other cases */}
+                <h3 className="text-lg font-semibold text-white mb-4">{t.useCases.featuresTitle}</h3>
+                <ul className="space-y-3">
+                  {useCase.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Results */}
-          <div
-            ref={resultsAnim.ref}
-            className={`mb-12 px-16 fade-in-up ${resultsAnim.isVisible ? 'animate' : ''}`}
-          >
-            <h2 className="text-xl font-semibold text-white mb-6">{t.useCases.resultsTitle}</h2>
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/50 rounded-2xl p-8">
-              <p className="text-gray-300 leading-relaxed text-lg">
-                {useCase.results}
-              </p>
+          {/* Mining Case - Special Applications Section */}
+          {id === 'mining' && (t.useCases.case2 as any).applications && (
+            <div
+              ref={solutionAnim.ref}
+              className={`mb-12 px-16 fade-in-up ${solutionAnim.isVisible ? 'animate' : ''}`}
+            >
+              <div className="space-y-8 mb-8">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  {(t.useCases.case2 as any).applications.title}
+                </h2>
+                <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                  {(t.useCases.case2 as any).applications.subtitle}
+                </p>
+
+                {/* Applications */}
+                <div className="space-y-8">
+                  {[
+                    (t.useCases.case2 as any).applications.app1,
+                    (t.useCases.case2 as any).applications.app2,
+                    (t.useCases.case2 as any).applications.app3,
+                    (t.useCases.case2 as any).applications.app4,
+                    (t.useCases.case2 as any).applications.app5
+                  ].map((app: any, index: number) => (
+                    <div key={index} className="bg-gray-500/10 border border-gray-500/30 rounded-2xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-4">{app.title}</h3>
+                      
+                      <div className="mb-4">
+                        <p className="text-gray-400 font-semibold mb-6" dangerouslySetInnerHTML={{ __html: app.challenge }} />
+                      </div>
+
+                      <div className="mb-4">
+                        <p className="text-gray-400 font-semibold mb-3" dangerouslySetInnerHTML={{ __html: app.capabilities }} />
+                        <ul className="space-y-3 ml-4">
+                          {app.features.map((feature: any, featureIndex: number) => (
+                            <li key={featureIndex} className="space-y-2">
+                              {/* Main bullet */}
+                              <div className="flex items-start space-x-2">
+                                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-gray-300">{typeof feature === 'string' ? feature : feature.main}</span>
+                              </div>
+                              
+                              {/* Sub bullets if they exist */}
+                              {feature.sub && feature.sub.length > 0 && (
+                                <ul className="space-y-1 ml-6">
+                                  {feature.sub.map((subFeature: string, subIndex: number) => (
+                                    <li key={subIndex} className="flex items-start space-x-2">
+                                      <div className="w-1 h-1 bg-orange-300 rounded-full mt-2.5 flex-shrink-0"></div>
+                                      <span className="text-gray-400 text-sm">{subFeature}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <p className="text-green-300 font-light" dangerouslySetInnerHTML={{ __html: app.value }} />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Video Section for Mining */}
+                {(t.useCases.case2 as any).videoSection && (
+                  <div className="pt-12">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {(t.useCases.case2 as any).videoSection.title}
+                    </h3>
+                      
+                    <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-gray-900 mb-6">
+                      <iframe
+                        src={(t.useCases.case2 as any).videoSection.videoUrl}
+                        title={(t.useCases.case2 as any).videoSection.videoTitle}
+                        className="absolute inset-0 w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+
+                    <p className="text-gray-400 leading-relaxed text-md mb-6 text-center">
+                      {(t.useCases.case2 as any).videoSection.subtitle}
+                    </p>
+                  
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Results - Only for non-mining cases */}
+          {id !== 'mining' && (
+            <div
+              ref={resultsAnim.ref}
+              className={`mb-12 px-16 fade-in-up ${resultsAnim.isVisible ? 'animate' : ''}`}
+            >
+              <h2 className="text-xl font-semibold text-white mb-6">{t.useCases.resultsTitle}</h2>
+              <div className="">
+                <p className="text-gray-300 leading-relaxed text-lg">
+                  {useCase.results}
+                </p>
+              </div>
+            </div>
+          )}
         </article>
 
         {/* CTA */}

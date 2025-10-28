@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import QuoteForm from '../components/QuoteForm';
 import SEO from '../components/SEO';
 

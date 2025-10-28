@@ -346,18 +346,129 @@
       "title": "Mining Intelligence",
       "category": "Minería",
       "excerpt": "Gestión inteligente de operaciones mineras con análisis predictivo de seguridad, optimización de recursos y monitoreo ambiental en tiempo real.",
-      "fullContent": "La industria minera enfrenta desafíos únicos en términos de seguridad, eficiencia operativa y cumplimiento ambiental. Mining Intelligence es una plataforma de IA diseñada específicamente para operaciones mineras que transforma datos complejos de múltiples fuentes en información accionable para mejorar la seguridad, optimizar la extracción y garantizar el cumplimiento normativo.",
-      "challenge": "Las operaciones mineras generan datos de múltiples fuentes: sensores geológicos, equipamiento pesado, monitoreo ambiental, reportes de seguridad y sistemas logísticos. Los gerentes de mina necesitan consolidar toda esta información para tomar decisiones críticas sobre seguridad, productividad y cumplimiento, pero los sistemas existentes están fragmentados y requieren análisis manual extenso.",
-      "solution": "Mining Intelligence integra datos de todas las fuentes operativas en una plataforma unificada de IA. Los supervisores pueden consultar en lenguaje natural sobre condiciones de seguridad, rendimiento de equipos, proyecciones de producción o impacto ambiental. La IA proporciona análisis predictivo para prevenir accidentes, optimizar rutas de transporte y anticipar problemas de mantenimiento.",
+      "fullContent": "La industria minera enfrenta desafíos únicos en términos de seguridad, eficiencia operativa y cumplimiento ambiental. Mining Intelligence es una plataforma de IA diseñada específicamente para operaciones mineras que transforma datos complejos de múltiples fuentes en información accionable.",
+      "challenge": "",
+      "solution": "",
+      "applications": {
+        "title": "⚙️ Aplicabilidad de LLMAPPS",
+        "subtitle": "Tu plataforma LLMAPPS (\"Conversación con tus datos de negocio\") puede posicionarse como una capa cognitiva de orquestación y conocimiento operacional sobre estos problemas. Aquí están las líneas concretas de aplicación:",
+        "app1": {
+          "title": "1. Agente Minero Inteligente para Supervisión y Telemetría",
+          "challenge": "Reto: Falta de visibilidad centralizada sobre equipos, conectividad y riesgos.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Integrarse a fuentes como PI System, SCADA, SAP PM, sensores y logs de robots teleoperados."
+            },
+            {
+              "main": "Ofrecer consultas conversacionales del tipo:",
+              "sub": [
+                "\"Muéstrame los equipos telecomandados inactivos en la galería Norte 3\"",
+                "\"¿Qué pala tiene mayor probabilidad de falla esta semana?\""
+              ]
+            },
+            {
+              "main": "Hacer alertas proactivas por lenguaje natural (Teams, WhatsApp o panel web)."
+            },
+            {
+              "main": "Complementar los sistemas actuales sin reemplazarlos."
+            }
+          ],
+          "value": "👉 Valor: Reduce tiempo de diagnóstico, mejora decisiones operativas sin necesidad de dashboards complejos."
+        },
+        "app2": {
+          "title": "2. RAG Predictivo de Mantenimiento",
+          "challenge": "Reto: Las palas mueren en zonas peligrosas sin aviso ni repuestos a tiempo.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Crear un modelo RAG (Retrieval-Augmented Generation) que lea reportes de mantenimiento históricos y manuales de fabricante."
+            },
+            {
+              "main": "Permitir consultas como:",
+              "sub": [
+                "\"¿Qué componentes críticos fallan más en palas Caterpillar 2022?\"",
+                "\"¿Cuál es la probabilidad de falla del radiador en la pala 14 según registros?\""
+              ]
+            },
+            {
+              "main": "Integrar un modelo de scoring de riesgo técnico y sugerir órdenes preventivas en SAP PM o similar."
+            }
+          ],
+          "value": "👉 Valor: Minimiza fallas imprevistas, evita exposición de cuadrillas de mantenimiento."
+        },
+        "app3": {
+          "title": "3. Control Cognitivo de Conectividad y Terreno",
+          "challenge": "Reto: Baja conectividad en túneles dinámicos (LTE temporal / mesh Wi-Fi).",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Integrarse con sistemas de telemetría de red (Wi-Fi Mesh / LTE privado) para entender en qué frentes hay conexión débil."
+            },
+            {
+              "main": "Permitir consultas del tipo:",
+              "sub": [
+                "\"¿En qué sectores la red mesh tiene pérdida de paquetes >10%?\"",
+                "\"¿Cuántas palas están fuera de cobertura?\""
+              ]
+            },
+            {
+              "main": "Reentrenar modelos con topología dinámica (avances de 1,7 m diarios)."
+            }
+          ],
+          "value": "👉 Valor: Anticipa interrupciones operacionales y mejora la continuidad de teleoperación."
+        },
+        "app4": {
+          "title": "4. Gemelo Cognitivo de Operaciones",
+          "challenge": "Reto: Hay información dispersa entre RFI, Excel, reportes y sensores.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Unificar todos los datos bajo una capa semántica accesible por lenguaje natural."
+            },
+            {
+              "main": "Generar \"escenarios hipotéticos\":",
+              "sub": [
+                "\"Simula qué pasa si automatizo el carril de explosivos.\"",
+                "\"¿Qué impacto tendría teleoperar los Boltec en productividad y riesgo?\""
+              ]
+            }
+          ],
+          "value": "👉 Valor: Soporte a la toma de decisiones estratégicas en innovación y seguridad."
+        },
+        "app5": {
+          "title": "5. Asistente de Entrenamiento Técnico",
+          "challenge": "Reto: Falta de operadores capacitados para teleoperación.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Incluir un módulo de capacitación basado en IA, con prompts guiados tipo copiloto técnico:",
+              "sub": [
+                "\"Explícame cómo calibrar el Voltec para fortificación en galería inclinada.\"",
+                "\"Simula un fallo hidráulico y cómo reaccionar.\""
+              ]
+            },
+            {
+              "main": "Reentrenar al personal con base en manuales internos y videos."
+            }
+          ],
+          "value": "👉 Valor: Democratiza el conocimiento técnico y reduce curva de aprendizaje."
+        }
+      },
+      "videoSection": {
+        "title": "🎥 Video Explicativo",
+        "subtitle": "Descubre cómo LLMAPPS revoluciona las operaciones mineras en este video resumen de nuestra solución.",
+        "videoUrl": "https://storage.googleapis.com/nodrize-storage-cms/offerings/LLMAPPS__Miner%C3%ADa_Cognitiva.mp4",
+        "videoTitle": "LLMAPPS para Minería - Solución Completa en Español"
+      },
       "features": [
-        "Monitoreo predictivo de seguridad y prevención de accidentes",
-        "Optimización de rutas y logística de transporte",
-        "Análisis geológico asistido por IA para mejor extracción",
-        "Monitoreo ambiental continuo y alertas de cumplimiento",
-        "Gestión predictiva de mantenimiento de maquinaria pesada",
-        "Reportes automáticos de producción y KPIs operativos"
+        "Agente minero inteligente para supervisión y telemetría",
+        "RAG predictivo de mantenimiento para prevenir fallas",
+        "Control cognitivo de conectividad y terreno",
+        "Gemelo cognitivo de operaciones unificadas",
+        "Asistente de entrenamiento técnico especializado"
       ],
-      "results": "Las operaciones mineras que adoptan Mining Intelligence experimentan una reducción del 35% en incidentes de seguridad, un aumento del 20% en productividad de extracción y una disminución del 30% en costos de mantenimiento. La plataforma también ayuda a cumplir con regulaciones ambientales mediante monitoreo continuo y reportes automáticos."
+      "results": "LLMAPPS transforma las operaciones mineras mediante una capa cognitiva que unifica datos dispersos, predice fallas críticas, optimiza conectividad en terrenos dinámicos y democratiza el conocimiento técnico. El resultado es una operación más segura, eficiente y preparada para los desafíos de la minería moderna."
     },
     "case3": {
       "title": "Development Metrics",
