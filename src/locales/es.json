@@ -330,9 +330,138 @@
       "title": "Retail Intelligence",
       "category": "Retail",
       "excerpt": "Optimización de ventas y experiencia del cliente mediante análisis predictivo de inventarios, comportamiento de compra y personalización en tiempo real.",
-      "fullContent": "En el sector retail moderno, entender el comportamiento del cliente y optimizar el inventario es crucial para mantener la competitividad. Retail Intelligence es una solución de IA que transforma datos de ventas, inventarios y comportamiento del cliente en insights accionables, permitiendo a los gerentes tomar decisiones informadas sobre stock, precios y experiencia del cliente.",
-      "challenge": "Las tiendas retail generan enormes cantidades de datos de ventas, inventarios, comportamiento de clientes y tendencias de mercado, pero carecen de herramientas para analizarlos efectivamente en tiempo real. Los gerentes necesitan respuestas inmediatas sobre rotación de productos, predicción de demanda y oportunidades de cross-selling, pero los sistemas tradicionales requieren análisis manual que toma días o semanas.",
-      "solution": "Retail Intelligence utiliza LLM Apps para conectarse directamente a sistemas POS, bases de datos de inventario y plataformas de e-commerce. La IA procesa automáticamente todos los datos en tiempo real, permitiendo a los gerentes hacer preguntas en lenguaje natural como '¿Qué productos tienen mayor riesgo de quiebre de stock esta semana?' o '¿Qué promociones generaron más conversión el mes pasado?' y recibir respuestas instantáneas con visualizaciones.",
+      "fullContent": "En el sector retail moderno, entender el comportamiento del cliente y optimizar el inventario es crucial para mantener la competitividad. Retail Intelligence es una solución de IA que transforma datos de ventas, inventarios y comportamiento del cliente en información accionable para impulsar las ventas y mejorar la experiencia del cliente.",
+      "challenge": "",
+      "solution": "",
+      "applications": {
+        "title": "⚙️ Aplicabilidad de LLMAPPS en Retail",
+        "subtitle": "Tu plataforma LLMAPPS puede posicionarse como una capa cognitiva de análisis y optimización sobre las operaciones retail. Aquí están las líneas concretas de aplicación:",
+        "app1": {
+          "title": "1. Asistente de Análisis de Ventas e Inventario",
+          "challenge": "Reto: Datos dispersos en sistemas POS, e-commerce, inventario y CRM sin análisis unificado.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Integrarse con sistemas POS, plataformas de e-commerce, ERPs y herramientas de inventario."
+            },
+            {
+              "main": "Responder consultas en lenguaje natural como:",
+              "sub": [
+                "\"¿Qué productos están cerca de quiebre de stock esta semana?\"",
+                "\"¿Cuáles fueron los 10 productos más vendidos en la categoría electrónica el mes pasado?\"",
+                "\"¿Qué tiendas tienen exceso de inventario en ropa de invierno?\""
+              ]
+            },
+            {
+              "main": "Generar alertas automáticas de reabastecimiento basadas en patrones de venta y estacionalidad."
+            },
+            {
+              "main": "Crear reportes ejecutivos automáticos con insights clave del día/semana/mes."
+            }
+          ],
+          "value": "👉 Valor: Reduce quiebres de stock en 30%, mejora rotación de inventario y optimiza decisiones de compra."
+        },
+        "app2": {
+          "title": "2. Motor de Recomendaciones Personalizadas",
+          "challenge": "Reto: Baja conversión y experiencias genéricas que no conectan con cada cliente.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Analizar historial de compras, navegación web y preferencias de clientes usando RAG."
+            },
+            {
+              "main": "Generar recomendaciones contextuales:",
+              "sub": [
+                "\"Clientes que compraron X también necesitan Y\"",
+                "\"Este cliente prefiere marcas sostenibles, recomienda productos eco-friendly\"",
+                "\"Sugiere productos complementarios para aumentar ticket promedio\""
+              ]
+            },
+            {
+              "main": "Personalizar campañas de marketing y promociones por segmento de cliente."
+            },
+            {
+              "main": "Optimizar cross-selling y up-selling en tiempo real tanto en tienda como online."
+            }
+          ],
+          "value": "👉 Valor: Incrementa conversión en 25%, aumenta ticket promedio 15% y mejora satisfacción del cliente."
+        },
+        "app3": {
+          "title": "3. Optimización Dinámica de Precios",
+          "challenge": "Reto: Precios estáticos que no responden a demanda, competencia o estacionalidad en tiempo real.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Analizar datos de demanda, competencia, estacionalidad y elasticidad de precio."
+            },
+            {
+              "main": "Responder consultas estratégicas:",
+              "sub": [
+                "\"¿Qué impacto tendría un descuento del 15% en la categoría de electrónica?\"",
+                "\"¿Cuál es el precio óptimo para maximizar margen en producto X?\"",
+                "\"¿Qué productos deberían tener promoción esta semana según tendencias?\""
+              ]
+            },
+            {
+              "main": "Sugerir ajustes de precio dinámicos basados en inventario, velocidad de venta y competencia."
+            },
+            {
+              "main": "Simular escenarios de promociones antes de implementarlas."
+            }
+          ],
+          "value": "👉 Valor: Maximiza márgenes, reduce inventario obsoleto y mejora competitividad sin erosionar rentabilidad."
+        },
+        "app4": {
+          "title": "4. Análisis Predictivo de Demanda",
+          "challenge": "Reto: Planificación de inventario basada en históricos simples sin considerar tendencias y eventos.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Integrar datos históricos de ventas, tendencias de mercado, clima, eventos y redes sociales."
+            },
+            {
+              "main": "Predecir demanda futura:",
+              "sub": [
+                "\"¿Cuántas unidades del producto Y necesitaremos la próxima temporada navideña?\"",
+                "\"¿Qué categorías tendrán mayor crecimiento en Q2?\"",
+                "\"¿Cómo afectará el evento deportivo próximo a las ventas de merchandising?\""
+              ]
+            },
+            {
+              "main": "Generar planes de reabastecimiento automáticos por tienda y categoría."
+            },
+            {
+              "main": "Identificar tendencias emergentes antes que la competencia."
+            }
+          ],
+          "value": "👉 Valor: Reduce sobrestocks en 35%, mejora disponibilidad de productos clave y aumenta ventas perdidas recuperadas."
+        },
+        "app5": {
+          "title": "5. Customer Intelligence y Atención al Cliente",
+          "challenge": "Reto: Consultas repetitivas de clientes y falta de insights sobre comportamiento y preferencias.",
+          "capabilities": "LLMAPPS puede:",
+          "features": [
+            {
+              "main": "Crear un asistente virtual que responda preguntas de clientes sobre productos, disponibilidad y políticas."
+            },
+            {
+              "main": "Analizar sentimiento y feedback de clientes en redes sociales, reviews y encuestas.",
+              "sub": [
+                "\"¿Qué dicen los clientes sobre nuestro servicio de entrega?\"",
+                "\"¿Cuáles son las quejas más comunes del último mes?\"",
+                "\"¿Qué productos tienen las mejores reviews y por qué?\""
+              ]
+            },
+            {
+              "main": "Identificar patrones de abandono de carrito y sugerir acciones para recuperar ventas."
+            },
+            {
+              "main": "Segmentar clientes por comportamiento y generar estrategias de retención personalizadas."
+            }
+          ],
+          "value": "👉 Valor: Mejora NPS, reduce churn de clientes valiosos y aumenta lifetime value por cliente."
+        }
+      },
       "features": [
         "Análisis predictivo de demanda y stock",
         "Recomendaciones personalizadas para clientes",
@@ -475,9 +604,194 @@
       "title": "Development Metrics",
       "category": "Tecnología",
       "excerpt": "Análisis avanzado de productividad de equipos de desarrollo con métricas de código, velocidad de entrega y predicción de cuellos de botella.",
-      "fullContent": "Los equipos de desarrollo de software modernos generan una cantidad masiva de datos a través de commits, pull requests, issues, y métricas de CI/CD. Development Metrics es una solución de IA que convierte estos datos en insights accionables para líderes técnicos, permitiéndoles mejorar la productividad del equipo, identificar cuellos de botella y optimizar procesos de desarrollo.",
-      "challenge": "Los CTOs y líderes de ingeniería necesitan visibilidad sobre la productividad real de sus equipos, la calidad del código, y los obstáculos que ralentizan la entrega. Sin embargo, los datos están dispersos en múltiples herramientas (GitHub, Jira, Jenkins, etc.) y analizar manualmente esta información consume tiempo valioso. Además, las métricas tradicionales como líneas de código no reflejan la verdadera productividad.",
-      "solution": "Development Metrics se integra con GitHub, GitLab, Jira, y otras herramientas de desarrollo para consolidar todos los datos en una plataforma unificada. La IA analiza patrones de trabajo, calidad de código, velocidad de entrega y colaboración del equipo. Los líderes pueden preguntar '¿Dónde están los cuellos de botella en el sprint actual?' o '¿Qué desarrolladores necesitan soporte?' y recibir análisis detallados con recomendaciones accionables.",
+      "fullContent": "Los equipos de desarrollo de software modernos generan una cantidad masiva de datos a través de commits, pull requests, issues y métricas de CI/CD. Development Metrics es una solución de IA que convierte estos datos en insights accionables basados en frameworks como SPACE, DORA y DevExp, permitiendo a los líderes técnicos mejorar la productividad del equipo y optimizar procesos de desarrollo.",
+      "challenge": "",
+      "solution": "",
+      "applications": {
+        "title": "⚙️ Aplicabilidad de LLMAPPS en Desarrollo de Software",
+        "subtitle": "Tu plataforma LLMAPPS puede posicionarse como una capa inteligente de análisis y optimización para equipos de ingeniería. Aquí están las líneas concretas de aplicación:",
+        "app1": {
+          "title": "1. Velocidad de Entrega y Eficiencia del Flujo",
+          "challenge": "Los equipos luchan por mantener ciclos de desarrollo rápidos mientras manejan revisiones de código, aprobaciones y despliegues sin visibilidad clara de cuellos de botella.",
+          "capabilities": "Pulzen mide métricas clave de DORA y DevExp como Deployment Frequency, Cycle Time, y Merge Frequency. Analiza Code Review Velocity, Time to Approval, PR Merge Times, y Code Review Timing para identificar delays.",
+          "features": [
+            {
+              "main": "DORA Metrics",
+              "sub": [
+                "Deployment Frequency",
+                "Merge Frequency",
+                "Cycle Time end-to-end"
+              ]
+            },
+            {
+              "main": "DevExp Metrics",
+              "sub": [
+                "Pickup Time",
+                "Review Time",
+                "Close Time",
+                "Deploy Time",
+                "Coding Time"
+              ]
+            },
+            {
+              "main": "SPACE Framework",
+              "sub": [
+                "Code Review Velocity",
+                "Time to Approval",
+                "PR Merge Times"
+              ]
+            },
+            {
+              "main": "Análisis de Approval Rate"
+            }
+          ],
+          "value": "Reduce tiempos de ciclo hasta 40%, identifica cuellos de botella y acelera time-to-market."
+        },
+        "app2": {
+          "title": "2. Actividad y Performance del Equipo",
+          "challenge": "Gerentes necesitan entender productividad, identificar top performers y detectar patrones sin micromanagement.",
+          "capabilities": "Pulzen rastrea commits, lines of code, deploy frequency, y PR activity. Incluye Commit Score que evalúa valor e impacto mediante cambios, adiciones y eliminaciones.",
+          "features": [
+            {
+              "main": "SPACE Framework",
+              "sub": [
+                "Commits",
+                "Lines of Code",
+                "Deploy Frequency por usuario/equipo"
+              ]
+            },
+            {
+              "main": "Pulzen Commit Score",
+              "sub": [
+                "Evaluación de valor e impacto"
+              ]
+            },
+            {
+              "main": "Commit Detail",
+              "sub": [
+                "Tracking temporal con adiciones/eliminaciones",
+                "Por usuario/equipo/repositorio"
+              ]
+            },
+            {
+              "main": "Pull Request Detail",
+              "sub": [
+                "PRs abiertos/cerrados/merged",
+                "Time-to-merge"
+              ]
+            }
+          ],
+          "value": "Identifica top performers, balancea cargas y reconoce contribuciones de alto valor con datos cuantitativos."
+        },
+        "app3": {
+          "title": "3. Calidad de Código y Revisiones",
+          "challenge": "Mantener calidad mientras se mueven rápido requiere procesos de revisión efectivos y métricas accionables.",
+          "capabilities": "Pulzen analiza code review con SPACE Framework: Code Review Velocity, número de revisiones, approval rates, tiempo de aprobación. Incluye Workflow Detail con tracking de pipelines (estados: canceled, failed, successful) y duración.",
+          "features": [
+            {
+              "main": "SPACE Framework",
+              "sub": [
+                "Code Review",
+                "Code Review Velocity",
+                "Approval Rate",
+                "Time to Approval"
+              ]
+            },
+            {
+              "main": "Workflow Detail",
+              "sub": [
+                "Tracking pipelines con estados/duración",
+                "Por usuario/equipo/repositorio"
+              ]
+            },
+            {
+              "main": "Análisis dual",
+              "sub": [
+                "Perspectiva autor PR",
+                "Perspectiva reviewer/approver"
+              ]
+            },
+            {
+              "main": "Insights sobre eficiencia y knowledge sharing"
+            }
+          ],
+          "value": "Mejora calidad 30%, reduce tiempos de revisión y optimiza CI/CD."
+        },
+        "app4": {
+          "title": "4. Adopción de GitHub Copilot y Herramientas de IA",
+          "challenge": "Organizaciones invierten en GitHub Copilot sin visibilidad de uso real, adopción y ROI.",
+          "capabilities": "Pulzen integra métricas completas de GitHub Copilot: seat usage, suggestion acceptance rate, lines accepted, chat usage, patrones de uso diario. Análisis por IDE, lenguaje, usuario y equipo.",
+          "features": [
+            {
+              "main": "GitHub Copilot Metrics",
+              "sub": [
+                "Seat usage",
+                "% Suggestion accepted",
+                "% Lines accepted",
+                "% Suggestion by chat"
+              ]
+            },
+            {
+              "main": "IDE per user/team",
+              "sub": [
+                "Identificación de herramientas más usadas"
+              ]
+            },
+            {
+              "main": "Language per user/team",
+              "sub": [
+                "Tracking lenguajes más usados"
+              ]
+            },
+            {
+              "main": "Daily usage of GitHub Copilot",
+              "sub": [
+                "Visualización de patrones temporales"
+              ]
+            }
+          ],
+          "value": "Maximiza ROI de Copilot, identifica oportunidades de capacitación y asegura adopción efectiva."
+        },
+        "app5": {
+          "title": "5. Bienestar del Desarrollador y Detección de Riesgos",
+          "challenge": "Burnout y desenganche son costosos pero difíciles de detectar temprano.",
+          "capabilities": "Pulzen detecta burnout mediante análisis de overactivity, trabajo fuera de horario, y fines de semana usando VCS y Teams. Identifica Ghost Developers comparando actividad histórica vs actual para detectar caídas significativas.",
+          "features": [
+            {
+              "main": "Pulzen Burnout Developer",
+              "sub": [
+                "Detección de overactivity",
+                "Trabajo fuera de horario/fines de semana"
+              ]
+            },
+            {
+              "main": "Pulzen Ghost Developer con scoring",
+              "sub": [
+                "0-2 Active",
+                "3-4 Under observation",
+                "5-6 Moderate risk",
+                "7+ Sustained ghosting"
+              ]
+            },
+            {
+              "main": "Integración Teams",
+              "sub": [
+                "Meetings, screen sharing",
+                "VCS activity tracking"
+              ]
+            },
+            {
+              "main": "Early warnings para intervención",
+              "sub": [
+                "1:1 conversations",
+                "Assignment review",
+                "Feedback formal"
+              ]
+            }
+          ],
+          "value": "Reduce rotación 25%, detecta burnout antes de crisis y apoya bienestar con data-driven warnings."
+        }
+      },
       "features": [
         "Análisis de velocidad de desarrollo y ciclo de entrega",
         "Detección automática de cuellos de botella y bloqueos",

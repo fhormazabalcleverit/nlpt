@@ -166,8 +166,8 @@ const UseCaseDetailPage = () => {
             </p>
           </div>
 
-          {/* Challenge - Only for non-mining cases */}
-          {id !== 'mining' && (
+          {/* Challenge - Not used in any case now */}
+          {false && (
             <div
               ref={challengeAnim.ref}
               className={`mb-12 px-16 fade-in-up ${challengeAnim.isVisible ? 'animate' : ''}`}
@@ -181,8 +181,8 @@ const UseCaseDetailPage = () => {
             </div>
           )}
 
-          {/* Solution - Only for non-mining cases */}
-          {id !== 'mining' && (
+          {/* Solution - Not used anymore, replaced by detailed applications */}
+          {false && (
             <div
               ref={solutionAnim.ref}
               className={`mb-12 px-16 fade-in-up ${solutionAnim.isVisible ? 'animate' : ''}`}
@@ -203,6 +203,71 @@ const UseCaseDetailPage = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          )}
+
+          {/* Retail Case - Special Applications Section */}
+          {id === 'production-insight' && (t.useCases.case1 as any).applications && (
+            <div
+              ref={solutionAnim.ref}
+              className={`mb-12 px-16 fade-in-up ${solutionAnim.isVisible ? 'animate' : ''}`}
+            >
+              <div className="space-y-8 mb-8">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  {(t.useCases.case1 as any).applications.title}
+                </h2>
+                <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                  {(t.useCases.case1 as any).applications.subtitle}
+                </p>
+
+                {/* Applications */}
+                <div className="space-y-8">
+                  {[
+                    (t.useCases.case1 as any).applications.app1,
+                    (t.useCases.case1 as any).applications.app2,
+                    (t.useCases.case1 as any).applications.app3,
+                    (t.useCases.case1 as any).applications.app4,
+                    (t.useCases.case1 as any).applications.app5
+                  ].map((app: any, index: number) => (
+                    <div key={index} className="bg-gray-500/10 border border-gray-500/30 rounded-2xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-4">{app.title}</h3>
+                      
+                      <div className="mb-4">
+                        <p className="text-gray-400 font-semibold mb-6" dangerouslySetInnerHTML={{ __html: app.challenge }} />
+                      </div>
+
+                      <div className="mb-4">
+                        <p className="text-gray-400 font-semibold mb-3" dangerouslySetInnerHTML={{ __html: app.capabilities }} />
+                        <ul className="space-y-3 ml-4">
+                          {app.features.map((feature: any, featureIndex: number) => (
+                            <li key={featureIndex} className="space-y-2">
+                              {/* Main bullet */}
+                              <div className="flex items-start space-x-2">
+                                <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-gray-300">{typeof feature === 'string' ? feature : feature.main}</span>
+                              </div>
+                              
+                              {/* Sub bullets if they exist */}
+                              {feature.sub && feature.sub.length > 0 && (
+                                <ul className="space-y-1 ml-6">
+                                  {feature.sub.map((subFeature: string, subIndex: number) => (
+                                    <li key={subIndex} className="flex items-start space-x-2">
+                                      <div className="w-1 h-1 bg-blue-300 rounded-full mt-2.5 flex-shrink-0"></div>
+                                      <span className="text-gray-400 text-sm">{subFeature}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <p className="text-green-300 font-light" dangerouslySetInnerHTML={{ __html: app.value }} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
@@ -297,8 +362,73 @@ const UseCaseDetailPage = () => {
             </div>
           )}
 
-          {/* Results - Only for non-mining cases */}
-          {id !== 'mining' && (
+          {/* Development Metrics Case - Special Applications Section */}
+          {id === 'development-metrics' && (t.useCases.case3 as any).applications && (
+            <div
+              ref={solutionAnim.ref}
+              className={`mb-12 px-16 fade-in-up ${solutionAnim.isVisible ? 'animate' : ''}`}
+            >
+              <div className="space-y-8 mb-8">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  {(t.useCases.case3 as any).applications.title}
+                </h2>
+                <p className="text-gray-300 leading-relaxed text-lg mb-8">
+                  {(t.useCases.case3 as any).applications.subtitle}
+                </p>
+
+                {/* Applications */}
+                <div className="space-y-8">
+                  {[
+                    (t.useCases.case3 as any).applications.app1,
+                    (t.useCases.case3 as any).applications.app2,
+                    (t.useCases.case3 as any).applications.app3,
+                    (t.useCases.case3 as any).applications.app4,
+                    (t.useCases.case3 as any).applications.app5
+                  ].map((app: any, index: number) => (
+                    <div key={index} className="bg-gray-500/10 border border-gray-500/30 rounded-2xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-4">{app.title}</h3>
+                      
+                      <div className="mb-4">
+                        <p className="text-gray-400 font-semibold mb-6" dangerouslySetInnerHTML={{ __html: app.challenge }} />
+                      </div>
+
+                      <div className="mb-4">
+                        <p className="text-gray-400 font-semibold mb-3" dangerouslySetInnerHTML={{ __html: app.capabilities }} />
+                        <ul className="space-y-3 ml-4">
+                          {app.features.map((feature: any, featureIndex: number) => (
+                            <li key={featureIndex} className="space-y-2">
+                              {/* Main bullet */}
+                              <div className="flex items-start space-x-2">
+                                <div className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-gray-300">{typeof feature === 'string' ? feature : feature.main}</span>
+                              </div>
+                              
+                              {/* Sub bullets if they exist */}
+                              {feature.sub && feature.sub.length > 0 && (
+                                <ul className="space-y-1 ml-6">
+                                  {feature.sub.map((subFeature: string, subIndex: number) => (
+                                    <li key={subIndex} className="flex items-start space-x-2">
+                                      <div className="w-1 h-1 bg-purple-300 rounded-full mt-2.5 flex-shrink-0"></div>
+                                      <span className="text-gray-400 text-sm">{subFeature}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <p className="text-green-300 font-light" dangerouslySetInnerHTML={{ __html: app.value }} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Results - Not used anymore */}
+          {false && (
             <div
               ref={resultsAnim.ref}
               className={`mb-12 px-16 fade-in-up ${resultsAnim.isVisible ? 'animate' : ''}`}

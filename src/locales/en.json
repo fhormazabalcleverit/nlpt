@@ -330,9 +330,138 @@
       "title": "Retail Intelligence",
       "category": "Retail",
       "excerpt": "Sales and customer experience optimization through predictive inventory analysis, purchase behavior insights, and real-time personalization.",
-      "fullContent": "In the modern retail sector, understanding customer behavior and optimizing inventory is crucial to maintaining competitiveness. Retail Intelligence is an AI solution that transforms sales data, inventory, and customer behavior into actionable insights, allowing managers to make informed decisions about stock, pricing, and customer experience.",
-      "challenge": "Retail stores generate enormous amounts of data from sales, inventory, customer behavior, and market trends, but lack tools to analyze them effectively in real-time. Managers need immediate answers about product rotation, demand prediction, and cross-selling opportunities, but traditional systems require manual analysis that takes days or weeks.",
-      "solution": "Retail Intelligence uses LLM Apps to connect directly to POS systems, inventory databases, and e-commerce platforms. The AI automatically processes all data in real-time, allowing managers to ask questions in natural language like 'Which products have the highest risk of stockout this week?' or 'Which promotions generated the most conversion last month?' and receive instant answers with visualizations.",
+      "fullContent": "In the modern retail sector, understanding customer behavior and optimizing inventory is crucial to maintaining competitiveness. Retail Intelligence is an AI solution that transforms sales data, inventory, and customer behavior into actionable insights to drive sales and improve customer experience.",
+      "challenge": "",
+      "solution": "",
+      "applications": {
+        "title": "⚙️ LLMAPPS Applicability in Retail",
+        "subtitle": "Your LLMAPPS platform can position itself as a cognitive layer of analysis and optimization over retail operations. Here are the concrete lines of application:",
+        "app1": {
+          "title": "1. Sales and Inventory Analysis Assistant",
+          "challenge": "Challenge: Scattered data across POS systems, e-commerce, inventory, and CRM without unified analysis.",
+          "capabilities": "LLMAPPS can:",
+          "features": [
+            {
+              "main": "Integrate with POS systems, e-commerce platforms, ERPs, and inventory management tools."
+            },
+            {
+              "main": "Answer natural language queries like:",
+              "sub": [
+                "\"Which products are close to stockout this week?\"",
+                "\"What were the top 10 best-selling products in electronics last month?\"",
+                "\"Which stores have excess winter clothing inventory?\""
+              ]
+            },
+            {
+              "main": "Generate automatic replenishment alerts based on sales patterns and seasonality."
+            },
+            {
+              "main": "Create automated executive reports with key daily/weekly/monthly insights."
+            }
+          ],
+          "value": "👉 Value: Reduces stockouts by 30%, improves inventory turnover, and optimizes purchasing decisions."
+        },
+        "app2": {
+          "title": "2. Personalized Recommendation Engine",
+          "challenge": "Challenge: Low conversion and generic experiences that don't connect with each customer.",
+          "capabilities": "LLMAPPS can:",
+          "features": [
+            {
+              "main": "Analyze purchase history, web browsing, and customer preferences using RAG."
+            },
+            {
+              "main": "Generate contextual recommendations:",
+              "sub": [
+                "\"Customers who bought X also need Y\"",
+                "\"This customer prefers sustainable brands, recommend eco-friendly products\"",
+                "\"Suggest complementary products to increase average ticket\""
+              ]
+            },
+            {
+              "main": "Personalize marketing campaigns and promotions by customer segment."
+            },
+            {
+              "main": "Optimize cross-selling and up-selling in real-time both in-store and online."
+            }
+          ],
+          "value": "👉 Value: Increases conversion by 25%, raises average ticket by 15%, and improves customer satisfaction."
+        },
+        "app3": {
+          "title": "3. Dynamic Price Optimization",
+          "challenge": "Challenge: Static pricing that doesn't respond to demand, competition, or seasonality in real-time.",
+          "capabilities": "LLMAPPS can:",
+          "features": [
+            {
+              "main": "Analyze demand data, competition, seasonality, and price elasticity."
+            },
+            {
+              "main": "Answer strategic queries:",
+              "sub": [
+                "\"What impact would a 15% discount in electronics have?\"",
+                "\"What's the optimal price to maximize margin on product X?\"",
+                "\"Which products should be on promotion this week based on trends?\""
+              ]
+            },
+            {
+              "main": "Suggest dynamic price adjustments based on inventory, sales velocity, and competition."
+            },
+            {
+              "main": "Simulate promotion scenarios before implementing them."
+            }
+          ],
+          "value": "👉 Value: Maximizes margins, reduces obsolete inventory, and improves competitiveness without eroding profitability."
+        },
+        "app4": {
+          "title": "4. Predictive Demand Analysis",
+          "challenge": "Challenge: Inventory planning based on simple historicals without considering trends and events.",
+          "capabilities": "LLMAPPS can:",
+          "features": [
+            {
+              "main": "Integrate historical sales data, market trends, weather, events, and social media."
+            },
+            {
+              "main": "Predict future demand:",
+              "sub": [
+                "\"How many units of product Y will we need next holiday season?\"",
+                "\"Which categories will have the highest growth in Q2?\"",
+                "\"How will the upcoming sporting event affect merchandising sales?\""
+              ]
+            },
+            {
+              "main": "Generate automatic replenishment plans by store and category."
+            },
+            {
+              "main": "Identify emerging trends before the competition."
+            }
+          ],
+          "value": "👉 Value: Reduces overstocks by 35%, improves availability of key products, and increases recovered lost sales."
+        },
+        "app5": {
+          "title": "5. Customer Intelligence and Support",
+          "challenge": "Challenge: Repetitive customer queries and lack of insights about behavior and preferences.",
+          "capabilities": "LLMAPPS can:",
+          "features": [
+            {
+              "main": "Create a virtual assistant that answers customer questions about products, availability, and policies."
+            },
+            {
+              "main": "Analyze customer sentiment and feedback on social media, reviews, and surveys.",
+              "sub": [
+                "\"What are customers saying about our delivery service?\"",
+                "\"What are the most common complaints from last month?\"",
+                "\"Which products have the best reviews and why?\""
+              ]
+            },
+            {
+              "main": "Identify cart abandonment patterns and suggest actions to recover sales."
+            },
+            {
+              "main": "Segment customers by behavior and generate personalized retention strategies."
+            }
+          ],
+          "value": "👉 Value: Improves NPS, reduces churn of valuable customers, and increases customer lifetime value."
+        }
+      },
       "features": [
         "Predictive demand and stock analysis",
         "Personalized recommendations for customers",
@@ -475,9 +604,194 @@
       "title": "Development Metrics",
       "category": "Technology",
       "excerpt": "Advanced analysis of development team productivity with code metrics, delivery velocity and bottleneck prediction.",
-      "fullContent": "Modern software development teams generate a massive amount of data through commits, pull requests, issues, and CI/CD metrics. Development Metrics is an AI solution that converts this data into actionable insights for technical leaders, allowing them to improve team productivity, identify bottlenecks and optimize development processes.",
-      "challenge": "CTOs and engineering leaders need visibility into their teams' actual productivity, code quality, and obstacles that slow delivery. However, data is scattered across multiple tools (GitHub, Jira, Jenkins, etc.) and manually analyzing this information consumes valuable time. Additionally, traditional metrics like lines of code don't reflect true productivity.",
-      "solution": "Development Metrics integrates with GitHub, GitLab, Jira, and other development tools to consolidate all data into a unified platform. The AI analyzes work patterns, code quality, delivery speed and team collaboration. Leaders can ask 'Where are the bottlenecks in the current sprint?' or 'Which developers need support?' and receive detailed analysis with actionable recommendations.",
+      "fullContent": "Modern software development teams generate a massive amount of data through commits, pull requests, issues and CI/CD metrics. Development Metrics is an AI solution that converts this data into actionable insights based on frameworks like SPACE, DORA and DevExp, allowing technical leaders to improve team productivity and optimize development processes.",
+      "challenge": "",
+      "solution": "",
+      "applications": {
+        "title": "⚙️ LLMAPPS Applicability in Software Development",
+        "subtitle": "Your LLMAPPS platform can position itself as an intelligent analysis and optimization layer for engineering teams. Here are the concrete lines of application:",
+        "app1": {
+          "title": "1. Delivery Speed and Flow Efficiency",
+          "challenge": "Teams struggle to maintain fast development cycles while managing code reviews, approvals, and deployments without clear visibility into bottlenecks.",
+          "capabilities": "Pulzen measures key DORA and DevExp metrics like Deployment Frequency, Cycle Time, and Merge Frequency. Analyzes Code Review Velocity, Time to Approval, PR Merge Times, and Code Review Timing to identify delays.",
+          "features": [
+            {
+              "main": "DORA Metrics",
+              "sub": [
+                "Deployment Frequency",
+                "Merge Frequency",
+                "End-to-end Cycle Time"
+              ]
+            },
+            {
+              "main": "DevExp Metrics",
+              "sub": [
+                "Pickup Time",
+                "Review Time",
+                "Close Time",
+                "Deploy Time",
+                "Coding Time"
+              ]
+            },
+            {
+              "main": "SPACE Framework",
+              "sub": [
+                "Code Review Velocity",
+                "Time to Approval",
+                "PR Merge Times"
+              ]
+            },
+            {
+              "main": "Approval Rate Analysis"
+            }
+          ],
+          "value": "Reduces cycle times by up to 40%, identifies bottlenecks, and accelerates time-to-market."
+        },
+        "app2": {
+          "title": "2. Team Activity and Performance",
+          "challenge": "Managers need to understand productivity, identify top performers, and detect patterns without micromanagement.",
+          "capabilities": "Pulzen tracks commits, lines of code, deploy frequency, and PR activity. Includes Commit Score that evaluates value and impact through changes, additions, and deletions.",
+          "features": [
+            {
+              "main": "SPACE Framework",
+              "sub": [
+                "Commits",
+                "Lines of Code",
+                "Deploy Frequency per user/team"
+              ]
+            },
+            {
+              "main": "Pulzen Commit Score",
+              "sub": [
+                "Value and impact evaluation"
+              ]
+            },
+            {
+              "main": "Commit Detail",
+              "sub": [
+                "Time tracking with additions/deletions",
+                "By user/team/repository"
+              ]
+            },
+            {
+              "main": "Pull Request Detail",
+              "sub": [
+                "Open/closed/merged PRs",
+                "Time-to-merge"
+              ]
+            }
+          ],
+          "value": "Identifies top performers, balances workloads, and recognizes high-value contributions with quantitative data."
+        },
+        "app3": {
+          "title": "3. Code Quality and Reviews",
+          "challenge": "Maintaining quality while moving fast requires effective review processes and actionable metrics.",
+          "capabilities": "Pulzen analyzes code review with SPACE Framework: Code Review Velocity, number of reviews, approval rates, time to approval. Includes Workflow Detail with pipeline tracking (states: canceled, failed, successful) and duration.",
+          "features": [
+            {
+              "main": "SPACE Framework",
+              "sub": [
+                "Code Review",
+                "Code Review Velocity",
+                "Approval Rate",
+                "Time to Approval"
+              ]
+            },
+            {
+              "main": "Workflow Detail",
+              "sub": [
+                "Pipeline tracking with states/duration",
+                "By user/team/repository"
+              ]
+            },
+            {
+              "main": "Dual Analysis",
+              "sub": [
+                "PR author perspective",
+                "Reviewer/approver perspective"
+              ]
+            },
+            {
+              "main": "Insights on efficiency and knowledge sharing"
+            }
+          ],
+          "value": "Improves quality by 30%, reduces review times, and optimizes CI/CD."
+        },
+        "app4": {
+          "title": "4. GitHub Copilot and AI Tools Adoption",
+          "challenge": "Organizations invest in GitHub Copilot without visibility into actual usage, adoption, and ROI.",
+          "capabilities": "Pulzen integrates comprehensive GitHub Copilot metrics: seat usage, suggestion acceptance rate, lines accepted, chat usage, daily usage patterns. Analysis by IDE, language, user, and team.",
+          "features": [
+            {
+              "main": "GitHub Copilot Metrics",
+              "sub": [
+                "Seat usage",
+                "% Suggestion accepted",
+                "% Lines accepted",
+                "% Suggestion by chat"
+              ]
+            },
+            {
+              "main": "IDE per user/team",
+              "sub": [
+                "Identification of most-used tools"
+              ]
+            },
+            {
+              "main": "Language per user/team",
+              "sub": [
+                "Tracking of most-used languages"
+              ]
+            },
+            {
+              "main": "Daily usage of GitHub Copilot",
+              "sub": [
+                "Temporal pattern visualization"
+              ]
+            }
+          ],
+          "value": "Maximizes Copilot ROI, identifies training opportunities, and ensures effective adoption."
+        },
+        "app5": {
+          "title": "5. Developer Wellbeing and Risk Detection",
+          "challenge": "Burnout and disengagement are costly but difficult to detect early.",
+          "capabilities": "Pulzen detects burnout through analysis of overactivity, after-hours work, and weekend work using VCS and Teams. Identifies Ghost Developers by comparing historical vs current activity to detect significant drops.",
+          "features": [
+            {
+              "main": "Pulzen Burnout Developer",
+              "sub": [
+                "Overactivity detection",
+                "After-hours/weekend work tracking"
+              ]
+            },
+            {
+              "main": "Pulzen Ghost Developer with scoring",
+              "sub": [
+                "0-2 Active",
+                "3-4 Under observation",
+                "5-6 Moderate risk",
+                "7+ Sustained ghosting"
+              ]
+            },
+            {
+              "main": "Teams Integration",
+              "sub": [
+                "Meetings, screen sharing",
+                "VCS activity tracking"
+              ]
+            },
+            {
+              "main": "Early warnings for intervention",
+              "sub": [
+                "1:1 conversations",
+                "Assignment review",
+                "Formal feedback"
+              ]
+            }
+          ],
+          "value": "Reduces turnover by 25%, detects burnout before crisis, and supports wellbeing with data-driven warnings."
+        }
+      },
       "features": [
         "Development velocity and delivery cycle analysis",
         "Automatic detection of bottlenecks and blockers",
