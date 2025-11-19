@@ -1,6 +1,6 @@
 // import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, Tag, ShoppingBag, Pickaxe, BarChart3 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, ShoppingBag, Pickaxe, BarChart3 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SEO from '../components/SEO';
@@ -30,7 +30,8 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case1.features,
       icon: ShoppingBag,
       gradient: 'from-blue-500 to-cyan-500',
-      image: '/articles/Retail.png'
+      image: '/articles/Retail.png',
+      demoUrl: 'https://retail-llmapp.cleveritgroup.ai'
     },
     'mining': {
       title: t.useCases.case2.title,
@@ -44,7 +45,8 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case2.features,
       icon: Pickaxe,
       gradient: 'from-orange-500 to-yellow-500',
-      image: '/articles/Mining.png'
+      image: '/articles/Mining.png',
+      demoUrl: 'https://mining-llmapp.cleveritgroup.ai'
     },
     'development-metrics': {
       title: t.useCases.case3.title,
@@ -58,7 +60,8 @@ const UseCaseDetailPage = () => {
       features: t.useCases.case3.features,
       icon: BarChart3,
       gradient: 'from-purple-500 to-pink-500',
-      image: '/articles/Technology.png'
+      image: '/articles/Technology.png',
+      demoUrl: 'https://pulzen-llmapp.cleveritgroup.ai'
     }
   };
 
@@ -306,6 +309,21 @@ const UseCaseDetailPage = () => {
                   {useCase.results}
                 </p>
               </div>
+            </div>
+          )}
+
+          {/* Try Demo Button - Centered */}
+          {useCase.demoUrl && (
+            <div className="text-center mb-16">
+              <a
+                href={useCase.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center space-x-2 bg-gradient-to-r ${useCase.gradient} hover:opacity-90 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg`}
+              >
+                <span>{t.useCases.tryDemo}</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </div>
           )}
         </article>
