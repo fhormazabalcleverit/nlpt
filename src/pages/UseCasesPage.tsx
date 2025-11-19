@@ -84,7 +84,7 @@ const UseCasesPage = () => {
                 {/* Card */}
                 <Link
                   to={`/use-cases/${useCase.id}`}
-                  className="block group bg-gray-900/50 border border-gray-700 rounded-3xl hover:border-pink-500/50 transition-all duration-300 hover:bg-gray-800/50 hover:scale-105 relative"
+                  className="block group bg-gray-900/50 border border-gray-700 rounded-3xl hover:border-pink-500/50 transition-all duration-300 hover:bg-gray-800/50 hover:scale-105 relative h-full"
                   style={{
                     backgroundImage: `url(${import.meta.env.BASE_URL}card.svg)`,
                     backgroundSize: 'cover',
@@ -92,7 +92,7 @@ const UseCasesPage = () => {
                   }}
                 >
                   {/* Content */}
-                  <div className="p-8 pt-20">
+                  <div className="p-8 pt-20 flex flex-col h-full">
                     {/* Category & Read Time */}
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm text-pink-400 font-medium">{useCase.category}</span>
@@ -105,29 +105,32 @@ const UseCasesPage = () => {
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-gray-400 leading-relaxed mb-6">
+                    <p className="text-gray-400 leading-relaxed mb-6 flex-grow">
                       {useCase.excerpt}
                     </p>
 
-                    {/* Read More Link */}
-                    <div className="flex items-center space-x-1 text-pink-400 text-sm font-normal group-hover:space-x-2 transition-all duration-300 mb-4 opacity-70">
-                      <span>{t.useCases.readMore}</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
+                    {/* Buttons Row */}
+                    <div className="flex items-center justify-between mt-auto">
+                      {/* Try Demo Button */}
+                      {useCase.demoUrl && (
+                        <a
+                          href={useCase.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className={`inline-flex items-center space-x-2 bg-gradient-to-r ${useCase.gradient} hover:opacity-90 text-white font-medium px-4 py-2 rounded-full text-sm transition-all duration-300`}
+                        >
+                          <span>{t.useCases.tryDemo}</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </a>
+                      )}
 
-                    {/* Try Demo Button (only for Development Metrics) */}
-                    {useCase.demoUrl && (
-                      <a
-                        href={useCase.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-4 py-2 rounded-full text-sm transition-all duration-300"
-                      >
-                        <span>{t.useCases.tryDemo}</span>
+                      {/* Read More Link */}
+                      <div className="flex items-center space-x-1 text-pink-400 text-sm font-normal group-hover:space-x-2 transition-all duration-300 opacity-70">
+                        <span>{t.useCases.readMore}</span>
                         <ArrowRight className="w-4 h-4" />
-                      </a>
-                    )}
+                      </div>
+                    </div>
                   </div>
                 </Link>
               </div>
