@@ -338,128 +338,153 @@
         "subtitle": "Tu plataforma LLMAPPS puede posicionarse como una capa cognitiva de análisis y optimización sobre las operaciones retail. Aquí están las líneas concretas de aplicación:",
         "app1": {
           "title": "1. Asistente de Análisis de Ventas e Inventario",
-          "challenge": "Reto: Datos dispersos en sistemas POS, e-commerce, inventario y CRM sin análisis unificado.",
-          "capabilities": "LLMAPPS puede:",
+          "challenge": "Gerentes retail necesitan analizar inventario por tienda, rastrear ventas por categoría de producto, y detectar quiebres de stock antes que afecten ventas sin consultar múltiples sistemas.",
+          "capabilities": "LLMAPPS integra datos de stores, products, inventory, y sales_transactions. Permite consultas en lenguaje natural sobre stock levels por tienda/producto, análisis de ventas por categoría, y alertas proactivas de reabastecimiento.",
           "features": [
             {
-              "main": "Integrarse con sistemas POS, plataformas de e-commerce, ERPs y herramientas de inventario."
-            },
-            {
-              "main": "Responder consultas en lenguaje natural como:",
+              "main": "Análisis de inventario multi-tienda:",
               "sub": [
-                "\"¿Qué productos están cerca de quiebre de stock esta semana?\"",
-                "\"¿Cuáles fueron los 10 productos más vendidos en la categoría electrónica el mes pasado?\"",
-                "\"¿Qué tiendas tienen exceso de inventario en ropa de invierno?\""
+                "\"¿Qué productos tienen menos de 50 unidades en la tienda Downtown?\"",
+                "\"¿Cuál es el nivel de stock de Electronics en todas las tiendas?\"",
+                "\"Muestra productos con quantity crítico por store_id\""
               ]
             },
             {
-              "main": "Generar alertas automáticas de reabastecimiento basadas en patrones de venta y estacionalidad."
+              "main": "Análisis de ventas y performance:",
+              "sub": [
+                "\"¿Cuáles fueron los top 10 productos más vendidos este mes?\"",
+                "\"¿Qué categoría generó más total_amount en la última semana?\"",
+                "\"Compara ventas entre tiendas propias (Owned) vs rentadas (Rented)\""
+              ]
             },
             {
-              "main": "Crear reportes ejecutivos automáticos con insights clave del día/semana/mes."
+              "main": "Alertas automáticas de reabastecimiento basadas en velocity de ventas y stock actual."
+            },
+            {
+              "main": "Reportes ejecutivos con profitability por producto (sale_price vs cost_price)."
             }
           ],
-          "value": "👉 Valor: Reduce quiebres de stock en 30%, mejora rotación de inventario y optimiza decisiones de compra."
+          "value": "Reduce quiebres de stock 30%, mejora rotación de inventario y optimiza decisiones de compra con visibilidad en tiempo real de inventory levels por store."
         },
         "app2": {
           "title": "2. Motor de Recomendaciones Personalizadas",
-          "challenge": "Reto: Baja conversión y experiencias genéricas que no conectan con cada cliente.",
-          "capabilities": "LLMAPPS puede:",
+          "challenge": "Equipos de ventas carecen de insights sobre patrones de compra por segmento de cliente (age, gender) y productos complementarios que podrían aumentar ticket promedio.",
+          "capabilities": "LLMAPPS analiza sales_transactions, sales_details, customers, y products para identificar patrones de compra, productos frecuentemente comprados juntos, y preferencias por demografía.",
           "features": [
             {
-              "main": "Analizar historial de compras, navegación web y preferencias de clientes usando RAG."
-            },
-            {
-              "main": "Generar recomendaciones contextuales:",
+              "main": "Análisis de patrones de compra por segmento:",
               "sub": [
-                "\"Clientes que compraron X también necesitan Y\"",
-                "\"Este cliente prefiere marcas sostenibles, recomienda productos eco-friendly\"",
-                "\"Sugiere productos complementarios para aumentar ticket promedio\""
+                "\"¿Qué productos compran más las mujeres de 25-35 años?\"",
+                "\"¿Qué categorías prefieren clientes que usan Credit Card vs Cash?\"",
+                "\"Identifica productos complementarios comprados en la misma transacción\""
               ]
             },
             {
-              "main": "Personalizar campañas de marketing y promociones por segmento de cliente."
+              "main": "Recomendaciones contextuales basadas en sales_details history:",
+              "sub": [
+                "\"Clientes que compraron producto_id X también compraron Y en 60% de casos\"",
+                "\"Sugiere productos para aumentar total_amount promedio de transacciones\"",
+                "\"Recomienda productos con high in_store_priority para promociones\""
+              ]
             },
             {
-              "main": "Optimizar cross-selling y up-selling en tiempo real tanto en tienda como online."
+              "main": "Segmentación de clientes por first_name, age, gender y purchase behavior."
+            },
+            {
+              "main": "Optimización de cross-selling basado en transaction_time patterns (In-Person vs Digital)."
             }
           ],
-          "value": "👉 Valor: Incrementa conversión en 25%, aumenta ticket promedio 15% y mejora satisfacción del cliente."
+          "value": "Incrementa conversión 25%, aumenta ticket promedio (total_amount) 15% y mejora customer satisfaction mediante recomendaciones data-driven."
         },
         "app3": {
-          "title": "3. Optimización Dinámica de Precios",
-          "challenge": "Reto: Precios estáticos que no responden a demanda, competencia o estacionalidad en tiempo real.",
-          "capabilities": "LLMAPPS puede:",
+          "title": "3. Optimización Dinámica de Precios y Márgenes",
+          "challenge": "Equipos de pricing necesitan maximizar márgenes analizando sale_price_per_unit vs cost_price, evaluar impacto de discount_coupon_amount, y ajustar base_sale_price sin erosionar rentabilidad.",
+          "capabilities": "LLMAPPS analiza profitability comparando sale_price_per_unit (sales_details) con cost_price (products), rastrea efectividad de discount_coupon_amount, y simula escenarios de pricing por categoría.",
           "features": [
             {
-              "main": "Analizar datos de demanda, competencia, estacionalidad y elasticidad de precio."
-            },
-            {
-              "main": "Responder consultas estratégicas:",
+              "main": "Análisis de profitability por producto y categoría:",
               "sub": [
-                "\"¿Qué impacto tendría un descuento del 15% en la categoría de electrónica?\"",
-                "\"¿Cuál es el precio óptimo para maximizar margen en producto X?\"",
-                "\"¿Qué productos deberían tener promoción esta semana según tendencias?\""
+                "\"¿Cuál es el margen promedio (sale_price - cost_price) por categoría?\"",
+                "\"¿Qué productos tienen margen menor al 20%?\"",
+                "\"Compara profitability entre tiendas Owned vs Rented considerando property_cost\""
               ]
             },
             {
-              "main": "Sugerir ajustes de precio dinámicos basados en inventario, velocidad de venta y competencia."
+              "main": "Evaluación de impacto de descuentos:",
+              "sub": [
+                "\"¿Cómo afectan los discount_coupon_amount al margen neto?\"",
+                "\"¿Qué productos se venden mejor con/sin descuentos?\"",
+                "\"Simula impacto de reducir base_sale_price 10% en Electronics\""
+              ]
             },
             {
-              "main": "Simular escenarios de promociones antes de implementarlas."
+              "main": "Sugerencias de ajuste de precio basadas en inventory quantity y sales velocity."
+            },
+            {
+              "main": "Análisis de value_added_tax impact en pricing competitivo."
             }
           ],
-          "value": "👉 Valor: Maximiza márgenes, reduce inventario obsoleto y mejora competitividad sin erosionar rentabilidad."
+          "value": "Maximiza márgenes, reduce inventario obsoleto mediante pricing inteligente y mejora competitividad sin erosionar profitability."
         },
         "app4": {
-          "title": "4. Análisis Predictivo de Demanda",
-          "challenge": "Reto: Planificación de inventario basada en históricos simples sin considerar tendencias y eventos.",
-          "capabilities": "LLMAPPS puede:",
+          "title": "4. Análisis de Performance de Tiendas y Workers",
+          "challenge": "Store managers necesitan evaluar performance de workers por ventas generadas, identificar top performers, y optimizar worker_shifts para maximizar revenue en horarios peak.",
+          "capabilities": "LLMAPPS vincula sales_transactions con workers y worker_shifts para analizar sales por empleado, identificar patterns de high-performance, y optimizar scheduling considerando worker_vacations.",
           "features": [
             {
-              "main": "Integrar datos históricos de ventas, tendencias de mercado, clima, eventos y redes sociales."
-            },
-            {
-              "main": "Predecir demanda futura:",
+              "main": "Análisis de worker performance:",
               "sub": [
-                "\"¿Cuántas unidades del producto Y necesitaremos la próxima temporada navideña?\"",
-                "\"¿Qué categorías tendrán mayor crecimiento en Q2?\"",
-                "\"¿Cómo afectará el evento deportivo próximo a las ventas de merchandising?\""
+                "\"¿Qué workers generan mayor total_amount promedio por transacción?\"",
+                "\"¿Cuál es el performance de Cashiers vs Store Managers en ventas?\"",
+                "\"Identifica workers con más transacciones Completed vs POS_Failure\""
               ]
             },
             {
-              "main": "Generar planes de reabastecimiento automáticos por tienda y categoría."
+              "main": "Optimización de scheduling:",
+              "sub": [
+                "\"¿Qué shift_start_time genera más ventas?\"",
+                "\"¿Cómo afectan worker_vacations a las ventas de la tienda?\"",
+                "\"Sugiere workers para horarios peak basado en historical performance\""
+              ]
             },
             {
-              "main": "Identificar tendencias emergentes antes que la competencia."
+              "main": "Análisis de store performance por ownership_type y property_cost ROI."
+            },
+            {
+              "main": "Identificación de patterns de payment_method (Credit Card, Debit Card, Cash) por worker."
             }
           ],
-          "value": "👉 Valor: Reduce sobrestocks en 35%, mejora disponibilidad de productos clave y aumenta ventas perdidas recuperadas."
+          "value": "Optimiza scheduling para maximizar revenue, identifica training needs para workers de bajo performance, y mejora store ROI."
         },
         "app5": {
-          "title": "5. Customer Intelligence y Atención al Cliente",
-          "challenge": "Reto: Consultas repetitivas de clientes y falta de insights sobre comportamiento y preferencias.",
-          "capabilities": "LLMAPPS puede:",
+          "title": "5. Customer Intelligence y Análisis de Transacciones",
+          "challenge": "Business analysts necesitan entender customer lifetime value, detectar patterns de transaction failures (POS_Failure), y analizar preferencias de sale_type (In-Person vs Digital).",
+          "capabilities": "LLMAPPS analiza customers con sales_transactions para calcular CLV, detectar transaction status patterns, identificar loyal customers, y comparar comportamiento In-Person vs Digital.",
           "features": [
             {
-              "main": "Crear un asistente virtual que responda preguntas de clientes sobre productos, disponibilidad y políticas."
-            },
-            {
-              "main": "Analizar sentimiento y feedback de clientes en redes sociales, reviews y encuestas.",
+              "main": "Análisis de Customer Lifetime Value:",
               "sub": [
-                "\"¿Qué dicen los clientes sobre nuestro servicio de entrega?\"",
-                "\"¿Cuáles son las quejas más comunes del último mes?\"",
-                "\"¿Qué productos tienen las mejores reviews y por qué?\""
+                "\"¿Quiénes son los top 20 clientes por total_amount acumulado?\"",
+                "\"¿Cuál es el CLV promedio por age group y gender?\"",
+                "\"Identifica clientes con high purchase frequency pero bajo total_amount\""
               ]
             },
             {
-              "main": "Identificar patrones de abandono de carrito y sugerir acciones para recuperar ventas."
+              "main": "Análisis de transaction reliability:",
+              "sub": [
+                "\"¿Qué porcentaje de transacciones son POS_Failure por store_id?\"",
+                "\"¿Qué payment_method tiene mayor tasa de Completed transactions?\"",
+                "\"Compara success rate entre In-Person y Digital sales\""
+              ]
             },
             {
-              "main": "Segmentar clientes por comportamiento y generar estrategias de retención personalizadas."
+              "main": "Segmentación de clientes por sale_type preference y payment_method."
+            },
+            {
+              "main": "Identificación de customers inactivos desde date_created para re-engagement campaigns."
             }
           ],
-          "value": "👉 Valor: Mejora NPS, reduce churn de clientes valiosos y aumenta lifetime value por cliente."
+          "value": "Mejora customer retention, reduce POS_Failure rates, y aumenta lifetime value mediante segmentación data-driven."
         }
       },
       "features": [

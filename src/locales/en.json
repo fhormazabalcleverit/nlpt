@@ -338,128 +338,153 @@
         "subtitle": "Your LLMAPPS platform can position itself as a cognitive layer of analysis and optimization over retail operations. Here are the concrete lines of application:",
         "app1": {
           "title": "1. Sales and Inventory Analysis Assistant",
-          "challenge": "Challenge: Scattered data across POS systems, e-commerce, inventory, and CRM without unified analysis.",
-          "capabilities": "LLMAPPS can:",
+          "challenge": "Retail managers need to analyze inventory by store, track sales by product category, and detect stockouts before they affect sales without consulting multiple systems.",
+          "capabilities": "LLMAPPS integrates data from stores, products, inventory, and sales_transactions. Enables natural language queries about stock levels per store/product, sales analysis by category, and proactive replenishment alerts.",
           "features": [
             {
-              "main": "Integrate with POS systems, e-commerce platforms, ERPs, and inventory management tools."
-            },
-            {
-              "main": "Answer natural language queries like:",
+              "main": "Multi-store inventory analysis:",
               "sub": [
-                "\"Which products are close to stockout this week?\"",
-                "\"What were the top 10 best-selling products in electronics last month?\"",
-                "\"Which stores have excess winter clothing inventory?\""
+                "\"Which products have less than 50 units at the Downtown store?\"",
+                "\"What's the Electronics stock level across all stores?\"",
+                "\"Show products with critical quantity by store_id\""
               ]
             },
             {
-              "main": "Generate automatic replenishment alerts based on sales patterns and seasonality."
+              "main": "Sales and performance analysis:",
+              "sub": [
+                "\"What were the top 10 best-selling products this month?\"",
+                "\"Which category generated the most total_amount last week?\"",
+                "\"Compare sales between Owned vs Rented stores\""
+              ]
             },
             {
-              "main": "Create automated executive reports with key daily/weekly/monthly insights."
+              "main": "Automatic replenishment alerts based on sales velocity and current stock."
+            },
+            {
+              "main": "Executive reports with profitability per product (sale_price vs cost_price)."
             }
           ],
-          "value": "👉 Value: Reduces stockouts by 30%, improves inventory turnover, and optimizes purchasing decisions."
+          "value": "Reduces stockouts by 30%, improves inventory turnover, and optimizes purchasing decisions with real-time visibility of inventory levels per store."
         },
         "app2": {
           "title": "2. Personalized Recommendation Engine",
-          "challenge": "Challenge: Low conversion and generic experiences that don't connect with each customer.",
-          "capabilities": "LLMAPPS can:",
+          "challenge": "Sales teams lack insights into purchase patterns by customer segment (age, gender) and complementary products that could increase average ticket.",
+          "capabilities": "LLMAPPS analyzes sales_transactions, sales_details, customers, and products to identify purchase patterns, frequently bought together products, and demographic preferences.",
           "features": [
             {
-              "main": "Analyze purchase history, web browsing, and customer preferences using RAG."
-            },
-            {
-              "main": "Generate contextual recommendations:",
+              "main": "Purchase pattern analysis by segment:",
               "sub": [
-                "\"Customers who bought X also need Y\"",
-                "\"This customer prefers sustainable brands, recommend eco-friendly products\"",
-                "\"Suggest complementary products to increase average ticket\""
+                "\"What products do women aged 25-35 buy most?\"",
+                "\"Which categories do customers using Credit Card vs Cash prefer?\"",
+                "\"Identify complementary products bought in the same transaction\""
               ]
             },
             {
-              "main": "Personalize marketing campaigns and promotions by customer segment."
+              "main": "Contextual recommendations based on sales_details history:",
+              "sub": [
+                "\"Customers who bought product_id X also bought Y in 60% of cases\"",
+                "\"Suggest products to increase average total_amount of transactions\"",
+                "\"Recommend products with high in_store_priority for promotions\""
+              ]
             },
             {
-              "main": "Optimize cross-selling and up-selling in real-time both in-store and online."
+              "main": "Customer segmentation by first_name, age, gender, and purchase behavior."
+            },
+            {
+              "main": "Cross-selling optimization based on transaction_time patterns (In-Person vs Digital)."
             }
           ],
-          "value": "👉 Value: Increases conversion by 25%, raises average ticket by 15%, and improves customer satisfaction."
+          "value": "Increases conversion by 25%, raises average ticket (total_amount) by 15%, and improves customer satisfaction through data-driven recommendations."
         },
         "app3": {
-          "title": "3. Dynamic Price Optimization",
-          "challenge": "Challenge: Static pricing that doesn't respond to demand, competition, or seasonality in real-time.",
-          "capabilities": "LLMAPPS can:",
+          "title": "3. Dynamic Pricing and Margin Optimization",
+          "challenge": "Pricing teams need to maximize margins by analyzing sale_price_per_unit vs cost_price, evaluate discount_coupon_amount impact, and adjust base_sale_price without eroding profitability.",
+          "capabilities": "LLMAPPS analyzes profitability comparing sale_price_per_unit (sales_details) with cost_price (products), tracks discount_coupon_amount effectiveness, and simulates pricing scenarios by category.",
           "features": [
             {
-              "main": "Analyze demand data, competition, seasonality, and price elasticity."
-            },
-            {
-              "main": "Answer strategic queries:",
+              "main": "Profitability analysis by product and category:",
               "sub": [
-                "\"What impact would a 15% discount in electronics have?\"",
-                "\"What's the optimal price to maximize margin on product X?\"",
-                "\"Which products should be on promotion this week based on trends?\""
+                "\"What's the average margin (sale_price - cost_price) by category?\"",
+                "\"Which products have margins below 20%?\"",
+                "\"Compare profitability between Owned vs Rented stores considering property_cost\""
               ]
             },
             {
-              "main": "Suggest dynamic price adjustments based on inventory, sales velocity, and competition."
+              "main": "Discount impact evaluation:",
+              "sub": [
+                "\"How do discount_coupon_amount affect net margin?\"",
+                "\"Which products sell better with/without discounts?\"",
+                "\"Simulate impact of reducing base_sale_price by 10% in Electronics\""
+              ]
             },
             {
-              "main": "Simulate promotion scenarios before implementing them."
+              "main": "Price adjustment suggestions based on inventory quantity and sales velocity."
+            },
+            {
+              "main": "Value_added_tax impact analysis on competitive pricing."
             }
           ],
-          "value": "👉 Value: Maximizes margins, reduces obsolete inventory, and improves competitiveness without eroding profitability."
+          "value": "Maximizes margins, reduces obsolete inventory through intelligent pricing, and improves competitiveness without eroding profitability."
         },
         "app4": {
-          "title": "4. Predictive Demand Analysis",
-          "challenge": "Challenge: Inventory planning based on simple historicals without considering trends and events.",
-          "capabilities": "LLMAPPS can:",
+          "title": "4. Store and Worker Performance Analysis",
+          "challenge": "Store managers need to evaluate worker performance by sales generated, identify top performers, and optimize worker_shifts to maximize revenue during peak hours.",
+          "capabilities": "LLMAPPS links sales_transactions with workers and worker_shifts to analyze sales per employee, identify high-performance patterns, and optimize scheduling considering worker_vacations.",
           "features": [
             {
-              "main": "Integrate historical sales data, market trends, weather, events, and social media."
-            },
-            {
-              "main": "Predict future demand:",
+              "main": "Worker performance analysis:",
               "sub": [
-                "\"How many units of product Y will we need next holiday season?\"",
-                "\"Which categories will have the highest growth in Q2?\"",
-                "\"How will the upcoming sporting event affect merchandising sales?\""
+                "\"Which workers generate the highest average total_amount per transaction?\"",
+                "\"What's the performance of Cashiers vs Store Managers in sales?\"",
+                "\"Identify workers with more Completed vs POS_Failure transactions\""
               ]
             },
             {
-              "main": "Generate automatic replenishment plans by store and category."
+              "main": "Scheduling optimization:",
+              "sub": [
+                "\"Which shift_start_time generates the most sales?\"",
+                "\"How do worker_vacations affect store sales?\"",
+                "\"Suggest workers for peak hours based on historical performance\""
+              ]
             },
             {
-              "main": "Identify emerging trends before the competition."
+              "main": "Store performance analysis by ownership_type and property_cost ROI."
+            },
+            {
+              "main": "Payment_method pattern identification (Credit Card, Debit Card, Cash) by worker."
             }
           ],
-          "value": "👉 Value: Reduces overstocks by 35%, improves availability of key products, and increases recovered lost sales."
+          "value": "Optimizes scheduling to maximize revenue, identifies training needs for underperforming workers, and improves store ROI."
         },
         "app5": {
-          "title": "5. Customer Intelligence and Support",
-          "challenge": "Challenge: Repetitive customer queries and lack of insights about behavior and preferences.",
-          "capabilities": "LLMAPPS can:",
+          "title": "5. Customer Intelligence and Transaction Analysis",
+          "challenge": "Business analysts need to understand customer lifetime value, detect transaction failure patterns (POS_Failure), and analyze sale_type preferences (In-Person vs Digital).",
+          "capabilities": "LLMAPPS analyzes customers with sales_transactions to calculate CLV, detect transaction status patterns, identify loyal customers, and compare In-Person vs Digital behavior.",
           "features": [
             {
-              "main": "Create a virtual assistant that answers customer questions about products, availability, and policies."
-            },
-            {
-              "main": "Analyze customer sentiment and feedback on social media, reviews, and surveys.",
+              "main": "Customer Lifetime Value analysis:",
               "sub": [
-                "\"What are customers saying about our delivery service?\"",
-                "\"What are the most common complaints from last month?\"",
-                "\"Which products have the best reviews and why?\""
+                "\"Who are the top 20 customers by cumulative total_amount?\"",
+                "\"What's the average CLV by age group and gender?\"",
+                "\"Identify customers with high purchase frequency but low total_amount\""
               ]
             },
             {
-              "main": "Identify cart abandonment patterns and suggest actions to recover sales."
+              "main": "Transaction reliability analysis:",
+              "sub": [
+                "\"What percentage of transactions are POS_Failure by store_id?\"",
+                "\"Which payment_method has the highest Completed transaction rate?\"",
+                "\"Compare success rate between In-Person and Digital sales\""
+              ]
             },
             {
-              "main": "Segment customers by behavior and generate personalized retention strategies."
+              "main": "Customer segmentation by sale_type preference and payment_method."
+            },
+            {
+              "main": "Identification of inactive customers since date_created for re-engagement campaigns."
             }
           ],
-          "value": "👉 Value: Improves NPS, reduces churn of valuable customers, and increases customer lifetime value."
+          "value": "Improves customer retention, reduces POS_Failure rates, and increases lifetime value through data-driven segmentation."
         }
       },
       "features": [
