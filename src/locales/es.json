@@ -314,6 +314,7 @@
     "title": "Casos de uso reales de IA",
     "subtitle": "Descubre cómo diferentes industrias están transformando sus operaciones con LLM Apps y soluciones de IA personalizadas.",
     "readMore": "Leer más",
+    "tryDemo": "Probar",
     "backToUseCases": "Volver a Casos de uso",
     "notFound": "Caso de uso no encontrado",
     "challengeTitle": "El Desafío",
@@ -326,21 +327,21 @@
     "detailCtaTitle": "¿Te interesa una solución similar?",
     "detailCtaSubtitle": "Hablemos sobre cómo podemos adaptar esta solución a las necesidades específicas de tu negocio.",
     "case1": {
-      "title": "Production Insight",
-      "category": "Manufactura",
-      "excerpt": "Optimización de líneas de producción mediante análisis en tiempo real con IA, permitiendo decisiones informadas y reducción de desperdicios.",
-      "fullContent": "En la industria manufacturera moderna, la capacidad de tomar decisiones informadas en tiempo real es fundamental para mantener la competitividad. Production Insight es una solución de IA que transforma datos de producción en insights accionables, permitiendo a los gerentes de planta optimizar operaciones, reducir desperdicios y maximizar la eficiencia.",
-      "challenge": "Las plantas de manufactura generan enormes cantidades de datos de sensores, máquinas y procesos, pero carecen de herramientas para analizarlos efectivamente en tiempo real. Los gerentes necesitan respuestas inmediatas sobre rendimiento de líneas, predicción de fallas y oportunidades de optimización, pero los sistemas tradicionales requieren análisis manual que toma días o semanas.",
-      "solution": "Production Insight utiliza LLM Apps para conectarse directamente a sistemas de producción, bases de datos SCADA y sensores IoT. La IA procesa automáticamente todos los datos en tiempo real, permitiendo a los gerentes hacer preguntas en lenguaje natural como '¿Qué línea tiene mayor desperdicio hoy?' o '¿Cuándo debería programar mantenimiento para la máquina X?' y recibir respuestas instantáneas con visualizaciones.",
+      "title": "Retail Intelligence",
+      "category": "Retail",
+      "excerpt": "Optimización de ventas y experiencia del cliente mediante análisis predictivo de inventarios, comportamiento de compra y personalización en tiempo real.",
+      "fullContent": "En el sector retail moderno, entender el comportamiento del cliente y optimizar el inventario es crucial para mantener la competitividad. Retail Intelligence es una solución de IA que transforma datos de ventas, inventarios y comportamiento del cliente en insights accionables, permitiendo a los gerentes tomar decisiones informadas sobre stock, precios y experiencia del cliente.",
+      "challenge": "Las tiendas retail generan enormes cantidades de datos de ventas, inventarios, comportamiento de clientes y tendencias de mercado, pero carecen de herramientas para analizarlos efectivamente en tiempo real. Los gerentes necesitan respuestas inmediatas sobre rotación de productos, predicción de demanda y oportunidades de cross-selling, pero los sistemas tradicionales requieren análisis manual que toma días o semanas.",
+      "solution": "Retail Intelligence utiliza LLM Apps para conectarse directamente a sistemas POS, bases de datos de inventario y plataformas de e-commerce. La IA procesa automáticamente todos los datos en tiempo real, permitiendo a los gerentes hacer preguntas en lenguaje natural como '¿Qué productos tienen mayor riesgo de quiebre de stock esta semana?' o '¿Qué promociones generaron más conversión el mes pasado?' y recibir respuestas instantáneas con visualizaciones.",
       "features": [
-        "Análisis en tiempo real de datos de producción",
-        "Predicción de fallas de maquinaria con machine learning",
-        "Optimización automática de líneas de producción",
-        "Alertas proactivas de problemas de calidad",
-        "Dashboards personalizados para diferentes roles",
-        "Integración con sistemas ERP y MES existentes"
+        "Análisis predictivo de demanda y stock",
+        "Recomendaciones personalizadas para clientes",
+        "Optimización automática de precios dinámicos",
+        "Alertas proactivas de quiebre de stock",
+        "Dashboards personalizados por categoría y tienda",
+        "Integración con sistemas POS, ERP y e-commerce existentes"
       ],
-      "results": "Las empresas que implementan Production Insight reportan una reducción del 25-30% en desperdicios, un aumento del 15-20% en eficiencia de producción y una disminución del 40% en tiempo de inactividad no planificado. Los gerentes toman decisiones más rápidas y basadas en datos, resultando en ahorros significativos y mejor calidad de producto."
+      "results": "Las empresas retail que implementan Retail Intelligence reportan un aumento del 20-25% en ventas, una reducción del 30% en quiebres de stock y un incremento del 40% en satisfacción del cliente. Los gerentes toman decisiones más rápidas y basadas en datos, resultando en mejor rotación de inventario y experiencias de compra personalizadas."
     },
     "case2": {
       "title": "Mining Intelligence",

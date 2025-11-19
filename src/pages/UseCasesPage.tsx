@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Factory, Pickaxe, BarChart3, ArrowRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, Pickaxe, BarChart3, ArrowRight, Sparkles } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
@@ -14,12 +14,13 @@ const UseCasesPage = () => {
   const useCases = [
     {
       id: 'production-insight',
-      icon: Factory,
+      icon: ShoppingBag,
       title: t.useCases.case1.title,
       excerpt: t.useCases.case1.excerpt,
       category: t.useCases.case1.category,
       readTime: '5 min',
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 to-cyan-500',
+      demoUrl: 'https://retail-llmapp.cleveritgroup.ai'
     },
     {
       id: 'mining',
@@ -28,7 +29,8 @@ const UseCasesPage = () => {
       excerpt: t.useCases.case2.excerpt,
       category: t.useCases.case2.category,
       readTime: '6 min',
-      gradient: 'from-orange-500 to-yellow-500'
+      gradient: 'from-orange-500 to-yellow-500',
+      demoUrl: 'https://mining-llmapp.cleveritgroup.ai'
     },
     {
       id: 'development-metrics',
@@ -37,7 +39,8 @@ const UseCasesPage = () => {
       excerpt: t.useCases.case3.excerpt,
       category: t.useCases.case3.category,
       readTime: '4 min',
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 to-pink-500',
+      demoUrl: 'https://pulzen-llmapp.cleveritgroup.ai'
     }
   ];
 
@@ -107,10 +110,24 @@ const UseCasesPage = () => {
                     </p>
 
                     {/* Read More Link */}
-                    <div className="flex items-center space-x-2 text-pink-400 font-medium group-hover:space-x-4 transition-all duration-300">
+                    <div className="flex items-center space-x-1 text-pink-400 text-sm font-normal group-hover:space-x-2 transition-all duration-300 mb-4 opacity-70">
                       <span>{t.useCases.readMore}</span>
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-4 h-4" />
                     </div>
+
+                    {/* Try Demo Button (only for Development Metrics) */}
+                    {useCase.demoUrl && (
+                      <a
+                        href={useCase.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-4 py-2 rounded-full text-sm transition-all duration-300"
+                      >
+                        <span>{t.useCases.tryDemo}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </Link>
               </div>

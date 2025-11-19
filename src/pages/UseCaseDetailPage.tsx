@@ -1,6 +1,6 @@
 // import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, Tag, Factory, Pickaxe, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag, ShoppingBag, Pickaxe, BarChart3 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SEO from '../components/SEO';
@@ -28,9 +28,9 @@ const UseCaseDetailPage = () => {
       solution: t.useCases.case1.solution,
       results: t.useCases.case1.results,
       features: t.useCases.case1.features,
-      icon: Factory,
+      icon: ShoppingBag,
       gradient: 'from-blue-500 to-cyan-500',
-      image: '/articles/Manufacturing.png'
+      image: '/articles/Retail.png'
     },
     'mining': {
       title: t.useCases.case2.title,
@@ -274,14 +274,14 @@ const UseCaseDetailPage = () => {
                     </h3>
                       
                     <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-gray-900 mb-6">
-                      <iframe
-                        src={(t.useCases.case2 as any).videoSection.videoUrl}
-                        title={(t.useCases.case2 as any).videoSection.videoTitle}
+                      <video
+                        controls
                         className="absolute inset-0 w-full h-full"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      />
+                        preload="metadata"
+                      >
+                        <source src={(t.useCases.case2 as any).videoSection.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
 
                     <p className="text-gray-400 leading-relaxed text-md mb-6 text-center">

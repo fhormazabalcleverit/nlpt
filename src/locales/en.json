@@ -314,6 +314,7 @@
     "title": "Real AI Use Cases",
     "subtitle": "Discover how different industries are transforming their operations with LLM Apps and custom AI solutions.",
     "readMore": "Read more",
+    "tryDemo": "Try it",
     "backToUseCases": "Back to Use Cases",
     "notFound": "Use case not found",
     "challengeTitle": "The Challenge",
@@ -326,21 +327,21 @@
     "detailCtaTitle": "Interested in a similar solution?",
     "detailCtaSubtitle": "Let's talk about how we can adapt this solution to your business specific needs.",
     "case1": {
-      "title": "Production Insight",
-      "category": "Manufacturing",
-      "excerpt": "Optimization of production lines through real-time AI analysis, enabling informed decisions and waste reduction.",
-      "fullContent": "In the modern manufacturing industry, the ability to make informed decisions in real-time is essential to maintain competitiveness. Production Insight is an AI solution that transforms production data into actionable insights, allowing plant managers to optimize operations, reduce waste and maximize efficiency.",
-      "challenge": "Manufacturing plants generate enormous amounts of data from sensors, machines and processes, but lack tools to analyze them effectively in real-time. Managers need immediate answers about line performance, failure prediction and optimization opportunities, but traditional systems require manual analysis that takes days or weeks.",
-      "solution": "Production Insight uses LLM Apps to connect directly to production systems, SCADA databases and IoT sensors. The AI automatically processes all data in real-time, allowing managers to ask questions in natural language like 'Which line has the most waste today?' or 'When should I schedule maintenance for machine X?' and receive instant answers with visualizations.",
+      "title": "Retail Intelligence",
+      "category": "Retail",
+      "excerpt": "Sales and customer experience optimization through predictive inventory analysis, purchase behavior insights, and real-time personalization.",
+      "fullContent": "In the modern retail sector, understanding customer behavior and optimizing inventory is crucial to maintaining competitiveness. Retail Intelligence is an AI solution that transforms sales data, inventory, and customer behavior into actionable insights, allowing managers to make informed decisions about stock, pricing, and customer experience.",
+      "challenge": "Retail stores generate enormous amounts of data from sales, inventory, customer behavior, and market trends, but lack tools to analyze them effectively in real-time. Managers need immediate answers about product rotation, demand prediction, and cross-selling opportunities, but traditional systems require manual analysis that takes days or weeks.",
+      "solution": "Retail Intelligence uses LLM Apps to connect directly to POS systems, inventory databases, and e-commerce platforms. The AI automatically processes all data in real-time, allowing managers to ask questions in natural language like 'Which products have the highest risk of stockout this week?' or 'Which promotions generated the most conversion last month?' and receive instant answers with visualizations.",
       "features": [
-        "Real-time analysis of production data",
-        "Machine failure prediction with machine learning",
-        "Automatic optimization of production lines",
-        "Proactive quality issue alerts",
-        "Custom dashboards for different roles",
-        "Integration with existing ERP and MES systems"
+        "Predictive demand and stock analysis",
+        "Personalized recommendations for customers",
+        "Automatic dynamic pricing optimization",
+        "Proactive stockout alerts",
+        "Custom dashboards by category and store",
+        "Integration with existing POS, ERP and e-commerce systems"
       ],
-      "results": "Companies that implement Production Insight report a 25-30% reduction in waste, a 15-20% increase in production efficiency and a 40% decrease in unplanned downtime. Managers make faster and data-driven decisions, resulting in significant savings and better product quality."
+      "results": "Retail companies that implement Retail Intelligence report a 20-25% increase in sales, a 30% reduction in stockouts, and a 40% increase in customer satisfaction. Managers make faster, data-driven decisions, resulting in better inventory turnover and personalized shopping experiences."
     },
     "case2": {
       "title": "Mining Intelligence",
