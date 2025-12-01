@@ -84,7 +84,7 @@
     "title": "How we transform your data into insights",
     "step1": {
       "title": "Upload your data",
-      "description": "Load files, connect databases or APIs securely and efficiently to power your AI system."
+      "description": "Integrations with third-party systems such as Sharepoint, all types of databases, files, APIs and MCP."
     },
     "step2": {
       "title": "Intelligent processing",
@@ -94,8 +94,12 @@
       "title": "Chat and get insights",
       "description": "Ask questions in natural language and receive accurate answers, automated reports and visualizations."
     }
-  },
-  "benefits": {
+  },  "integrations": {
+    "databases": "Databases",
+    "files": "Files",
+    "description1": "These integrations make data sources much more meaningful when responding to business challenges. Our platform also allows training agents in the use of this information, achieving much more detailed responses.",
+    "description2": "With access to multiple data sources, agents can provide complete context and answers grounded in your business's real information."
+  },  "benefits": {
     "badge": "Benefits",
     "benefit1": {
       "title": "Faster decisions",

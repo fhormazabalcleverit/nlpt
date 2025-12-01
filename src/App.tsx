@@ -7,6 +7,7 @@ import DynamicSEO from './components/DynamicSEO';
 import Hero from './components/Hero';
 import Process from './components/Process';
 import NewProcess from './components/NewProcess';
+import Integrations from './components/Integrations';
 import Benefits from './components/Benefits';
 import MastraHighlight from './components/MastraHighlight';
 // import Testimonials from './components/Testimonials';
@@ -29,6 +30,7 @@ const HomePage = () => (
     />
     <Hero />
     <NewProcess />
+    <Integrations />
     <Benefits />
     <MastraHighlight />
     <Process />

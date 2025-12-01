@@ -84,7 +84,7 @@
     "title": "Cómo transformamos tus datos en insights",
     "step1": {
       "title": "Sube tus datos",
-      "description": "Carga archivos, conecta bases de datos o APIs de manera segura y eficiente para alimentar tu sistema de IA."
+      "description": "Integraciones con sistemas terceros como Sharepoint, todo tipo de bases de datos, archivos, APIs y MCP."
     },
     "step2": {
       "title": "Procesamiento inteligente",
@@ -94,6 +94,12 @@
       "title": "Conversa y obtén insights",
       "description": "Haz preguntas en lenguaje natural y recibe respuestas precisas, reportes automáticos y visualizaciones."
     }
+  },
+  "integrations": {
+    "databases": "Bases de datos",
+    "files": "Archivos",
+    "description1": "Estas integraciones hacen que las fuentes tengan mucho más sentido a la hora de responder ante una problemática. Nuestra plataforma además permite entrenar a los agentes en el uso de esta información logrando respuestas mucho más detalladas.",
+    "description2": "Con acceso a múltiples fuentes de datos, los agentes pueden proporcionar contexto completo y respuestas fundamentadas en la información real de tu negocio."
   },
   "benefits": {
     "badge": "Beneficios",

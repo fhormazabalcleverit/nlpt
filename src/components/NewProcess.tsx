@@ -62,10 +62,10 @@ const NewProcess = () => {
         {/* Process Cards */}
         <div ref={cardsRef} className={`grid grid-cols-1 lg:grid-cols-3 gap-8 fade-in-up-delay ${cardsVisible ? 'animate' : ''}`}>
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col">
+            <div key={index} className="flex flex-col h-full">
               {/* Card */}
               <div
-                className="group relative border border-gray-800 hover:border-pink-500/50 rounded-2xl p-0 transition-all duration-500 ease-in-out min-h-[200px] flex items-center justify-center mb-6"
+                className="group relative border border-gray-800 hover:border-pink-500/50 rounded-2xl p-0 transition-all duration-500 ease-in-out min-h-[320px] flex items-center justify-center mb-6"
                 style={{
                   backgroundImage: `url(${import.meta.env.BASE_URL}card.svg)`,
                   backgroundSize: 'cover',
@@ -75,7 +75,7 @@ const NewProcess = () => {
               >
                 {index === 1 ? (
                   /* Animated Loader for center card */
-                  <div className="flex flex-col items-center justify-center space-y-6">
+                  <div className="flex flex-col items-center justify-center space-y-6 py-12">
                     <div className="relative">
                       <div className="w-16 h-16 border-4 border-gray-600 border-t-pink-500 rounded-full animate-spin"></div>
                       <div className="absolute inset-0 w-16 h-16 border-4 border-transparent border-r-purple-500 rounded-full animate-spin" style={{animationDirection: 'reverse', animationDuration: '1.5s'}}></div>
