@@ -98,6 +98,26 @@
   "integrations": {
     "databases": "Bases de datos",
     "files": "Archivos",
+    "sharepoint": {
+      "name": "SharePoint",
+      "description": "Conecta documentos, listas y bibliotecas de SharePoint para análisis y consultas inteligentes."
+    },
+    "database": {
+      "name": "Bases de datos",
+      "description": "Integración con todo tipo de bases de datos SQL, NoSQL, BigQuery y sistemas de almacenamiento empresarial."
+    },
+    "file": {
+      "name": "Archivos",
+      "description": "Procesa archivos PDF, Word, Excel y otros formatos para extraer información relevante."
+    },
+    "api": {
+      "name": "APIs",
+      "description": "Conecta con APIs REST y servicios web para obtener datos en tiempo real."
+    },
+    "mcp": {
+      "name": "MCP",
+      "description": "Model Context Protocol para integración avanzada con sistemas externos y flujos personalizados."
+    },
     "description1": "Estas integraciones hacen que las fuentes tengan mucho más sentido a la hora de responder ante una problemática. Nuestra plataforma además permite entrenar a los agentes en el uso de esta información logrando respuestas mucho más detalladas.",
     "description2": "Con acceso a múltiples fuentes de datos, los agentes pueden proporcionar contexto completo y respuestas fundamentadas en la información real de tu negocio."
   },
