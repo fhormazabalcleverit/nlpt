@@ -61,14 +61,12 @@ const Integrations = () => {
                     <h3 className="text-2lg lg:text-3xl font-semibold text-white mb-1 lg:mb-2 leading-tight flex-shrink-0">
                       <IconComponent className="w-8 h-8 lg:w-10 lg:h-10" />
                     </h3>
-                    <h3 className="text-lg lg:text-lg font-semibold text-white mb-1 lg:mb-2 leading-tight flex-shrink-0">
+                    <h3 className="text-lg lg:text-lg font-semibold text-white mb-4 leading-tight flex-shrink-0">
                       {integration.title}
                     </h3>
-                    <div className="flex-1 flex items-end">
-                      <p className="text-gray-400 leading-relaxed text-bold text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200 pt-4">
-                        {integration.description}
-                      </p>
-                    </div>
+                    <p className="text-gray-400 leading-relaxed text-bold text-sm opacity-100 transition-opacity duration-500 delay-200">
+                      {integration.description}
+                    </p>
                   </div>
                 );
               })}
@@ -86,14 +84,12 @@ const Integrations = () => {
                       <h3 className="text-2lg lg:text-3xl font-semibold text-white mb-1 lg:mb-2 leading-tight flex-shrink-0">
                         <IconComponent className="w-8 h-8 lg:w-10 lg:h-10" />
                       </h3>
-                      <h3 className="text-lg lg:text-lg font-semibold text-white mb-1 lg:mb-2 leading-tight flex-shrink-0">
+                      <h3 className="text-lg lg:text-lg font-semibold text-white mb-4 leading-tight flex-shrink-0">
                         {integration.title}
                       </h3>
-                      <div className="flex-1 flex items-end">
-                        <p className="text-gray-400 leading-relaxed text-bold text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200 pt-4">
-                          {integration.description}
-                        </p>
-                      </div>
+                      <p className="text-gray-400 leading-relaxed text-bold text-sm opacity-100 transition-opacity duration-500 delay-200">
+                        {integration.description}
+                      </p>
                     </div>
                   );
                 })}
