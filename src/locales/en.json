@@ -205,7 +205,11 @@
   "faq": {
     "badge": "FAQ",
     "title": "Answers to common questions",
-    "subtitle": "We answer the most common questions about our LLM Apps services and how they can transform your business.",
+    "subtitle": "Main questions about LLM Apps. For detailed inquiries:",
+    "subtitleLink": {
+      "text": "Chat with our AI agent",
+      "url": "https://phoenix.cleveritgroup.ai/"
+    },
     "certBadge": "Verified experts",
     "certTitle": "AI Certified",
     "certDescription": "At Cleverit we have the certification of",
@@ -214,28 +218,32 @@
     "certFeature1": "Modernize and migrate your enterprise applications to the cloud",
     "certFeature2": "Boost your developers' productivity with Microsoft Azure",
     "question1": {
-      "q": "What exactly are LLM Apps?",
-      "a": "LLM Apps are intelligent applications that use large language models to process, analyze and generate content naturally. They allow companies to automate complex communication and data analysis tasks."
+      "q": "What value does implementing LLM Apps bring to my organization?",
+      "a": "**LLMApp** is a platform that allows you to create and manage **multiple specialized AI agents**, each with its own database, training examples, and specific configuration.\n\nThis enables organizations to have different agents focused on different business areas (sales, support, operations, etc.), transforming scattered information into **intelligent conversational assistants** that improve:\n\n• **Productivity**\n• **Decision-making**\n• **Internal user experience**"
     },
     "question2": {
-      "q": "What are the main features of LLMApps?",
-      "a": "Our LLM Apps include advanced natural language processing, integration with existing databases, customization according to your industry, automatic scalability and intuitive interfaces for non-technical users."
+      "q": "What integrations does the platform support and how do they improve responses?",
+      "a": "The **LLMApp platform** integrates with:\n\n• **SharePoint** (enterprise documents)\n• **Databases** (SQL Server, MySQL, PostgreSQL, MongoDB, BigQuery, etc.)\n• **Files** (PDF, Excel, Word, images)\n• **REST and GraphQL APIs**\n• **MCP** (Model Context Protocol)\n\n**Important:** Agents are trained with **personalized business examples** that teach how and when to use each source, achieving **much more accurate and relevant** responses."
     },
     "question3": {
-      "q": "Is my data secure when using LLM Apps?",
-      "a": "Absolutely. We implement end-to-end encryption, comply with international security standards such as ISO 27001, and your data is never shared with third parties. Additionally, we offer on-premise deployment options for maximum security."
+      "q": "How long does the LLMApp platform implementation take?",
+      "a": "The **LLMApp** implementation project is designed to be agile and comprehensive, ensuring your organization can start leveraging AI benefits in the shortest time possible.\n\nThe base setup duration is **3 weeks**: 1 week for platform and infrastructure configuration, 2 weeks for creation and adjustments of the first agent. Each additional agent requires approximately **2 more weeks**."
     },
     "question4": {
-      "q": "What differentiates your LLM Apps from other AI solutions?",
-      "a": "We specialize in customized solutions for each business, offer complete integration with existing systems, Spanish support, and a consultative approach that ensures AI truly solves your specific problems."
+      "q": "What does the initial setup include?",
+      "a": "The **LLMApp** initial setup includes everything needed to launch your AI agents platform:\n\nMulti-agent platform setup, connection with client data, agent creation and configuration, database schema generation per agent, training examples definition, Mastra chat interface, agent management, functional testing, and Azure deployment.\n\nAdditionally includes:\n• **Alerts creation**\n• **Custom dashboards**\n• **Automated reports**"
     },
     "question5": {
-      "q": "What is the cost of developing an LLM App?",
-      "a": "The cost varies depending on complexity and specific features. We offer plans starting at $2,000 USD per month for basic solutions, up to customized enterprise projects. Contact us for a detailed quote."
+      "q": "What are the implementation and monthly usage costs?",
+      "a": "**Implementation (one-time payment):**\n• Initial setup: **USD 4,200** (includes platform + infrastructure + 1 agent)\n• Each additional agent: **USD 2,000**\n\n**Monthly Usage (recurring):**\nTiered by users:\n• 0-100 users: **USD 10/user**\n• 100-500 users: **USD 7/user**\n• 500-1000 users: **USD 5/user**\n• 3000+ users: **USD 3/user**\n\n**Monthly Support:**\n• **Basic Support: USD 2,500** (included in all implementations)\n• **Medium Support: USD 4,000**\n• **Pro Support: USD 5,000**"
     },
     "question6": {
-      "q": "What type of support do you offer after launch?",
-      "a": "We provide 24/7 technical support, regular model updates, performance monitoring, team training, and continuous improvements based on actual use of your application."
+      "q": "What does the USD 2,500 monthly Basic Support include?",
+      "a": "Basic Support includes **EVERYTHING needed to operate:**\n\n• **Complete Azure infrastructure** (Container Registry, Container Apps, Azure Foundry, PostgreSQL)\n• **Complete Azure CSP management**\n• **Platform operational maintenance**\n• **Monthly monitoring** (status, logs, failure detection)\n• **Technical incident response with SLA**\n• **Monthly patches and updates**\n• **Monthly system review**\n\nIt's a **predictable fixed cost** that includes EVERYTHING."
+    },
+    "question7": {
+      "q": "What are the differences between Medium and Pro Support?",
+      "a": "**Medium Support (USD 4,000/month):**\nBasic Support + **20 monthly hours** for improvements, bi-weekly monitoring, prompt and agent optimization, functional adjustments.\n\n**Pro Support (USD 5,000/month):**\nMedium Support + **30 additional hours (50 hrs total)**, AI model fine-tuning, dataset expansion, advanced observability with dashboards, custom alerts, and analytical reports."
     }
   },
   "pricing": {

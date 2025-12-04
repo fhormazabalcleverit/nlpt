@@ -10,6 +10,17 @@ const FAQ = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
 
+  // Function to render text with bold markdown (**text**)
+  const renderTextWithBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={index}>{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
   const faqs = [
     {
       question: t.faq.question1.q,
@@ -34,6 +45,10 @@ const FAQ = () => {
     {
       question: t.faq.question6.q,
       answer: t.faq.question6.a
+    },
+    {
+      question: t.faq.question7.q,
+      answer: t.faq.question7.a
     }
   ];
 
@@ -56,7 +71,15 @@ const FAQ = () => {
             {t.faq.title}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {t.faq.subtitle}
+            {t.faq.subtitle}{' '}
+            <a 
+              href={t.faq.subtitleLink.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:text-pink-300 underline transition-colors"
+            >
+              {t.faq.subtitleLink.text}
+            </a>
           </p>
         </div>
 
@@ -87,13 +110,13 @@ const FAQ = () => {
               
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  openIndex === index ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="px-6 pb-6 pt-0">
                   <div className="border-t border-gray-900 pt-6">
-                    <p className="text-gray-400 leading-relaxed">
-                      {faq.answer}
+                    <p className="text-gray-400 leading-relaxed whitespace-pre-line">
+                      {renderTextWithBold(faq.answer)}
                     </p>
                   </div>
                 </div>

@@ -207,7 +207,11 @@
   "faq": {
     "badge": "FAQ",
     "title": "Respuestas a preguntas comunes",
-    "subtitle": "Resolvemos las dudas más comunes sobre nuestros servicios de LLM Apps y cómo pueden transformar tu negocio.",
+    "subtitle": "Preguntas principales sobre LLM Apps. Para consultas detalladas:",
+    "subtitleLink": {
+      "text": "Habla con nuestro agente AI",
+      "url": "https://phoenix.cleveritgroup.ai/"
+    },
     "certBadge": "Expertos verificados",
     "certTitle": "Certificados en IA",
     "certDescription": "En Cleverit contamos con la certificación de",
@@ -216,28 +220,32 @@
     "certFeature1": "Modernizar y migrar tus aplicaciones empresariales a la nube",
     "certFeature2": "Impulsar la productividad de tus desarrolladores con Microsoft Azure",
     "question1": {
-      "q": "¿Qué son exactamente las LLM Apps?",
-      "a": "Las LLM Apps son aplicaciones inteligentes que utilizan modelos de lenguaje grandes para procesar, analizar y generar contenido de manera natural. Permiten a las empresas automatizar tareas complejas de comunicación y análisis de datos."
+      "q": "¿Qué valor aporta la implementación de LLM Apps a mi organización?",
+      "a": "**LLMApp** es una plataforma que te permite crear y gestionar **múltiples agentes de IA especializados**, cada uno con su propia base de datos, ejemplos de entrenamiento y configuración específica.\n\nEsto permite a las organizaciones tener distintos agentes enfocados en diferentes áreas de negocio (ventas, soporte, operaciones, etc.), transformando la información dispersa en **asistentes conversacionales inteligentes** que mejoran:\n\n• **La productividad**\n• **La toma de decisiones**\n• **La experiencia de los usuarios internos**"
     },
     "question2": {
-      "q": "¿Cuáles son las características principales de LLMApps?",
-      "a": "Nuestras LLM Apps incluyen procesamiento de lenguaje natural avanzado, integración con bases de datos existentes, personalización según tu industria, escalabilidad automática y interfaces intuitivas para usuarios no técnicos."
+      "q": "¿Qué integraciones soporta la plataforma y cómo mejoran las respuestas?",
+      "a": "La plataforma **LLMApp** se integra con:\n\n• **SharePoint** (documentos empresariales)\n• **Bases de datos** (SQL Server, MySQL, PostgreSQL, MongoDB, BigQuery, etc.)\n• **Archivos** (PDF, Excel, Word, imágenes)\n• **APIs REST y GraphQL**\n• **MCP** (Model Context Protocol)\n\n**Importante:** Los agentes son entrenados con **ejemplos de negocio personalizados** que enseñan cómo y cuándo usar cada fuente, logrando respuestas **mucho más precisas y relevantes**."
     },
     "question3": {
-      "q": "¿Mis datos están seguros al usar LLM Apps?",
-      "a": "Absolutamente. Implementamos encriptación de extremo a extremo, cumplimos con estándares internacionales de seguridad como ISO 27001, y tus datos nunca se comparten con terceros. Además, ofrecemos opciones de despliegue on-premise para máxima seguridad."
+      "q": "¿Cuánto dura la implementación de la plataforma LLMApp?",
+      "a": "El proyecto de implementación de **LLMApp** está diseñado para ser ágil y completo, asegurando que tu organización pueda comenzar a aprovechar los beneficios de la IA en el menor tiempo posible.\n\nLa duración del setup base es de **3 semanas**: 1 semana para configuración de plataforma e infraestructura, 2 semanas para creación y ajustes del primer agente. Cada agente adicional requiere aproximadamente **2 semanas más**."
     },
     "question4": {
-      "q": "¿Qué diferencia a sus LLM Apps de otras soluciones de IA?",
-      "a": "Nos especializamos en soluciones personalizadas para cada negocio, ofrecemos integración completa con sistemas existentes, soporte en español, y un enfoque consultivo que garantiza que la IA realmente resuelva tus problemas específicos."
+      "q": "¿Qué incluye el setup inicial?",
+      "a": "El setup inicial de **LLMApp** incluye todo lo necesario para poner en marcha tu plataforma de agentes de IA:\n\nSetup de plataforma multi-agente, conexión con datos del cliente, creación y configuración de agente, generación de esquema de base de datos por agente, definición de ejemplos de entrenamiento, interfaz de chat Mastra, gestión de agentes, pruebas funcionales y despliegue en Azure.\n\nAdemás incluye:\n• **Creación de alertas**\n• **Dashboards personalizados**\n• **Reportes automatizados**"
     },
     "question5": {
-      "q": "¿Cuál es el costo de desarrollar una LLM App?",
-      "a": "El costo varía según la complejidad y características específicas. Ofrecemos planes desde $2,000 USD mensuales para soluciones básicas, hasta proyectos enterprise personalizados. Contacta con nosotros para una cotización detallada."
+      "q": "¿Cuáles son los costos de implementación y uso mensual?",
+      "a": "**Implementación (pago único):**\n• Setup inicial: **USD 4,200** (incluye plataforma + infraestructura + 1 agente)\n• Cada agente adicional: **USD 2,000**\n\n**Uso Mensual (recurrente):**\nEscalonado por usuarios:\n• 0-100 usuarios: **USD 10/usuario**\n• 100-500 usuarios: **USD 7/usuario**\n• 500-1000 usuarios: **USD 5/usuario**\n• 3000+ usuarios: **USD 3/usuario**\n\n**Soporte mensual:**\n• **Soporte Básico: USD 2,500** (incluido en toda implementación)\n• **Soporte Medio: USD 4,000**\n• **Soporte Pro: USD 5,000**"
     },
     "question6": {
-      "q": "¿Qué tipo de soporte ofrecen después del lanzamiento?",
-      "a": "Proporcionamos soporte técnico 24/7, actualizaciones regulares del modelo, monitoreo de rendimiento, capacitación para tu equipo, y mejoras continuas basadas en el uso real de tu aplicación."
+      "q": "¿Qué incluye el Soporte Básico de USD 2,500 mensuales?",
+      "a": "El Soporte Básico incluye **TODO lo necesario para operar:**\n\n• **Infraestructura Azure completa** (Container Registry, Container Apps, Azure Foundry, PostgreSQL)\n• **Gestión completa CSP de Azure**\n• **Mantención operativa** de la plataforma\n• **Monitoreo mensual** (estado, logs, detección de fallas)\n• **Atención de incidentes con SLA**\n• **Parches y actualizaciones mensuales**\n• **Revisión mensual del sistema**\n\nEs un **costo fijo predecible** que incluye TODO."
+    },
+    "question7": {
+      "q": "¿Qué diferencias hay entre Soporte Medio y Pro?",
+      "a": "**Soporte Medio (USD 4,000/mes):**\nSoporte Básico + **20 horas mensuales** para mejoras, monitoreo quincenal, optimización de prompts y agentes, ajustes funcionales.\n\n**Soporte Pro (USD 5,000/mes):**\nSoporte Medio + **30 horas adicionales (50 hrs totales)**, fine-tuning de modelos, ampliación de datasets, observabilidad avanzada con dashboards, alertas personalizadas y reportes analíticos."
     }
   },
   "pricing": {

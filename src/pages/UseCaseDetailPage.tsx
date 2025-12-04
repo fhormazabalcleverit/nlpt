@@ -58,7 +58,8 @@ const UseCaseDetailPage = () => {
       solution: t.useCases.case3.solution,
       results: t.useCases.case3.results,
       features: t.useCases.case3.features,
-      icon: BarChart3,
+      icon: null,
+      iconSvg: '/faviconPulzen LLMApp.svg',
       gradient: 'from-purple-500 to-pink-500',
       image: '/articles/Technology.png',
       demoUrl: 'https://pulzen-llmapp.cleveritgroup.ai'
@@ -116,7 +117,11 @@ const UseCaseDetailPage = () => {
           <div className="flex items-center gap-6 mb-6">
             {/* Icon Circle */}
             <div className={`w-20 h-20 bg-gradient-to-r ${useCase.gradient} rounded-full flex items-center justify-center border-4 border-gray-900/50 flex-shrink-0`}>
-              <useCase.icon className="w-10 h-10 text-white" />
+              {(useCase as any).iconSvg ? (
+                <img src={(useCase as any).iconSvg} alt={useCase.title} className="w-10 h-10" />
+              ) : (
+                <useCase.icon className="w-10 h-10 text-white" />
+              )}
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">

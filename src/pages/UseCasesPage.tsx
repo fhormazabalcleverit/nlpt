@@ -34,7 +34,8 @@ const UseCasesPage = () => {
     },
     {
       id: 'development-metrics',
-      icon: BarChart3,
+      icon: null, // Will use SVG instead
+      iconSvg: '/faviconPulzen LLMApp.svg',
       title: t.useCases.case3.title,
       excerpt: t.useCases.case3.excerpt,
       category: t.useCases.case3.category,
@@ -77,7 +78,11 @@ const UseCasesPage = () => {
                 {/* Icon positioned outside and above the card */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 translate-y-2">
                   <div className={`w-24 h-24 bg-gradient-to-r ${useCase.gradient} rounded-full flex items-center justify-center border-4 border-gray-900/50`}>
-                    <IconComponent className="w-12 h-12 text-white" />
+                    {useCase.iconSvg ? (
+                      <img src={useCase.iconSvg} alt={useCase.title} className="w-12 h-12" />
+                    ) : (
+                      IconComponent && <IconComponent className="w-12 h-12 text-white" />
+                    )}
                   </div>
                 </div>
 
