@@ -1,5 +1,5 @@
 // import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
@@ -18,10 +18,11 @@ import QuotePage from './pages/QuotePage';
 import TeamPage from './pages/TeamPage';
 import UseCasesPage from './pages/UseCasesPage';
 import UseCaseDetailPage from './pages/UseCaseDetailPage';
+import WebPlzPage from './pages/WebPlzPage';
 
 const HomePage = () => (
   <>
-    <DynamicSEO 
+    <DynamicSEO
       title="LLMApps by CleverIT | Generative AI and Business Automation Solutions"
       description="Transformamos tu negocio con LLM Apps que potencian la productividad y automatización. Carga, memoriza y conversa con tus datos de manera inteligente."
       image="/meta/thumbnail.jpg"
@@ -39,23 +40,30 @@ const HomePage = () => (
   </>
 );
 
+const MainLayout = () => (
+  <div className="min-h-screen bg-backblack">
+    <Navbar />
+    <Outlet />
+    <Footer />
+  </div>
+);
+
 function App() {
   return (
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen bg-backblack">
-          <Navbar />
-          <Routes>
+        <Routes>
+          <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/plans" element={<PricingPage />} />
             <Route path="/quote" element={<QuotePage />} />
             <Route path="/use-cases" element={<UseCasesPage />} />
             <Route path="/use-cases/:id" element={<UseCaseDetailPage />} />
-          </Routes>
-          <Footer />
-        </div>
+          </Route>
+          <Route path="/web/plz" element={<WebPlzPage />} />
+        </Routes>
       </Router>
     </LanguageProvider>
   );
