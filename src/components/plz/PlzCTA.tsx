@@ -16,12 +16,11 @@ const PlzCTA = () => {
                         <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed font-light">
                             Transforma datos en ventaja competitiva y lleva tu operación al siguiente nivel con inteligencia artificial aplicada.
                         </p>
-
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="px-6 py-3 text-sm md:text-base font-medium text-white bg-[#0e52e0] hover:bg-[#1d4ed8] rounded-xl transition-all shadow-lg shadow-blue-900/20 text-center">
+                            <button className="px-6 py-3 text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-[#17BBCD]/10">
                                 Solicitar demo personalizada
                             </button>
-                            <button className="px-6 py-3 text-sm md:text-base font-medium text-gray-200 bg-[#0a0f12]/50 backdrop-blur-sm border border-gray-800 hover:border-gray-500 hover:bg-white/5 rounded-xl transition-all text-center">
+                            <button className="px-6 py-3 text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
                                 Hablar con un especialista
                             </button>
                         </div>

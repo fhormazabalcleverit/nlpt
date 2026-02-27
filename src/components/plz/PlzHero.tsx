@@ -18,9 +18,22 @@ const PlzHero = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <section className="relative w-full bg-[#040809] pt-32 pb-20 lg:pt-80 lg:pb-32 font-sansation overflow-hidden">
+        <section
+            className="relative w-full bg-[#040809] pt-32 pb-20 lg:pt-80 lg:pb-32 font-sansation overflow-hidden"
+            style={{
+                backgroundImage: "url('/plz/brand/background-hero.svg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
             {/* Subtle blue gradient on the left side similar to screenshot */}
-            <div className="absolute -top-1/4 -left-64 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+            {/* <div className="absolute -top-1/4 -left-64 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+
+            <div className="absolute -top-1/4 -right-64 w-[700px] h-[700px] bg-red-900/20 rounded-full blur-[120px] pointer-events-none"></div> */}
+
+
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl">
@@ -31,7 +44,7 @@ const PlzHero = () => {
                         <br className="hidden md:block" />
                         <span
                             key={index}
-                            className="inline-block animate-fade-in-up text-[#0e52e0]"
+                            className="inline-block animate-fade-in-up text-[#B81769]"
                         >
                             {phrases[index]}
                         </span>
@@ -41,10 +54,10 @@ const PlzHero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="px-6 py-3 text-base font-medium text-white bg-[#0e52e0] hover:bg-[#1d4ed8] rounded-xl transition-all shadow-lg shadow-blue-900/20">
+                        <button className="px-6 py-3 text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20">
                             Comience con su proceso
                         </button>
-                        <button className="px-6 py-3 text-base font-medium text-gray-200 bg-[#0a0f12] border border-gray-800 hover:border-gray-600 hover:bg-white/5 rounded-xl transition-all">
+                        <button className="px-6 py-3 text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
                             Vea la demostración de 2 minutos
                         </button>
                     </div>

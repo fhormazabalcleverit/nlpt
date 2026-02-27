@@ -76,7 +76,7 @@ const PlzGraphic = () => {
                     <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 inline-block tracking-widest uppercase">
                         Ventajas de tu IA
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight leading-tight max-w-3xl mb-6">
+                    <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-3xl mb-6">
                         Escala tu operación con un agente inteligente y adaptativo
                     </h2>
                     <p className="text-lg md:text-xl text-gray-400 font-light max-w-2xl leading-relaxed">
@@ -91,9 +91,10 @@ const PlzGraphic = () => {
                         <svg viewBox="0 0 1000 400" className="w-full h-full preserve-3d" preserveAspectRatio="none">
                             <defs>
                                 <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="#2552b4ff" />
-                                    <stop offset="50%" stopColor="#2552b4ff" />
-                                    <stop offset="100%" stopColor="#2552b4ff" />
+                                    <stop offset="0%" stopColor="#000000" />
+                                    <stop offset="25%" stopColor="#B81769" />
+                                    <stop offset="75%" stopColor="#B81769" />
+                                    <stop offset="100%" stopColor="#200011" />
                                 </linearGradient>
                                 <linearGradient id="bgLineGrad" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
                                     <stop offset="0%" stopColor="transparent" />
@@ -142,7 +143,7 @@ const PlzGraphic = () => {
                                             cy={cy}
                                             r="12"
                                             fill="#040809"
-                                            stroke="#7da2f1ff"
+                                            stroke="#B81769"
                                             strokeWidth="6"
                                         />
                                         <circle
@@ -150,7 +151,7 @@ const PlzGraphic = () => {
                                             cy={cy}
                                             r="12"
                                             fill="transparent"
-                                            stroke="#ffffff"
+                                            stroke="#560F9D"
                                             strokeWidth="6"
                                             opacity={highlightRatio}
                                         />
@@ -164,9 +165,11 @@ const PlzGraphic = () => {
                     <div className="relative z-10 w-full md:w-1/2 flex-none translate-y-2 md:translate-y-10 pointer-events-none">
                         <h3 className="text-2xl md:text-3xl text-white mb-2 tracking-tight">Evolución operacional</h3>
                         <h3 className="text-2xl md:text-3xl text-gray-300 font-light mb-8 tracking-tight">para la escalabilidad de cada servicio.</h3>
-                        <button className="px-5 py-2 text-sm font-medium text-white bg-transparent border border-white/20 rounded-lg transition-colors pointer-events-auto hover:bg-white/5">
+                        <button className="px-5 py-2 text-sm font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all  pointer-events-auto">
                             Conocer más
                         </button>
+
+
                     </div>
 
                     {/* Animated Labels */}
@@ -201,12 +204,12 @@ const PlzGraphic = () => {
                                     <div
                                         className="px-4 py-2 backdrop-blur-md rounded-full text-xs md:text-sm shadow-xl whitespace-nowrap whitespace-pre"
                                         style={{
-                                            backgroundColor: highlightRatio > 0 ? `rgba(37, 82, 180, ${highlightRatio * 0.2 + 0.05})` : 'rgba(255, 255, 255, 0.05)',
-                                            borderColor: highlightRatio > 0 ? `rgba(37, 82, 180, ${highlightRatio * 0.8 + 0.1})` : 'rgba(255, 255, 255, 0.1)',
+                                            backgroundColor: highlightRatio > 0 ? `rgba(86, 15, 157, ${highlightRatio * 0.2 + 0.05})` : 'rgba(255, 255, 255, 0.05)',
+                                            borderColor: highlightRatio > 0 ? `rgba(86, 15, 157, ${highlightRatio * 0.8 + 0.1})` : 'rgba(255, 255, 255, 0.1)',
                                             borderWidth: '1px',
                                             borderStyle: 'solid',
                                             color: highlightRatio > 0 ? '#ffffff' : '#d1d5db',
-                                            boxShadow: highlightRatio > 0 ? `0 10px 15px -3px rgba(37, 82, 180, ${highlightRatio * 0.4})` : '0 10px 15px -3px rgba(59, 130, 246, 0.1)'
+                                            boxShadow: highlightRatio > 0 ? `0 10px 15px -3px rgba(86, 15, 157, ${highlightRatio * 0.4})` : '0 10px 15px -3px rgba(86, 15, 157, 0.1)'
                                         }}
                                     >
                                         {benefit}

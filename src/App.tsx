@@ -19,6 +19,9 @@ import TeamPage from './pages/TeamPage';
 import UseCasesPage from './pages/UseCasesPage';
 import UseCaseDetailPage from './pages/UseCaseDetailPage';
 import WebPlzPage from './pages/WebPlzPage';
+import WebPlzPerformancePage from './pages/WebPlzPerformancePage';
+import WebPlzMiningPage from './pages/WebPlzMiningPage';
+import WebPlzRetailPage from './pages/WebPlzRetailPage';
 
 const HomePage = () => (
   <>
@@ -63,6 +66,9 @@ function App() {
             <Route path="/use-cases/:id" element={<UseCaseDetailPage />} />
           </Route>
           <Route path="/web/plz" element={<WebPlzPage />} />
+          <Route path="/web/plz-performance" element={<WebPlzPerformancePage />} />
+          <Route path="/web/plz-mining" element={<WebPlzMiningPage />} />
+          <Route path="/web/plz-retail" element={<WebPlzRetailPage />} />
         </Routes>
       </Router>
     </LanguageProvider>

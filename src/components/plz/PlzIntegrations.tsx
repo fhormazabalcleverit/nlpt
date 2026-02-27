@@ -56,7 +56,7 @@ const PlzIntegrations = () => {
                     <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-6 inline-block tracking-widest uppercase bg-white/5">
                         Integraciones
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight leading-tight max-w-4xl mb-6">
+                    <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
                         Ponga los datos a su servicio
                     </h2>
                     <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
@@ -73,13 +73,13 @@ const PlzIntegrations = () => {
                         <div className="w-full relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/11] flex items-center justify-center p-6 shadow-2xl">
 
                             {/* Dynamic Gradient Background (Aurora effect) */}
-                            <div className="absolute inset-0 bg-[#0b1b3d]"></div>
+                            <div className="absolute inset-0 bg-[#560F9D]/40"></div>
                             <div
-                                className="absolute inset-0 opacity-60 transition-all duration-1000 ease-in-out"
+                                className="absolute inset-0 opacity-60 transition-all duration-1000 ease-in-out transition-all duration-1000 ease-in-out"
                                 style={{
-                                    background: `radial-gradient(circle at ${50 + (activeIndex % 2) * 20}% ${40 + (activeIndex % 3) * 10}%, #1e40af 0%, transparent 60%),
-                                                radial-gradient(circle at ${30 + (activeIndex % 3) * 20}% ${70 - (activeIndex % 2) * 20}%, #3b82f6 0%, transparent 50%),
-                                                radial-gradient(circle at ${80 - (activeIndex % 2) * 30}% ${20 + (activeIndex % 3) * 15}%, #0ea5e9 0%, transparent 40%)`
+                                    background: `radial-gradient(circle at ${50 + (activeIndex % 2) * 20}% ${40 + (activeIndex % 3) * 10}%, #2C8AA0 0%, transparent 60%),
+                                                radial-gradient(circle at ${30 + (activeIndex % 3) * 20}% ${70 - (activeIndex % 2) * 20}%, #17BBCD 0%, transparent 50%),
+                                                radial-gradient(circle at ${80 - (activeIndex % 2) * 30}% ${20 + (activeIndex % 3) * 15}%, #560F9D 0%, transparent 40%)`
                                 }}
                             ></div>
 

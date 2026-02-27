@@ -47,7 +47,7 @@ const PlzFAQ = () => {
                             >
                                 <span className="text-md md:text-lg font-medium text-gray-200">{faq.question}</span>
                                 <ChevronDown
-                                    className={`w-6 h-6 text-[#0e52e0] transition-transform duration-300 flex-shrink-0 ml-4 ${openIndex === index ? 'rotate-180' : ''}`}
+                                    className={`w-6 h-6 text-[#17BBCD] transition-transform duration-300 flex-shrink-0 ml-4 ${openIndex === index ? 'rotate-180' : ''}`}
                                 />
                             </button>
 

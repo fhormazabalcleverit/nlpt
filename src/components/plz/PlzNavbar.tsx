@@ -6,7 +6,7 @@ const PlzNavbar = () => {
     return (
         <nav className="w-full bg-[#040809]/80 backdrop-blur-sm fixed top-0 z-50 border-b border-white/5 font-sansation">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+                <div className="flex justify-between items-center h-16 relative">
                     {/* Logo */}
                     <div className="flex items-center">
                         <a href="/web/plz" className="text-white font-bold text-xl tracking-tight flex items-center gap-1">
@@ -15,7 +15,7 @@ const PlzNavbar = () => {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Plataforma</a>
                         <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Soluciones</a>
                         <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">Recursos</a>
@@ -24,10 +24,10 @@ const PlzNavbar = () => {
 
                     {/* Buttons */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <button className="px-5 py-2 text-sm font-medium text-white bg-transparent border border-white/20 rounded-lg hover:bg-white/10 transition-all">
+                        <button className="px-5 py-2 text-sm font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
                             Conectarse
                         </button>
-                        <button className="px-5 py-2 text-sm font-medium text-white bg-[#2563EB] rounded-lg hover:bg-[#1D4ED8] transition-all">
+                        <button className="px-5 py-2 text-sm font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20">
                             Solicitar acceso
                         </button>
                     </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const cases = [
     { id: 'mining', title: 'Minería' },
@@ -7,7 +8,7 @@ const cases = [
     { id: 'performance', title: 'Performance' },
 ];
 
-const tabData: Record<string, { image: string, title: string, desc: string, btn: string, tags: { icon: string, text: string }[] }> = {
+const tabData: Record<string, { image: string, title: string, desc: string, btn: string, link?: string, tags: { icon: string, text: string }[] }> = {
     mining: {
         image: '/mining_operations.png',
         title: 'Minería Autónoma',
@@ -18,7 +19,8 @@ const tabData: Record<string, { image: string, title: string, desc: string, btn:
             { icon: '⚠️', text: 'Monitor de Seguridad AI Agent' },
             { icon: '⚙️', text: 'Mando de Equipos Predictivo' },
             { icon: '📊', text: 'Análisis de Mineral AI Agent' },
-        ]
+        ],
+        link: '/web/plz-mining'
     },
     retail: {
         image: '/retail_analytics.png',
@@ -30,7 +32,8 @@ const tabData: Record<string, { image: string, title: string, desc: string, btn:
             { icon: '🎯', text: 'Generador de Promociones AI' },
             { icon: '🛒', text: 'Soporte E-Commerce AI Agent' },
             { icon: '📉', text: 'Predicción de Demanda AI' },
-        ]
+        ],
+        link: '/web/plz-retail'
     },
     performance: {
         image: '/performance_analytics.png',
@@ -42,14 +45,18 @@ const tabData: Record<string, { image: string, title: string, desc: string, btn:
             { icon: '📋', text: 'Generador de Reportes AI' },
             { icon: '🛡️', text: 'Detección de Fraude AI Agent' },
             { icon: '💡', text: 'Recomendador de Inversión' },
-        ]
+        ],
+        link: '/web/plz-performance'
     }
 };
 
 const PlzCases = () => {
     const [activeTab, setActiveTab] = useState('mining');
+    const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if (isHovered) return;
         const interval = setInterval(() => {
             setActiveTab((current) => {
                 const currentIndex = cases.findIndex(c => c.id === current);
@@ -58,7 +65,7 @@ const PlzCases = () => {
             });
         }, 4000);
         return () => clearInterval(interval);
-    }, []);
+    }, [isHovered]);
 
     const currentData = tabData[activeTab];
 
@@ -71,7 +78,7 @@ const PlzCases = () => {
                     <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-6 inline-block tracking-widest uppercase bg-white/5">
                         Casos aplicados
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight leading-tight max-w-4xl mb-6">
+                    <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
                         Aplicación real del agente en distintas industrias, rubros y negocios.
                     </h2>
                     <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
@@ -88,7 +95,7 @@ const PlzCases = () => {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`px-6 md:px-12 py-3 rounded-full text-sm font-medium transition-all cursor-pointer ${activeTab === tab.id
-                                    ? 'bg-white text-black shadow-lg shadow-white/10'
+                                    ? 'bg-[#19687A] text-white shadow-lg shadow-[#19687A]/20'
                                     : 'text-gray-400 hover:text-white bg-transparent'
                                     }`}
                             >
@@ -99,7 +106,16 @@ const PlzCases = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="w-full relative rounded-[2rem] overflow-hidden bg-[#11161A] aspect-square md:aspect-[16/7] border border-white/10 shadow-2xl">
+                <div
+                    className="w-full relative rounded-[2rem] overflow-hidden bg-[#11161A] aspect-square md:aspect-[16/7] border border-white/10 hover:border-[#19687A] transition-all duration-300 shadow-2xl cursor-pointer"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    onClick={() => {
+                        if (currentData.link) {
+                            navigate(currentData.link);
+                        }
+                    }}
+                >
 
                     {/* Preload images logic */}
                     <div className="hidden">
@@ -140,7 +156,15 @@ const PlzCases = () => {
                             </div>
 
                             {/* CTA Button */}
-                            <button className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-xl text-white text-sm font-medium transition-all animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+                            <button
+                                onClick={() => {
+                                    if (currentData.link) {
+                                        navigate(currentData.link);
+                                    }
+                                }}
+                                className="flex items-center gap-2 px-6 py-3 text-[#17BBCD] hover:text-[#19687A] border border-[#17BBCD] hover:border-[#19687A] rounded-xl text-white text-sm font-medium transition-all animate-fade-in-up"
+                                style={{ animationDelay: '300ms' }}
+                            >
                                 {currentData.btn}
                                 <ChevronRight className="w-4 h-4 ml-1" />
                             </button>
