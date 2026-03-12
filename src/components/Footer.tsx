@@ -79,11 +79,11 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-1 text-gray-400 text-sm order-2 md:order-1 mt-12 md:mt-0">
               <span>{language === 'es' ? 'Creado por' : 'Created by'}</span>
               <div className="flex items-center space-x-1">
-               
+
                 <a href="https://www.cleveritgroup.com/es" target="_blank" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 underline">
-                 
-                   <img src="https://cdn.prod.website-files.com/5ff9f08ad0f45f13b2c0e743/641caf0bae4bded796d89833_logo-cleverit-blanco.png" className="w-20" alt="Cleverit"/>
-                  
+
+                  <img src="https://cdn.prod.website-files.com/5ff9f08ad0f45f13b2c0e743/641caf0bae4bded796d89833_logo-cleverit-blanco.png" className="w-20" alt="Cleverit" />
+
                 </a>
                 <span>2025 LLMApps.</span>
               </div>
@@ -93,9 +93,9 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-sm underline">
                 {t.footer.terms}
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-sm underline">
+              <Link to="/privacy" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 text-sm underline">
                 {t.footer.privacy}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

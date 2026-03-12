@@ -78,7 +78,7 @@ const WebPlzMiningPage = () => {
                             Ver demo en funcionamiento
                         </Link>
                         <Link
-                            to="/quote"
+                            to="/web/plz-contact"
                             className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#19687A] hover:border-[#17BBCD] text-[#19687A] hover:text-[#17BBCD] rounded-xl text-sm font-medium transition-colors"
                         >
                             Contactar al equipo

@@ -22,6 +22,13 @@ import WebPlzPage from './pages/WebPlzPage';
 import WebPlzPerformancePage from './pages/WebPlzPerformancePage';
 import WebPlzMiningPage from './pages/WebPlzMiningPage';
 import WebPlzRetailPage from './pages/WebPlzRetailPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import WebPlzPlatformPage from './pages/WebPlzPlatformPage';
+import WebPlzAboutPage from './pages/WebPlzAboutPage';
+import WebPlzCasesPage from './pages/WebPlzCasesPage';
+import WebPlzContactPage from './pages/WebPlzContactPage';
+import WebPlzQuotePage from './pages/WebPlzQuotePage';
 
 const HomePage = () => (
   <>
@@ -65,10 +72,17 @@ function App() {
             <Route path="/use-cases" element={<UseCasesPage />} />
             <Route path="/use-cases/:id" element={<UseCaseDetailPage />} />
           </Route>
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
           <Route path="/web/plz" element={<WebPlzPage />} />
           <Route path="/web/plz-performance" element={<WebPlzPerformancePage />} />
           <Route path="/web/plz-mining" element={<WebPlzMiningPage />} />
           <Route path="/web/plz-retail" element={<WebPlzRetailPage />} />
+          <Route path="/web/plz-platform" element={<WebPlzPlatformPage />} />
+          <Route path="/web/plz-about" element={<WebPlzAboutPage />} />
+          <Route path="/web/plz-cases" element={<WebPlzCasesPage />} />
+          <Route path="/web/plz-contact" element={<WebPlzContactPage />} />
+          <Route path="/web/plz-quote" element={<WebPlzQuotePage />} />
         </Routes>
       </Router>
     </LanguageProvider>

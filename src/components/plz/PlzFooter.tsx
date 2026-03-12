@@ -1,4 +1,5 @@
 import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PlzFooter = () => {
     return (
@@ -34,8 +35,8 @@ const PlzFooter = () => {
                 <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-light text-gray-500">
                     <p>&copy; {new Date().getFullYear()} Pulzen AI. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
-                        <a href="#" className="hover:text-gray-300 transition-colors">Aviso de Privacidad</a>
-                        <a href="#" className="hover:text-gray-300 transition-colors">Términos del Servicio</a>
+                        <Link to="/privacy" className="hover:text-gray-300 transition-colors">Aviso de Privacidad</Link>
+                        <Link to="/terms" className="hover:text-gray-300 transition-colors">Términos del Servicio</Link>
                         <a href="#" className="hover:text-gray-300 transition-colors">Cookies</a>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const phrases = [
     "tu negocio.",
@@ -54,9 +55,9 @@ const PlzHero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="px-6 py-3 text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20">
-                            Comience con su proceso
-                        </button>
+                        <Link to="/web/plz-contact" className="px-6 py-3 text-center text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20">
+                            Conversa con el equipo
+                        </Link>
                         <button className="px-6 py-3 text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
                             Vea la demostración de 2 minutos
                         </button>

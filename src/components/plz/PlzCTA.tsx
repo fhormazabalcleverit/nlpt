@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const PlzCTA = () => {
     return (
         <section className="relative w-full bg-[#040809] py-32 font-sansation overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/plz/brand/background-cta.svg')" }}>
@@ -20,9 +22,9 @@ const PlzCTA = () => {
                             <button className="px-6 py-3 text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-[#17BBCD]/10">
                                 Solicitar demo personalizada
                             </button>
-                            <button className="px-6 py-3 text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
+                            <Link to="/web/plz-contact" className="px-6 py-3 text-center text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
                                 Hablar con un especialista
-                            </button>
+                            </Link>
                         </div>
                     </div>
 

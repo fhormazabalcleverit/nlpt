@@ -88,18 +88,35 @@ const PlzCases = () => {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex justify-center mb-12">
-                    <div className="flex p-2 overflow-x-auto w-full md:w-auto">
+                <div className="flex justify-center mb-12 relative">
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                        @keyframes fillProgress {
+                            0% { width: 0%; }
+                            100% { width: 100%; }
+                        }
+                    `}} />
+                    <div className="flex p-2 overflow-x-auto w-full md:w-auto gap-2">
                         {cases.map((tab) => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`px-6 md:px-12 py-3 rounded-full text-sm font-medium transition-all cursor-pointer ${activeTab === tab.id
+                                className={`relative overflow-hidden px-6 md:px-12 py-3 rounded-xl text-sm font-medium transition-all cursor-pointer ${activeTab === tab.id
                                     ? 'bg-[#19687A] text-white shadow-lg shadow-[#19687A]/20'
                                     : 'text-gray-400 hover:text-white bg-transparent'
                                     }`}
                             >
-                                {tab.title}
+                                <span className="relative z-10">{tab.title}</span>
+                                {activeTab === tab.id && (
+                                    /* Progress border that fills left to right */
+                                    <div
+                                        className="absolute bottom-0 left-0 h-[3px] bg-white/70"
+                                        style={{
+                                            animation: 'fillProgress 4s linear',
+                                            animationPlayState: isHovered ? 'paused' : 'running'
+                                        }}
+                                    />
+                                )}
                             </button>
                         ))}
                     </div>

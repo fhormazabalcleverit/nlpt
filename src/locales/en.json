@@ -8,10 +8,9 @@
   },
   "team": {
     "titleA": "Technology with ",
-    "titleHighlightA":"purpose",
+    "titleHighlightA": "purpose",
     "titleB": ", people with v ",
-    "titleHighlightB":"vision",
-    
+    "titleHighlightB": "vision",
     "description": "At CleverIT we believe that behind every successful technological solution there is a passionate, creative and committed team.",
     "cta": "Call to action",
     "quote": "Technology evolves every day, but what really makes a difference are the people who drive it. Our purpose is to transform innovation into tangible results",
@@ -94,7 +93,8 @@
       "title": "Chat and get insights",
       "description": "Ask questions in natural language and receive accurate answers, automated reports and visualizations."
     }
-  },  "integrations": {
+  },
+  "integrations": {
     "databases": "Databases",
     "files": "Files",
     "sharepoint": {
@@ -119,7 +119,8 @@
     },
     "description1": "These integrations make data sources much more meaningful when responding to business challenges. Our platform also allows training agents in the use of this information, achieving much more detailed responses.",
     "description2": "With access to multiple data sources, agents can provide complete context and answers grounded in your business's real information."
-  },  "benefits": {
+  },
+  "benefits": {
     "badge": "Benefits",
     "benefit1": {
       "title": "Faster decisions",
@@ -336,7 +337,7 @@
     "careers": "Careers",
     "contact": "Contact",
     "legal": "Legal",
-    "privacy": "Privacy",
+    "privacy": "Privacy Policy",
     "terms": "Terms",
     "cookies": "Cookies",
     "rights": "All rights reserved."
