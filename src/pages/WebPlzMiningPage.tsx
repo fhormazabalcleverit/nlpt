@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import PlzMiningFeatures from '../components/plz/PlzMiningFeatures';
+import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
 
 const WebPlzMiningPage = () => {
     return (
@@ -12,79 +13,93 @@ const WebPlzMiningPage = () => {
             <main className="flex-grow flex flex-col pt-32 pb-20">
                 {/* Header Section */}
                 <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-20 text-left">
-                    {/* Back Button */}
-                    <div className="flex items-center gap-2">
-                        <Link
-                            to="/web/plz"
-                            className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-12 group"
-                        >
-                            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                            Volver a Pulzen AI
-                        </Link>
-                    </div>
+                    <StaggerContainer>
+                        {/* Back Button */}
+                        <StaggerItem>
+                            <div className="flex items-center gap-2">
+                                <Link
+                                    to="/web/plz"
+                                    className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-12 group"
+                                >
+                                    <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                                    Volver a Pulzen AI
+                                </Link>
+                            </div>
+                        </StaggerItem>
 
-                    {/* Badge */}
-                    {/* <div className="inline-flex px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-300 tracking-wide mb-6">
-                        Pulzen by LLM Apps
-                    </div> */}
-                    {/* Title */}
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight mb-8">
-                        Minería Autónoma
-                    </h1>
+                        <StaggerItem>
+                            {/* Title */}
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight mb-8">
+                                Minería Autónoma
+                            </h1>
+                        </StaggerItem>
 
-                    {/* Description Text */}
-                    <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl">
-                        Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.
-                    </p>
+                        <StaggerItem>
+                            {/* Description Text */}
+                            <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl">
+                                Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.
+                            </p>
+                        </StaggerItem>
+                    </StaggerContainer>
 
                     {/* Hero Full Width Graphic */}
-                    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center mt-12 mb-8">
-                        {/* Soft Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+                    <FadeIn delay={0.4} blur={true}>
+                        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center mt-12 mb-8">
+                            {/* Soft Glow */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-                        {/* Image representing the feature */}
-                        <div
-                            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
-                            style={{ backgroundImage: `url('/mining_operations.png')` }}
-                        ></div>
+                            {/* Image representing the feature */}
+                            <div
+                                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
+                                style={{ backgroundImage: `url('/mining_operations.png')` }}
+                            ></div>
 
-                        {/* Placeholder gradient to add depth */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#040809] via-transparent to-transparent opacity-80 pointer-events-none"></div>
-                    </div>
+                            {/* Placeholder gradient to add depth */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#040809] via-transparent to-transparent opacity-80 pointer-events-none"></div>
+                        </div>
+                    </FadeIn>
                 </div>
 
                 {/* Features Section */}
                 <PlzMiningFeatures />
 
                 {/* Final CTA Section */}
-                <div className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-32 mb-10 text-center flex flex-col items-center animate-fade-in-up">
-                    <div className="inline-flex px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 tracking-wide">
-                        Empieza hoy
-                    </div>
+                <StaggerContainer className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-32 mb-10 text-center flex flex-col items-center">
+                    <StaggerItem>
+                        <div className="inline-flex px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 tracking-wide">
+                            Empieza hoy
+                        </div>
+                    </StaggerItem>
 
-                    <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8 leading-tight">
-                        Empiece hoy mismo a analizar el <br className="hidden md:block" /> rendimiento de su faena
-                    </h2>
+                    <StaggerItem>
+                        <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8 leading-tight">
+                            Empiece hoy mismo a analizar el <br className="hidden md:block" /> rendimiento de su faena
+                        </h2>
+                    </StaggerItem>
 
-                    <p className="text-lg text-gray-400 font-light leading-relaxed mb-12 max-w-3xl">
-                        ¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar potentes herramientas operativas para la industria minera sin esfuerzo técnico. Amplíe la visibilidad de su operación corporativa y automatice sus reportes reduciendo riesgos.
-                    </p>
+                    <StaggerItem>
+                        <p className="text-lg text-gray-400 font-light leading-relaxed mb-12 max-w-3xl">
+                            ¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar potentes herramientas operativas para la industria minera sin esfuerzo técnico. Amplíe la visibilidad de su operación corporativa y automatice sus reportes reduciendo riesgos.
+                        </p>
+                    </StaggerItem>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-                        <Link
-                            to="#"
-                            className="w-full sm:w-auto px-8 py-3.5 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-sm font-medium transition-colors"
-                        >
-                            Ver demo en funcionamiento
-                        </Link>
-                        <Link
-                            to="/web/plz-contact"
-                            className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#19687A] hover:border-[#17BBCD] text-[#19687A] hover:text-[#17BBCD] rounded-xl text-sm font-medium transition-colors"
-                        >
-                            Contactar al equipo
-                        </Link>
-                    </div>
-                </div>
+                    <StaggerItem>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                            <Link
+                                to="#"
+                                className="w-full sm:w-auto px-8 py-3.5 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-sm font-medium transition-colors"
+                            >
+                                Ver demo en funcionamiento
+                            </Link>
+                            <Link
+                                to="/web/plz-contact"
+                                className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#19687A] hover:border-[#17BBCD] text-[#19687A] hover:text-[#17BBCD] rounded-xl text-sm font-medium transition-colors"
+                            >
+                                Contactar al equipo
+                            </Link>
+                        </div>
+                    </StaggerItem>
+                </StaggerContainer>
             </main>
 
             <PlzFooter />

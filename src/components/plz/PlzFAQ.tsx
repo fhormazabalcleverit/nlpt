@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { StaggerContainer, StaggerItem } from './PlzMotion';
 
 const faqs = [
     {
@@ -24,43 +25,48 @@ const PlzFAQ = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="relative w-full bg-[#040809] py-24 font-sansation">
+        <section className="relative w-full py-24 font-sansation">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
-                        Preguntas frecuentes
-                    </h2>
-                    <p className="text-gray-400 text-lg md:text-xl font-light">
-                        Resuelve tus dudas generales sobre Pulzen AI y descubre cómo adaptarlo a tus servicios.
-                    </p>
-                </div>
+                <StaggerContainer className="text-center mb-16">
+                    <StaggerItem>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
+                            Preguntas frecuentes
+                        </h2>
+                    </StaggerItem>
+                    <StaggerItem>
+                        <p className="text-gray-400 text-lg md:text-xl font-light">
+                            Resuelve tus dudas generales sobre Pulzen AI y descubre cómo adaptarlo a tus servicios.
+                        </p>
+                    </StaggerItem>
+                </StaggerContainer>
 
-                <div className="space-y-4">
+                <StaggerContainer className="space-y-4" staggerChildren={0.05}>
                     {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className="overflow-hidden transition-all duration-300 hover:bg-[#0a0f12] rounded-xl"
-                        >
-                            <button
-                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full px-6 md:px-8 py-6 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                            >
-                                <span className="text-md md:text-lg font-medium text-gray-200">{faq.question}</span>
-                                <ChevronDown
-                                    className={`w-6 h-6 text-[#17BBCD] transition-transform duration-300 flex-shrink-0 ml-4 ${openIndex === index ? 'rotate-180' : ''}`}
-                                />
-                            </button>
-
+                        <StaggerItem key={index}>
                             <div
-                                className={`px-6 md:px-8 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                                className="overflow-hidden transition-all duration-300 hover:bg-[#0a0f12] rounded-xl border border-white/5"
                             >
-                                <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
-                                    {faq.answer}
-                                </p>
+                                <button
+                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                    className="w-full px-6 md:px-8 py-6 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                                >
+                                    <span className="text-md md:text-lg font-medium text-gray-200">{faq.question}</span>
+                                    <ChevronDown
+                                        className={`w-6 h-6 text-[#17BBCD] transition-transform duration-300 flex-shrink-0 ml-4 ${openIndex === index ? 'rotate-180' : ''}`}
+                                    />
+                                </button>
+
+                                <div
+                                    className={`px-6 md:px-8 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                                >
+                                    <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light">
+                                        {faq.answer}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     );

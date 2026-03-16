@@ -1,6 +1,6 @@
 const PlzAboutHero = () => {
     return (
-        <section className="bg-[#040809] pt-32 pb-20 px-4 sm:px-6 lg:px-8 font-sansation text-center max-w-7xl mx-auto">
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 font-sansation text-center max-w-7xl mx-auto">
             <div className="flex flex-col items-center gap-6 mt-16">
                 <span className="text-gray-400 text-sm tracking-widest uppercase">
                     Sobre nosotros

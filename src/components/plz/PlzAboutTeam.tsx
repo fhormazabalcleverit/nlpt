@@ -2,23 +2,23 @@ const teamMembers = [
     {
         name: 'Jonas Diezun',
         role: 'Co-Fundador & CEO',
-        image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400',
+        image: '/plz/platform/avatar01.jpg',
     },
     {
         name: 'Aqib Ansari',
         role: 'Co-Fundador y CTO',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400',
+        image: '/plz/platform/avatar02.jpg',
     },
     {
         name: 'Burak Özapşar',
         role: 'Co-Fundador y Arquitecto Jefe de Sistemas',
-        image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400',
+        image: '/plz/platform/avatar03.jpg',
     }
 ];
 
 const PlzAboutTeam = () => {
     return (
-        <section className="bg-[#040809] py-20 px-4 sm:px-6 lg:px-8 font-sansation text-center max-w-7xl mx-auto">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 font-sansation text-center max-w-7xl mx-auto">
             <div className="flex flex-col items-center gap-4 mt-8">
                 <span className="text-gray-400 text-sm tracking-widest uppercase">
                     Equipo de Pulzen AI

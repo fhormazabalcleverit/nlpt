@@ -15,7 +15,7 @@ const TeamPage = () => {
 
   return (
     <div className="min-h-screen bg-backblack relative overflow-hidden">
-      <SEO 
+      <SEO
         title="Conoce al Equipo"
         description="Conoce al equipo de CleverIT. Tecnología con propósito, personas con visión. Especialistas en GitHub, Cloud, DevOps y experiencia digital."
         keywords="CleverIT, equipo, tecnología, desarrolladores, GitHub, Cloud, DevOps, experiencia digital, Microsoft Partner"
@@ -32,13 +32,13 @@ const TeamPage = () => {
           <div className="space-y-8 col-span-3">
 
 
-             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-8 leading-tight animate-slide-up max-w-5xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-8 leading-tight animate-slide-up max-w-5xl mx-auto">
               {t.team.titleA}{' '}
               <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                 {t.team.titleHighlightA}
               </span>
               {' '}{t.team.titleB}
-                  <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                 {t.team.titleHighlightB}
               </span>
             </h1>
@@ -52,7 +52,7 @@ const TeamPage = () => {
         </div>
 
 
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-9 gap-12 lg:gap-16 items-center">
           <div className="space-y-6 col-span-6">
             <div className="">
@@ -81,7 +81,7 @@ const TeamPage = () => {
 
 
 
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div ref={skillsTitle.ref} className={`fade-in-up ${skillsTitle.isVisible ? 'animate' : ''}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
@@ -149,7 +149,7 @@ const TeamPage = () => {
       </div>
 
 
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 animate-slide-up">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="w-full h-96 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl flex items-center justify-center overflow-hidden">
@@ -184,7 +184,7 @@ const TeamPage = () => {
           <div className="w-full h-96 bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl flex items-center justify-center overflow-hidden">
             <img src={`${import.meta.env.BASE_URL}cohesionado.png`} alt="Equipo Cohesionado" className="w-full h-full object-cover" />
           </div>
-          
+
         </div>
       </div>
 

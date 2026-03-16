@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle2, MoreVertical } from 'lucide-react';
+import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
 
 const integrations = [
     {
@@ -52,24 +53,29 @@ const PlzIntegrations = () => {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Headers */}
-                <div className="text-center mb-16 flex flex-col items-center">
-                    <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-6 inline-block tracking-widest uppercase bg-white/5">
-                        Integraciones
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
-                        Ponga los datos a su servicio
-                    </h2>
-                    <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
-                        Este agente de IA extrae datos de múltiples fuentes, los estandariza y limpia, apoyando la toma de decisiones con una intervención manual mínima.
-                    </p>
-                </div>
+                <StaggerContainer className="text-center mb-16 flex flex-col items-center">
+                    <StaggerItem>
+                        <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-6 inline-block tracking-widest uppercase bg-white/5">
+                            Integraciones
+                        </div>
+                    </StaggerItem>
+                    <StaggerItem>
+                        <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
+                            Ponga los datos a su servicio
+                        </h2>
+                    </StaggerItem>
+                    <StaggerItem>
+                        <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
+                            Este agente de IA extrae datos de múltiples fuentes, los estandariza y limpia, apoyando la toma de decisiones con una intervención manual mínima.
+                        </p>
+                    </StaggerItem>
+                </StaggerContainer>
 
                 {/* Two Column Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-cente h-[520px]">
-
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-cente lg:h-[520px]">
 
                     {/* Right Column: Aurora Graphic Display & Indicators */}
-                    <div className="flex flex-col gap-6 w-full">
+                    <FadeIn delay={0.2} className="flex flex-col gap-6 w-full order-1 lg:order-2">
                         <div className="w-full relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/11] flex items-center justify-center p-6 shadow-2xl">
 
                             {/* Dynamic Gradient Background (Aurora effect) */}
@@ -116,38 +122,35 @@ const PlzIntegrations = () => {
                                 />
                             ))}
                         </div>
-                    </div>
-
+                    </FadeIn>
 
                     {/* Left Column: Accordion List */}
-                    <div className="flex flex-col w-full">
-                        {/* <div className="text-2xl font-medium text-white mb-6 border-b border-white/10 pb-4">
-                            Integraciones
-                        </div> */}
+                    <StaggerContainer className="flex flex-col w-full order-2 lg:order-1" staggerChildren={0.1}>
                         {integrations.map((item, idx) => {
                             const isActive = activeIndex === idx;
                             return (
-                                <div
-                                    key={item.id}
-                                    className={`border-b border-white/10 cursor-pointer overflow-hidden transition-all duration-500`}
-                                    onClick={() => setActiveIndex(idx)}
-                                >
-                                    <div className="py-6 flex flex-col justify-center">
-                                        <h3 className={`text-xl font-medium transition-colors duration-300 ${isActive ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}>
-                                            {item.title}
-                                        </h3>
-                                        <div
-                                            className={`transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
-                                        >
-                                            <p className="text-gray-400 font-light leading-relaxed pr-4">
-                                                {item.desc}
-                                            </p>
+                                <StaggerItem key={item.id}>
+                                    <div
+                                        className={`border-b border-white/10 cursor-pointer overflow-hidden transition-all duration-500`}
+                                        onClick={() => setActiveIndex(idx)}
+                                    >
+                                        <div className="py-6 flex flex-col justify-center">
+                                            <h3 className={`text-xl font-medium transition-colors duration-300 ${isActive ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}>
+                                                {item.title}
+                                            </h3>
+                                            <div
+                                                className={`transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+                                            >
+                                                <p className="text-gray-400 font-light leading-relaxed pr-4">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </StaggerItem>
                             );
                         })}
-                    </div>
+                    </StaggerContainer>
 
                 </div>
 

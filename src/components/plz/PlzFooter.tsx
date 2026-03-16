@@ -1,10 +1,11 @@
 import { Github, Twitter, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { FadeIn } from './PlzMotion';
 
 const PlzFooter = () => {
     return (
         <footer className="bg-[#040809] border-t border-white/5 font-sansation py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-12">
 
                     {/* Logo & Description */}
@@ -40,7 +41,7 @@ const PlzFooter = () => {
                         <a href="#" className="hover:text-gray-300 transition-colors">Cookies</a>
                     </div>
                 </div>
-            </div>
+            </FadeIn>
         </footer>
     );
 };
