@@ -68,7 +68,7 @@ const PlzGraphic = () => {
                 <StaggerContainer className="text-center mb-16 flex flex-col items-center">
                     <StaggerItem>
                         <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 inline-block tracking-widest uppercase">
-                            Ventajas de tu IA
+                            Ventajas Pulzen AI
                         </div>
                     </StaggerItem>
                     <StaggerItem>
@@ -164,7 +164,7 @@ const PlzGraphic = () => {
                         {/* Content inside graphic */}
                         <div className="relative z-10 w-full md:w-1/2 flex-none translate-y-2 md:translate-y-10 pointer-events-none">
                             <h3 className="text-2xl md:text-3xl text-white mb-2 tracking-tight">Evolución operacional</h3>
-                            <h3 className="text-2xl md:text-3xl text-gray-300 font-light mb-8 tracking-tight">para la escalabilidad de cada servicio.</h3>
+                            <h3 className="text-2xl md:text-3xl text-gray-300 font-light mb-8 tracking-tight">para la escalabilidad de cada servicio</h3>
                             <button className="px-5 py-2 text-sm font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all  pointer-events-auto">
                                 Conocer más
                             </button>
@@ -220,7 +220,7 @@ const PlzGraphic = () => {
                 </FadeIn>
 
                 {/* Bottom Six Columns Data representation Carousel */}
-                <StaggerContainer 
+                <StaggerContainer
                     ref={carouselRef}
                     onScroll={() => {
                         if (carouselRef.current) {
@@ -231,7 +231,7 @@ const PlzGraphic = () => {
                             }
                         }
                     }}
-                    className="relative w-full flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scroll" 
+                    className="relative w-full flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scroll"
                     staggerChildren={0.05}
                 >
                     {[

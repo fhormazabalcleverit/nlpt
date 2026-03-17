@@ -16,7 +16,7 @@ const PlzHero = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((current) => (current + 1) % phrases.length);
-        }, 3000); // changes every 3 seconds
+        }, 1500); // changes every 3 seconds
         return () => clearInterval(interval);
     }, []);
     return (
@@ -46,7 +46,7 @@ const PlzHero = () => {
                                 </span>
                             </h1>
                         </StaggerItem>
-                        
+
                         <StaggerItem>
                             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl leading-relaxed font-light">
                                 LLM capaz de medir, optimizar y automatizar operaciones en cualquier industria: talento TI, logística, manufactura, servicios, lo que tu negocio necesite.

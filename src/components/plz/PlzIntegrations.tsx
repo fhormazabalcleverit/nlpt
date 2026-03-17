@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle2, MoreVertical } from 'lucide-react';
+import { MoreVertical, ThumbsUp, ThumbsDown, Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
 
 const integrations = [
@@ -37,16 +38,28 @@ const integrations = [
 
 const PlzIntegrations = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isProcessing, setIsProcessing] = useState(false);
 
-    // Auto-cycle through integrations every 5 seconds
+    // Auto-cycle through integrations every 3 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            setActiveIndex((current) => (current + 1) % integrations.length);
+            // Start "Procesado" state 800ms before switching index
+            const timer = setTimeout(() => {
+                setIsProcessing(true);
+            }, 1200);
+
+            // Switch index at 3000ms
+            setTimeout(() => {
+                setActiveIndex((current: number) => (current + 1) % integrations.length);
+                setIsProcessing(false);
+            }, 3000);
+
+            return () => clearTimeout(timer);
         }, 3000);
+
         return () => clearInterval(interval);
     }, []);
 
-    const activeItem = integrations[activeIndex];
 
     return (
         <section className="relative w-full bg-[#040809] py-24 font-sansation light">
@@ -61,12 +74,12 @@ const PlzIntegrations = () => {
                     </StaggerItem>
                     <StaggerItem>
                         <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
-                            Ponga los datos a su servicio
+                            Pon los datos a tu servicio
                         </h2>
                     </StaggerItem>
                     <StaggerItem>
                         <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
-                            Este agente de IA extrae datos de múltiples fuentes, los estandariza y limpia, apoyando la toma de decisiones con una intervención manual mínima.
+                            Pulzen IA extrae datos de múltiples fuentes, los estandariza y limpia, apoyando la toma de decisiones con una intervención manual mínima.
                         </p>
                     </StaggerItem>
                 </StaggerContainer>
@@ -78,35 +91,120 @@ const PlzIntegrations = () => {
                     <FadeIn delay={0.2} className="flex flex-col gap-6 w-full order-1 lg:order-2">
                         <div className="w-full relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/11] flex items-center justify-center p-6 shadow-2xl">
 
-                            {/* Dynamic Gradient Background (Aurora effect) */}
+                            {/* Dynamic Gradient Background (Aurora effect) with Cross-fade */}
                             <div className="absolute inset-0 bg-[#560F9D]/40"></div>
-                            <div
-                                className="absolute inset-0 opacity-60 transition-all duration-1000 ease-in-out transition-all duration-1000 ease-in-out"
-                                style={{
-                                    background: `radial-gradient(circle at ${50 + (activeIndex % 2) * 20}% ${40 + (activeIndex % 3) * 10}%, #2C8AA0 0%, transparent 60%),
-                                                radial-gradient(circle at ${30 + (activeIndex % 3) * 20}% ${70 - (activeIndex % 2) * 20}%, #17BBCD 0%, transparent 50%),
-                                                radial-gradient(circle at ${80 - (activeIndex % 2) * 30}% ${20 + (activeIndex % 3) * 15}%, #560F9D 0%, transparent 40%)`
-                                }}
-                            ></div>
+                            <AnimatePresence>
+                                <motion.div
+                                    key={activeIndex}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 0.6 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 2, ease: "linear" }}
+                                    className="absolute inset-0"
+                                    style={{
+                                        background: `radial-gradient(circle at ${50 + (activeIndex % 2) * 20}% ${40 + (activeIndex % 3) * 10}%, #2C8AA0 0%, transparent 60%),
+                                                    radial-gradient(circle at ${30 + (activeIndex % 3) * 20}% ${70 - (activeIndex % 2) * 20}%, #17BBCD 0%, transparent 50%),
+                                                    radial-gradient(circle at ${80 - (activeIndex % 2) * 30}% ${20 + (activeIndex % 3) * 15}%, #560F9D 0%, transparent 40%)`
+                                    }}
+                                />
+                            </AnimatePresence>
 
                             {/* Stars/Dust overlay */}
                             <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)), radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 50px 160px, #ddd, rgba(0,0,0,0)), radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0))', backgroundSize: '200px 200px' }}></div>
 
-                            {/* Floating Notification Card */}
-                            <div className="relative z-10 bg-[#11161a]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 w-full max-w-sm shadow-2xl transform transition-all duration-500 hover:scale-105">
-                                <p className="text-sm font-light text-white mb-6 leading-relaxed">
-                                    {activeItem.popupText}
-                                </p>
-                                <div className="flex items-center justify-between text-xs font-medium">
-                                    <div className="flex items-center gap-2 text-emerald-400 bg-emerald-400/10 px-3 py-1.5 rounded-full border border-emerald-400/20">
-                                        <CheckCircle2 className="w-4 h-4" />
-                                        <span>Completado</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-gray-500">
-                                        <span>ID-0E48</span>
-                                        <MoreVertical className="w-4 h-4 cursor-pointer hover:text-gray-300" />
-                                    </div>
-                                </div>
+                            {/* Floating Notification Card Stack */}
+                            <div className="relative z-10 w-full max-w-sm h-48 flex items-center justify-center">
+                                <AnimatePresence mode='popLayout'>
+                                    {[2, 1, 0].map((offset) => {
+                                        const index = (activeIndex + offset) % integrations.length;
+                                        const item = integrations[index];
+                                        const isFront = offset === 0;
+
+                                        return (
+                                            <motion.div
+                                                key={item.id}
+                                                initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                                                animate={{
+                                                    opacity: isFront ? 1 : 1 - offset * 0.4,
+                                                    y: -offset * 20,
+                                                    scale: 1 - offset * 0.05,
+                                                    zIndex: 10 - offset,
+                                                    filter: isFront ? 'blur(0px)' : `blur(${offset * 2}px)`
+                                                }}
+                                                exit={{
+                                                    opacity: 0,
+                                                    y: 100, // Falling effect
+                                                    scale: 0.9,
+                                                    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+                                                }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 260,
+                                                    damping: 20
+                                                }}
+                                                className="absolute w-full bg-[#11161a]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl"
+                                            >
+                                                <p className="text-sm font-light text-white mb-6 leading-relaxed">
+                                                    {item.popupText}
+                                                </p>
+                                                <div className="flex items-center justify-between text-xs font-medium">
+                                                    <motion.div 
+                                                        animate={{
+                                                            color: isFront && isProcessing ? '#34d399' : '#fbbf24', // emerald-400 : amber-400
+                                                            backgroundColor: isFront && isProcessing ? 'rgba(52, 211, 153, 0.1)' : 'rgba(251, 191, 36, 0.1)',
+                                                            borderColor: isFront && isProcessing ? 'rgba(52, 211, 153, 0.2)' : 'rgba(251, 191, 36, 0.2)',
+                                                        }}
+                                                        transition={{ duration: 0.8 }}
+                                                        className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium"
+                                                    >
+                                                        <AnimatePresence mode="wait">
+                                                            {isFront && isProcessing ? (
+                                                                <motion.div
+                                                                    key="check"
+                                                                    initial={{ opacity: 0, scale: 0.5 }}
+                                                                    animate={{ opacity: 1, scale: 1 }}
+                                                                    exit={{ opacity: 0, scale: 0.5 }}
+                                                                >
+                                                                    <Check className="w-3 h-3" />
+                                                                </motion.div>
+                                                            ) : (
+                                                                <motion.div
+                                                                    key="pending"
+                                                                    initial={{ opacity: 0, scale: 0.5 }}
+                                                                    animate={{ opacity: 1, scale: 1 }}
+                                                                    exit={{ opacity: 0, scale: 0.5 }}
+                                                                    className="w-4 h-4 rounded border border-amber-400/40 flex items-center justify-center bg-transparent"
+                                                                />
+                                                            )}
+                                                        </AnimatePresence>
+                                                        <motion.span
+                                                            key={isFront && isProcessing ? 'proc' : 'pend'}
+                                                            initial={{ opacity: 0, x: -5 }}
+                                                            animate={{ opacity: 1, x: 0 }}
+                                                            transition={{ delay: 0.1 }}
+                                                        >
+                                                            {isFront && isProcessing ? 'Procesado' : 'Pendiente'}
+                                                        </motion.span>
+                                                    </motion.div>
+
+                                                    {index % 3 === 0 ? (
+                                                        <div className="flex items-center gap-3 text-gray-400">
+                                                            <ThumbsUp className="w-4 h-4 cursor-pointer hover:text-white transition-colors" />
+                                                            <ThumbsDown className="w-4 h-4 cursor-pointer hover:text-white transition-colors" />
+                                                            <div className="w-px h-3 bg-white/10 mx-1"></div>
+                                                            <span className="text-[10px] bg-white/5 px-1.5 py-0.5 rounded text-gray-500">ID-{item.id.toUpperCase().slice(0, 4)}</span>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex items-center gap-3 text-gray-500">
+                                                            <span>ID-0E48</span>
+                                                            <MoreVertical className="w-4 h-4 cursor-pointer hover:text-gray-300" />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </motion.div>
+                                        );
+                                    })}
+                                </AnimatePresence>
                             </div>
 
                         </div>
