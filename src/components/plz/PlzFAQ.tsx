@@ -1,40 +1,42 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from './PlzMotion';
-
-const faqs = [
-    {
-        question: '¿Qué valor aporta la implementación de LLM Apps a mi organización?',
-        answer: 'LLMApp es una plataforma que te permite crear y gestionar múltiples agentes de IA especializados, cada uno con su propia base de datos, ejemplos de entrenamiento y configuración específica.\n\nEsto permite a las organizaciones tener distintos agentes enfocados en diferentes áreas de negocio (ventas, soporte, operaciones, etc.), transformando la información dispersa en asistentes conversacionales inteligentes que mejoran:\n\n• La productividad\n• La toma de decisiones\n• La experiencia de los usuarios internos',
-    },
-    {
-        question: '¿Qué integraciones soporta la plataforma y cómo mejoran las respuestas?',
-        answer: 'La plataforma LLMApp se integra con:\n\n• SharePoint (documentos empresariales)\n• Bases de datos (SQL Server, MySQL, PostgreSQL, MongoDB, BigQuery, etc.)\n• Archivos (PDF, Excel, Word, imágenes)\n• APIs REST y GraphQL\n• MCP (Model Context Protocol)\n\nImportante: Los agentes son entrenados con ejemplos de negocio personalizados que enseñan cómo y cuándo usar cada fuente, logrando respuestas mucho más precisas y relevantes.',
-    },
-    {
-        question: '¿Cuánto dura la implementación de la plataforma LLMApp?',
-        answer: 'El proyecto de implementación de LLMApp está diseñado para ser ágil y completo, asegurando que tu organización pueda comenzar a aprovechar los beneficios de la IA en el menor tiempo posible.\n\nLa duración del setup base es de 3 semanas: 1 semana para configuración de plataforma e infraestructura, 2 semanas para creación y ajustes del primer agente. Cada agente adicional requiere aproximadamente 2 semanas más.',
-    },
-    {
-        question: '¿Qué incluye el setup inicial?',
-        answer: 'El setup inicial de LLMApp incluye todo lo necesario para poner en marcha tu plataforma de agentes de IA:\n\nSetup de plataforma multi-agente, conexión con datos del cliente, creación y configuración de agente, generación de esquema de base de datos por agente, definición de ejemplos de entrenamiento, interfaz de chat Mastra, gestión de agentes, pruebas funcionales y despliegue en Azure.\n\nAdemás incluye:\n• Creación de alertas\n• Dashboards personalizados\n• Reportes automatizados',
-    },
-    {
-        question: '¿Cuáles son los costos de implementación y uso mensual?',
-        answer: 'Implementación (pago único):\n• Setup inicial: USD 4,200 (incluye plataforma + infraestructura + 1 agente)\n• Cada agente adicional: USD 2,000\n\nUso Mensual (recurrente):\nEscalonado por usuarios:\n• 0-100 usuarios: USD 10/usuario\n• 100-500 usuarios: USD 7/usuario\n• 500-1000 usuarios: USD 5/usuario\n• 3000+ usuarios: USD 3/usuario\n\nSoporte mensual:\n• Soporte Básico: USD 2,500 (incluido en toda implementación)\n• Soporte Medio: USD 4,000\n• Soporte Pro: USD 5,000',
-    },
-    {
-        question: '¿Qué incluye el Soporte Básico de USD 2,500 mensuales?',
-        answer: 'El Soporte Básico incluye TODO lo necesario para operar:\n\n• Infraestructura Azure completa (Container Registry, Container Apps, Azure Foundry, PostgreSQL)\n• Gestión completa CSP de Azure\n• Mantención operativa de la plataforma\n• Monitoreo mensual (estado, logs, detección de fallas)\n• Atención de incidentes con SLA\n• Parches y actualizaciones mensuales\n• Revisión mensual del sistema\n\nEs un costo fijo predecible que incluye TODO.',
-    },
-    {
-        question: '¿Qué diferencias hay entre Soporte Medio y Pro?',
-        answer: 'Soporte Medio (USD 4,000/mes):\nSoporte Básico + 20 horas mensuales para mejoras, monitoreo quincenal, optimización de prompts y agentes, ajustes funcionales.\n\nSoporte Pro (USD 5,000/mes):\nSoporte Medio + 30 horas adicionales (50 hrs totales), fine-tuning de modelos, ampliación de datasets, observabilidad avanzada con dashboards, alertas personalizadas y reportes analíticos.',
-    },
-];
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzFAQ = () => {
+    const { t } = useLanguage();
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const faqs = [
+        {
+            question: t.faq.question1.q,
+            answer: t.faq.question1.a,
+        },
+        {
+            question: t.faq.question2.q,
+            answer: t.faq.question2.a,
+        },
+        {
+            question: t.faq.question3.q,
+            answer: t.faq.question3.a,
+        },
+        {
+            question: t.faq.question4.q,
+            answer: t.faq.question4.a,
+        },
+        {
+            question: t.faq.question5.q,
+            answer: t.faq.question5.a,
+        },
+        {
+            question: t.faq.question6.q,
+            answer: t.faq.question6.a,
+        },
+        {
+            question: t.faq.question7.q,
+            answer: t.faq.question7.a,
+        },
+    ];
 
     return (
         <section className="relative w-full py-24 font-sansation">
@@ -42,14 +44,16 @@ const PlzFAQ = () => {
                 <StaggerContainer className="text-center mb-16">
                     <StaggerItem>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
-                            Respuestas a preguntas comunes
+                            {t.faq.title}
                         </h2>
                     </StaggerItem>
                     <StaggerItem>
                         <p className="text-gray-400 text-lg md:text-xl font-light">
-                            Preguntas principales sobre LLM Apps. Para consultas detalladas.
+                            {t.faq.subtitle}
                             <br />
-                            <a href="https://phoenix.cleveritgroup.ai/" target="_blank" rel="noopener noreferrer" className="text-[#17BBCD] hover:underline">Habla con nuestro agente AI</a>
+                            <a href={t.faq.subtitleLink.url} target="_blank" rel="noopener noreferrer" className="text-[#17BBCD] hover:underline">
+                                {t.faq.subtitleLink.text}
+                            </a>
                         </p>
                     </StaggerItem>
                 </StaggerContainer>

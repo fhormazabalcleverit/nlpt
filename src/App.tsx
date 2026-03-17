@@ -64,25 +64,30 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/team" element={<TeamPage />} />
-            <Route path="/plans" element={<PricingPage />} />
-            <Route path="/quote" element={<QuotePage />} />
-            <Route path="/use-cases" element={<UseCasesPage />} />
-            <Route path="/use-cases/:id" element={<UseCaseDetailPage />} />
+          {/* V2 Version */}
+          <Route path="/v2" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="team" element={<TeamPage />} />
+            <Route path="plans" element={<PricingPage />} />
+            <Route path="quote" element={<QuotePage />} />
+            <Route path="use-cases" element={<UseCasesPage />} />
+            <Route path="use-cases/:id" element={<UseCaseDetailPage />} />
           </Route>
+
+          {/* V1 Version (WebPlz) */}
+          <Route path="/" element={<WebPlzPage />} />
+          <Route path="/performance" element={<WebPlzPerformancePage />} />
+          <Route path="/mining" element={<WebPlzMiningPage />} />
+          <Route path="/retail" element={<WebPlzRetailPage />} />
+          <Route path="/platform" element={<WebPlzPlatformPage />} />
+          <Route path="/about" element={<WebPlzAboutPage />} />
+          <Route path="/cases" element={<WebPlzCasesPage />} />
+          <Route path="/contact" element={<WebPlzContactPage />} />
+          <Route path="/quote" element={<WebPlzQuotePage />} />
+
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsOfServicePage />} />
-          <Route path="/web/plz" element={<WebPlzPage />} />
-          <Route path="/web/plz-performance" element={<WebPlzPerformancePage />} />
-          <Route path="/web/plz-mining" element={<WebPlzMiningPage />} />
-          <Route path="/web/plz-retail" element={<WebPlzRetailPage />} />
-          <Route path="/web/plz-platform" element={<WebPlzPlatformPage />} />
-          <Route path="/web/plz-about" element={<WebPlzAboutPage />} />
-          <Route path="/web/plz-cases" element={<WebPlzCasesPage />} />
-          <Route path="/web/plz-contact" element={<WebPlzContactPage />} />
-          <Route path="/web/plz-quote" element={<WebPlzQuotePage />} />
+
         </Routes>
       </Router>
     </LanguageProvider>

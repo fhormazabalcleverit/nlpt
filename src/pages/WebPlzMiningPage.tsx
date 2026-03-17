@@ -1,13 +1,22 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import PlzMiningFeatures from '../components/plz/PlzMiningFeatures';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
+import DynamicSEO from '../components/DynamicSEO';
 
 const WebPlzMiningPage = () => {
+    const { t } = useLanguage();
+    const data = t.plzIndustry.mining;
+
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col">
+            <DynamicSEO 
+                title={`${data.title} | Pulzen AI`}
+                description={data.description}
+            />
             <PlzNavbar />
 
             <main className="flex-grow flex flex-col pt-32 pb-20">
@@ -18,11 +27,11 @@ const WebPlzMiningPage = () => {
                         <StaggerItem>
                             <div className="flex items-center gap-2">
                                 <Link
-                                    to="/web/plz"
+                                    to="/"
                                     className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-12 group"
                                 >
                                     <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                                    Volver a Pulzen AI
+                                    {t.plzQuote?.back || 'Volver a Pulzen AI'}
                                 </Link>
                             </div>
                         </StaggerItem>
@@ -30,14 +39,14 @@ const WebPlzMiningPage = () => {
                         <StaggerItem>
                             {/* Title */}
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight mb-8">
-                                Minería Autónoma
+                                {data.title}
                             </h1>
                         </StaggerItem>
 
                         <StaggerItem>
                             {/* Description Text */}
                             <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl">
-                                Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.
+                                {data.description}
                             </p>
                         </StaggerItem>
                     </StaggerContainer>
@@ -67,19 +76,19 @@ const WebPlzMiningPage = () => {
                 <StaggerContainer className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-32 mb-10 text-center flex flex-col items-center">
                     <StaggerItem>
                         <div className="inline-flex px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 tracking-wide">
-                            Empieza hoy
+                            {data.ctaHero}
                         </div>
                     </StaggerItem>
 
                     <StaggerItem>
                         <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8 leading-tight">
-                            Empiece hoy mismo a analizar el <br className="hidden md:block" /> rendimiento de su faena
+                            {data.ctaTitle}
                         </h2>
                     </StaggerItem>
 
                     <StaggerItem>
                         <p className="text-lg text-gray-400 font-light leading-relaxed mb-12 max-w-3xl">
-                            ¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar potentes herramientas operativas para la industria minera sin esfuerzo técnico. Amplíe la visibilidad de su operación corporativa y automatice sus reportes reduciendo riesgos.
+                            {data.ctaDescription}
                         </p>
                     </StaggerItem>
 
@@ -89,13 +98,13 @@ const WebPlzMiningPage = () => {
                                 to="#"
                                 className="w-full sm:w-auto px-8 py-3.5 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-sm font-medium transition-colors"
                             >
-                                Ver demo en funcionamiento
+                                {data.ctaDemo}
                             </Link>
                             <Link
-                                to="/web/plz-contact"
+                                to="/contact"
                                 className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#19687A] hover:border-[#17BBCD] text-[#19687A] hover:text-[#17BBCD] rounded-xl text-sm font-medium transition-colors"
                             >
-                                Contactar al equipo
+                                {data.ctaContact}
                             </Link>
                         </div>
                     </StaggerItem>

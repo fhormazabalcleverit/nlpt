@@ -1,24 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
 import { StaggerContainer, StaggerItem } from './PlzMotion';
 
-const phrases = [
-    "tu negocio.",
-    "tus servicios.",
-    "tu rubro.",
-    "tu emprendimiento.",
-    "lo que tú necesites."
-];
-
 const PlzHero = () => {
+    const { t } = useLanguage();
     const [index, setIndex] = useState(0);
+    const phrases = t.plzPhrases || [];
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((current) => (current + 1) % phrases.length);
-        }, 1500); // changes every 3 seconds
+        }, 1500); // changes every 1.5 seconds
         return () => clearInterval(interval);
-    }, []);
+    }, [phrases.length]);
+
     return (
         <section
             className="relative w-full bg-[#040809] pt-32 pb-20 lg:pt-80 lg:pb-32 font-sansation overflow-hidden"
@@ -34,9 +30,9 @@ const PlzHero = () => {
                     <StaggerContainer>
                         <StaggerItem>
                             <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-light text-white tracking-tight leading-[1.1] mb-6">
-                                Pulzen AI — Inteligencia que
+                                {t.plzHero.title}
                                 <br className="hidden md:block" />
-                                escala el rendimiento de
+                                {t.plzHero.title2}
                                 <br className="hidden md:block" />
                                 <span
                                     key={index}
@@ -49,18 +45,18 @@ const PlzHero = () => {
 
                         <StaggerItem>
                             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl leading-relaxed font-light">
-                                LLM capaz de medir, optimizar y automatizar operaciones en cualquier industria: talento TI, logística, manufactura, servicios, lo que tu negocio necesite.
+                                {t.plzHero.description}
                             </p>
                         </StaggerItem>
 
                         <StaggerItem>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Link to="/web/plz-contact" className="px-6 py-3 text-center text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20">
-                                    Conversa con el equipo
+                                <Link to="/contact" className="px-6 py-3 text-center text-base font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20">
+                                    {t.plzHero.ctaPrimary}
                                 </Link>
-                                <button className="px-6 py-3 text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
-                                    Vea la demostración de 2 minutos
-                                </button>
+                                <a href="https://phoenix.cleveritgroup.ai/?offering=llmapps" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-center text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all">
+                                    {t.plzHero.ctaSecondary}
+                                </a>
                             </div>
                         </StaggerItem>
                     </StaggerContainer>

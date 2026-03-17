@@ -6,8 +6,11 @@ import PlzFooter from '../components/plz/PlzFooter';
 import PlzFAQ from '../components/plz/PlzFAQ';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import DynamicSEO from '../components/DynamicSEO';
 
 const WebPlzContactPage = () => {
+    const { t } = useLanguage();
     const [reason, setReason] = useState<string>('');
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -16,30 +19,22 @@ const WebPlzContactPage = () => {
 
     const isFormValid = reason && name && email && industry && contactMethod;
 
-    const reasonMessages: Record<string, string> = {
-        'Ventas y demos': '“Un ejecutivo se pondrá en contacto en menos de 24 horas para coordinar una demo o entregar más información.”',
-        'Soporte del producto': '“El equipo de soporte responderá a la brevedad para dar solución al caso reportado.”',
-        'Alianzas estratégicas': '“El equipo revisará la propuesta y tomará contacto en menos de 48 horas para dar seguimiento.”',
-        'Prensa y medios': '“El equipo de comunicaciones responderá en menos de 24 horas para coordinar la solicitud.”',
-        'Otro': '“El mensaje será revisado y se entregará una respuesta en menos de 24 horas.”'
-    };
-
-    const reasons = [
-        'Ventas y demos',
-        'Soporte del producto',
-        'Alianzas estratégicas',
-        'Prensa y medios',
-        'Otro'
-    ];
+    const reasons = t.plzContact.form.reasons.options;
+    const reasonMessages = t.plzContact.form.reasons.messages;
 
     const contactMethods = [
-        { id: 'Correo electrónico', icon: Mail },
-        { id: 'WhatsApp', icon: MessageCircle },
-        { id: 'Llamada telefónica', icon: Phone }
+        { id: t.plzContact.form.fields.contactMethod.options.email, icon: Mail },
+        { id: t.plzContact.form.fields.contactMethod.options.whatsapp, icon: MessageCircle },
+        { id: t.plzContact.form.fields.contactMethod.options.phone, icon: Phone }
     ];
 
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
+            <DynamicSEO 
+                title={`${t.plzContact.title} | Pulzen AI`}
+                description={t.plzContact.subtitle}
+                url={window.location.href}
+            />
             <PlzNavbar />
 
             <main className="flex-grow flex flex-col pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
@@ -50,11 +45,11 @@ const WebPlzContactPage = () => {
                     {/* Back Button */}
                     <FadeIn delay={0.1}>
                         <Link
-                            to="/web/plz"
+                            to="/"
                             className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-10 group"
                         >
                             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                            Volver a Pulzen AI
+                            {t.plzContact.backBtn}
                         </Link>
                     </FadeIn>
 
@@ -62,12 +57,12 @@ const WebPlzContactPage = () => {
                     <StaggerContainer className="text-left mb-16">
                         <StaggerItem>
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.1] mb-8 text-white">
-                                Contacto
+                                {t.plzContact.title}
                             </h1>
                         </StaggerItem>
                         <StaggerItem>
                             <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-2xl text-balance">
-                                Nuestro equipo de ventas puede proporcionar informacion y asistencia adicional para la implementación de agentes de IA en tu organización.
+                                {t.plzContact.subtitle}
                             </p>
                         </StaggerItem>
                     </StaggerContainer>
@@ -79,7 +74,7 @@ const WebPlzContactPage = () => {
                                 {/* Step 1: Reason Selection */}
                                 <div className="space-y-4">
                                     <label htmlFor="reason" className="block text-sm font-medium text-gray-300">
-                                        ¿En qué podemos ayudarte?
+                                        {t.plzContact.form.fields.reason.label}
                                     </label>
                                     <div className="relative">
                                         <select
@@ -89,8 +84,8 @@ const WebPlzContactPage = () => {
                                             className="w-full appearance-none bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all cursor-pointer"
                                             required
                                         >
-                                            <option value="" disabled>Seleccione una opción</option>
-                                            {reasons.map((opt) => (
+                                            <option value="" disabled>{t.plzContact.form.fields.reason.placeholder}</option>
+                                            {reasons.map((opt: string) => (
                                                 <option key={opt} value={opt}>{opt}</option>
                                             ))}
                                         </select>
@@ -113,7 +108,7 @@ const WebPlzContactPage = () => {
                                             {/* Full Name - Full Width */}
                                             <div className="space-y-3">
                                                 <label htmlFor="name" className="block text-sm font-medium text-gray-300">
-                                                    Nombre completo <span className="text-red-500">*</span>
+                                                    {t.plzContact.form.fields.name.label} <span className="text-red-500">*</span>
                                                 </label>
                                                 <input
                                                     type="text"
@@ -121,7 +116,7 @@ const WebPlzContactPage = () => {
                                                     value={name}
                                                     onChange={(e) => setName(e.target.value)}
                                                     className="w-full bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all"
-                                                    placeholder="Ej. Carlos Gallardo"
+                                                    placeholder={t.plzContact.form.fields.name.placeholder}
                                                     required
                                                 />
                                             </div>
@@ -130,7 +125,7 @@ const WebPlzContactPage = () => {
                                                 {/* Email */}
                                                 <div className="space-y-3">
                                                     <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                                                        Correo electrónico <span className="text-red-500">*</span>
+                                                        {t.plzContact.form.fields.email.label} <span className="text-red-500">*</span>
                                                     </label>
                                                     <input
                                                         type="email"
@@ -138,14 +133,14 @@ const WebPlzContactPage = () => {
                                                         value={email}
                                                         onChange={(e) => setEmail(e.target.value)}
                                                         className="w-full bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all"
-                                                        placeholder="carlos@empresa.com"
+                                                        placeholder={t.plzContact.form.fields.email.placeholder}
                                                         required
                                                     />
                                                 </div>
                                                 {/* Industry */}
                                                 <div className="space-y-3">
                                                     <label htmlFor="industry" className="block text-sm font-medium text-gray-300">
-                                                        Rubro o industria <span className="text-red-500">*</span>
+                                                        {t.plzContact.form.fields.industry.label} <span className="text-red-500">*</span>
                                                     </label>
                                                     <input
                                                         type="text"
@@ -153,7 +148,7 @@ const WebPlzContactPage = () => {
                                                         value={industry}
                                                         onChange={(e) => setIndustry(e.target.value)}
                                                         className="w-full bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all"
-                                                        placeholder="Ej. Minería, Retail..."
+                                                        placeholder={t.plzContact.form.fields.industry.placeholder}
                                                         required
                                                     />
                                                 </div>
@@ -162,7 +157,7 @@ const WebPlzContactPage = () => {
                                             {/* Contact Preference - Full Width */}
                                             <div className="space-y-3">
                                                 <label className="block text-sm font-medium text-gray-300">
-                                                    ¿Cómo prefieres que te contactemos? <span className="text-red-500">*</span>
+                                                    {t.plzContact.form.fields.contactMethod.label} <span className="text-red-500">*</span>
                                                 </label>
                                                 <div className="grid grid-cols-3 gap-4">
                                                     {contactMethods.map((method) => (
@@ -192,7 +187,7 @@ const WebPlzContactPage = () => {
                                                         : 'bg-white/5 text-gray-500 cursor-not-allowed opacity-50'
                                                         }`}
                                                 >
-                                                    Enviar
+                                                    {t.plzContact.form.submit}
                                                 </button>
                                                 {/* phases  */}
                                                 <AnimatePresence mode="wait">
@@ -204,7 +199,7 @@ const WebPlzContactPage = () => {
                                                         transition={{ duration: 0.3 }}
                                                         className="mt-6 text-center text-md text-gray-400 font-light max-w-lg mx-auto leading-relaxed"
                                                     >
-                                                        {reasonMessages[reason] || "Nos pondremos en contacto con usted en menos de 24 horas."}
+                                                        {reasonMessages[reason] || t.plzContact.form.successMessage}
                                                     </motion.p>
                                                 </AnimatePresence>
                                             </div>
@@ -233,19 +228,21 @@ const WebPlzContactPage = () => {
                             <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 text-left">
                                 <div className="flex-grow max-w-xl">
                                     <h2 className="text-xl md:text-2xl font-normal text-white mb-4">
-                                        ¿Buscas una solución a medida?
+                                        {t.plzContact.quoteBanner.title}
                                     </h2>
                                     <p className="text-gray-400 text-md font-light leading-relaxed">
-                                        Obtén una cotización personalizada según los requerimientos técnicos y de negocio de tu organización.
+                                        {t.plzContact.quoteBanner.subtitle}
                                     </p>
                                 </div>
                                 <div className="flex-shrink-0">
-                                    <Link
-                                        to="/web/plz-quote"
+                                    <a
+                                        href="https://phoenix.cleveritgroup.ai/chat/XfbwQq3kX8tVV8C1?offering=llmapps"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center px-8 py-4 bg-transparent border border-[#19687A] text-[#17BBCD] group-hover:bg-[#19687A] group-hover:text-white rounded-md text-lg font-medium transition-all shadow-xl hover:shadow-[#17BBCD]/10 active:scale-[0.98] whitespace-nowrap"
                                     >
-                                        Cotizar ahora
-                                    </Link>
+                                        {t.plzContact.quoteBanner.cta}
+                                    </a>
                                 </div>
                             </div>
                         </div>

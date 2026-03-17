@@ -3,10 +3,19 @@ import PlzFooter from '../components/plz/PlzFooter';
 import PlzCasesList from '../components/plz/PlzCasesList';
 import PlzCTA from '../components/plz/PlzCTA';
 import { FadeIn } from '../components/plz/PlzMotion';
+import DynamicSEO from '../components/DynamicSEO';
+import { useLanguage } from '../context/LanguageContext';
 
 const WebPlzCasesPage = () => {
+    const { t } = useLanguage();
+
     return (
         <div className="min-h-screen bg-[#040809] flex flex-col font-sansation">
+            <DynamicSEO 
+                title={`${t.plzNavbar.cases} | Pulzen AI`}
+                description={t.plzCases.subtitle}
+                url={window.location.href}
+            />
             <PlzNavbar />
             <main className="flex-grow pt-32 pb-20 lg:pt-40 lg:pb-32 relative">
                 {/* Background wrapper for blobs */}

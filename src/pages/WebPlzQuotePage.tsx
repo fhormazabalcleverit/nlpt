@@ -4,14 +4,22 @@ import { ArrowLeft } from 'lucide-react';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
+import { useLanguage } from '../context/LanguageContext';
+import DynamicSEO from '../components/DynamicSEO';
 
 const WebPlzQuotePage = () => {
+    const { t } = useLanguage();
     const [selectedUsers, setSelectedUsers] = useState<string>('');
     const [agentsCount, setAgentsCount] = useState<number>(1);
-    const [selectedSupport, setSelectedSupport] = useState<string>('Básico');
+    const [selectedSupport, setSelectedSupport] = useState<string>(t.plzQuote.plans.basic.id);
 
     return (
-        <div className="min-h-screen bg-[#040809] font-sansation flex flex-col">
+        <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
+            <DynamicSEO 
+                title={`${t.plzQuote.title} | Pulzen AI`}
+                description={t.plzQuote.subtitle}
+                url={window.location.href}
+            />
             <PlzNavbar />
 
             <main className="flex-grow flex flex-col pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
@@ -22,11 +30,11 @@ const WebPlzQuotePage = () => {
                     {/* Back Button */}
                     <FadeIn delay={0.1}>
                         <Link
-                            to="/web/plz"
+                            to="/"
                             className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-10 group"
                         >
                             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                            Volver a Pulzen AI
+                            {t.plzQuote.backBtn}
                         </Link>
                     </FadeIn>
 
@@ -34,17 +42,17 @@ const WebPlzQuotePage = () => {
                     <StaggerContainer className="text-center mb-16">
                         <StaggerItem>
                             <div className="mb-8 inline-flex items-center px-5 py-1.5 rounded-full border border-gray-700 bg-black/40 backdrop-blur-sm text-sm font-light text-gray-300 shadow-sm">
-                                Cotización
+                                {t.plzQuote.badge}
                             </div>
                         </StaggerItem>
                         <StaggerItem>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8 text-white">
-                                Quiero cotizar
+                                {t.plzQuote.title}
                             </h1>
                         </StaggerItem>
                         <StaggerItem>
                             <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mx-auto text-balance">
-                                Da el siguiente paso hacia la automatización. Completa tus datos y un especialista preparará una propuesta a medida.
+                                {t.plzQuote.subtitle}
                             </p>
                         </StaggerItem>
                     </StaggerContainer>
@@ -57,26 +65,26 @@ const WebPlzQuotePage = () => {
                                     {/* Name */}
                                     <div className="space-y-2">
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-300">
-                                            Nombre completo
+                                            {t.plzQuote.form.fields.name.label}
                                         </label>
                                         <input
                                             type="text"
                                             id="name"
                                             className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                            placeholder="Ej. Juan Pérez"
+                                            placeholder={t.plzQuote.form.fields.name.placeholder}
                                             required
                                         />
                                     </div>
                                     {/* Email */}
                                     <div className="space-y-2">
                                         <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                                            Correo electrónico
+                                            {t.plzQuote.form.fields.email.label}
                                         </label>
                                         <input
                                             type="email"
                                             id="email"
                                             className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                            placeholder="Ej. juan@empresa.com"
+                                            placeholder={t.plzQuote.form.fields.email.placeholder}
                                             required
                                         />
                                     </div>
@@ -86,26 +94,26 @@ const WebPlzQuotePage = () => {
                                     {/* Company */}
                                     <div className="space-y-2">
                                         <label htmlFor="company" className="block text-sm font-medium text-gray-300">
-                                            Empresa u organización
+                                            {t.plzQuote.form.fields.company.label}
                                         </label>
                                         <input
                                             type="text"
                                             id="company"
                                             className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                            placeholder="Nombre de tu empresa"
+                                            placeholder={t.plzQuote.form.fields.company.placeholder}
                                             required
                                         />
                                     </div>
                                     {/* Phone */}
                                     <div className="space-y-2">
                                         <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
-                                            Teléfono
+                                            {t.plzQuote.form.fields.phone.label}
                                         </label>
                                         <input
                                             type="tel"
                                             id="phone"
                                             className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                            placeholder="+56 9 1234 5678"
+                                            placeholder={t.plzQuote.form.fields.phone.placeholder}
                                             required
                                         />
                                     </div>
@@ -114,7 +122,7 @@ const WebPlzQuotePage = () => {
                                 {/* Users */}
                                 <div className="space-y-3">
                                     <label className="block text-sm font-medium text-gray-300">
-                                        Cantidad de usuarios
+                                        {t.plzQuote.form.fields.users.label}
                                     </label>
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                         {['0-100', '100-500', '500-1000', '3000+'].map((opt) => (
@@ -136,7 +144,7 @@ const WebPlzQuotePage = () => {
                                 {/* Agents Slider */}
                                 <div className="space-y-4 pt-4">
                                     <div className="flex justify-between items-center text-sm font-medium">
-                                        <label className="text-gray-300">Cantidad de agentes</label>
+                                        <label className="text-gray-300">{t.plzQuote.form.fields.agents.label}</label>
                                         <span className="text-white text-lg">{agentsCount}</span>
                                     </div>
                                     <div>
@@ -190,13 +198,13 @@ const WebPlzQuotePage = () => {
                                 {/* Support Level */}
                                 <div className="space-y-4 pt-4">
                                     <label className="block text-sm font-medium text-gray-300">
-                                        Nivel de Soporte
+                                        {t.plzQuote.form.fields.support.label}
                                     </label>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                         {[
-                                            { id: 'Básico', price: '$2,500/mes', desc: 'Infraestructura incluida' },
-                                            { id: 'Medio', price: '$4,000/mes', desc: '+ 20 hrs mensuales' },
-                                            { id: 'Pro', price: '$5,000/mes', desc: '+ 30 hrs mensuales' }
+                                            t.plzQuote.plans.basic,
+                                            t.plzQuote.plans.medium,
+                                            t.plzQuote.plans.pro
                                         ].map((plan) => (
                                             <button
                                                 key={plan.id}
@@ -221,7 +229,7 @@ const WebPlzQuotePage = () => {
                                         type="button"
                                         className="w-full px-8 py-4 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-base font-medium transition-colors shadow-lg shadow-[#17BBCD]/10 disabled:opacity-50"
                                     >
-                                        Comenzar
+                                        {t.plzQuote.form.submit}
                                     </button>
                                 </div>
                             </form>

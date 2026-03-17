@@ -6,6 +6,157 @@
     "quoteWithAI": "Quote with AI",
     "aiQuote": "Quote with AI"
   },
+  "plzNavbar": {
+    "platform": "Platform",
+    "cases": "Case Studies",
+    "about": "About Us",
+    "contact": "Contact",
+    "quote": "Get a Quote"
+  },
+  "plzHero": {
+    "title": "Pulzen AI — Intelligence that",
+    "title2": "scales performance for",
+    "description": "LLM capable of measuring, optimizing and automating operations in any industry: IT talent, logistics, manufacturing, services, whatever your business needs.",
+    "ctaPrimary": "Talk with the team",
+    "ctaSecondary": "Quote with AI"
+  },
+  "plzPhrases": [
+    "your business.",
+    "your services.",
+    "your industry.",
+    "your startup.",
+    "whatever you need."
+  ],
+  "plzGraphic": {
+    "badge": "Pulzen AI Advantages",
+    "title": "Scale your operation with an intelligent and adaptive agent",
+    "description": "Whatever your industry, Pulzen AI integrates and evolves with you.",
+    "evolutionTitle": "Operational evolution",
+    "evolutionSubtitle": "for the scalability of each service",
+    "button": "Learn more",
+    "benefits": [
+      "Continuous improvement",
+      "Automation",
+      "Time reduction",
+      "Risk identification",
+      "Cost optimization",
+      "Actionable insights"
+    ],
+    "cards": [
+      {
+        "tag": "Evolution",
+        "title": "Data-driven continuous improvement",
+        "desc": "Your capacity increases iteratively based on self-learning from previous usage and results."
+      },
+      {
+        "tag": "Efficiency",
+        "title": "Automation of complex analysis",
+        "desc": "Process large volumes of information simultaneously to solve deep problems without operational fatigue."
+      },
+      {
+        "tag": "Speed",
+        "title": "Reduction of decision times",
+        "desc": "Optimizes information flow and delivers critical answers ready to accelerate action."
+      },
+      {
+        "tag": "Security",
+        "title": "Early risk identification",
+        "desc": "Detects anomalies and unusual patterns long before they become incidents for your business."
+      },
+      {
+        "tag": "Profitability",
+        "title": "Resource and cost optimization",
+        "desc": "Maximizes the performance of your operational assets and reduces unnecessary spending."
+      },
+      {
+        "tag": "Evaluate Return",
+        "title": "Real-time actionable insights",
+        "desc": "Early identification of opportunities and patterns to make agile decisions, without delaying your teams."
+      }
+    ]
+  },
+  "plzIntegrations": {
+    "badge": "Integrations",
+    "title": "Put data at your service",
+    "description": "Pulzen AI extracts data from multiple sources, standardizes and cleans it, supporting decision-making with minimal manual intervention.",
+    "statusPending": "Pending",
+    "statusProcessed": "Processed",
+    "items": {
+      "sharepoint": {
+        "title": "SharePoint",
+        "desc": "Connect documents, lists, and libraries from SharePoint for intelligent analysis and queries.",
+        "popupText": "Extracting meeting minutes and project documents from SharePoint."
+      },
+      "db": {
+        "title": "Databases",
+        "desc": "Integration with all types of SQL, NoSQL, BigQuery databases, and enterprise storage systems.",
+        "popupText": "Querying historical records in a PostgreSQL database."
+      },
+      "files": {
+        "title": "Files",
+        "desc": "Process PDF, Word, Excel, and other file formats to extract relevant information.",
+        "popupText": "Processing and classifying 50 invoices in PDF format."
+      },
+      "api": {
+        "title": "APIs",
+        "desc": "Connect with REST APIs and web services to obtain real-time data.",
+        "popupText": "Obtaining real-time quotes via REST API."
+      },
+      "mcp": {
+        "title": "MCP",
+        "desc": "Model Context Protocol for advanced integration with external systems and custom workflows.",
+        "popupText": "Syncing agent context via MCP connection."
+      }
+    }
+  },
+  "plzCases": {
+    "badge": "Applied Cases",
+    "title": "Real application of the agent in different industries, areas, and businesses.",
+    "description": "Designed for scalability and security by identifying data and assisting in decision-making.",
+    "mining": "Mining",
+    "retail": "Retail",
+    "performance": "Performance",
+    "miningTitle": "Autonomous Mining",
+    "miningDesc": "Detects unsafe conditions and automates processes in real-time with agents operating in site systems, reducing downtime.",
+    "miningBtn": "Learn more",
+    "miningTags": [
+      "Route Optimization AI Agent",
+      "Security Monitor AI Agent",
+      "Predictive Equipment Command",
+      "Mineral Analysis AI Agent"
+    ],
+    "retailTitle": "Retail Intelligence Suite",
+    "retailDesc": "Prevents stockouts and personalizes communications. Agents that interpret omni-channel demand to optimize inventory and increase conversions.",
+    "retailBtn": "Learn more",
+    "retailTags": [
+      "Inventory Control AI Agent",
+      "AI Promotion Generator",
+      "AI E-Commerce Support Agent",
+      "AI Demand Prediction"
+    ],
+    "performanceTitle": "Corporate Performance",
+    "performanceDesc": "Consolida silos de datos financieros en un dashboard de control. Obtén insights predictivos y agentes que generan reportes de salud financiera diariamente.",
+    "performanceBtn": "Learn more",
+    "performanceTags": [
+      "Financial Analyst AI Agent",
+      "AI Report Generator",
+      "Fraud Detection AI Agent",
+      "Investment Recommender"
+    ]
+  },
+  "plzCTA": {
+    "title": "Evolve your business with Pulzen AI",
+    "description": "Transform data into competitive advantage and take your operation to the next level with applied artificial intelligence.",
+    "primaryBtn": "Request personalized demo",
+    "secondaryBtn": "Speak with a specialist"
+  },
+  "plzFooter": {
+    "description": "Intelligence that scales your business performance. Transform data into competitive advantage and power your operations autonomously.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Notice",
+    "terms": "Terms of Service",
+    "cookies": "Cookies"
+  },
   "team": {
     "titleA": "Technology with ",
     "titleHighlightA": "purpose",
@@ -209,7 +360,7 @@
     "subtitle": "Main questions about LLM Apps. For detailed inquiries:",
     "subtitleLink": {
       "text": "Chat with our AI agent",
-      "url": "https://phoenix.cleveritgroup.ai/"
+      "url": "https://phoenix.cleveritgroup.ai/chat/XfbwQq3kX8tVV8C1?offering=llmapps"
     },
     "certBadge": "Verified experts",
     "certTitle": "AI Certified",
@@ -859,6 +1010,344 @@
         "Custom dashboards for different technical roles"
       ],
       "results": "Teams that implement Development Metrics report a 30% increase in delivery velocity, a 25% reduction in production bugs and a 40% improvement in estimation accuracy. Technical leaders gain clear visibility into team health and can intervene proactively before issues affect delivery."
+    }
+  },
+  "plzPlatform": {
+    "badge": "Pulzen Platform",
+    "title": "An agentic AI platform for operational process automation",
+    "description": "Our agentic platform offers a wide range of tools designed to facilitate your organization's transition to an AI-driven future.",
+    "cta": "Discover it now",
+    "bento": {
+      "hub": {
+        "title": "Multi-Industry Agent Orchestration",
+        "desc": "We implement autonomous agent architectures adaptable to any vertical ecosystem.",
+        "placeholder": "Space for Hub image"
+      },
+      "automation": {
+        "title": "High-Performance Natural Language",
+        "desc": "Optimize asset and request management through semantic processing of operational management instructions.",
+        "placeholder": "Space for Automation image",
+        "chatSimulation": {
+          "userQ1": "Can you give me a list of the collaborators who use Copilot the most?",
+          "aiR1": "Here is the list of collaborators with the highest GitHub Copilot usage over the last month.",
+          "table": {
+            "colaborador": "Collaborator",
+            "equipo": "Team",
+            "uso": "Usage",
+            "lineas": "Lines",
+            "aceptacion": "% Acceptance"
+          },
+          "userQ2": "Thanks! Now I want to visualize this on a dashboard :P",
+          "aiR2": "Perfect. I have generated a new dashboard so you can analyze it.",
+          "dashboard": {
+            "title": "Copilot Metrics - 2026",
+            "subtitle": "Dashboard generated"
+          }
+        }
+      },
+      "integrations": {
+        "title": "Total Visibility for Data-Driven Decisions",
+        "desc": "Through real-time data collection and analysis, it allows every business decision to be based on tangible metrics and detected patterns.",
+        "placeholder": "Space for Integrations image"
+      },
+      "tools": {
+        "title": "Scalable Architecture on Mastra",
+        "desc": "We develop next-generation agents using the Mastra framework, ensuring seamless integration, high availability, and an agile development lifecycle.",
+        "placeholder": "Space for Tools image"
+      }
+    },
+    "features": [
+      {
+        "id": "management",
+        "shortTitle": "Centralized Management",
+        "title": "Agent Management and Deployment",
+        "desc": "Challenge: Fragmented deployment of agents and tools across different environments.\n\nLLMAPPS can:\nOffer a centralized Hub for the administration of the entire AI agent fleet.",
+        "bullets": [
+          {
+            "title": "Key capabilities include:",
+            "subItems": [
+              "Create and configure new agents from scratch in minutes.",
+              "Assign roles and permissions to each agent by department."
+            ]
+          },
+          "Monitor the version and updates of each installed model.",
+          "Continuous integration with existing repositories and CI/CD flows."
+        ],
+        "highlightText": "👉 Value: Simplifies life cycle, reduces maintenance costs, and accelerates time-to-market."
+      },
+      {
+        "id": "control",
+        "shortTitle": "Control and Supervision",
+        "title": "Telemetry and Continuous Control",
+        "desc": "Challenge: Lack of visibility into how and where agents are operating.\n\nLLMAPPS can:\nProvide real-time dashboards with performance and agent usage metrics.",
+        "bullets": [
+          {
+            "title": "Supervision of metrics such as:",
+            "subItems": [
+              "Success rate of autonomously executed tasks.",
+              "Token consumption and associated costs per agent or process."
+            ]
+          },
+          "Automatic alerts in case of deviations or execution errors."
+        ],
+        "highlightText": "👉 Value: Guarantees operational reliability and optimization of computational resources."
+      },
+      {
+        "id": "security",
+        "shortTitle": "Security and Auditing",
+        "title": "Security, Governance, and Auditing",
+        "desc": "Challenge: Security risks due to unauthorized access and lack of traceability.\n\nLLMAPPS can:\nImplement granular access policies (RBAC) and an immutable audit log.",
+        "bullets": [
+          {
+            "title": "Security features:",
+            "subItems": [
+              "Ensure agents only access permitted data.",
+              "Record every interaction or decision made by the AI."
+            ]
+          }
+        ],
+        "highlightText": "👉 Value: Ensures regulatory compliance and total confidence in automated processes."
+      }
+    ]
+  },
+  "plzCasesList": {
+    "badge": "Applied cases",
+    "title": "Real application of the agent in different industries, fields, and businesses.",
+    "description": "Designed for scalability and security by identifying data and assisting in decision-making.",
+    "items": {
+      "mining": {
+        "title": "Autonomous Mining",
+        "desc": "Detects unsafe conditions and automates processes in real-time with agents operating in site systems, reducing downtime.",
+        "btn": "Learn more",
+        "tags": [
+          "Route Optimization AI Agent",
+          "Security Monitor AI Agent",
+          "Predictive Equipment Command",
+          "Mineral Analysis AI Agent"
+        ]
+      },
+      "retail": {
+        "title": "Retail Intelligence Suite",
+        "desc": "Prevents stockouts and personalizes communications. Agents that interpret omni-channel demand to optimize inventory and increase conversions.",
+        "btn": "Learn more",
+        "tags": [
+          "Inventory Control AI Agent",
+          "AI Promotion Generator",
+          "AI E-Commerce Support Agent",
+          "AI Demand Prediction"
+        ]
+      },
+      "performance": {
+        "title": "Corporate Performance",
+        "desc": "Consolidates financial data silos into a control dashboard. Get predictive insights and agents that generate health reports daily.",
+        "btn": "Learn more",
+        "tags": [
+          "Financial Analyst AI Agent",
+          "AI Report Generator",
+          "Fraud Detection AI Agent",
+          "Investment Recommender"
+        ]
+      }
+    }
+  },
+  "plzAbout": {
+    "hero": {
+      "badge": "About us",
+      "title": "Creating technology with purpose from an experience-based vision to impact and provide value in every business.",
+      "description": "We are building generative artificial intelligence agents to support operational management, automate repetitive or manual tasks, and increase team productivity and visibility.",
+      "quote": "\"Technology evolves every day, but what really makes the difference are the people who drive it. Our purpose is to transform innovation into tangible results\"",
+      "stats": {
+        "team": {
+          "label": "Team members",
+          "value": "9"
+        },
+        "countries": {
+          "label": "Countries",
+          "value": "3"
+        },
+        "clients": {
+          "label": "Active clients",
+          "value": "7"
+        }
+      }
+    },
+    "team": {
+      "badge": "Pulzen AI Team",
+      "title": "Decades of experience in engineering and product design to empower the organizational operational management of the future.",
+      "description": "We design agentic ecosystems that collaborate with each other and with the human team. Our technical expertise allows us to transform complex workflows into self-learning systems that evolve with the business.",
+      "learnMore": "Learn more",
+      "members": {
+        "carlos": {
+          "role": "Master Chief Product Officer",
+          "linkedin": "https://www.linkedin.com/in/cpgallardo/",
+          "github": ""
+        },
+        "francisco": {
+          "role": "Head of Engineering & Engineering IA",
+          "linkedin": "https://www.linkedin.com/in/francisco-javier-maldonado-moya-47876959/",
+          "github": ""
+        },
+        "julio": {
+          "role": "Fullstack Development - Innovation & AI",
+          "linkedin": "https://www.linkedin.com/in/julio-ferreira-morales-b75833187/",
+          "github": ""
+        },
+        "jesus": {
+          "role": "Fullstack Development - Innovation & AI",
+          "linkedin": "https://www.linkedin.com/in/jsusran/",
+          "github": ""
+        }
+      },
+      "roles": {
+        "ceo": "Co-Founder & CEO",
+        "cto": "Co-Founders and CTO",
+        "architect": "Co-Founder and Chief Systems Architect"
+      }
+    }
+  },
+  "plzContact": {
+    "back": "Back to Pulzen AI",
+    "title": "Contact",
+    "subtitle": "Our sales team can provide additional information and assistance for implements AI agents in your organization.",
+    "form": {
+      "fields": {
+        "reason": {
+          "label": "How can we help you?",
+          "placeholder": "Select an option"
+        },
+        "name": {
+          "label": "Full name",
+          "placeholder": "E.g. Carlos Gallardo"
+        },
+        "email": {
+          "label": "Email address",
+          "placeholder": "carlos@company.com"
+        },
+        "industry": {
+          "label": "Field or industry",
+          "placeholder": "E.g. Mining, Retail..."
+        },
+        "contactMethod": {
+          "label": "How do you prefer us to contact you?",
+          "options": {
+            "email": "Email",
+            "whatsapp": "WhatsApp",
+            "phone": "Phone call"
+          }
+        }
+      },
+      "reasons": {
+        "options": [
+          "Sales and demos",
+          "Product support",
+          "Strategic alliances",
+          "Press and media",
+          "Other"
+        ],
+        "messages": {
+          "Sales and demos": "“An executive will contact you in less than 24 hours to coordinate a demo or provide more information.”",
+          "Product support": "“The support team will respond as soon as possible to provide a solution to the reported case.”",
+          "Strategic alliances": "“The team will review the proposal and contact you in less than 48 hours to follow up.”",
+          "Press and media": "“The communications team will respond in less than 24 hours to coordinate the request.”",
+          "Other": "“The message will be reviewed and a response will be delivered in less than 24 hours.”"
+        }
+      },
+      "submit": "Send",
+      "defaultSuccess": "We will contact you in less than 24 hours."
+    },
+    "backBtn": "Back to Pulzen AI",
+    "quoteBanner": {
+      "title": "Need a custom quote?",
+      "subtitle": "Use our smart quoter to get an estimated budget based on your specific needs.",
+      "cta": "Go to quoter"
+    }
+  },
+  "plzQuote": {
+    "back": "Back to Pulzen AI",
+    "badge": "Quote",
+    "title": "I want to get a quote",
+    "subtitle": "Take the next step toward automation. Complete your details and a specialist will prepare a custom proposal.",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "E.g. Juan Pérez",
+      "email": "Email address",
+      "emailPlaceholder": "E.g. juan@company.com",
+      "company": "Company or organization",
+      "companyPlaceholder": "Your company name",
+      "phone": "Phone",
+      "phonePlaceholder": "+56 9 1234 5678",
+      "usersLabel": "Number of users",
+      "agentsLabel": "Number of agents",
+      "supportLabel": "Support Level",
+      "plans": [
+        {
+          "id": "Basic",
+          "price": "$2,500/month",
+          "desc": "Infrastructure included"
+        },
+        {
+          "id": "Medium",
+          "price": "$4,000/month",
+          "desc": "+ 20 monthly hours"
+        },
+        {
+          "id": "Pro",
+          "price": "$5,000/month",
+          "desc": "+ 30 monthly hours"
+        }
+      ],
+      "submit": "Start"
+    }
+  },
+  "plzIndustry": {
+    "performance": {
+      "title": "Development Metrics",
+      "description": "Modern software development teams generate a massive amount of data through commits, pull requests, issues, and CI/CD metrics.",
+      "ctaHero": "Start today",
+      "ctaTitle": "Start analyzing your team's performance today",
+      "ctaDescription": "Launch your first AI agent today! With Pulzen, you can deploy powerful software engineering metrics tools without technical effort or complex implementations. Broaden your operation's visibility, reduce bottlenecks, and automate reports without delay.",
+      "ctaDemo": "Watch demo in action",
+      "ctaContact": "Contact the team",
+      "nav": {
+        "velocidad": "Delivery Speed",
+        "actividad": "Team Activity",
+        "calidad": "Quality and Reviews",
+        "copilot": "AI Adoption and Copilot",
+        "bienestar": "Team Well-being"
+      }
+    },
+    "mining": {
+      "title": "Autonomous Mining",
+      "description": "Detects unsafe conditions and automates processes in real-time with agents operating in site systems, reducing downtime.",
+      "ctaHero": "Start today",
+      "ctaTitle": "Start analyzing your site's performance today",
+      "ctaDescription": "Launch your first AI agent today! With Pulzen, you can deploy powerful operational tools for the mining industry without technical effort. Broaden your corporate operation's visibility and automate your reports, reducing risks.",
+      "ctaDemo": "Watch demo in action",
+      "ctaContact": "Contact the team",
+      "nav": {
+        "supervision": "Intelligent Supervision",
+        "mantenimiento": "Maintenance RAG",
+        "conectividad": "Connectivity Control",
+        "gemelo": "Cognitive Twin",
+        "entrenamiento": "Technical Training"
+      }
+    },
+    "retail": {
+      "title": "Retail Intelligence",
+      "description": "In the modern retail sector, understanding customer behavior and optimizing inventory is crucial to maintaining competitiveness.",
+      "description2": "Retail Intelligence is an AI solution that transforms sales data, inventory, and customer behavior into actionable information to drive sales and improve customer experience.",
+      "ctaHero": "Start today",
+      "ctaTitle": "Start increasing your business conversions today",
+      "ctaDescription": "Launch your first AI agent today! With Pulzen, you can deploy smart retail-oriented tools to control inventory and anticipate demand, providing exceptional experiences.",
+      "ctaDemo": "Watch demo in action",
+      "ctaContact": "Contact the team",
+      "nav": {
+        "inventario": "Analysis and Inventory",
+        "recomendaciones": "Recommendations",
+        "pricing": "Pricing Optimization",
+        "performance": "Store Performance",
+        "customer_intelligence": "Customer Intelligence"
+      }
     }
   }
 }

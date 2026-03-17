@@ -2,59 +2,61 @@ import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
-
-const cases = [
-    { id: 'mining', title: 'Minería' },
-    { id: 'retail', title: 'Retail' },
-    { id: 'performance', title: 'Performance' },
-];
-
-const tabData: Record<string, { image: string, title: string, desc: string, btn: string, link?: string, tags: { icon: string, text: string }[] }> = {
-    mining: {
-        image: '/mining_operations.png',
-        title: 'Minería Autónoma',
-        desc: 'Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.',
-        btn: 'Conocer el caso',
-        tags: [
-            { icon: '🚜', text: 'Optimización de Rutas AI Agent' },
-            { icon: '⚠️', text: 'Monitor de Seguridad AI Agent' },
-            { icon: '⚙️', text: 'Mando de Equipos Predictivo' },
-            { icon: '📊', text: 'Análisis de Mineral AI Agent' },
-        ],
-        link: '/web/plz-mining'
-    },
-    retail: {
-        image: '/retail_analytics.png',
-        title: 'Retail Intelligence Suite',
-        desc: 'Previene quiebres de stock y personaliza comunicaciones. Agentes que interpretan la demanda omnicanal para optimizar inventarios y aumentar conversiones.',
-        btn: 'Conocer el caso',
-        tags: [
-            { icon: '📦', text: 'Control de Inventario AI Agent' },
-            { icon: '🎯', text: 'Generador de Promociones AI' },
-            { icon: '🛒', text: 'Soporte E-Commerce AI Agent' },
-            { icon: '📉', text: 'Predicción de Demanda AI' },
-        ],
-        link: '/web/plz-retail'
-    },
-    performance: {
-        image: '/performance_analytics.png',
-        title: 'Rendimiento Corporativo',
-        desc: 'Consolida silos de datos financieros en un dashboard de control. Obtén insights predictivos y agentes que generan reportes de salud financiera diariamente.',
-        btn: 'Conocer el caso',
-        tags: [
-            { icon: '📈', text: 'Analista Financiero AI Agent' },
-            { icon: '📋', text: 'Generador de Reportes AI' },
-            { icon: '🛡️', text: 'Detección de Fraude AI Agent' },
-            { icon: '💡', text: 'Recomendador de Inversión' },
-        ],
-        link: '/web/plz-performance'
-    }
-};
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzCases = () => {
+    const { t } = useLanguage();
     const [activeTab, setActiveTab] = useState('mining');
     const [isHovered, setIsHovered] = useState(false);
     const navigate = useNavigate();
+
+    const cases = [
+        { id: 'mining', title: t.plzCases.mining },
+        { id: 'retail', title: t.plzCases.retail },
+        { id: 'performance', title: t.plzCases.performance },
+    ];
+
+    const tabData: Record<string, { image: string, title: string, desc: string, btn: string, link?: string, tags: { icon: string, text: string }[] }> = {
+        mining: {
+            image: '/mining_operations.png',
+            title: t.plzCases.miningTitle,
+            desc: t.plzCases.miningDesc,
+            btn: t.plzCases.miningBtn,
+            tags: [
+                { icon: '🚜', text: t.plzCases.miningTags[0] },
+                { icon: '⚠️', text: t.plzCases.miningTags[1] },
+                { icon: '⚙️', text: t.plzCases.miningTags[2] },
+                { icon: '📊', text: t.plzCases.miningTags[3] },
+            ],
+            link: '/mining'
+        },
+        retail: {
+            image: '/retail_analytics.png',
+            title: t.plzCases.retailTitle,
+            desc: t.plzCases.retailDesc,
+            btn: t.plzCases.retailBtn,
+            tags: [
+                { icon: '📦', text: t.plzCases.retailTags[0] },
+                { icon: '🎯', text: t.plzCases.retailTags[1] },
+                { icon: '🛒', text: t.plzCases.retailTags[2] },
+                { icon: '📉', text: t.plzCases.retailTags[3] },
+            ],
+            link: '/retail'
+        },
+        performance: {
+            image: '/performance_analytics.png',
+            title: t.plzCases.performanceTitle,
+            desc: t.plzCases.performanceDesc,
+            btn: t.plzCases.performanceBtn,
+            tags: [
+                { icon: '📈', text: t.plzCases.performanceTags[0] },
+                { icon: '📋', text: t.plzCases.performanceTags[1] },
+                { icon: '🛡️', text: t.plzCases.performanceTags[2] },
+                { icon: '💡', text: t.plzCases.performanceTags[3] },
+            ],
+            link: '/performance'
+        }
+    };
 
     useEffect(() => {
         if (isHovered) return;
@@ -66,7 +68,7 @@ const PlzCases = () => {
             });
         }, 4000);
         return () => clearInterval(interval);
-    }, [isHovered]);
+    }, [isHovered, cases.length]);
 
     const currentData = tabData[activeTab];
 
@@ -78,18 +80,17 @@ const PlzCases = () => {
                 <StaggerContainer className="text-center mb-12 flex flex-col items-center">
                     <StaggerItem>
                         <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-6 inline-block tracking-widest uppercase bg-white/5">
-                            Casos aplicados
+                            {t.plzCases.badge}
                         </div>
                     </StaggerItem>
                     <StaggerItem>
                         <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
-                            Aplicación real del agente en distintas industrias, rubros y negocios.
+                            {t.plzCases.title}
                         </h2>
                     </StaggerItem>
                     <StaggerItem>
                         <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
-                            Diseñado para la escalabilidad y seguridad<br className="hidden md:block" />
-                            identificando los datos y ayudando a la toma de decisiones.
+                            {t.plzCases.description}
                         </p>
                     </StaggerItem>
                 </StaggerContainer>

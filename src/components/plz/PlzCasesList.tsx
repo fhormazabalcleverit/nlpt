@@ -1,54 +1,28 @@
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from './PlzMotion';
-
-const casesData = [
-    {
-        id: 'mining',
-        image: '/mining_operations.png',
-        title: 'Minería Autónoma',
-        desc: 'Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.',
-        btn: 'Conocer el caso',
-        tags: [
-            { icon: '🚜', text: 'Optimización de Rutas AI Agent' },
-            { icon: '⚠️', text: 'Monitor de Seguridad AI Agent' },
-            { icon: '⚙️', text: 'Mando de Equipos Predictivo' },
-            { icon: '📊', text: 'Análisis de Mineral AI Agent' },
-        ],
-        link: '/web/plz-mining'
-    },
-    {
-        id: 'retail',
-        image: '/retail_analytics.png',
-        title: 'Retail Intelligence Suite',
-        desc: 'Previene quiebres de stock y personaliza comunicaciones. Agentes que interpretan la demanda omnicanal para optimizar inventarios y aumentar conversiones.',
-        btn: 'Conocer el caso',
-        tags: [
-            { icon: '📦', text: 'Control de Inventario AI Agent' },
-            { icon: '🎯', text: 'Generador de Promociones AI' },
-            { icon: '🛒', text: 'Soporte E-Commerce AI Agent' },
-            { icon: '📉', text: 'Predicción de Demanda AI' },
-        ],
-        link: '/web/plz-retail'
-    },
-    {
-        id: 'performance',
-        image: '/performance_analytics.png',
-        title: 'Rendimiento Corporativo',
-        desc: 'Consolida silos de datos financieros en un dashboard de control. Obtén insights predictivos y agentes que generan reportes de salud financiera diariamente.',
-        btn: 'Conocer el caso',
-        tags: [
-            { icon: '📈', text: 'Analista Financiero AI Agent' },
-            { icon: '📋', text: 'Generador de Reportes AI' },
-            { icon: '🛡️', text: 'Detección de Fraude AI Agent' },
-            { icon: '💡', text: 'Recomendador de Inversión' },
-        ],
-        link: '/web/plz-performance'
-    }
-];
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzCasesList = () => {
     const navigate = useNavigate();
+    const { t } = useLanguage();
+
+    const casesItems = t.plzCasesList.items;
+    
+    const casesWithIcons = [
+        { id: 'mining', icons: ['🚜', '⚠️', '⚙️', '📊'], image: '/mining_operations.png', link: '/mining' },
+        { id: 'retail', icons: ['📦', '🎯', '🛒', '📉'], image: '/retail_analytics.png', link: '/retail' },
+        { id: 'performance', icons: ['📈', '📋', '🛡️', '💡'], image: '/performance_analytics.png', link: '/performance' }
+    ];
+
+    const displayCases = casesWithIcons.map(c => {
+        const trans = casesItems[c.id];
+        return {
+            ...c,
+            ...trans,
+            tags: trans.tags.map((text: string, i: number) => ({ icon: c.icons[i], text }))
+        };
+    });
 
     return (
         <section className="font-sansation w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,27 +30,27 @@ const PlzCasesList = () => {
                 {/* Badge */}
                 <StaggerItem>
                     <div className="mb-8 inline-flex items-center px-5 py-1.5 rounded-full border border-gray-700 bg-black/40 backdrop-blur-sm text-sm font-light text-gray-300 shadow-sm">
-                        Casos aplicados
+                        {t.plzCasesList.badge}
                     </div>
                 </StaggerItem>
 
                 {/* Title */}
                 <StaggerItem>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8 text-white max-w-4xl">
-                        Aplicación real del agente en distintas industrias, rubros y negocios.
+                        {t.plzCasesList.title}
                     </h1>
                 </StaggerItem>
 
                 {/* Description */}
                 <StaggerItem>
                     <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mb-12">
-                        Diseñado para la escalabilidad y seguridad identificando los datos y ayudando a la toma de decisiones.
+                        {t.plzCasesList.description}
                     </p>
                 </StaggerItem>
             </StaggerContainer>
 
             <div className="max-w-6xl mx-auto flex flex-col gap-12">
-                {casesData.map((data) => (
+                {displayCases.map((data) => (
                     <div
                         key={data.id}
                         className="w-full group relative rounded-[2rem] overflow-hidden bg-[#0a0f12] aspect-square md:aspect-[16/7] border border-white/10 hover:border-[#19687A]/50 transition-all duration-500 shadow-2xl cursor-pointer"
@@ -107,7 +81,7 @@ const PlzCasesList = () => {
 
                                 {/* Tags/Badges Grid */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-xl">
-                                    {data.tags.map((tag, idx) => (
+                                    {data.tags.map((tag: any, idx: number) => (
                                         <div key={idx} className="flex items-center gap-3 px-4 py-2 bg-black/40 backdrop-blur-md rounded-xl border border-white/10 group-hover:border-[#19687A]/30 transition-colors">
                                             <div className="w-5 h-5 rounded-full flex items-center justify-center text-[18px]">{tag.icon}</div>
                                             <span className="text-sm font-light text-gray-300">{tag.text}</span>

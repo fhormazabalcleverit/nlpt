@@ -6,8 +6,10 @@ import DynamicSEO from '../components/DynamicSEO';
 import PlzBentoGrid from '../components/plz/PlzBentoGrid';
 import PlzPlatformFeatures from '../components/plz/PlzPlatformFeatures';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
+import { useLanguage } from '../context/LanguageContext';
 
 const WebPlzPlatformPage = () => {
+    const { t } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -20,8 +22,8 @@ const WebPlzPlatformPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] flex flex-col font-sansation text-white">
             <DynamicSEO
-                title="Plataforma | Pulzen AI"
-                description="Una plataforma de agentes de IA para la automatización de procesos agénticos"
+                title={`${t.plzNavbar.platform} | Pulzen AI`}
+                description={t.plzPlatform.description}
                 url={window.location.href}
             />
             <PlzNavbar />
@@ -45,32 +47,28 @@ const WebPlzPlatformPage = () => {
                         {/* Badge */}
                         <StaggerItem>
                             <div className="mb-8 inline-flex items-center px-5 py-1.5 rounded-full border border-gray-700 bg-black/40 backdrop-blur-sm text-sm font-light text-gray-300 shadow-sm">
-                                Plataforma Pulzen
+                                {t.plzPlatform.badge}
                             </div>
                         </StaggerItem>
 
                         {/* Title */}
                         <StaggerItem>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8">
-                                Una plataforma agéntica<br className="hidden sm:block" />
-                                de IA para la automatización<br className="hidden sm:block" />
-                                de procesos operacionales
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8 whitespace-pre-line">
+                                {t.plzPlatform.title}
                             </h1>
                         </StaggerItem>
 
                         {/* Description */}
                         <StaggerItem>
                             <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mb-12">
-                                Nuestra plataforma agéntica ofrece una amplia gama de
-                                herramientas diseñadas para facilitar la transición de su organización a un
-                                futuro basado en la IA.
+                                {t.plzPlatform.description}
                             </p>
                         </StaggerItem>
 
                         {/* Button */}
                         <StaggerItem>
                             <button className="px-5 py-2 text-sm font-medium text-white bg-[#19687A] hover:bg-[#17BBCD] rounded-xl transition-all shadow-lg shadow-blue-900/20 mb-24">
-                                Conócela ahora
+                                {t.plzPlatform.cta}
                             </button>
                         </StaggerItem>
                     </StaggerContainer>

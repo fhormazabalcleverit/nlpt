@@ -1,6 +1,6 @@
 // import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, ShoppingBag, Pickaxe, BarChart3 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, ShoppingBag, Pickaxe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SEO from '../components/SEO';
@@ -78,7 +78,7 @@ const UseCaseDetailPage = () => {
         />
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">{t.useCases.notFound}</h1>
-          <Link to="/use-cases" className="text-pink-400 hover:text-pink-300 transition-colors">
+          <Link to="/v2/use-cases" className="text-pink-400 hover:text-pink-300 transition-colors">
             {t.useCases.backToUseCases}
           </Link>
         </div>
@@ -100,7 +100,7 @@ const UseCaseDetailPage = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <Link
-          to="/use-cases"
+          to="/v2/use-cases"
           className="inline-flex items-center space-x-2 text-gray-400 hover:text-pink-400 transition-colors duration-200 mb-8"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -120,7 +120,7 @@ const UseCaseDetailPage = () => {
               {(useCase as any).iconSvg ? (
                 <img src={(useCase as any).iconSvg} alt={useCase.title} className="w-10 h-10" />
               ) : (
-                <useCase.icon className="w-10 h-10 text-white" />
+                useCase.icon && <useCase.icon className="w-10 h-10 text-white" />
               )}
             </div>
 
@@ -475,7 +475,7 @@ const UseCaseDetailPage = () => {
             {t.useCases.detailCtaSubtitle}
           </p>
           <Link
-            to="/quote"
+            to="/v2/quote"
             className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
           >
             {t.useCases.ctaButton}

@@ -1,18 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
-
-const benefits = [
-    "Mejora continua",
-    "Automatización",
-    "Reducción tiempos",
-    "Identificación de riesgos",
-    "Optimización de costos",
-    "Insights accionables",
-];
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzGraphic = () => {
+    const { t } = useLanguage();
     const [offset, setOffset] = useState(0);
     const [activeCard, setActiveCard] = useState(0);
+
+    const benefits = t.plzGraphic.benefits;
 
     useEffect(() => {
         let animationFrameId: number;
@@ -48,8 +43,6 @@ const PlzGraphic = () => {
         return () => clearInterval(timer);
     }, []);
 
-    // Function to calculate Y based on X exactly for our curve
-    // Continuously slopes upwards across the entire width
     const getCurveY = (x: number) => {
         const normalized = Math.max(0, (x + 150) / 1250);
         return 390 - 350 * Math.pow(normalized, 1.8);
@@ -68,17 +61,17 @@ const PlzGraphic = () => {
                 <StaggerContainer className="text-center mb-16 flex flex-col items-center">
                     <StaggerItem>
                         <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 inline-block tracking-widest uppercase">
-                            Ventajas Pulzen AI
+                            {t.plzGraphic.badge}
                         </div>
                     </StaggerItem>
                     <StaggerItem>
                         <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-3xl mb-6">
-                            Escala tu operación con un agente inteligente y adaptativo
+                            {t.plzGraphic.title}
                         </h2>
                     </StaggerItem>
                     <StaggerItem>
                         <p className="text-lg md:text-xl text-gray-400 font-light max-w-2xl leading-relaxed">
-                            Sea cual sea tu industria, Pulzen AI se integra y evoluciona contigo.
+                            {t.plzGraphic.description}
                         </p>
                     </StaggerItem>
                 </StaggerContainer>
@@ -124,7 +117,7 @@ const PlzGraphic = () => {
                                 <path d={pathData} fill="none" stroke="url(#lineGrad)" strokeWidth="6" strokeLinecap="round" />
 
                                 {/* Animated Points on the curve */}
-                                {benefits.map((_, i) => {
+                                {benefits.map((_: any, i: number) => {
                                     const x = (i * 200 + offset) % 1200;
                                     const renderX = x - 100; // -100 to 1100
                                     const cy = getCurveY(renderX);
@@ -163,16 +156,16 @@ const PlzGraphic = () => {
 
                         {/* Content inside graphic */}
                         <div className="relative z-10 w-full md:w-1/2 flex-none translate-y-2 md:translate-y-10 pointer-events-none">
-                            <h3 className="text-2xl md:text-3xl text-white mb-2 tracking-tight">Evolución operacional</h3>
-                            <h3 className="text-2xl md:text-3xl text-gray-300 font-light mb-8 tracking-tight">para la escalabilidad de cada servicio</h3>
+                            <h3 className="text-2xl md:text-3xl text-white mb-2 tracking-tight">{t.plzGraphic.evolutionTitle}</h3>
+                            <h3 className="text-2xl md:text-3xl text-gray-300 font-light mb-8 tracking-tight">{t.plzGraphic.evolutionSubtitle}</h3>
                             <button className="px-5 py-2 text-sm font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A] hover:border-[#17BBCD] rounded-xl transition-all  pointer-events-auto">
-                                Conocer más
+                                {t.plzGraphic.button}
                             </button>
                         </div>
 
                         {/* Animated Labels */}
                         <div className="absolute inset-0 z-10 hidden md:block pointer-events-none ml-10 mb-10">
-                            {benefits.map((benefit, i) => {
+                            {benefits.map((benefit: string, i: number) => {
                                 const x = (i * 200 + offset) % 1200;
                                 const renderX = x - 100;
                                 const cy = getCurveY(renderX);
@@ -234,38 +227,7 @@ const PlzGraphic = () => {
                     className="relative w-full flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory hide-scroll"
                     staggerChildren={0.05}
                 >
-                    {[
-                        {
-                            tag: 'Evolución',
-                            title: 'Mejora continua basada en datos',
-                            desc: 'Tu capacidad aumenta iterativamente a partir del autoaprendizaje sobre el uso y resultados previos.'
-                        },
-                        {
-                            tag: 'Eficiencia',
-                            title: 'Automatización de análisis complejos',
-                            desc: 'Procesa grandes volúmenes de información simultáneamente para resolver problemas profundos sin fatiga operativa.'
-                        },
-                        {
-                            tag: 'Velocidad',
-                            title: 'Reducción de tiempos de decisión',
-                            desc: 'Optimiza el flujo de información y entrega respuestas críticas listas para acelerar la acción.'
-                        },
-                        {
-                            tag: 'Seguridad',
-                            title: 'Identificación temprana de riesgos',
-                            desc: 'Detecta anomalías y patrones inusuales mucho antes de que se conviertan en incidentes para tu negocio.'
-                        },
-                        {
-                            tag: 'Rentabilidad',
-                            title: 'Optimización de recursos y costos',
-                            desc: 'Maximiza el rendimiento de tus activos operacionales y disminuye el gasto innecesario.'
-                        },
-                        {
-                            tag: 'Evaluar Retorno',
-                            title: 'Insights accionables en tiempo real',
-                            desc: 'Identificación temprana de oportunidades y patrones para tomar decisiones ágiles, sin retrasar a tus equipos.'
-                        }
-                    ].map((card, i) => (
+                    {t.plzGraphic.cards.map((card: any, i: number) => (
                         <StaggerItem key={i}>
                             <div
                                 className="snap-start flex-none w-[300px] md:w-[calc(50vw-48px)] lg:w-[350px] bg-[#1C2126]/40 border border-white/5 p-8 rounded-xl flex flex-col justify-start hover:bg-white/[0.02] transition-colors duration-300 h-full"

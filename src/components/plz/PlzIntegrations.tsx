@@ -2,43 +2,45 @@ import { useState, useEffect } from 'react';
 import { MoreVertical, ThumbsUp, ThumbsDown, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
-
-const integrations = [
-    {
-        id: 'sharepoint',
-        title: 'SharePoint',
-        desc: 'Conecta documentos, listas y bibliotecas de SharePoint para análisis y consultas inteligentes.',
-        popupText: 'Extrayendo actas de reunión y documentos de proyectos desde SharePoint.'
-    },
-    {
-        id: 'db',
-        title: 'Bases de datos',
-        desc: 'Integración con todo tipo de bases de datos SQL, NoSQL, BigQuery y sistemas de almacenamiento empresarial.',
-        popupText: 'Consultando registros históricos en base de datos PostgreSQL.'
-    },
-    {
-        id: 'files',
-        title: 'Archivos',
-        desc: 'Procesa archivos PDF, Word, Excel y otros formatos para extraer información relevante.',
-        popupText: 'Procesando y clasificando 50 facturas en formato PDF.'
-    },
-    {
-        id: 'api',
-        title: 'APIs',
-        desc: 'Conecta con APIs REST y servicios web para obtener datos en tiempo real.',
-        popupText: 'Obteniendo cotizaciones en tiempo real mediante API REST.'
-    },
-    {
-        id: 'mcp',
-        title: 'MCP',
-        desc: 'Model Context Protocol para integración avanzada con sistemas externos y flujos personalizados.',
-        popupText: 'Sincronizando contexto de agente mediante conexión MCP.'
-    }
-];
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzIntegrations = () => {
+    const { t } = useLanguage();
     const [activeIndex, setActiveIndex] = useState(0);
     const [isProcessing, setIsProcessing] = useState(false);
+
+    const integrations = [
+        {
+            id: 'sharepoint',
+            title: t.plzIntegrations.items.sharepoint.title,
+            desc: t.plzIntegrations.items.sharepoint.desc,
+            popupText: t.plzIntegrations.items.sharepoint.popupText
+        },
+        {
+            id: 'db',
+            title: t.plzIntegrations.items.db.title,
+            desc: t.plzIntegrations.items.db.desc,
+            popupText: t.plzIntegrations.items.db.popupText
+        },
+        {
+            id: 'files',
+            title: t.plzIntegrations.items.files.title,
+            desc: t.plzIntegrations.items.files.desc,
+            popupText: t.plzIntegrations.items.files.popupText
+        },
+        {
+            id: 'api',
+            title: t.plzIntegrations.items.api.title,
+            desc: t.plzIntegrations.items.api.desc,
+            popupText: t.plzIntegrations.items.api.popupText
+        },
+        {
+            id: 'mcp',
+            title: t.plzIntegrations.items.mcp.title,
+            desc: t.plzIntegrations.items.mcp.desc,
+            popupText: t.plzIntegrations.items.mcp.popupText
+        }
+    ];
 
     // Auto-cycle through integrations every 3 seconds
     useEffect(() => {
@@ -58,7 +60,7 @@ const PlzIntegrations = () => {
         }, 3000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [integrations.length]);
 
 
     return (
@@ -69,17 +71,17 @@ const PlzIntegrations = () => {
                 <StaggerContainer className="text-center mb-16 flex flex-col items-center">
                     <StaggerItem>
                         <div className="px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-6 inline-block tracking-widest uppercase bg-white/5">
-                            Integraciones
+                            {t.plzIntegrations.badge}
                         </div>
                     </StaggerItem>
                     <StaggerItem>
                         <h2 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight max-w-4xl mb-6">
-                            Pon los datos a tu servicio
+                            {t.plzIntegrations.title}
                         </h2>
                     </StaggerItem>
                     <StaggerItem>
                         <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
-                            Pulzen IA extrae datos de múltiples fuentes, los estandariza y limpia, apoyando la toma de decisiones con una intervención manual mínima.
+                            {t.plzIntegrations.description}
                         </p>
                     </StaggerItem>
                 </StaggerContainer>
@@ -183,7 +185,7 @@ const PlzIntegrations = () => {
                                                             animate={{ opacity: 1, x: 0 }}
                                                             transition={{ delay: 0.1 }}
                                                         >
-                                                            {isFront && isProcessing ? 'Procesado' : 'Pendiente'}
+                                                            {isFront && isProcessing ? t.plzIntegrations.statusProcessed : t.plzIntegrations.statusPending}
                                                         </motion.span>
                                                     </motion.div>
 

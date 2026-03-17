@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, Pickaxe, BarChart3, ArrowRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, Pickaxe, ArrowRight, Sparkles } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useLanguage } from '../context/LanguageContext';
 import SEO from '../components/SEO';
@@ -88,7 +87,7 @@ const UseCasesPage = () => {
 
                 {/* Card */}
                 <Link
-                  to={`/use-cases/${useCase.id}`}
+                  to={`/v2/use-cases/${useCase.id}`}
                   className="block group bg-gray-900/50 border border-gray-700 rounded-3xl hover:border-pink-500/50 transition-all duration-300 hover:bg-gray-800/50 hover:scale-105 relative h-full"
                   style={{
                     backgroundImage: `url(${import.meta.env.BASE_URL}card.svg)`,
@@ -155,7 +154,7 @@ const UseCasesPage = () => {
 
                       {/* CTA Buttons */}
           <div className="animate-slide-up-delay-2 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 px-4">
-            <Link to="/quote" className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25 text-center">
+            <Link to="/v2/quote" className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25 text-center">
               {t.hero.ctaPrimary}
             </Link>
             <a href="https://phoenix.cleveritgroup.ai/?offering=llmapps" target="_blank" rel="noopener noreferrer" className="relative w-full sm:w-auto border-2 border-gray-600 hover:border-pink-500 text-white hover:text-pink-400 font-medium px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 bg-transparent hover:bg-pink-500/10 text-center flex items-center justify-center gap-2 group">

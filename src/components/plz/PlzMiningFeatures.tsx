@@ -1,116 +1,75 @@
 import { useState, useEffect } from 'react';
-
+import { useLanguage } from '../../context/LanguageContext';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
 
-const miningFeatures: any[] = [
-    {
-        id: 'supervision',
-        shortTitle: 'Supervisión Inteligente',
-        title: 'Agente Minero Inteligente para Supervisión y Telemetría',
-        desc: `Reto: Falta de visibilidad centralizada sobre equipos, conectividad y riesgos.
-
-LLMAPPS puede:
-Integrarse a fuentes como PI System, SCADA, SAP PM, sensores y logs de robots teleoperados.`,
-        bullets: [
-            {
-                title: 'Ofrecer consultas conversacionales del tipo:',
-                subItems: [
-                    '"Muéstrame los equipos telecomandados inactivos en la galería Norte 3"',
-                    '"¿Qué pala tiene mayor probabilidad de falla esta semana?"'
-                ]
-            },
-            'Hacer alertas proactivas por lenguaje natural (Teams, WhatsApp o panel web).',
-            'Complementar los sistemas actuales sin reemplazarlos.'
-        ],
-        highlightText: '👉 Valor: Reduce tiempo de diagnóstico, mejora decisiones operativas sin necesidad de dashboards complejos.',
-        image: '/mining_operations.png'
-    },
-    {
-        id: 'mantenimiento',
-        shortTitle: 'RAG Mantenimiento',
-        title: 'RAG Predictivo de Mantenimiento',
-        desc: `Reto: Las palas mueren en zonas peligrosas sin aviso ni repuestos a tiempo.
-
-LLMAPPS puede:
-Crear un modelo RAG (Retrieval-Augmented Generation) que lea reportes de mantenimiento históricos y manuales de fabricante.`,
-        bullets: [
-            {
-                title: 'Permitir consultas como:',
-                subItems: [
-                    '"¿Qué componentes críticos fallan más en palas Caterpillar 2022?"',
-                    '"¿Cuál es la probabilidad de falla del radiador en la pala 14 según registros?"'
-                ]
-            },
-            'Integrar un modelo de scoring de riesgo técnico y sugerir órdenes preventivas en SAP PM o similar.'
-        ],
-        highlightText: '👉 Valor: Minimiza fallas imprevistas, evita exposición de cuadrillas de mantenimiento.',
-        image: '/performance_analytics.png'
-    },
-    {
-        id: 'conectividad',
-        shortTitle: 'Control Conectividad',
-        title: 'Control Cognitivo de Conectividad y Terreno',
-        desc: `Reto: Baja conectividad en túneles dinámicos (LTE temporal / mesh Wi-Fi).
-
-LLMAPPS puede:
-Integrarse con sistemas de telemetría de red (Wi-Fi Mesh / LTE privado) para entender en qué frentes hay conexión débil.`,
-        bullets: [
-            {
-                title: 'Permitir consultas del tipo:',
-                subItems: [
-                    '"¿En qué sectores la red mesh tiene pérdida de paquetes >10%?"',
-                    '"¿Cuántas palas están fuera de cobertura?"'
-                ]
-            },
-            'Reentrenar modelos con topología dinámica (avances de 1,7 m diarios).'
-        ],
-        highlightText: '👉 Valor: Anticipa interrupciones operacionales y mejora la continuidad de teleoperación.',
-        image: '/retail_analytics.png'
-    },
-    {
-        id: 'gemelo',
-        shortTitle: 'Gemelo Cognitivo',
-        title: 'Gemelo Cognitivo de Operaciones',
-        desc: `Reto: Hay información dispersa entre RFI, Excel, reportes y sensores.
-
-LLMAPPS puede:
-Unificar todos los datos bajo una capa semántica accesible por lenguaje natural.`,
-        bullets: [
-            {
-                title: 'Generar "escenarios hipotéticos":',
-                subItems: [
-                    '"Simula qué pasa si automatizo el carril de explosivos."',
-                    '"¿Qué impacto tendría teleoperar los Boltec en productividad y riesgo?"'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Soporte a la toma de decisiones estratégicas en innovación y seguridad.',
-        image: '/mining_operations.png'
-    },
-    {
-        id: 'entrenamiento',
-        shortTitle: 'Entrenamiento Técnico',
-        title: 'Asistente de Entrenamiento Técnico',
-        desc: `Reto: Falta de operadores capacitados para teleoperación.
-
-LLMAPPS puede:
-Incluir un módulo de capacitación basado en IA, con prompts guiados tipo copiloto técnico.`,
-        bullets: [
-            {
-                title: 'Consultas y simulaciones:',
-                subItems: [
-                    '"Explícame cómo calibrar el Voltec para fortificación en galería inclinada."',
-                    '"Simula un fallo hidráulico y cómo reaccionar."'
-                ]
-            },
-            'Reentrenar al personal con base en manuales internos y videos.'
-        ],
-        highlightText: '👉 Valor: Democratiza el conocimiento técnico y reduce curva de aprendizaje.',
-        image: '/performance_analytics.png'
-    }
-];
-
 const PlzMiningFeatures = () => {
+    const { t } = useLanguage();
+    
+    // Map JSON data to the component's expected structure
+    const apps = t.useCases?.case2?.applications || {};
+    const miningFeatures = [
+        {
+            id: 'supervision',
+            shortTitle: t.plzMining?.nav?.supervision || 'Supervisión Inteligente',
+            title: apps.app1?.title,
+            desc: apps.app1?.challenge + '\n\n' + apps.app1?.capabilities,
+            bullets: apps.app1?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: apps.app1?.value,
+            image: '/mining_operations.png'
+        },
+        {
+            id: 'mantenimiento',
+            shortTitle: t.plzMining?.nav?.mantenimiento || 'RAG Mantenimiento',
+            title: apps.app2?.title,
+            desc: apps.app2?.challenge + '\n\n' + apps.app2?.capabilities,
+            bullets: apps.app2?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: apps.app2?.value,
+            image: '/performance_analytics.png'
+        },
+        {
+            id: 'conectividad',
+            shortTitle: t.plzMining?.nav?.conectividad || 'Control Conectividad',
+            title: apps.app3?.title,
+            desc: apps.app3?.challenge + '\n\n' + apps.app3?.capabilities,
+            bullets: apps.app3?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: apps.app3?.value,
+            image: '/retail_analytics.png'
+        },
+        {
+            id: 'gemelo',
+            shortTitle: t.plzMining?.nav?.gemelo || 'Gemelo Cognitivo',
+            title: apps.app4?.title,
+            desc: apps.app4?.challenge + '\n\n' + apps.app4?.capabilities,
+            bullets: apps.app4?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: apps.app4?.value,
+            image: '/mining_operations.png'
+        },
+        {
+            id: 'entrenamiento',
+            shortTitle: t.plzMining?.nav?.entrenamiento || 'Entrenamiento Técnico',
+            title: apps.app5?.title,
+            desc: apps.app5?.challenge + '\n\n' + apps.app5?.capabilities,
+            bullets: apps.app5?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: apps.app5?.value,
+            image: '/performance_analytics.png'
+        }
+    ];
+
     const [activeSection, setActiveSection] = useState(miningFeatures[0].id);
 
     useEffect(() => {
@@ -131,7 +90,7 @@ const PlzMiningFeatures = () => {
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, [miningFeatures]);
 
     return (
         <section className="relative w-full bg-[#040809] py-24 font-sansation text-white">

@@ -1,189 +1,75 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
 
-const performanceFeatures: any[] = [
-    {
-        id: 'velocidad',
-        shortTitle: 'Velocidad de Entrega',
-        title: 'Velocidad de Entrega y Eficiencia del Flujo',
-        desc: `Los equipos luchan por mantener ciclos de desarrollo rápidos mientras manejan revisiones de código, aprobaciones y despliegues sin visibilidad clara de cuellos de botella.
-        
-Pulzen mide métricas clave de DORA y DevExp como Deployment Frequency, Cycle Time, y Merge Frequency. Analiza Code Review Velocity, Time to Approval, PR Merge Times, y Code Review Timing para identificar delays.`,
-        bullets: [
-            {
-                title: 'DORA Metrics',
-                subItems: [
-                    'Deployment Frequency',
-                    'Merge Frequency',
-                    'Cycle Time end-to-end'
-                ]
-            },
-            {
-                title: 'DevExp Metrics',
-                subItems: [
-                    'Pickup Time, Review Time, Close Time',
-                    'Deploy Time, Coding Time'
-                ]
-            },
-            {
-                title: 'SPACE Framework',
-                subItems: [
-                    'Code Review Velocity',
-                    'Time to Approval',
-                    'PR Merge Times',
-                    'Análisis de Approval Rate'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Reduce tiempos de ciclo hasta 40%, identifica cuellos de botella y acelera time-to-market.',
-        image: '/mining_operations.png'
-    },
-    {
-        id: 'actividad',
-        shortTitle: 'Actividad de Equipo',
-        title: 'Actividad y Performance del Equipo',
-        desc: `Gerentes necesitan entender productividad, identificar top performers y detectar patrones sin micromanagement.
-
-Pulzen rastrea commits, lines of code, deploy frequency, y PR activity. Incluye Commit Score que evalúa valor e impacto mediante cambios, adiciones y eliminaciones.`,
-        bullets: [
-            {
-                title: 'SPACE Framework',
-                subItems: [
-                    'Commits, Lines of Code',
-                    'Deploy Frequency por usuario/equipo'
-                ]
-            },
-            {
-                title: 'Pulzen Commit Score',
-                subItems: [
-                    'Evaluación de valor e impacto',
-                    'Commit Detail con tracking temporal (adiciones/eliminaciones)',
-                    'Por usuario/equipo/repositorio'
-                ]
-            },
-            {
-                title: 'Pull Request Detail',
-                subItems: [
-                    'PRs abiertos/cerrados/merged',
-                    'Time-to-merge'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Identifica top performers, balancea cargas y reconoce contribuciones de alto valor con datos cuantitativos.',
-        image: '/performance_analytics.png'
-    },
-    {
-        id: 'calidad',
-        shortTitle: 'Calidad y Revisiones',
-        title: 'Calidad de Código y Revisiones',
-        desc: `Mantener calidad mientras se mueven rápido requiere procesos de revisión efectivos y métricas accionables.
-
-Pulzen analiza code review con SPACE Framework: Code Review Velocity, número de revisiones, approval rates, tiempo de aprobación. Incluye Workflow Detail with tracking de pipelines (estados: canceled, failed, successful) y duración.`,
-        bullets: [
-            {
-                title: 'SPACE Framework: Code Review',
-                subItems: [
-                    'Code Review Velocity',
-                    'Approval Rate, Time to Approval'
-                ]
-            },
-            {
-                title: 'Workflow Detail',
-                subItems: [
-                    'Tracking pipelines con estados/duración',
-                    'Por usuario/equipo/repositorio'
-                ]
-            },
-            {
-                title: 'Análisis dual',
-                subItems: [
-                    'Perspectiva autor PR vs reviewer/approver',
-                    'Insights sobre eficiencia y knowledge sharing'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Mejora calidad 30%, reduce tiempos de revisión y optimiza CI/CD.',
-        image: '/retail_analytics.png'
-    },
-    {
-        id: 'copilot',
-        shortTitle: 'Adopción IA y Copilot',
-        title: 'Adopción de GitHub Copilot y Herramientas de IA',
-        desc: `Organizaciones invierten en GitHub Copilot sin visibilidad de uso real, adopción y ROI.
-
-Pulzen integra métricas completas de GitHub Copilot: seat usage, suggestion acceptance rate, lines accepted, chat usage, patrones de uso diario. Análisis por IDE, lenguaje, usuario y equipo.`,
-        bullets: [
-            {
-                title: 'GitHub Copilot Metrics',
-                subItems: [
-                    'Seat usage',
-                    '% Suggestion accepted, % Lines accepted',
-                    '% Suggestion by chat'
-                ]
-            },
-            {
-                title: 'IDE per user/team',
-                subItems: [
-                    'Identificación de herramientas más usadas'
-                ]
-            },
-            {
-                title: 'Language per user/team',
-                subItems: [
-                    'Tracking lenguajes más usados'
-                ]
-            },
-            {
-                title: 'Daily usage of GitHub Copilot',
-                subItems: [
-                    'Visualización de patrones temporales diarios'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Maximiza ROI de Copilot, identifica oportunidades de capacitación y asegura adopción efectiva.',
-        image: '/mining_operations.png'
-    },
-    {
-        id: 'bienestar',
-        shortTitle: 'Bienestar del Equipo',
-        title: 'Bienestar del Desarrollador y Detección de Riesgos',
-        desc: `Burnout y desenganche son costosos pero difíciles de detectar temprano.
-
-Pulzen detecta burnout mediante análisis de overactivity, trabajo fuera de horario, y fines de semana usando VCS y Teams. Identifica Ghost Developers comparando actividad histórica vs actual para detectar caídas significativas.`,
-        bullets: [
-            {
-                title: 'Pulzen Burnout Developer',
-                subItems: [
-                    'Detección de overactivity',
-                    'Trabajo fuera de horario/fines de semana'
-                ]
-            },
-            {
-                title: 'Pulzen Ghost Developer con scoring',
-                subItems: [
-                    '0-2 Active, 3-4 Under observation',
-                    '5-6 Moderate risk, 7+ Sustained ghosting'
-                ]
-            },
-            {
-                title: 'Integración Teams',
-                subItems: [
-                    'Meetings, screen sharing'
-                ]
-            },
-            {
-                title: 'VCS activity tracking',
-                subItems: [
-                    'Early warnings para intervención (1:1s, Assignment review, Feedback)'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Reduce rotación 25%, detecta burnout antes de crisis y apoya bienestar con data-driven warnings.',
-        image: '/performance_analytics.png'
-    }
-];
-
 const PlzPerformanceFeatures = () => {
+    const { t } = useLanguage();
+
+    // Map JSON data to the component's expected structure
+    const apps = t.plzCasesList?.case3?.applications || {};
+    const performanceFeatures = [
+        {
+            id: 'velocidad',
+            shortTitle: t.plzPerformance?.nav?.velocidad || 'Velocidad de Entrega',
+            title: apps.app1?.title,
+            desc: apps.app1?.challenge + '\n\n' + apps.app1?.capabilities,
+            bullets: apps.app1?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: '👉 Valor: ' + apps.app1?.value,
+            image: '/mining_operations.png'
+        },
+        {
+            id: 'actividad',
+            shortTitle: t.plzPerformance?.nav?.actividad || 'Actividad de Equipo',
+            title: apps.app2?.title,
+            desc: apps.app2?.challenge + '\n\n' + apps.app2?.capabilities,
+            bullets: apps.app2?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: '👉 Valor: ' + apps.app2?.value,
+            image: '/performance_analytics.png'
+        },
+        {
+            id: 'calidad',
+            shortTitle: t.plzPerformance?.nav?.calidad || 'Calidad y Revisiones',
+            title: apps.app3?.title,
+            desc: apps.app3?.challenge + '\n\n' + apps.app3?.capabilities,
+            bullets: apps.app3?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: '👉 Valor: ' + apps.app3?.value,
+            image: '/retail_analytics.png'
+        },
+        {
+            id: 'copilot',
+            shortTitle: t.plzPerformance?.nav?.copilot || 'Adopción IA y Copilot',
+            title: apps.app4?.title,
+            desc: apps.app4?.challenge + '\n\n' + apps.app4?.capabilities,
+            bullets: apps.app4?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: '👉 Valor: ' + apps.app4?.value,
+            image: '/mining_operations.png'
+        },
+        {
+            id: 'bienestar',
+            shortTitle: t.plzPerformance?.nav?.bienestar || 'Bienestar del Equipo',
+            title: apps.app5?.title,
+            desc: apps.app5?.challenge + '\n\n' + apps.app5?.capabilities,
+            bullets: apps.app5?.features?.map((f: any) => ({
+                title: f.main,
+                subItems: f.sub || []
+            })) || [],
+            highlightText: '👉 Valor: ' + apps.app5?.value,
+            image: '/performance_analytics.png'
+        }
+    ];
+
     const [activeSection, setActiveSection] = useState(performanceFeatures[0].id);
 
     useEffect(() => {
@@ -204,7 +90,7 @@ const PlzPerformanceFeatures = () => {
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, [performanceFeatures]);
 
     return (
         <section className="relative w-full bg-[#040809] py-24 font-sansation text-white">
@@ -295,7 +181,7 @@ const PlzPerformanceFeatures = () => {
                                             </div>
                                         </StaggerItem>
                                     )}
-                                    
+
                                     {/* Graphic Container */}
                                     <StaggerItem>
                                         <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center">

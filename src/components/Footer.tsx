@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Logo and Description */}
           <div className="space-y-6">
-            <div className="flex items-center">
+            <Link to="/v2" className="flex items-center">
               <img src={`${import.meta.env.BASE_URL}logotipo.svg`} alt="LLMApp by CleverIT" className="h-8" />
-            </div>
+            </Link>
             <p className="text-gray-300 leading-relaxed max-w-sm">
               {t.footer.description}
             </p>
@@ -32,13 +32,13 @@ const Footer = () => {
           <div>
             <h3 className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-6">{language === 'es' ? 'MAPA DE SITIO' : 'SITEMAP'}</h3>
             <div className="space-y-4">
-              <Link to="/team" className="block text-gray-300 hover:text-pink-400 transition-colors duration-200">
+              <Link to="/v2/team" className="block text-gray-300 hover:text-pink-400 transition-colors duration-200">
                 {t.navbar.team}
               </Link>
-              <Link to="/use-cases" className="block text-gray-300 hover:text-pink-400 transition-colors duration-200">
+              <Link to="/v2/use-cases" className="block text-gray-300 hover:text-pink-400 transition-colors duration-200">
                 {t.navbar.useCases}
               </Link>
-              <Link to="/quote" className="block text-gray-300 hover:text-pink-400 transition-colors duration-200">
+              <Link to="/v2/quote" className="block text-gray-300 hover:text-pink-400 transition-colors duration-200">
                 {t.navbar.contact}
               </Link>
             </div>

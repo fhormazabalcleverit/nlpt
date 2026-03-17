@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import PlzPerformanceFeatures from '../components/plz/PlzPerformanceFeatures';
+import DynamicSEO from '../components/DynamicSEO';
 
 const WebPlzPerformancePage = () => {
+    const { t } = useLanguage();
+    const data = t.plzIndustry.performance;
+
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col">
+            <DynamicSEO 
+                title={`${data.title} | Pulzen AI`}
+                description={data.description}
+            />
             <PlzNavbar />
 
             <main className="flex-grow flex flex-col pt-32 pb-20">
@@ -15,30 +24,23 @@ const WebPlzPerformancePage = () => {
                     {/* Back Button */}
                     <div className="flex items-center gap-2">
                         <Link
-                            to="/web/plz"
+                            to="/"
                             className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-12 group"
                         >
                             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                            Volver a Pulzen AI
+                            {t.plzQuote?.back || 'Volver a Pulzen AI'}
                         </Link>
                     </div>
 
-                    {/* Badge */}
-                    {/* <div className="inline-flex px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-300 tracking-wide mb-6">
-                        Pulzen by LLM Apps
-                    </div> */}
                     {/* Title */}
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight mb-8">
-                        Development Metrics
+                        {data.title}
                     </h1>
 
                     {/* Description Text */}
                     <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl">
-                        Los equipos de desarrollo de software modernos generan una cantidad masiva de datos a través de commits, pull requests, issues y métricas de CI/CD.
+                        {data.description}
                     </p>
-                    {/* <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl">
-                        Development Metrics es una solución de IA que convierte estos datos en insights accionables basados en frameworks como SPACE, DORA y DevExp, permitiendo a los líderes técnicos mejorar la productividad del equipo y optimizar procesos de desarrollo.
-                    </p> */}
 
                     {/* Hero Full Width Graphic */}
                     <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center mt-12 mb-8">
@@ -62,15 +64,15 @@ const WebPlzPerformancePage = () => {
                 {/* Final CTA Section */}
                 <div className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-32 mb-10 text-center flex flex-col items-center animate-fade-in-up">
                     <div className="inline-flex px-4 py-1.5 border border-white/10 rounded-full text-xs text-gray-400 mb-8 tracking-wide">
-                        Empieza hoy
+                        {data.ctaHero}
                     </div>
 
                     <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-8 leading-tight">
-                        Empiece hoy mismo a analizar el <br className="hidden md:block" /> rendimiento de su equipo
+                        {data.ctaTitle}
                     </h2>
 
                     <p className="text-lg text-gray-400 font-light leading-relaxed mb-12 max-w-3xl">
-                        ¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar potentes herramientas de métricas para ingeniería de software sin esfuerzo técnico ni implementaciones complejas. Amplíe la visibilidad de su operación, reduzca los cuellos de botella y automatice los reportes sin demora.
+                        {data.ctaDescription}
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
@@ -78,13 +80,13 @@ const WebPlzPerformancePage = () => {
                             to="#"
                             className="w-full sm:w-auto px-8 py-3.5 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-sm font-medium transition-colors"
                         >
-                            Ver demo en funcionamiento
+                            {data.ctaDemo}
                         </Link>
                         <Link
-                            to="/web/plz-contact"
+                            to="/contact"
                             className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#19687A] hover:border-[#17BBCD] text-[#19687A] hover:text-[#17BBCD] rounded-xl text-sm font-medium transition-colors"
                         >
-                            Contactar al equipo
+                            {data.ctaContact}
                         </Link>
                     </div>
                 </div>

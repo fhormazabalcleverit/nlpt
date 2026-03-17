@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
 
@@ -32,23 +31,23 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+          <Link to="/v2" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
             <img src={`${import.meta.env.BASE_URL}logotipo.svg`} alt="LLMApp by CleverIT" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <Link to="/team" className="text-gray-300 hover:text-white transition-colors duration-200">
+            <Link to="/v2/team" className="text-gray-300 hover:text-white transition-colors duration-200">
               {t.navbar.team}
             </Link>
-            <Link to="/use-cases" className="text-gray-300 hover:text-white transition-colors duration-200">
+            <Link to="/v2/use-cases" className="text-gray-300 hover:text-white transition-colors duration-200">
               {t.navbar.useCases}
             </Link>
-            <Link to="/quote" className="text-gray-300 hover:text-white transition-colors duration-200">
+            <Link to="/v2/quote" className="text-gray-300 hover:text-white transition-colors duration-200">
               {t.navbar.contact}
             </Link>
             <a 
-              href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
+              href="https://phoenix.cleveritgroup.ai/chat/XfbwQq3kX8tVV8C1?offering=llmapps" 
               target="_blank" 
               rel="noopener noreferrer"
               className="relative p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-900 ease-out group"
@@ -68,15 +67,30 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Right side - Language Toggle */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium"
-            >
-              <Globe className="w-5 h-5" />
-              <span>{language === 'es' ? 'EN' : 'ES'}</span>
-            </button>
+          {/* Right side - Language Toggle Switch */}
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/20 p-1 rounded-full">
+                <button
+                    onClick={() => language !== 'es' && toggleLanguage()}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
+                        language === 'es' 
+                            ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg shadow-pink-500/30' 
+                            : 'text-gray-400 hover:text-gray-200'
+                    }`}
+                >
+                    ES
+                </button>
+                <button
+                    onClick={() => language !== 'en' && toggleLanguage()}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
+                        language === 'en' 
+                            ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg shadow-purple-500/30' 
+                            : 'text-gray-400 hover:text-gray-200'
+                    }`}
+                >
+                    EN
+                </button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -98,18 +112,18 @@ const Navbar = () => {
               : 'bg-backblack/95 backdrop-blur-sm border-gray-800'
           }`}>
             <div className="px-2 pt-2 pb-3 space-y-1 text-center">
-              <Link to="/team" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
+              <Link to="/v2/team" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
                 {t.navbar.team}
               </Link>
-              <Link to="/use-cases" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
+              <Link to="/v2/use-cases" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
                 {t.navbar.useCases}
               </Link>
-              <Link to="/quote" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
+              <Link to="/v2/quote" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 text-center" onClick={() => setIsOpen(false)}>
                 {t.navbar.contact}
               </Link>
               <div className="px-3 py-2">
                 <a 
-                  href="https://phoenix.cleveritgroup.ai/?offering=llmapps" 
+                  href="https://phoenix.cleveritgroup.ai/chat/XfbwQq3kX8tVV8C1?offering=llmapps" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="relative block w-full p-0.5 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-500 bg-[length:400%_100%] animate-gradient-slow rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-500 ease-out group"
@@ -129,17 +143,30 @@ const Navbar = () => {
                   </span>
                 </a>
               </div>
-              <div className="flex items-center justify-center px-3 py-2 border-t border-gray-700 mt-4 pt-4">
-                <button
-                  onClick={() => {
-                    toggleLanguage();
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-4 py-2 rounded-full transition-colors duration-200 font-medium"
-                >
-                  <Globe className="w-5 h-5" />
-                  <span>{language === 'es' ? 'EN' : 'ES'}</span>
-                </button>
+              <div className="flex items-center justify-center gap-2 py-4 border-t border-gray-700 mt-4">
+                <span className="text-xs text-gray-500 font-medium">Idioma:</span>
+                <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/20 p-1 rounded-full">
+                    <button
+                        onClick={() => language !== 'es' && toggleLanguage()}
+                        className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
+                            language === 'es' 
+                                ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg' 
+                                : 'text-gray-400'
+                        }`}
+                    >
+                        ES
+                    </button>
+                    <button
+                        onClick={() => language !== 'en' && toggleLanguage()}
+                        className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
+                            language === 'en' 
+                                ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg' 
+                                : 'text-gray-400'
+                        }`}
+                    >
+                        EN
+                    </button>
+                </div>
               </div>
             </div>
           </div>

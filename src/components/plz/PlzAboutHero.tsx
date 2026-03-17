@@ -1,29 +1,30 @@
 import { StaggerContainer, StaggerItem } from './PlzMotion';
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzAboutHero = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="font-sansation text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <StaggerContainer className="flex flex-col items-center">
                 {/* Badge */}
                 <StaggerItem>
                     <div className="mb-8 inline-flex items-center px-5 py-1.5 rounded-full border border-gray-700 bg-black/40 backdrop-blur-sm text-sm font-light text-gray-300 shadow-sm">
-                        Sobre nosotros
+                        {t.plzAbout.hero.badge}
                     </div>
                 </StaggerItem>
 
                 {/* Title */}
                 <StaggerItem>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8 text-white max-w-4xl">
-                        Creando tecnología con propósito desde la visión de la experiencia para impactar y dar valor en cada negocio.
+                        {t.plzAbout.hero.title}
                     </h1>
                 </StaggerItem>
 
                 {/* Description */}
                 <StaggerItem>
                     <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mb-12">
-                        Estamos construyendo agentes de inteligencia artificial generativa para apoyar la gestión operativa,
-                        automatizar tareas repetitivas o manuales y
-                        aumentar la productividad y visibilidad de los equipos.
+                        {t.plzAbout.hero.description}
                     </p>
                 </StaggerItem>
             </StaggerContainer>
@@ -44,7 +45,7 @@ const PlzAboutHero = () => {
             {/* Reflection Section */}
             <div className="mt-28 mb-16 max-w-4xl mx-auto flex flex-col items-center px-4">
                 <blockquote className="text-lg lg:text-xl font-light text-white leading-[1.2] mb-10 tracking-tight">
-                    "La tecnología evoluciona cada día, pero lo que realmente marca la diferencia son las personas que la impulsan. Nuestro propósito es transformar la innovación en resultados tangibles"
+                    {t.plzAbout.hero.quote}
                 </blockquote>
 
                 <div className="flex flex-col items-center gap-5">
@@ -59,7 +60,7 @@ const PlzAboutHero = () => {
                     <div className="text-center">
                         <h4 className="text-white font-medium text-xl mb-1">Carlos Gallardo</h4>
                         <p className="text-gray-400 text-sm md:text-base max-w-xs md:max-w-md">
-                            Chief Product Officer - Product Development and Innovation - Cleverit Group
+                            {t.team.member.position}
                         </p>
                     </div>
                 </div>
@@ -67,16 +68,16 @@ const PlzAboutHero = () => {
 
             <div className="mt-20 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32 border-t border-white/5 pt-12">
                 <div className="flex flex-col items-center">
-                    <span className="text-5xl font-medium text-white mb-2">9+</span>
-                    <span className="text-gray-400">Miembros del equipo</span>
+                    <span className="text-5xl font-medium text-white mb-2">{t.plzAbout.hero.stats.team.value}</span>
+                    <span className="text-gray-400">{t.plzAbout.hero.stats.team.label}</span>
                 </div>
                 <div className="flex flex-col items-center">
-                    <span className="text-5xl font-medium text-white mb-2">3</span>
-                    <span className="text-gray-400">Países</span>
+                    <span className="text-5xl font-medium text-white mb-2">{t.plzAbout.hero.stats.countries.value}</span>
+                    <span className="text-gray-400">{t.plzAbout.hero.stats.countries.label}</span>
                 </div>
                 <div className="flex flex-col items-center">
-                    <span className="text-5xl font-medium text-white mb-2">7</span>
-                    <span className="text-gray-400">Clientes</span>
+                    <span className="text-5xl font-medium text-white mb-2">{t.plzAbout.hero.stats.clients.value}</span>
+                    <span className="text-gray-400">{t.plzAbout.hero.stats.clients.label}</span>
                 </div>
             </div>
         </section>

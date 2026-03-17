@@ -1,73 +1,13 @@
 import { useState, useEffect } from 'react';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
-
-const platformFeatures: any[] = [
-    {
-        id: 'gestion',
-        shortTitle: 'Gestión Centralizada',
-        title: 'Gestión y Despliegue de Agentes',
-        desc: `Reto: Despliegue fragmentado de agentes y herramientas en distintos entornos.
-
-LLMAPPS puede:
-Ofrecer un Hub centralizado para la administración de toda la flota de agentes IA.`,
-        bullets: [
-            {
-                title: 'Capacidades clave incluyen:',
-                subItems: [
-                    'Crear y configurar nuevos agentes desde cero en minutos.',
-                    'Asignar roles y permisos a cada agente según el departamento.'
-                ]
-            },
-            'Monitorear la versión y las actualizaciones de cada modelo instalado.',
-            'Integración continua con repositorios y flujos CI/CD existentes.'
-        ],
-        highlightText: '👉 Valor: Simplifica el ciclo de vida, reduce costos de mantenimiento y acelera el time-to-market.',
-        image: '/mining_operations.png' // using placeholder images from existing ones
-    },
-    {
-        id: 'control',
-        shortTitle: 'Control y Supervisión',
-        title: 'Telemetría y Control Continuo',
-        desc: `Reto: Falta de visibilidad sobre cómo y dónde están operando los agentes.
-
-LLMAPPS puede:
-Proveer dashboards en tiempo real con métricas de rendimiento y uso de agentes.`,
-        bullets: [
-            {
-                title: 'Supervisión de métricas como:',
-                subItems: [
-                    'Tasa de éxito de tareas ejecutadas de forma autónoma.',
-                    'Consumo de tokens y costos asociados por agente o proceso.'
-                ]
-            },
-            'Alertas automáticas en caso de desviaciones o errores de ejecución.'
-        ],
-        highlightText: '👉 Valor: Garantiza fiabilidad operacional y optimización de recursos computacionales.',
-        image: '/performance_analytics.png'
-    },
-    {
-        id: 'seguridad',
-        shortTitle: 'Seguridad y Auditoría',
-        title: 'Seguridad, Gobernanza y Auditoría',
-        desc: `Reto: Riesgos de seguridad por acceso no autorizado y falta de trazabilidad.
-
-LLMAPPS puede:
-Implementar políticas de acceso granulares (RBAC) y un registro de auditoría inmutable.`,
-        bullets: [
-            {
-                title: 'Funcionalidades de seguridad:',
-                subItems: [
-                    'Garantizar que los agentes solo accedan a datos permitidos.',
-                    'Registrar cada interacción o decisión tomada por la IA.'
-                ]
-            }
-        ],
-        highlightText: '👉 Valor: Asegura cumplimiento normativo y confianza total en procesos automatizados.',
-        image: '/retail_analytics.png'
-    }
-];
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzPlatformFeatures = () => {
+    const { t } = useLanguage();
+
+    // Get features from translation file
+    const platformFeatures = t.plzPlatform.features;
+
     const [activeSection, setActiveSection] = useState(platformFeatures[0].id);
 
     useEffect(() => {
@@ -82,13 +22,13 @@ const PlzPlatformFeatures = () => {
             { rootMargin: '-20% 0px -60% 0px' }
         );
 
-        platformFeatures.forEach((feat) => {
+        platformFeatures.forEach((feat: any) => {
             const el = document.getElementById(feat.id);
             if (el) observer.observe(el);
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, [platformFeatures]);
 
     return (
         <section className="relative w-full py-24 font-sansation text-white">
@@ -97,7 +37,7 @@ const PlzPlatformFeatures = () => {
 
                     {/* Left Sidebar Menu (Sticky) */}
                     <FadeIn className="hidden lg:flex w-full lg:w-1/4 flex-col gap-6 sticky top-32 self-start">
-                        {platformFeatures.map((feat) => {
+                        {platformFeatures.map((feat: any) => {
                             const isActive = activeSection === feat.id;
                             return (
                                 <a
@@ -124,7 +64,7 @@ const PlzPlatformFeatures = () => {
 
                     {/* Right Content Area (Blog Style) */}
                     <div className="w-full lg:w-3/4 flex flex-col gap-32">
-                        {platformFeatures.map((feat) => (
+                        {platformFeatures.map((feat: any) => (
                             <FadeIn id={feat.id} key={feat.id} className="scroll-mt-32" y={20}>
                                 <StaggerContainer>
                                     <StaggerItem>
@@ -179,7 +119,7 @@ const PlzPlatformFeatures = () => {
                                             </div>
                                         </StaggerItem>
                                     )}
-                                    
+
                                     {/* Graphic Container */}
                                     <StaggerItem>
                                         <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center">
@@ -189,7 +129,7 @@ const PlzPlatformFeatures = () => {
                                             {/* Image representing the feature */}
                                             <div
                                                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
-                                                style={{ backgroundImage: `url(${feat.image})` }}
+                                                style={{ backgroundImage: `url(${feat.id === 'gestion' || feat.id === 'management' ? '/mining_operations.png' : feat.id === 'control' ? '/performance_analytics.png' : '/retail_analytics.png'})` }}
                                             ></div>
 
                                             {/* Placeholder gradient if image is not enough */}

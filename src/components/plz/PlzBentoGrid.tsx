@@ -1,22 +1,30 @@
 import { StaggerContainer, StaggerItem } from './PlzMotion';
+import { useLanguage } from '../../context/LanguageContext';
+import PlzChatSimulation from './PlzChatSimulation';
 
 const PlzBentoGrid = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 font-sansation">
             <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-fr">
 
                 {/* Agente AI Hub - Spans 2 columns on large screens */}
                 <StaggerItem className="lg:col-span-2">
-                    <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors">
+                    <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors group">
                         <div className="mb-8">
-                            <h3 className="text-2xl font-medium text-white mb-3">Agente AI Hub</h3>
+                            <h3 className="text-2xl font-medium text-white mb-3">{t.plzPlatform.bento.hub.title}</h3>
                             <p className="text-gray-400 font-light leading-relaxed max-w-xl">
-                                La interfaz de usuario de Beam, de fácil navegación, permite realizar tareas sin problemas en cuestión de segundos.
+                                {t.plzPlatform.bento.hub.desc}
                             </p>
                         </div>
-                        {/* Image Placeholder */}
-                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-br from-blue-900/40 to-black border border-white/5 flex items-center justify-center min-h-[250px] relative overflow-hidden">
-                            <span className="text-gray-600 font-light text-sm">Espacio para imagen Hub</span>
+                        {/* Image Background */}
+                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-br from-blue-900/10 to-black border border-white/5 flex items-center justify-center min-h-[250px] relative overflow-hidden">
+                            <img
+                                src="/plz/platform/agente.png"
+                                alt="Agent Orchestration"
+                                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-all duration-500 transform group-hover:scale-[1.1]"
+                            />
                         </div>
                     </div>
                 </StaggerItem>
@@ -25,46 +33,54 @@ const PlzBentoGrid = () => {
                 <StaggerItem className="lg:col-span-1 lg:row-span-2">
                     <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors">
                         <div className="mb-8">
-                            <h3 className="text-2xl font-medium text-white mb-3">Automatización Agenética</h3>
+                            <h3 className="text-2xl font-medium text-white mb-3">{t.plzPlatform.bento.automation.title}</h3>
                             <p className="text-gray-400 font-light leading-relaxed">
-                                De principio a fin, Beam permite automatizar completamente los procesos, por compleja que sea la tarea.
+                                {t.plzPlatform.bento.automation.desc}
                             </p>
                         </div>
-                        {/* Image Placeholder */}
-                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-b from-blue-900/30 to-black border border-white/5 flex items-center justify-center min-h-[400px] relative overflow-hidden">
-                            <span className="text-gray-600 font-light text-sm">Espacio para imagen Automatización</span>
+                        {/* Chat Simulation Component */}
+                        <div className="flex-grow w-full rounded-2xl bg-[#0d1117] border border-white/5 min-h-[500px] relative overflow-hidden shadow-inner">
+                            <PlzChatSimulation />
                         </div>
                     </div>
                 </StaggerItem>
 
                 {/* Integraciones */}
                 <StaggerItem className="lg:col-span-1">
-                    <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors">
+                    <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors group">
                         <div className="mb-8">
-                            <h3 className="text-2xl font-medium text-white mb-3">Integraciones</h3>
+                            <h3 className="text-2xl font-medium text-white mb-3">{t.plzPlatform.bento.integrations.title}</h3>
                             <p className="text-gray-400 font-light leading-relaxed">
-                                Nuestra amplia selección de integraciones permite a nuestros agentes trabajar con las mismas herramientas que usted.
+                                {t.plzPlatform.bento.integrations.desc}
                             </p>
                         </div>
-                        {/* Image Placeholder */}
-                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-tr from-purple-900/30 to-black border border-white/5 flex items-center justify-center min-h-[250px] relative overflow-hidden">
-                            <span className="text-gray-600 font-light text-sm">Espacio para imagen Integraciones</span>
+                        {/* Image Background */}
+                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-tr from-purple-900/10 to-black border border-white/5 flex items-center justify-center min-h-[250px] relative overflow-hidden">
+                            <img
+                                src="/plz/platform/datadriven.png"
+                                alt="Data-Driven Decisions"
+                                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-all duration-500"
+                            />
                         </div>
                     </div>
                 </StaggerItem>
 
                 {/* Herramientas de IA */}
                 <StaggerItem className="lg:col-span-1">
-                    <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors">
+                    <div className="h-full border border-white/5 bg-[#0a0f12] rounded-3xl p-8 flex flex-col hover:border-white/10 transition-colors group">
                         <div className="mb-8">
-                            <h3 className="text-2xl font-medium text-white mb-3">Herramientas de IA</h3>
+                            <h3 className="text-2xl font-medium text-white mb-3">{t.plzPlatform.bento.tools.title}</h3>
                             <p className="text-gray-400 font-light leading-relaxed">
-                                Utilice nuestras herramientas de IA preexistentes o cree fácilmente las suyas propias para adaptarlas a sus necesidades exactas.
+                                {t.plzPlatform.bento.tools.desc}
                             </p>
                         </div>
-                        {/* Image Placeholder */}
-                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-br from-blue-900/20 to-black border border-white/5 flex items-center justify-center min-h-[250px] relative overflow-hidden">
-                            <span className="text-gray-600 font-light text-sm">Espacio para imagen Herramientas</span>
+                        {/* Image Background */}
+                        <div className="flex-grow w-full rounded-2xl bg-gradient-to-br from-blue-900/10 to-black border border-white/5 flex items-center justify-center min-h-[250px] relative overflow-hidden">
+                            <img
+                                src="/plz/platform/mastra.png"
+                                alt="Mastra Framework"
+                                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-500"
+                            />
                         </div>
                     </div>
                 </StaggerItem>

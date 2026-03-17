@@ -2,8 +2,10 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from './PlzMotion';
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzCTA = () => {
+    const { t } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Mouse movement values
@@ -69,22 +71,22 @@ const PlzCTA = () => {
                     <StaggerContainer className="max-w-xl">
                         <StaggerItem>
                             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-light text-white tracking-tight leading-[1.15] mb-6">
-                                Evoluciona tu negocio <br className="hidden lg:block" />con Pulzen AI
+                                {t.plzCTA.title}
                             </h2>
                         </StaggerItem>
                         <StaggerItem>
                             <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed font-light">
-                                Transforma datos en ventaja competitiva y lleva tu operación al siguiente nivel con inteligencia artificial aplicada.
+                                {t.plzCTA.description}
                             </p>
                         </StaggerItem>
                         <StaggerItem>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button className="group relative px-8 py-4 text-base font-medium text-white overflow-hidden rounded-xl transition-all">
                                     <div className="absolute inset-0 bg-[#19687A] transition-all group-hover:bg-[#17BBCD]"></div>
-                                    <span className="relative z-10">Solicitar demo personalizada</span>
+                                    <span className="relative z-10">{t.plzCTA.primaryBtn}</span>
                                 </button>
-                                <Link to="/web/plz-contact" className="px-8 py-4 text-center text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A]/30 hover:border-[#17BBCD] rounded-xl transition-all bg-white/5">
-                                    Hablar con un especialista
+                                <Link to="/contact" className="px-8 py-4 text-center text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A]/30 hover:border-[#17BBCD] rounded-xl transition-all bg-white/5">
+                                    {t.plzCTA.secondaryBtn}
                                 </Link>
                             </div>
                         </StaggerItem>

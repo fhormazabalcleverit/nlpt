@@ -1,8 +1,10 @@
 import { Github, Twitter, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FadeIn } from './PlzMotion';
+import { useLanguage } from '../../context/LanguageContext';
 
 const PlzFooter = () => {
+    const { t } = useLanguage();
     return (
         <footer className="bg-[#040809] border-t border-white/5 font-sansation py-12">
             <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,11 +12,11 @@ const PlzFooter = () => {
 
                     {/* Logo & Description */}
                     <div className="flex flex-col items-center md:items-start gap-4">
-                        <a href="/web/plz" className="text-white font-bold text-xl tracking-tight flex items-center gap-1">
+                        <Link to="/" className="text-white font-bold text-xl tracking-tight flex items-center gap-1">
                             <img src="/plz/brand/logotipoplz.svg" alt="Pulzen AI Logo" className="h-8 w-auto" />
-                        </a>
+                        </Link>
                         <p className="text-gray-400 text-sm font-light text-center md:text-left max-w-sm leading-relaxed">
-                            Inteligencia que escala el rendimiento de tu negocio. Transforma datos en ventaja competitiva y potencia tus operaciones de forma autónoma.
+                            {t.plzFooter.description}
                         </p>
                     </div>
 
@@ -34,11 +36,11 @@ const PlzFooter = () => {
 
                 {/* Bottom Bar: Copyright & Links */}
                 <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-light text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Pulzen AI. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} Pulzen AI. {t.plzFooter.rights}</p>
                     <div className="flex gap-6">
-                        <Link to="/privacy" className="hover:text-gray-300 transition-colors">Aviso de Privacidad</Link>
-                        <Link to="/terms" className="hover:text-gray-300 transition-colors">Términos del Servicio</Link>
-                        <a href="#" className="hover:text-gray-300 transition-colors">Cookies</a>
+                        <Link to="/privacy" className="hover:text-gray-300 transition-colors">{t.plzFooter.privacy}</Link>
+                        <Link to="/terms" className="hover:text-gray-300 transition-colors">{t.plzFooter.terms}</Link>
+                        <a href="#" className="hover:text-gray-300 transition-colors">{t.plzFooter.cookies}</a>
                     </div>
                 </div>
             </FadeIn>
