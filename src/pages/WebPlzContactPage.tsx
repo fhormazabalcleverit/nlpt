@@ -1,126 +1,263 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronDown, Mail, MessageCircle, Phone } from 'lucide-react';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
+import PlzFAQ from '../components/plz/PlzFAQ';
+import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const WebPlzContactPage = () => {
+    const [reason, setReason] = useState<string>('');
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [industry, setIndustry] = useState<string>('');
+    const [contactMethod, setContactMethod] = useState<string>('');
+
+    const isFormValid = reason && name && email && industry && contactMethod;
+
+    const reasonMessages: Record<string, string> = {
+        'Ventas y demos': '“Un ejecutivo se pondrá en contacto en menos de 24 horas para coordinar una demo o entregar más información.”',
+        'Soporte del producto': '“El equipo de soporte responderá a la brevedad para dar solución al caso reportado.”',
+        'Alianzas estratégicas': '“El equipo revisará la propuesta y tomará contacto en menos de 48 horas para dar seguimiento.”',
+        'Prensa y medios': '“El equipo de comunicaciones responderá en menos de 24 horas para coordinar la solicitud.”',
+        'Otro': '“El mensaje será revisado y se entregará una respuesta en menos de 24 horas.”'
+    };
+
+    const reasons = [
+        'Ventas y demos',
+        'Soporte del producto',
+        'Alianzas estratégicas',
+        'Prensa y medios',
+        'Otro'
+    ];
+
+    const contactMethods = [
+        { id: 'Correo electrónico', icon: Mail },
+        { id: 'WhatsApp', icon: MessageCircle },
+        { id: 'Llamada telefónica', icon: Phone }
+    ];
+
     return (
-        <div className="min-h-screen bg-[#040809] font-sansation flex flex-col">
+        <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
             <PlzNavbar />
 
-            <main className="flex-grow flex flex-col pt-32 pb-20 relative overflow-hidden">
+            <main className="flex-grow flex flex-col pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
                 {/* Background effects */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-96 bg-[#19687A]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
                 <div className="relative z-10 max-w-3xl mx-auto w-full px-4 sm:px-6 lg:px-8">
                     {/* Back Button */}
-                    <Link
-                        to="/web/plz"
-                        className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-10 group"
-                    >
-                        <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                        Volver a Pulzen AI
-                    </Link>
+                    <FadeIn delay={0.1}>
+                        <Link
+                            to="/web/plz"
+                            className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-10 group"
+                        >
+                            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                            Volver a Pulzen AI
+                        </Link>
+                    </FadeIn>
 
                     {/* Header */}
-                    <div className="text-center mb-16">
-                        <div className="inline-flex px-4 py-1.5 border border-[#19687A]/30 bg-[#19687A]/10 rounded-full text-xs text-[#17BBCD] font-medium tracking-wide mb-6">
-                            Contacto
-                        </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.1] mb-6">
-                            Habla con nuestro equipo
-                        </h1>
-                        <p className="text-lg text-gray-400 font-light leading-relaxed">
-                            Descubre cómo Pulzen AI puede transformar tu negocio. Llena el formulario y un especialista se contactará contigo.
-                        </p>
-                    </div>
+                    <StaggerContainer className="text-left mb-16">
+                        <StaggerItem>
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.1] mb-8 text-white">
+                                Contacto
+                            </h1>
+                        </StaggerItem>
+                        <StaggerItem>
+                            <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-2xl text-balance">
+                                Nuestro equipo de ventas puede proporcionar informacion y asistencia adicional para la implementación de agentes de IA en tu organización.
+                            </p>
+                        </StaggerItem>
+                    </StaggerContainer>
 
                     {/* Form Container */}
-                    <div className="bg-[#0A0F11] border border-white/5 rounded-2xl p-8 md:p-12 shadow-2xl relative">
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* Name */}
-                                <div className="space-y-2">
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300">
-                                        Nombre completo
+                    <FadeIn delay={0.4}>
+                        <div className="bg-[#0A0F11] border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl relative mb-24 transition-all">
+                            <form className="space-y-8">
+                                {/* Step 1: Reason Selection */}
+                                <div className="space-y-4">
+                                    <label htmlFor="reason" className="block text-sm font-medium text-gray-300">
+                                        ¿En qué podemos ayudarte?
                                     </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                        placeholder="Ej. Juan Pérez"
-                                        required
-                                    />
+                                    <div className="relative">
+                                        <select
+                                            id="reason"
+                                            value={reason}
+                                            onChange={(e) => setReason(e.target.value)}
+                                            className="w-full appearance-none bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all cursor-pointer"
+                                            required
+                                        >
+                                            <option value="" disabled>Seleccione una opción</option>
+                                            {reasons.map((opt) => (
+                                                <option key={opt} value={opt}>{opt}</option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                            <ChevronDown className="w-5 h-5" />
+                                        </div>
+                                    </div>
                                 </div>
-                                {/* Email */}
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                                        Correo electrónico
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                        placeholder="Ej. juan@empresa.com"
-                                        required
-                                    />
-                                </div>
-                            </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {/* Company */}
-                                <div className="space-y-2">
-                                    <label htmlFor="company" className="block text-sm font-medium text-gray-300">
-                                        Empresa
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="company"
-                                        className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                        placeholder="Nombre de tu empresa"
-                                        required
-                                    />
-                                </div>
-                                {/* Phone */}
-                                <div className="space-y-2">
-                                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
-                                        Teléfono (Opcional)
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors"
-                                        placeholder="+56 9 1234 5678"
-                                    />
-                                </div>
-                            </div>
+                                {/* Step 2: Dynamic Fields */}
+                                <AnimatePresence>
+                                    {reason && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0, y: 20 }}
+                                            animate={{ opacity: 1, height: 'auto', y: 0 }}
+                                            exit={{ opacity: 0, height: 0, y: 20 }}
+                                            transition={{ duration: 0.5, ease: "circOut" }}
+                                            className="space-y-8 overflow-hidden pt-4"
+                                        >
+                                            {/* Full Name - Full Width */}
+                                            <div className="space-y-3">
+                                                <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+                                                    Nombre completo <span className="text-red-500">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="name"
+                                                    value={name}
+                                                    onChange={(e) => setName(e.target.value)}
+                                                    className="w-full bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all"
+                                                    placeholder="Ej. Carlos Gallardo"
+                                                    required
+                                                />
+                                            </div>
 
-                            {/* Message */}
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-300">
-                                    ¿Cómo podemos ayudarte?
-                                </label>
-                                <textarea
-                                    id="message"
-                                    rows={4}
-                                    className="w-full bg-[#11161A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-colors resize-none"
-                                    placeholder="Cuéntanos un poco sobre tus necesidades y objetivos..."
-                                    required
-                                ></textarea>
-                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                                {/* Email */}
+                                                <div className="space-y-3">
+                                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+                                                        Correo electrónico <span className="text-red-500">*</span>
+                                                    </label>
+                                                    <input
+                                                        type="email"
+                                                        id="email"
+                                                        value={email}
+                                                        onChange={(e) => setEmail(e.target.value)}
+                                                        className="w-full bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all"
+                                                        placeholder="carlos@empresa.com"
+                                                        required
+                                                    />
+                                                </div>
+                                                {/* Industry */}
+                                                <div className="space-y-3">
+                                                    <label htmlFor="industry" className="block text-sm font-medium text-gray-300">
+                                                        Rubro o industria <span className="text-red-500">*</span>
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        id="industry"
+                                                        value={industry}
+                                                        onChange={(e) => setIndustry(e.target.value)}
+                                                        className="w-full bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all"
+                                                        placeholder="Ej. Minería, Retail..."
+                                                        required
+                                                    />
+                                                </div>
+                                            </div>
 
-                            {/* Submit Button */}
-                            <div className="pt-4">
-                                <button
-                                    type="button"
-                                    className="w-full px-8 py-4 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-base font-medium transition-colors shadow-lg shadow-[#17BBCD]/10 disabled:opacity-50"
-                                >
-                                    Enviar mensaje
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                                            {/* Contact Preference - Full Width */}
+                                            <div className="space-y-3">
+                                                <label className="block text-sm font-medium text-gray-300">
+                                                    ¿Cómo prefieres que te contactemos? <span className="text-red-500">*</span>
+                                                </label>
+                                                <div className="grid grid-cols-3 gap-4">
+                                                    {contactMethods.map((method) => (
+                                                        <button
+                                                            key={method.id}
+                                                            type="button"
+                                                            onClick={() => setContactMethod(method.id)}
+                                                            className={`flex flex-col items-center justify-center gap-2 p-4 rounded-md border transition-all duration-300 ${contactMethod === method.id
+                                                                ? 'bg-[#19687A]/20 border-[#19687A] text-[#17BBCD] shadow-[0_0_20px_rgba(25,104,122,0.2)]'
+                                                                : 'bg-[#11161A] border-white/10 text-gray-400 hover:border-white/20'
+                                                                }`}
+                                                        >
+                                                            <method.icon className={`w-6 h-6 transition-colors ${contactMethod === method.id ? 'text-[#17BBCD]' : 'text-gray-400'}`} />
+                                                            <span className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-center">{method.id}</span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            {/* Submit Button */}
+                                            <div className="pt-6">
+                                                <button
+                                                    type="button"
+                                                    disabled={!isFormValid}
+                                                    className={`w-full px-8 py-5 rounded-md text-lg font-medium transition-all shadow-xl active:scale-[0.98] ${isFormValid
+                                                        ? 'bg-[#19687A] hover:bg-[#17BBCD] text-white shadow-[#17BBCD]/10 cursor-pointer'
+                                                        : 'bg-white/5 text-gray-500 cursor-not-allowed opacity-50'
+                                                        }`}
+                                                >
+                                                    Enviar
+                                                </button>
+                                                {/* phases  */}
+                                                <AnimatePresence mode="wait">
+                                                    <motion.p
+                                                        key={reason}
+                                                        initial={{ opacity: 0, y: 10 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: -10 }}
+                                                        transition={{ duration: 0.3 }}
+                                                        className="mt-6 text-center text-md text-gray-400 font-light max-w-lg mx-auto leading-relaxed"
+                                                    >
+                                                        {reasonMessages[reason] || "Nos pondremos en contacto con usted en menos de 24 horas."}
+                                                    </motion.p>
+                                                </AnimatePresence>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </form>
+                        </div>
+                    </FadeIn>
                 </div>
+
+                {/* Quote CTA Banner */}
+                <FadeIn delay={0.6}>
+                    <div className="relative z-10 max-w-7xl mx-auto w-full px-2 sm:px-6 lg:px-8 mb-24">
+                        <div className="relative overflow-hidden border border-white/5 bg-[#0A0F11] rounded-2xl group transition-all duration-500 hover:border-white/10">
+                            {/* SVG Background Layer */}
+                            <div
+                                className="absolute inset-0 opacity-100 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+                                style={{
+                                    backgroundImage: "url('/plz/brand/background-hero.svg')",
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                }}
+                            />
+
+                            <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 text-left">
+                                <div className="flex-grow max-w-xl">
+                                    <h2 className="text-xl md:text-2xl font-normal text-white mb-4">
+                                        ¿Buscas una solución a medida?
+                                    </h2>
+                                    <p className="text-gray-400 text-md font-light leading-relaxed">
+                                        Obtén una cotización personalizada según los requerimientos técnicos y de negocio de tu organización.
+                                    </p>
+                                </div>
+                                <div className="flex-shrink-0">
+                                    <Link
+                                        to="/web/plz-quote"
+                                        className="inline-flex items-center px-8 py-4 bg-transparent border border-[#19687A] text-[#17BBCD] group-hover:bg-[#19687A] group-hover:text-white rounded-md text-lg font-medium transition-all shadow-xl hover:shadow-[#17BBCD]/10 active:scale-[0.98] whitespace-nowrap"
+                                    >
+                                        Cotizar ahora
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </FadeIn>
+
+                {/* FAQ Section */}
+                <FadeIn delay={0.8}>
+                    <div className="max-w-7xl mx-auto w-full border-t border-white/5 pt-20">
+                        <PlzFAQ />
+                    </div>
+                </FadeIn>
             </main>
 
             <PlzFooter />

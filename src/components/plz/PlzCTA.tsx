@@ -11,26 +11,26 @@ const PlzCTA = () => {
     const mouseY = useMotionValue(0);
 
     // Higher responsiveness with lower mass and optimal damping for "liquid" movement
-    const springConfig = { damping: 15, stiffness: 150, mass: 0.1, restDelta: 0.001 };
+    const springConfig = { damping: 10, stiffness: 50, mass: 0.01, restDelta: 0.001 };
     const x = useSpring(mouseX, springConfig);
     const y = useSpring(mouseY, springConfig);
 
     // Parallax sub-elements (optional, but adds depth)
-    const rotateX = useTransform(y, [-100, 100], [15, -15]);
-    const rotateY = useTransform(x, [-100, 100], [-15, 15]);
+    const rotateX = useTransform(y, [-100, 100], [1, -1]);
+    const rotateY = useTransform(x, [-100, 100], [-1, 1]);
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if (!containerRef.current) return;
         const rect = containerRef.current.getBoundingClientRect();
 
         // Calculate center-relative mouse position
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+        const centerX = rect.left + rect.width / 1;
+        const centerY = rect.top + rect.height / 1;
 
         // Intensity of the magnet effect (attraction)
         // We use a larger range for more fluid movement
-        const moveX = (e.clientX - centerX) * 0.2;
-        const moveY = (e.clientY - centerY) * 0.2;
+        const moveX = (e.clientX - centerX) * 0.05;
+        const moveY = (e.clientY - centerY) * 0.05;
 
         mouseX.set(moveX);
         mouseY.set(moveY);
@@ -55,7 +55,7 @@ const PlzCTA = () => {
                     backgroundImage: "url('/plz/brand/background-cta.svg')",
                     x: useTransform(x, (v) => v * 0.2),
                     y: useTransform(y, (v) => v * 0.2),
-                    scale: 1.6
+                    scale: 1.2
                 }}
             />
 
@@ -95,10 +95,30 @@ const PlzCTA = () => {
                         <motion.div
                             style={{ x, y, rotateX, rotateY }}
                             whileHover={{ scale: 1.05 }}
-                            className="relative w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 flex items-center justify-center"
+                            className="relative w-28 h-28 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center"
                         >
                             {/* Glow behind the icon */}
                             <div className="absolute inset-0 bg-[#17BBCD]/20 blur-[80px] rounded-full"></div>
+
+                            {/* White Pulse Animation */}
+                            {[...Array(3)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="absolute inset-0 border border-white/20 rounded-full"
+                                    initial={{ scale: 0.9, opacity: 0 }}
+                                    animate={{
+                                        scale: [0.6, 6],
+                                        opacity: [0, 0.5, 0]
+                                    }}
+                                    transition={{
+                                        duration: 8,
+                                        repeat: Infinity,
+                                        delay: i * 2.9,
+                                        ease: "easeOut",
+                                        times: [0, 0.2, 1]
+                                    }}
+                                />
+                            ))}
 
                             <img
                                 src="/plz/brand/isotipo.svg"

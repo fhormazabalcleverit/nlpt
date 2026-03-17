@@ -2,12 +2,13 @@ import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import PlzCasesList from '../components/plz/PlzCasesList';
 import PlzCTA from '../components/plz/PlzCTA';
+import { FadeIn } from '../components/plz/PlzMotion';
 
 const WebPlzCasesPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] flex flex-col font-sansation">
             <PlzNavbar />
-            <main className="flex-grow pt-16 relative">
+            <main className="flex-grow pt-32 pb-20 lg:pt-40 lg:pb-32 relative">
                 {/* Background wrapper for blobs */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                     <div className="absolute top-0 -left-[10%] w-[1000px] h-[1000px] bg-blue-900/30 rounded-full blur-[250px]"></div>
@@ -17,8 +18,12 @@ const WebPlzCasesPage = () => {
                 </div>
 
                 <div className="relative z-10">
-                    <PlzCasesList />
-                    <PlzCTA />
+                    <FadeIn>
+                        <PlzCasesList />
+                    </FadeIn>
+                    <FadeIn delay={0.2}>
+                        <PlzCTA />
+                    </FadeIn>
                 </div>
             </main>
             <PlzFooter />

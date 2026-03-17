@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { StaggerContainer, StaggerItem } from './PlzMotion';
 
 const casesData = [
     {
@@ -50,18 +51,29 @@ const PlzCasesList = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 font-sansation w-full">
-            <div className="max-w-6xl mx-auto flex flex-col items-center gap-6 mt-16 mb-20 text-center">
-                <span className="text-gray-400 text-sm tracking-widest uppercase">
-                    Casos aplicados
-                </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white max-w-4xl leading-tight">
-                    Aplicación real del agente en distintas industrias, rubros y negocios.
-                </h1>
-                <p className="text-gray-400 text-lg md:text-xl max-w-3xl mt-4">
-                    Diseñado para la escalabilidad y seguridad identificando los datos y ayudando a la toma de decisiones.
-                </p>
-            </div>
+        <section className="font-sansation w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <StaggerContainer className="flex flex-col items-center text-center mb-20">
+                {/* Badge */}
+                <StaggerItem>
+                    <div className="mb-8 inline-flex items-center px-5 py-1.5 rounded-full border border-gray-700 bg-black/40 backdrop-blur-sm text-sm font-light text-gray-300 shadow-sm">
+                        Casos aplicados
+                    </div>
+                </StaggerItem>
+
+                {/* Title */}
+                <StaggerItem>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8 text-white max-w-4xl">
+                        Aplicación real del agente en distintas industrias, rubros y negocios.
+                    </h1>
+                </StaggerItem>
+
+                {/* Description */}
+                <StaggerItem>
+                    <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mb-12">
+                        Diseñado para la escalabilidad y seguridad identificando los datos y ayudando a la toma de decisiones.
+                    </p>
+                </StaggerItem>
+            </StaggerContainer>
 
             <div className="max-w-6xl mx-auto flex flex-col gap-12">
                 {casesData.map((data) => (

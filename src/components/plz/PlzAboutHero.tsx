@@ -1,46 +1,82 @@
+import { StaggerContainer, StaggerItem } from './PlzMotion';
+
 const PlzAboutHero = () => {
     return (
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 font-sansation text-center max-w-7xl mx-auto">
-            <div className="flex flex-col items-center gap-6 mt-16">
-                <span className="text-gray-400 text-sm tracking-widest uppercase">
-                    Sobre nosotros
-                </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white max-w-4xl leading-tight">
-                    Creando el sistema operativo para que las organizaciones se conviertan en sistemas de inteligencia autoevolutivos
-                </h1>
-                <p className="text-gray-400 text-lg md:text-xl max-w-3xl mt-4">
-                    Estamos construyendo agentes de inteligencia artificial generativa para ayudar
-                    a las organizaciones a automatizar tareas manuales repetitivas, aumentar la
-                    productividad y permitir que los equipos se concentren en el trabajo que
-                    realmente importa.
-                </p>
-            </div>
+        <section className="font-sansation text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <StaggerContainer className="flex flex-col items-center">
+                {/* Badge */}
+                <StaggerItem>
+                    <div className="mb-8 inline-flex items-center px-5 py-1.5 rounded-full border border-gray-700 bg-black/40 backdrop-blur-sm text-sm font-light text-gray-300 shadow-sm">
+                        Sobre nosotros
+                    </div>
+                </StaggerItem>
+
+                {/* Title */}
+                <StaggerItem>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.2] mb-8 text-white max-w-4xl">
+                        Creando tecnología con propósito desde la visión de la experiencia para impactar y dar valor en cada negocio.
+                    </h1>
+                </StaggerItem>
+
+                {/* Description */}
+                <StaggerItem>
+                    <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-3xl mb-12">
+                        Estamos construyendo agentes de inteligencia artificial generativa para apoyar la gestión operativa,
+                        automatizar tareas repetitivas o manuales y
+                        aumentar la productividad y visibilidad de los equipos.
+                    </p>
+                </StaggerItem>
+            </StaggerContainer>
 
             <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Placeholder images */}
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-96 relative group">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600&h=800" alt="Team collaborating" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                    <img src="/plz/about/01.png" alt="Team collaborating" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-96 relative group">
-                    <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&q=80&w=600&h=800" alt="Networking" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                    <img src="/plz/about/02.png" alt="Networking" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-96 relative group">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600&h=800" alt="Presentation" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                    <img src="/plz/about/03.png" alt="Presentation" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                </div>
+            </div>
+
+            {/* Reflection Section */}
+            <div className="mt-28 mb-16 max-w-4xl mx-auto flex flex-col items-center px-4">
+                <blockquote className="text-lg lg:text-xl font-light text-white leading-[1.2] mb-10 tracking-tight">
+                    "La tecnología evoluciona cada día, pero lo que realmente marca la diferencia son las personas que la impulsan. Nuestro propósito es transformar la innovación en resultados tangibles"
+                </blockquote>
+
+                <div className="flex flex-col items-center gap-5">
+                    <div className="relative">
+                        <div className="absolute inset-0 bg-[#17BBCD]/20 blur-2xl rounded-full"></div>
+                        <img
+                            src="/plz/about/carlosgallado.png"
+                            alt="Carlos Gallardo"
+                            className="w-20 h-20 rounded-full object-cover relative z-10 border border-white/10"
+                        />
+                    </div>
+                    <div className="text-center">
+                        <h4 className="text-white font-medium text-xl mb-1">Carlos Gallardo</h4>
+                        <p className="text-gray-400 text-sm md:text-base max-w-xs md:max-w-md">
+                            Chief Product Officer - Product Development and Innovation - Cleverit Group
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div className="mt-20 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32 border-t border-white/5 pt-12">
                 <div className="flex flex-col items-center">
-                    <span className="text-5xl font-medium text-white mb-2">50+</span>
+                    <span className="text-5xl font-medium text-white mb-2">9+</span>
                     <span className="text-gray-400">Miembros del equipo</span>
                 </div>
                 <div className="flex flex-col items-center">
-                    <span className="text-5xl font-medium text-white mb-2">5</span>
+                    <span className="text-5xl font-medium text-white mb-2">3</span>
                     <span className="text-gray-400">Países</span>
                 </div>
                 <div className="flex flex-col items-center">
-                    <span className="text-5xl font-medium text-white mb-2">1</span>
-                    <span className="text-gray-400">Misión</span>
+                    <span className="text-5xl font-medium text-white mb-2">7</span>
+                    <span className="text-gray-400">Clientes</span>
                 </div>
             </div>
         </section>
