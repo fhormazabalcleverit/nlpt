@@ -1243,15 +1243,13 @@
           "Sales and demos",
           "Product support",
           "Strategic alliances",
-          "Press and media",
-          "Other"
+          "Press and media"
         ],
         "messages": {
           "Sales and demos": "“An executive will contact you in less than 24 hours to coordinate a demo or provide more information.”",
           "Product support": "“The support team will respond as soon as possible to provide a solution to the reported case.”",
           "Strategic alliances": "“The team will review the proposal and contact you in less than 48 hours to follow up.”",
-          "Press and media": "“The communications team will respond in less than 24 hours to coordinate the request.”",
-          "Other": "“The message will be reviewed and a response will be delivered in less than 24 hours.”"
+          "Press and media": "“The communications team will respond in less than 24 hours to coordinate the request.”"
         }
       },
       "submit": "Send",

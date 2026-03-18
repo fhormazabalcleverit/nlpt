@@ -1228,15 +1228,13 @@
           "Ventas y demos",
           "Soporte del producto",
           "Alianzas estratégicas",
-          "Prensa y medios",
-          "Otro"
+          "Prensa y medios"
         ],
         "messages": {
           "Ventas y demos": "“Un ejecutivo se pondrá en contacto en menos de 24 horas para coordinar una demo o entregar más información.”",
           "Soporte del producto": "“El equipo de soporte responderá a la brevedad para dar solución al caso reportado.”",
           "Alianzas estratégicas": "“El equipo revisará la propuesta y tomará contacto en menos de 48 horas para dar seguimiento.”",
-          "Prensa y medios": "“El equipo de comunicaciones responderá en menos de 24 horas para coordinar la solicitud.”",
-          "Otro": "“El mensaje será revisado y se entregará una respuesta en menos de 24 horas.”"
+          "Prensa y medios": "“El equipo de comunicaciones responderá en menos de 24 horas para coordinar la solicitud.”"
         }
       },
       "submit": "Enviar",

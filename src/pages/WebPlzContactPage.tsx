@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeft, ChevronDown, Mail, MessageCircle, Phone, CheckCircle, AlertCircle, X } from 'lucide-react';
+import { ArrowLeft, Mail, MessageCircle, Phone, CheckCircle, AlertCircle, X, Zap, LifeBuoy, Handshake, Newspaper } from 'lucide-react';
 
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
@@ -126,6 +126,8 @@ const WebPlzContactPage = () => {
         { id: t.plzContact.form.fields.contactMethod.options.phone, icon: Phone }
     ];
 
+    const reasonIcons = [Zap, LifeBuoy, Handshake, Newspaper];
+
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
             <DynamicSEO
@@ -238,25 +240,27 @@ const WebPlzContactPage = () => {
                             <form onSubmit={handleSubmit} className="space-y-8">
                                 {/* Step 1: Reason Selection */}
                                 <div className="space-y-4">
-                                    <label htmlFor="reason" className="block text-sm font-medium text-gray-300">
+                                    <label className="block text-sm font-medium text-gray-300 mb-6">
                                         {t.plzContact.form.fields.reason.label}
                                     </label>
-                                    <div className="relative">
-                                        <select
-                                            id="reason"
-                                            value={reason}
-                                            onChange={(e) => setReason(e.target.value)}
-                                            className="w-full appearance-none bg-[#11161A] border border-white/10 rounded-md px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#19687A] focus:ring-1 focus:ring-[#19687A] transition-all cursor-pointer"
-                                            required
-                                        >
-                                            <option value="" disabled>{t.plzContact.form.fields.reason.placeholder}</option>
-                                            {reasons.map((opt: string) => (
-                                                <option key={opt} value={opt}>{opt}</option>
-                                            ))}
-                                        </select>
-                                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                                            <ChevronDown className="w-5 h-5" />
-                                        </div>
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        {reasons.slice(0, 4).map((opt: string, index: number) => {
+                                            const Icon = reasonIcons[index];
+                                            return (
+                                                <button
+                                                    key={opt}
+                                                    type="button"
+                                                    onClick={() => setReason(opt)}
+                                                    className={`flex flex-col items-center justify-center text-center gap-3 px-4 py-8 rounded-2xl border transition-all duration-300 group ${reason === opt
+                                                        ? 'bg-[#19687A]/20 border-[#19687A] text-[#17BBCD] shadow-[0_0_30px_rgba(25,104,122,0.2)]'
+                                                        : 'bg-[#11161A]/40 border-white/10 text-gray-400 hover:border-white/20 hover:bg-[#11161A]/60'
+                                                        }`}
+                                                >
+                                                    {Icon && <Icon className={`w-8 h-8 transition-colors ${reason === opt ? 'text-[#17BBCD]' : 'text-gray-500 group-hover:text-gray-300'}`} />}
+                                                    <span className={`text-xs font-medium uppercase tracking-wider transition-colors`}>{opt}</span>
+                                                </button>
+                                            );
+                                        })}
                                     </div>
                                 </div>
 
