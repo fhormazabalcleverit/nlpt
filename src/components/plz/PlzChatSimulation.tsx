@@ -56,7 +56,7 @@ const PlzChatSimulation = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="flex-grow p-4 md:p-6 space-y-6 overflow-y-auto no-scrollbar scroll-smooth relative left-3 w-[350px]"
+                className="flex-grow p-4 md:p-6 space-y-6 overflow-y-auto no-scrollbar scroll-smooth relative left-3 w-[350px] md:w-full sm:w-full xs:w-full "
             >
                 {/* User Message 1 */}
                 <motion.div variants={itemVariants} className="flex justify-end">

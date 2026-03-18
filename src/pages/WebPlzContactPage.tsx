@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronDown, Mail, MessageCircle, Phone } from 'lucide-react';
+import { ArrowLeft, ChevronDown, Mail, MessageCircle, Phone, CheckCircle, AlertCircle, X } from 'lucide-react';
+
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import PlzFAQ from '../components/plz/PlzFAQ';
@@ -16,6 +17,84 @@ const WebPlzContactPage = () => {
     const [email, setEmail] = useState<string>('');
     const [industry, setIndustry] = useState<string>('');
     const [contactMethod, setContactMethod] = useState<string>('');
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+    const [notification, setNotification] = useState<{
+        type: "success" | "error";
+        message: string;
+    } | null>(null);
+
+    // Auto-dismiss notification after 5 seconds
+    useEffect(() => {
+        if (notification) {
+            const timer = setTimeout(() => setNotification(null), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [notification]);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
+            // Build the email HTML content
+            const emailHtml = `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #19687A; margin-bottom: 20px;">Nuevo Contacto WebPlz</h2>
+                    <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px;">
+                        <p style="margin: 10px 0;"><strong>Motivo:</strong> ${reason}</p>
+                        <p style="margin: 10px 0;"><strong>Nombre:</strong> ${name}</p>
+                        <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
+                        <p style="margin: 10px 0;"><strong>Rubro:</strong> ${industry}</p>
+                        <p style="margin: 10px 0;"><strong>Método de Contacto Preferido:</strong> ${contactMethod}</p>
+                    </div>
+                    <p style="margin-top: 20px; color: #6b7280; font-size: 14px;">Este mensaje fue enviado desde llmapps.cleveritgroup.com (Formulario de Contacto)</p>
+                </div>
+            `;
+
+            const response = await fetch(
+                "https://regis.groowcity.com/common/send-email",
+                {
+                    method: "POST",
+                    headers: {
+                        "x-api-key": "550e8400-e29b-41d4-a716-446655440000",
+                        origin: "https://llmapps.cleveritgroup.com",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        from: "no-reply@ndrz.io",
+                        to: "comercial@cleveritgroup.com",
+                        subject: `Nuevo Lead (Contacto) - de ${name}`,
+                        html: emailHtml,
+                    }),
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            // Success
+            setNotification({
+                type: "success",
+                message: t.plzContact.form.successMessage || "¡Formulario enviado con éxito!",
+            });
+
+            // Reset form
+            setReason('');
+            setName('');
+            setEmail('');
+            setIndustry('');
+            setContactMethod('');
+        } catch (error) {
+            console.error("Error sending email:", error);
+            setNotification({
+                type: "error",
+                message: "Error al enviar el formulario. Por favor intente nuevamente.",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     const isFormValid = reason && name && email && industry && contactMethod;
 
@@ -38,6 +117,64 @@ const WebPlzContactPage = () => {
             <PlzNavbar />
 
             <main className="flex-grow flex flex-col pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+                {/* Notification Toast */}
+                <AnimatePresence>
+                    {notification && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -50 }}
+                            className="fixed top-24 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center p-4"
+                        >
+                            <div
+                                className={`relative rounded-2xl p-6 shadow-2xl max-w-md w-full backdrop-blur-md ${notification.type === "success"
+                                        ? "bg-[#19687A]/90 border border-[#17BBCD]/50"
+                                        : "bg-red-900/90 border border-red-500/50"
+                                    }`}
+                            >
+                                <div className="flex items-start space-x-4">
+                                    <div
+                                        className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${notification.type === "success"
+                                                ? "bg-[#17BBCD]/20"
+                                                : "bg-red-500/20"
+                                            }`}
+                                    >
+                                        {notification.type === "success" ? (
+                                            <CheckCircle className="w-5 h-5 text-[#17BBCD]" />
+                                        ) : (
+                                            <AlertCircle className="w-5 h-5 text-red-400" />
+                                        )}
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3
+                                            className={`font-semibold text-lg ${notification.type === "success"
+                                                    ? "text-white"
+                                                    : "text-red-100"
+                                                }`}
+                                        >
+                                            {notification.type === "success" ? "¡Éxito!" : "Error"}
+                                        </h3>
+                                        <p
+                                            className={`text-sm mt-1 ${notification.type === "success"
+                                                    ? "text-blue-100"
+                                                    : "text-red-200"
+                                                }`}
+                                        >
+                                            {notification.message}
+                                        </p>
+                                    </div>
+                                    <button
+                                        onClick={() => setNotification(null)}
+                                        className="text-white/60 hover:text-white transition-colors flex-shrink-0 mt-1"
+                                    >
+                                        <X className="w-5 h-5" />
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
                 {/* Background effects */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-96 bg-[#19687A]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -70,7 +207,7 @@ const WebPlzContactPage = () => {
                     {/* Form Container */}
                     <FadeIn delay={0.4}>
                         <div className="bg-[#0A0F11] border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl relative mb-24 transition-all">
-                            <form className="space-y-8">
+                            <form onSubmit={handleSubmit} className="space-y-8">
                                 {/* Step 1: Reason Selection */}
                                 <div className="space-y-4">
                                     <label htmlFor="reason" className="block text-sm font-medium text-gray-300">
@@ -180,14 +317,14 @@ const WebPlzContactPage = () => {
                                             {/* Submit Button */}
                                             <div className="pt-6">
                                                 <button
-                                                    type="button"
-                                                    disabled={!isFormValid}
-                                                    className={`w-full px-8 py-5 rounded-md text-lg font-medium transition-all shadow-xl active:scale-[0.98] ${isFormValid
+                                                    type="submit"
+                                                    disabled={!isFormValid || isSubmitting}
+                                                    className={`w-full px-8 py-5 rounded-md text-lg font-medium transition-all shadow-xl active:scale-[0.98] ${isFormValid && !isSubmitting
                                                         ? 'bg-[#19687A] hover:bg-[#17BBCD] text-white shadow-[#17BBCD]/10 cursor-pointer'
                                                         : 'bg-white/5 text-gray-500 cursor-not-allowed opacity-50'
                                                         }`}
                                                 >
-                                                    {t.plzContact.form.submit}
+                                                    {isSubmitting ? 'Enviando...' : t.plzContact.form.submit}
                                                 </button>
                                                 {/* phases  */}
                                                 <AnimatePresence mode="wait">
