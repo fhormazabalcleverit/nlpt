@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, ChevronDown, Mail, MessageCircle, Phone, CheckCircle, AlertCircle, X } from 'lucide-react';
 
 import PlzNavbar from '../components/plz/PlzNavbar';
@@ -12,7 +12,15 @@ import DynamicSEO from '../components/DynamicSEO';
 
 const WebPlzContactPage = () => {
     const { t } = useLanguage();
-    const [reason, setReason] = useState<string>('');
+    const location = useLocation();
+
+    // Auto-select reason if passed via state
+    const options = t.plzContact.form.reasons.options;
+    const defaultReason = typeof location.state?.reasonIndex === 'number'
+        ? options[location.state.reasonIndex]
+        : '';
+
+    const [reason, setReason] = useState<string>(defaultReason);
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [industry, setIndustry] = useState<string>('');
@@ -30,6 +38,17 @@ const WebPlzContactPage = () => {
             return () => clearTimeout(timer);
         }
     }, [notification]);
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            const originalStyle = window.getComputedStyle(document.documentElement).scrollBehavior;
+            document.documentElement.style.scrollBehavior = 'auto';
+            window.scrollTo(0, 0);
+            document.documentElement.style.scrollBehavior = originalStyle;
+        }, 100);
+        return () => clearTimeout(timeout);
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -109,7 +128,7 @@ const WebPlzContactPage = () => {
 
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
-            <DynamicSEO 
+            <DynamicSEO
                 title={`${t.plzContact.title} | Pulzen AI`}
                 description={t.plzContact.subtitle}
                 url={window.location.href}
@@ -128,15 +147,15 @@ const WebPlzContactPage = () => {
                         >
                             <div
                                 className={`relative rounded-2xl p-6 shadow-2xl max-w-md w-full backdrop-blur-md ${notification.type === "success"
-                                        ? "bg-[#19687A]/90 border border-[#17BBCD]/50"
-                                        : "bg-red-900/90 border border-red-500/50"
+                                    ? "bg-[#19687A]/90 border border-[#17BBCD]/50"
+                                    : "bg-red-900/90 border border-red-500/50"
                                     }`}
                             >
                                 <div className="flex items-start space-x-4">
                                     <div
                                         className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${notification.type === "success"
-                                                ? "bg-[#17BBCD]/20"
-                                                : "bg-red-500/20"
+                                            ? "bg-[#17BBCD]/20"
+                                            : "bg-red-500/20"
                                             }`}
                                     >
                                         {notification.type === "success" ? (
@@ -148,16 +167,16 @@ const WebPlzContactPage = () => {
                                     <div className="flex-1">
                                         <h3
                                             className={`font-semibold text-lg ${notification.type === "success"
-                                                    ? "text-white"
-                                                    : "text-red-100"
+                                                ? "text-white"
+                                                : "text-red-100"
                                                 }`}
                                         >
                                             {notification.type === "success" ? "¡Éxito!" : "Error"}
                                         </h3>
                                         <p
                                             className={`text-sm mt-1 ${notification.type === "success"
-                                                    ? "text-blue-100"
-                                                    : "text-red-200"
+                                                ? "text-blue-100"
+                                                : "text-red-200"
                                                 }`}
                                         >
                                             {notification.message}
@@ -177,6 +196,15 @@ const WebPlzContactPage = () => {
 
                 {/* Background effects */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-96 bg-[#19687A]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+                {/* SVG Background Decoration */}
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-80 flex justify-center items-start">
+                    <img
+                        src="/plz/contact/bg-contact.svg"
+                        alt=""
+                        className="w-[1200px] min-w-[1200px] h-auto object-contain"
+                    />
+                </div>
 
                 <div className="relative z-10 max-w-3xl mx-auto w-full px-4 sm:px-6 lg:px-8">
                     {/* Back Button */}

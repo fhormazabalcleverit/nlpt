@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ExternalLink } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from './PlzMotion';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -10,9 +10,9 @@ const PlzCasesList = () => {
     const casesItems = t.plzCasesList.items;
     
     const casesWithIcons = [
-        { id: 'mining', icons: ['🚜', '⚠️', '⚙️', '📊'], image: '/mining_operations.png', link: '/mining' },
-        { id: 'retail', icons: ['📦', '🎯', '🛒', '📉'], image: '/retail_analytics.png', link: '/retail' },
-        { id: 'performance', icons: ['📈', '📋', '🛡️', '💡'], image: '/performance_analytics.png', link: '/performance' }
+        { id: 'mining', icons: ['🚜', '⚠️', '⚙️', '📊'], image: '/mining_operations.png', link: '/mining', demoLink: 'https://mining-llmapp.cleveritgroup.ai/' },
+        { id: 'retail', icons: ['📦', '🎯', '🛒', '📉'], image: '/retail_analytics.png', link: '/retail', demoLink: 'https://retail-llmapp.cleveritgroup.ai/' },
+        { id: 'performance', icons: ['📈', '📋', '🛡️', '💡'], image: '/performance_analytics.png', link: '/performance', demoLink: 'https://pulzen-llmapp.cleveritgroup.ai/' }
     ];
 
     const displayCases = casesWithIcons.map(c => {
@@ -89,11 +89,34 @@ const PlzCasesList = () => {
                                     ))}
                                 </div>
 
-                                {/* CTA Button */}
-                                <button className="flex items-center gap-2 px-6 py-3 text-[#17BBCD] hover:text-[#19687A] border border-[#17BBCD] hover:border-[#19687A] rounded-xl text-white text-sm font-medium transition-all group-hover:bg-[#19687A]/10">
-                                    {data.btn}
-                                    <ChevronRight className="w-4 h-4 ml-1" />
-                                </button>
+                                {/* CTA Buttons */}
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <button 
+                                        className="flex items-center justify-center gap-2 px-6 py-3 text-[#17BBCD] hover:text-[#19687A] border border-[#17BBCD] hover:border-[#19687A] rounded-xl text-sm font-medium transition-all group-hover:bg-[#19687A]/10"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (data.link) {
+                                                navigate(data.link);
+                                            }
+                                        }}
+                                    >
+                                        {data.btn}
+                                        <ChevronRight className="w-4 h-4 ml-1" />
+                                    </button>
+
+                                    {data.demoLink && (
+                                        <a
+                                            href={data.demoLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="flex items-center justify-center gap-2 px-6 py-3 bg-[#19687A] hover:bg-[#17BBCD] rounded-xl text-white text-sm font-medium transition-all shadow-lg"
+                                        >
+                                            {t.plzCases.demoBtn}
+                                            <ExternalLink className="w-4 h-4 ml-1" />
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

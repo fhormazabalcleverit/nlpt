@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
 import { useLanguage } from '../../context/LanguageContext';
@@ -16,7 +16,7 @@ const PlzCases = () => {
         { id: 'performance', title: t.plzCases.performance },
     ];
 
-    const tabData: Record<string, { image: string, title: string, desc: string, btn: string, link?: string, tags: { icon: string, text: string }[] }> = {
+    const tabData: Record<string, { image: string, title: string, desc: string, btn: string, link?: string, demoLink?: string, tags: { icon: string, text: string }[] }> = {
         mining: {
             image: '/mining_operations.png',
             title: t.plzCases.miningTitle,
@@ -28,7 +28,8 @@ const PlzCases = () => {
                 { icon: '⚙️', text: t.plzCases.miningTags[2] },
                 { icon: '📊', text: t.plzCases.miningTags[3] },
             ],
-            link: '/mining'
+            link: '/mining',
+            demoLink: 'https://mining-llmapp.cleveritgroup.ai/'
         },
         retail: {
             image: '/retail_analytics.png',
@@ -41,7 +42,8 @@ const PlzCases = () => {
                 { icon: '🛒', text: t.plzCases.retailTags[2] },
                 { icon: '📉', text: t.plzCases.retailTags[3] },
             ],
-            link: '/retail'
+            link: '/retail',
+            demoLink: 'https://retail-llmapp.cleveritgroup.ai/'
         },
         performance: {
             image: '/performance_analytics.png',
@@ -54,7 +56,8 @@ const PlzCases = () => {
                 { icon: '🛡️', text: t.plzCases.performanceTags[2] },
                 { icon: '💡', text: t.plzCases.performanceTags[3] },
             ],
-            link: '/performance'
+            link: '/performance',
+            demoLink: 'https://pulzen-llmapp.cleveritgroup.ai/'
         }
     };
 
@@ -184,18 +187,34 @@ const PlzCases = () => {
                                     ))}
                                 </div>
 
-                                {/* CTA Button */}
-                                <button
-                                    onClick={() => {
-                                        if (currentData.link) {
-                                            navigate(currentData.link);
-                                        }
-                                    }}
-                                    className="flex items-center gap-2 px-6 py-3 text-[#17BBCD] hover:text-[#19687A] border border-[#17BBCD] hover:border-[#19687A] rounded-xl text-white text-sm font-medium transition-all"
-                                >
-                                    {currentData.btn}
-                                    <ChevronRight className="w-4 h-4 ml-1" />
-                                </button>
+                                {/* CTA Buttons */}
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            if (currentData.link) {
+                                                navigate(currentData.link);
+                                            }
+                                        }}
+                                        className="flex items-center justify-center gap-2 px-6 py-3 text-[#17BBCD] hover:text-[#19687A] border border-[#17BBCD] hover:border-[#19687A] rounded-xl text-white text-sm font-medium transition-all"
+                                    >
+                                        {currentData.btn}
+                                        <ChevronRight className="w-4 h-4 ml-1" />
+                                    </button>
+
+                                    {currentData.demoLink && (
+                                        <a
+                                            href={currentData.demoLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="flex items-center justify-center gap-2 px-6 py-3 bg-[#19687A] hover:bg-[#17BBCD] rounded-xl text-white text-sm font-medium transition-all shadow-lg"
+                                        >
+                                            {t.plzCases.demoBtn}
+                                            <ExternalLink className="w-4 h-4 ml-1" />
+                                        </a>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

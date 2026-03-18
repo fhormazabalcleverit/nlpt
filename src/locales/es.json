@@ -113,10 +113,12 @@
     "badge": "Casos aplicados",
     "title": "Aplicación real del agente en distintas industrias, rubros y negocios.",
     "description": "Diseñado para la escalabilidad y seguridad identificando los datos y ayudando a la toma de decisiones.",
+    "demoBtn": "Ver demo",
+    "backBtn": "Volver a Casos aplicados",
     "mining": "Minería",
     "retail": "Retail",
     "performance": "Performance",
-    "miningTitle": "Minería Autónoma",
+    "miningTitle": "Mining Intelligence",
     "miningDesc": "Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.",
     "miningBtn": "Conocer el caso",
     "miningTags": [
@@ -125,7 +127,7 @@
       "Mando de Equipos Predictivo",
       "Análisis de Mineral AI Agent"
     ],
-    "retailTitle": "Retail Intelligence Suite",
+    "retailTitle": "Retail Intelligence",
     "retailDesc": "Previene quiebres de stock y personaliza comunicaciones. Agentes que interpretan la demanda omnicanal para optimizar inventarios y aumentar conversiones.",
     "retailBtn": "Conocer el caso",
     "retailTags": [
@@ -134,7 +136,7 @@
       "Soporte E-Commerce AI Agent",
       "Predicción de Demanda AI"
     ],
-    "performanceTitle": "Rendimiento Corporativo",
+    "performanceTitle": "Development Metrics",
     "performanceDesc": "Consolida silos de datos financieros en un dashboard de control. Obtén insights predictivos y agentes que generan reportes de salud financiera diariamente.",
     "performanceBtn": "Conocer el caso",
     "performanceTags": [
@@ -147,7 +149,7 @@
   "plzCTA": {
     "title": "Evoluciona tu negocio con Pulzen AI",
     "description": "Transforma datos en ventaja competitiva y lleva tu operación al siguiente nivel con inteligencia artificial aplicada.",
-    "primaryBtn": "Solicitar demo personalizada",
+    "primaryBtn": "Solicita una demo",
     "secondaryBtn": "Hablar con un especialista"
   },
   "plzFooter": {
@@ -682,7 +684,7 @@
       "results": "Las empresas retail que implementan Retail Intelligence reportan un aumento del 20-25% en ventas, una reducción del 30% en quiebres de stock y un incremento del 40% en satisfacción del cliente. Los gerentes toman decisiones más rápidas y basadas en datos, resultando en mejor rotación de inventario y experiencias de compra personalizadas."
     },
     "case2": {
-      "title": "Mining Intelligence",
+      "title": "Mineria autónoma",
       "category": "Minería",
       "excerpt": "Gestión inteligente de operaciones mineras con análisis predictivo de seguridad, optimización de recursos y monitoreo ambiental en tiempo real.",
       "fullContent": "La industria minera enfrenta desafíos únicos en términos de seguridad, eficiencia operativa y cumplimiento ambiental. Mining Intelligence es una plataforma de IA diseñada específicamente para operaciones mineras que transforma datos complejos de múltiples fuentes en información accionable.",
@@ -1101,7 +1103,7 @@
     "description": "Diseñado para la escalabilidad y seguridad identificando los datos y ayudando a la toma de decisiones.",
     "items": {
       "mining": {
-        "title": "Minería Autónoma",
+        "title": "Mining Intelligence",
         "desc": "Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.",
         "btn": "Conocer el caso",
         "tags": [
@@ -1112,7 +1114,7 @@
         ]
       },
       "retail": {
-        "title": "Retail Intelligence Suite",
+        "title": "Retail Intelligence",
         "desc": "Previene quiebres de stock y personaliza comunicaciones. Agentes que interpretan la demanda omnicanal para optimizar inventarios y aumentar conversiones.",
         "btn": "Conocer el caso",
         "tags": [
@@ -1123,7 +1125,7 @@
         ]
       },
       "performance": {
-        "title": "Rendimiento Corporativo",
+        "title": "Development Metrics",
         "desc": "Consolida silos de datos financieros en un dashboard de control. Obtén insights predictivos y agentes que generan reportes de salud financiera diariamente.",
         "btn": "Conocer el caso",
         "tags": [
@@ -1288,6 +1290,7 @@
     "performance": {
       "title": "Development Metrics",
       "description": "Los equipos de desarrollo de software modernos generan una cantidad masiva de datos a través de commits, pull requests, issues y métricas de CI/CD.",
+      "imageUrl": "/performance_analytics.png",
       "ctaHero": "Empieza hoy",
       "ctaTitle": "Empiece hoy mismo a analizar el rendimiento de su equipo",
       "ctaDescription": "¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar potentes herramientas de métricas para ingeniería de software sin esfuerzo técnico ni implementaciones complejas. Amplüe la visibilidad de su operación, reduzca los cuellos de botella y automatice los reportes sin demora.",
@@ -1302,8 +1305,9 @@
       }
     },
     "mining": {
-      "title": "Minería Autónoma",
+      "title": "Mining Intelligence",
       "description": "Detecta condiciones inseguras y automatiza procesos en tiempo real con agentes que operan en sistemas de faena reduciendo tiempos de inactividad.",
+      "imageUrl": "/mining_operations.png",
       "ctaHero": "Empieza hoy",
       "ctaTitle": "Empiece hoy mismo a analizar el rendimiento de su faena",
       "ctaDescription": "¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar potentes herramientas operativas para la industria minera sin esfuerzo técnico. Amplüe la visibilidad de su operación corporativa y automatice sus reportes reduciendo riesgos.",
@@ -1321,6 +1325,7 @@
       "title": "Retail Intelligence",
       "description": "En el sector retail moderno, entender el comportamiento del cliente y optimizar el inventario es crucial para mantener la competitividad.",
       "description2": "Retail Intelligence es una solución de IA que transforma datos de ventas, inventarios y comportamiento del cliente en información accionable para impulsar las ventas y mejorar la experiencia del cliente.",
+      "imageUrl": "/retail_analytics.png",
       "ctaHero": "Empieza hoy",
       "ctaTitle": "Empiece hoy mismo a aumentar las conversiones de su negocio",
       "ctaDescription": "¡Lance su primer agente de IA hoy mismo! Con Pulzen, puede desplegar herramientas orientadas al retail inteligente para controlar el inventario y anticipar la demanda, brindando experiencias excepcionales.",

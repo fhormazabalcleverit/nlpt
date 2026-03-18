@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
@@ -24,11 +24,11 @@ const WebPlzRetailPage = () => {
                     {/* Back Button */}
                     <div className="flex items-center gap-2">
                         <Link
-                            to="/"
+                            to="/cases"
                             className="inline-flex items-center gap-2 px-0 py-2 text-sm font-medium text-gray-400 bg-transparent hover:text-white transition-all mb-12 group"
                         >
                             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                            {t.plzQuote?.back || 'Volver a Pulzen AI'}
+                            {t.plzCases?.backBtn || 'Volver a Casos aplicados'}
                         </Link>
                     </div>
 
@@ -43,19 +43,21 @@ const WebPlzRetailPage = () => {
                     </p>
 
                     {/* Hero Full Width Graphic */}
-                    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center mt-12 mb-8">
-                        {/* Soft Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+                    {data.imageUrl && (
+                        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center mt-12 mb-8">
+                            {/* Soft Glow */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-                        {/* Image representing the feature */}
-                        <div
-                            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
-                            style={{ backgroundImage: `url('/retail_analytics.png')` }}
-                        ></div>
+                            {/* Image representing the feature */}
+                            <div
+                                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
+                                style={{ backgroundImage: `url('${data.imageUrl}')` }}
+                            ></div>
 
-                        {/* Placeholder gradient to add depth */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#040809] via-transparent to-transparent opacity-80 pointer-events-none"></div>
-                    </div>
+                            {/* Placeholder gradient to add depth */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#040809] via-transparent to-transparent opacity-80 pointer-events-none"></div>
+                        </div>
+                    )}
 
                     {/* Description Text */}
                     <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
@@ -81,12 +83,15 @@ const WebPlzRetailPage = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-                        <Link
-                            to="#"
-                            className="w-full sm:w-auto px-8 py-3.5 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-sm font-medium transition-colors"
+                        <a
+                            href="https://retail-llmapp.cleveritgroup.ai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-[#19687A] hover:bg-[#17BBCD] text-white rounded-xl text-sm font-medium transition-colors"
                         >
                             {data.ctaDemo}
-                        </Link>
+                            <ExternalLink className="w-4 h-4" />
+                        </a>
                         <Link
                             to="/contact"
                             className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-[#19687A] hover:border-[#17BBCD] text-[#19687A] hover:text-[#17BBCD] rounded-xl text-sm font-medium transition-colors"

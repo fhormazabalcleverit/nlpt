@@ -183,21 +183,23 @@ const PlzRetailFeatures = () => {
                                     )}
                                     
                                     {/* Graphic Container */}
-                                    <StaggerItem>
-                                        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center">
-                                            {/* Soft Glow */}
-                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/20 rounded-full blur-[80px]"></div>
+                                    {feat.image && (
+                                        <StaggerItem>
+                                            <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden bg-[#11161A] border border-white/5 shadow-2xl flex items-center justify-center">
+                                                {/* Soft Glow */}
+                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-600/20 rounded-full blur-[80px]"></div>
 
-                                            {/* Image representing the feature */}
-                                            <div
-                                                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
-                                                style={{ backgroundImage: `url(${feat.image})` }}
-                                            ></div>
+                                                {/* Image representing the feature */}
+                                                <div
+                                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-lighten"
+                                                    style={{ backgroundImage: `url(${feat.image})` }}
+                                                ></div>
 
-                                            {/* Placeholder gradient if image is not enough */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#040809] to-transparent opacity-80"></div>
-                                        </div>
-                                    </StaggerItem>
+                                                {/* Placeholder gradient if image is not enough */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-[#040809] to-transparent opacity-80"></div>
+                                            </div>
+                                        </StaggerItem>
+                                    )}
                                 </StaggerContainer>
                             </FadeIn>
                         ))}

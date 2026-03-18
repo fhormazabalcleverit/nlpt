@@ -113,10 +113,12 @@
     "badge": "Applied Cases",
     "title": "Real application of the agent in different industries, areas, and businesses.",
     "description": "Designed for scalability and security by identifying data and assisting in decision-making.",
+    "demoBtn": "View demo",
+    "backBtn": "Back to Applied Cases",
     "mining": "Mining",
     "retail": "Retail",
     "performance": "Performance",
-    "miningTitle": "Autonomous Mining",
+    "miningTitle": "Mining Intelligence",
     "miningDesc": "Detects unsafe conditions and automates processes in real-time with agents operating in site systems, reducing downtime.",
     "miningBtn": "Learn more",
     "miningTags": [
@@ -125,7 +127,7 @@
       "Predictive Equipment Command",
       "Mineral Analysis AI Agent"
     ],
-    "retailTitle": "Retail Intelligence Suite",
+    "retailTitle": "Retail Intelligence",
     "retailDesc": "Prevents stockouts and personalizes communications. Agents that interpret omni-channel demand to optimize inventory and increase conversions.",
     "retailBtn": "Learn more",
     "retailTags": [
@@ -1116,7 +1118,7 @@
     "description": "Designed for scalability and security by identifying data and assisting in decision-making.",
     "items": {
       "mining": {
-        "title": "Autonomous Mining",
+        "title": "Mining Intelligence",
         "desc": "Detects unsafe conditions and automates processes in real-time with agents operating in site systems, reducing downtime.",
         "btn": "Learn more",
         "tags": [
@@ -1127,7 +1129,7 @@
         ]
       },
       "retail": {
-        "title": "Retail Intelligence Suite",
+        "title": "Retail Intelligence",
         "desc": "Prevents stockouts and personalizes communications. Agents that interpret omni-channel demand to optimize inventory and increase conversions.",
         "btn": "Learn more",
         "tags": [
@@ -1303,6 +1305,7 @@
     "performance": {
       "title": "Development Metrics",
       "description": "Modern software development teams generate a massive amount of data through commits, pull requests, issues, and CI/CD metrics.",
+      "imageUrl": "",
       "ctaHero": "Start today",
       "ctaTitle": "Start analyzing your team's performance today",
       "ctaDescription": "Launch your first AI agent today! With Pulzen, you can deploy powerful software engineering metrics tools without technical effort or complex implementations. Broaden your operation's visibility, reduce bottlenecks, and automate reports without delay.",
@@ -1317,8 +1320,9 @@
       }
     },
     "mining": {
-      "title": "Autonomous Mining",
+      "title": "Mining Intelligence",
       "description": "Detects unsafe conditions and automates processes in real-time with agents operating in site systems, reducing downtime.",
+      "imageUrl": "",
       "ctaHero": "Start today",
       "ctaTitle": "Start analyzing your site's performance today",
       "ctaDescription": "Launch your first AI agent today! With Pulzen, you can deploy powerful operational tools for the mining industry without technical effort. Broaden your corporate operation's visibility and automate your reports, reducing risks.",
@@ -1336,6 +1340,7 @@
       "title": "Retail Intelligence",
       "description": "In the modern retail sector, understanding customer behavior and optimizing inventory is crucial to maintaining competitiveness.",
       "description2": "Retail Intelligence is an AI solution that transforms sales data, inventory, and customer behavior into actionable information to drive sales and improve customer experience.",
+      "imageUrl": "",
       "ctaHero": "Start today",
       "ctaTitle": "Start increasing your business conversions today",
       "ctaDescription": "Launch your first AI agent today! With Pulzen, you can deploy smart retail-oriented tools to control inventory and anticipate demand, providing exceptional experiences.",

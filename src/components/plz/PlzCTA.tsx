@@ -81,10 +81,10 @@ const PlzCTA = () => {
                         </StaggerItem>
                         <StaggerItem>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="group relative px-8 py-4 text-base font-medium text-white overflow-hidden rounded-xl transition-all">
+                                <Link to="/contact" state={{ reasonIndex: 0 }} className="group relative px-8 py-4 text-center text-base font-medium text-white overflow-hidden rounded-xl transition-all">
                                     <div className="absolute inset-0 bg-[#19687A] transition-all group-hover:bg-[#17BBCD]"></div>
                                     <span className="relative z-10">{t.plzCTA.primaryBtn}</span>
-                                </button>
+                                </Link>
                                 <Link to="/contact" className="px-8 py-4 text-center text-base font-medium text-[#19687A] hover:text-[#17BBCD] border border-[#19687A]/30 hover:border-[#17BBCD] rounded-xl transition-all bg-white/5">
                                     {t.plzCTA.secondaryBtn}
                                 </Link>

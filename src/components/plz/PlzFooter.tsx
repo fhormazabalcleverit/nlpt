@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FadeIn } from './PlzMotion';
 import { useLanguage } from '../../context/LanguageContext';
@@ -22,15 +22,19 @@ const PlzFooter = () => {
 
                     {/* Social Icons */}
                     <div className="flex gap-4">
+                        {/* 
                         <a href="#" className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 bg-[#0a0f12] border border-white/5">
                             <Twitter className="w-5 h-5" />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 bg-[#0a0f12] border border-white/5">
+                        */}
+                        <a href="https://www.linkedin.com/company/pulzen-ai/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 bg-[#0a0f12] border border-white/5">
                             <Linkedin className="w-5 h-5" />
                         </a>
+                        {/* 
                         <a href="#" className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 bg-[#0a0f12] border border-white/5">
                             <Github className="w-5 h-5" />
                         </a>
+                        */}
                     </div>
                 </div>
 
