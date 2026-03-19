@@ -36,7 +36,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden min-[1118px]:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <Link to="/v2/team" className="text-gray-300 hover:text-white transition-colors duration-200">
               {t.navbar.team}
             </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
           </div>
 
           {/* Right side - Language Toggle Switch */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden min-[1118px]:flex items-center">
             <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/20 p-1 rounded-full">
                 <button
                     onClick={() => language !== 'es' && toggleLanguage()}
@@ -94,7 +94,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="min-[1118px]:hidden flex items-center">
             <button
               onClick={toggleMenu}
               className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -106,7 +106,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className={`md:hidden border-t transition-all duration-300 ${
+          <div className={`min-[1118px]:hidden border-t transition-all duration-300 ${
             isScrolled
               ? 'bg-backblack/90 backdrop-blur-md border-gray-700/50'
               : 'bg-backblack/95 backdrop-blur-sm border-gray-800'

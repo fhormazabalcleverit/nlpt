@@ -197,12 +197,12 @@ const WebPlzContactPage = () => {
                 </AnimatePresence>
 
                 {/* Background effects */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-96 bg-[#19687A]/10 rounded-full blur-[120px] pointer-events-none"></div>
+                {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-96 bg-[#19687A]/10 rounded-full blur-[120px] pointer-events-none"></div> */}
 
                 {/* SVG Background Decoration */}
-                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-80 flex justify-center items-start">
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-100 flex justify-center items-start">
                     <img
-                        src="/plz/contact/bg-contact.svg"
+                        src="/plz/contact/bg-contact.png"
                         alt=""
                         className="w-[1200px] min-w-[1200px] h-auto object-contain"
                     />

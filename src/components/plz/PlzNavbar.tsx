@@ -18,14 +18,14 @@ const PlzNavbar = () => {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-nowrap">
+                    <div className="hidden min-[1118px]:flex items-center space-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-nowrap">
                         <Link to="/platform" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">{t.plzNavbar.platform}</Link>
                         <Link to="/cases" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">{t.plzNavbar.cases}</Link>
                         <Link to="/about" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">{t.plzNavbar.about}</Link>
                     </div>
 
                     {/* Buttons + Switch */}
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden min-[1118px]:flex items-center space-x-4">
                         {/* Language Switch */}
                         <div className="flex items-center gap-1 bg-white/5 border border-white/10 p-1 rounded-full mr-2">
                             <button
@@ -59,7 +59,7 @@ const PlzNavbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="min-[1118px]:hidden flex items-center">
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="text-gray-300 hover:text-white focus:outline-none"
@@ -78,7 +78,7 @@ const PlzNavbar = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden bg-[#040809] border-b border-white/5">
+                <div className="min-[1118px]:hidden bg-[#040809] border-b border-white/5">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <Link to="/platform" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">{t.plzNavbar.platform}</Link>
                         <Link to="/cases" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">{t.plzNavbar.cases}</Link>
