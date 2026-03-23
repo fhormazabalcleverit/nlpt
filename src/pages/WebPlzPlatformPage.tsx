@@ -22,7 +22,7 @@ const WebPlzPlatformPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] flex flex-col font-sansation text-white">
             <DynamicSEO
-                title={`${t.plzNavbar.platform} | Pulzen AI`}
+                title={`${t.plzNavbar.platform} | CleverIT AI`}
                 description={t.plzPlatform.description}
                 url={window.location.href}
             />

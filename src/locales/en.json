@@ -16,7 +16,7 @@
     "quote": "Get a Quote"
   },
   "plzHero": {
-    "title": "Pulzen AI — Intelligence that",
+    "title": "CleverIT AI — Intelligence that",
     "title2": "scales performance for",
     "description": "LLM capable of measuring, optimizing and automating operations in any industry: IT talent, logistics, manufacturing, services, whatever your business needs.",
     "ctaPrimary": "Talk with the team",
@@ -30,9 +30,9 @@
     "whatever you need."
   ],
   "plzGraphic": {
-    "badge": "Pulzen AI Advantages",
+    "badge": "CleverIT AI Advantages",
     "title": "Scale your operation with an intelligent and adaptive agent",
-    "description": "Whatever your industry, Pulzen AI integrates and evolves with you.",
+    "description": "Whatever your industry, CleverIT AI integrates and evolves with you.",
     "evolutionTitle": "Operational evolution",
     "evolutionSubtitle": "for the scalability of each service",
     "button": "Learn more",
@@ -80,7 +80,7 @@
   "plzIntegrations": {
     "badge": "Integrations",
     "title": "Put data at your service",
-    "description": "Pulzen AI extracts data from multiple sources, standardizes and cleans it, supporting decision-making with minimal manual intervention.",
+    "description": "CleverIT AI extracts data from multiple sources, standardizes and cleans it, supporting decision-making with minimal manual intervention.",
     "statusPending": "Pending",
     "statusProcessed": "Processed",
     "items": {
@@ -149,7 +149,7 @@
     ]
   },
   "plzCTA": {
-    "title": "Evolve your business with Pulzen AI",
+    "title": "Evolve your business with CleverIT AI",
     "description": "Transform data into competitive advantage and take your operation to the next level with applied artificial intelligence.",
     "primaryBtn": "Request personalized demo",
     "secondaryBtn": "Speak with a specialist"
@@ -360,7 +360,7 @@
   },
   "faq": {
     "badge": "FAQ",
-    "title": "Answers to common questions",
+    "title": "Frequent Questions about the AI Duo",
     "subtitle": "Main questions about LLM Apps. For detailed inquiries:",
     "subtitleLink": {
       "text": "Chat with our AI agent",
@@ -374,37 +374,33 @@
     "certFeature1": "Modernize and migrate your enterprise applications to the cloud",
     "certFeature2": "Boost your developers' productivity with Microsoft Azure",
     "question1": {
-      "q": "What value does implementing LLM Apps bring to my organization?",
-      "a": "**LLMApp** is a platform that allows you to create and manage **multiple specialized AI agents**, each with its own database, training examples, and specific configuration.\n\nThis enables organizations to have different agents focused on different business areas (sales, support, operations, etc.), transforming scattered information into **intelligent conversational assistants** that improve:\n\n• **Productivity**\n• **Decision-making**\n• **Internal user experience**"
+      "q": "What is the advantage of hiring this \"Dynamic Duo\" instead of a traditional development team?",
+      "a": "The combination of Architect and Developer covers the entire product lifecycle: from strategic feasibility to technical deployment. Being both powered by an advanced AI stack (Claude + Copilot), we reduce development times by up to 40%, maintaining code quality and architectural consistency that larger teams often lose in technical bureaucracy."
     },
     "question2": {
-      "q": "What integrations does the platform support and how do they improve responses?",
-      "a": "The **LLMApp platform** integrates with:\n\n• **SharePoint** (enterprise documents)\n• **Databases** (SQL Server, MySQL, PostgreSQL, MongoDB, BigQuery, etc.)\n• **Files** (PDF, Excel, Word, images)\n• **REST and GraphQL APIs**\n• **MCP** (Model Context Protocol)\n\n**Important:** Agents are trained with **personalized business examples** that teach how and when to use each source, achieving **much more accurate and relevant** responses."
+      "q": "How do you guarantee the security and privacy of my company's data?",
+      "a": "Security is the pillar of our architecture. The CleverIT AI Architect designs systems that comply with governance regulations, using private architectures (RAG) where your data is never used to train public models. We implement validation layers to mitigate hallucinations and ensure the AI output is reliable and aligned with your corporate values."
     },
     "question3": {
-      "q": "How long does the LLMApp platform implementation take?",
-      "a": "The **LLMApp** implementation project is designed to be agile and comprehensive, ensuring your organization can start leveraging AI benefits in the shortest time possible.\n\nThe base setup duration is **3 weeks**: 1 week for platform and infrastructure configuration, 2 weeks for creation and adjustments of the first agent. Each additional agent requires approximately **2 more weeks**."
+      "q": "How fast can we see a functioning MVP (Minimum Viable Product)?",
+      "a": "Thanks to our Vibe Coding methodology and the intensive use of acceleration tools, we can move from architectural definition to a functional MVP in weeks. The CleverIT AI Developer focuses on agile integrations and iterative flows that allow validating business hypotheses in record time."
     },
     "question4": {
-      "q": "What does the initial setup include?",
-      "a": "The **LLMApp** initial setup includes everything needed to launch your AI agents platform:\n\nMulti-agent platform setup, connection with client data, agent creation and configuration, database schema generation per agent, training examples definition, Mastra chat interface, agent management, functional testing, and Azure deployment.\n\nAdditionally includes:\n• **Alerts creation**\n• **Custom dashboards**\n• **Automated reports**"
+      "q": "Can you integrate AI solutions into platforms that are already operational?",
+      "a": "Absolutely. It's not always necessary to rebuild from scratch. We specialize in modernizing existing ecosystems, injecting layers of intelligence (such as automation agents or semantic search engines) via APIs, without interrupting your business's current operation."
     },
     "question5": {
-      "q": "What are the implementation and monthly usage costs?",
-      "a": "**Implementation (one-time payment):**\n• Initial setup: **USD 4,200** (includes platform + infrastructure + 1 agent)\n• Each additional agent: **USD 2,000**\n\n**Monthly Usage (recurring):**\nTiered by users:\n• 0-100 users: **USD 10/user**\n• 100-500 users: **USD 7/user**\n• 500-1000 users: **USD 5/user**\n• 3000+ users: **USD 3/user**\n\n**Monthly Support:**\n• **Basic Support: USD 2,500** (included in all implementations)\n• **Medium Support: USD 4,000**\n• **Pro Support: USD 5,000**"
+      "q": "What happens if AI models (OpenAI, Anthropic, etc.) change or evolve?",
+      "a": "We design model-agnostic architectures. This means that the structure built by the Architect allows for an easy swap of the \"brain\" (the LLM) of the application if a more efficient or cost-effective option appears in the future, thus protecting your long-term technological investment."
     },
     "question6": {
-      "q": "What does the USD 2,500 monthly Basic Support include?",
-      "a": "Basic Support includes **EVERYTHING needed to operate:**\n\n• **Complete Azure infrastructure** (Container Registry, Container Apps, Azure Foundry, PostgreSQL)\n• **Complete Azure CSP management**\n• **Platform operational maintenance**\n• **Monthly monitoring** (status, logs, failure detection)\n• **Technical incident response with SLA**\n• **Monthly patches and updates**\n• **Monthly system review**\n\nIt's a **predictable fixed cost** that includes EVERYTHING."
-    },
-    "question7": {
-      "q": "What are the differences between Medium and Pro Support?",
-      "a": "**Medium Support (USD 4,000/month):**\nBasic Support + **20 monthly hours** for improvements, bi-weekly monitoring, prompt and agent optimization, functional adjustments.\n\n**Pro Support (USD 5,000/month):**\nMedium Support + **30 additional hours (50 hrs total)**, AI model fine-tuning, dataset expansion, advanced observability with dashboards, custom alerts, and analytical reports."
+      "q": "What exactly does it mean that the profiles are \"AI-Augmented\"?",
+      "a": "It means we don't write code in the traditional manual way. We use GitHub Copilot Enterprise for real-time assistance and Claude for deep logical analysis and refactoring. This does not replace our technical criteria; it amplifies it. It allows us to act as a 10-person team, detecting security errors and optimizing performance before the code reaches production."
     }
   },
   "plzPricing": {
     "badge": "Plans",
-    "title": "Scale your business with the power of Pulzen AI",
+    "title": "Scale your business with the power of CleverIT AI",
     "subtitle": "Choose the plan that best fits your operational needs, from development environments to large-scale operations.",
     "plans": [
       {
@@ -1272,7 +1268,7 @@
       }
     },
     "team": {
-      "badge": "Pulzen AI Team",
+      "badge": "CleverIT AI Team",
       "title": "Decades of experience in engineering and product design to empower the organizational operational management of the future.",
       "description": "We design agentic ecosystems that collaborate with each other and with the human team. Our technical expertise allows us to transform complex workflows into self-learning systems that evolve with the business.",
       "learnMore": "Learn more",
@@ -1306,7 +1302,7 @@
     }
   },
   "plzContact": {
-    "back": "Back to Pulzen AI",
+    "back": "Back to CleverIT AI",
     "title": "Contact",
     "subtitle": "Our sales team can provide additional information and assistance for implements AI agents in your organization.",
     "form": {
@@ -1353,7 +1349,7 @@
       "submit": "Send",
       "defaultSuccess": "We will contact you in less than 24 hours."
     },
-    "backBtn": "Back to Pulzen AI",
+    "backBtn": "Back to CleverIT AI",
     "quoteBanner": {
       "title": "Need a custom quote?",
       "subtitle": "Use our smart quoter to get an estimated budget based on your specific needs.",
@@ -1361,7 +1357,7 @@
     }
   },
   "plzQuote": {
-    "back": "Back to Pulzen AI",
+    "back": "Back to CleverIT AI",
     "badge": "Quote",
     "title": "I want to get a quote",
     "subtitle": "Take the next step toward automation. Complete your details and a specialist will prepare a custom proposal.",
@@ -1455,9 +1451,9 @@
     "hero": {
       "seoTitle": "Enterprise AI Experts & Autonomous Agents | Cleverit AI",
       "seoSubtitle": "Transform your business with scalable AI architectures, LLM integration, and autonomous agents. Expert consulting for governance and real-time execution.",
-      "title": "The Architect's Vision. The Developer's Strength.",
+      "title": "The Architect's Vision.",
       "subtitle": "Don't choose between strategy or execution. Get an AI ecosystem designed for enterprise governance and built for real-time performance.",
-      "cta": "Explore Experts"
+      "cta": "Explore experts"
     },
     "architect": {
       "name": "Clever AI Architect",

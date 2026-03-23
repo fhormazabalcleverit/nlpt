@@ -14,7 +14,7 @@ const WebPlzMiningPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col">
             <DynamicSEO 
-                title={`${data.title} | Pulzen AI`}
+                title={`${data.title} | CleverIT AI`}
                 description={data.description}
             />
             <PlzNavbar />

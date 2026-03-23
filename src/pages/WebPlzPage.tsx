@@ -15,7 +15,7 @@ const WebPlzPage = () => {
     return (
         <div className="min-h-screen bg-backblack flex flex-col font-sansation">
             <DynamicSEO 
-                title={`${t.plzHero.title} | Pulzen AI`}
+                title={`${t.plzHero.title} | CleverIT AI`}
                 description={t.plzHero.description}
                 url={window.location.href}
             />

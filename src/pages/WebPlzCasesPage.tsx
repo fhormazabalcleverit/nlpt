@@ -12,7 +12,7 @@ const WebPlzCasesPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] flex flex-col font-sansation">
             <DynamicSEO 
-                title={`${t.plzNavbar.cases} | Pulzen AI`}
+                title={`${t.plzNavbar.cases} | CleverIT AI`}
                 description={t.plzCases.subtitle}
                 url={window.location.href}
             />

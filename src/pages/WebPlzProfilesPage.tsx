@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import { useLanguage } from '../context/LanguageContext';
@@ -9,12 +10,25 @@ import { Shield, Code, Zap, Lightbulb, Cpu, Layers, ArrowUpRight } from 'lucide-
 
 const HoverBadge = ({ color, x, y, active }: { color: string, x: number, y: number, active: boolean }) => {
     return (
-        <div
-            className={`pointer-events-none absolute z-50 transition-all duration-300 ease-out ${active ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
+        <motion.div
+            className="pointer-events-none absolute z-50"
+            initial={false}
+            animate={{ 
+                x, 
+                y, 
+                opacity: active ? 1 : 0, 
+                scale: active ? 1 : 0.5 
+            }}
+            transition={{
+                type: 'spring',
+                damping: 25,
+                stiffness: 250,
+                opacity: { duration: 0.2 },
+                scale: { duration: 0.2 }
+            }}
             style={{
-                left: x,
-                top: y,
-                transform: 'translate(-50%, -50%)'
+                translateX: '-50%',
+                translateY: '-50%'
             }}
         >
             <div className="relative w-28 h-28 rounded-full flex items-center justify-center shadow-2xl overflow-visible" style={{ backgroundColor: color }}>
@@ -30,7 +44,7 @@ const HoverBadge = ({ color, x, y, active }: { color: string, x: number, y: numb
                     </text>
                 </svg>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -120,16 +134,15 @@ const WebPlzProfilesPage = () => {
                                 >
                                     <HoverBadge color="#9333ea" x={archHover.x} y={archHover.y} active={archHover.active} />
 
-                                    {/* Floating Expert Image */}
-                                    <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-full h-[600px] -z-20 pointer-events-none group-hover:-translate-y-6 transition-transform duration-700 ease-out">
-                                        <img
-                                            src="/plz/profiles/01.png"
-                                            alt={data.architect.name}
-                                            className="w-full h-full object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.6)]"
-                                        />
-                                    </div>
-
                                     <Link to="/clever-ai-architect" className="block h-full cursor-pointer">
+                                        {/* Floating Expert Image */}
+                                        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-full h-[600px] -z-20 group-hover:-translate-y-6 transition-transform duration-700 ease-out pointer-events-none">
+                                            <img
+                                                src={`${import.meta.env.BASE_URL}plz/profiles/01.png`}
+                                                alt={data.architect.name}
+                                                className="w-full h-full object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.6)]"
+                                            />
+                                        </div>
                                         <div className="relative h-full bg-black/[0.7] border border-white/10 rounded-[2rem] p-8 lg:p-10 pt-20 backdrop-blur-xl transition-all group-hover:bg-black/[0.9] group-hover:border-white/20 shadow-2xl">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-600/10 blur-[60px] rounded-full group-hover:bg-purple-600/20 transition-all pointer-events-none" />
 
@@ -166,9 +179,9 @@ const WebPlzProfilesPage = () => {
                                                     </h4>
                                                     <div className="bg-purple-600/5 p-6 rounded-2xl border border-purple-600/10 transition-all group-hover:bg-purple-600/10">
                                                         <div className="flex flex-wrap items-center gap-6 mb-4">
-                                                            <img src="/plz/profiles/github.svg" alt="GitHub Copilot" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                                                            <img src={`${import.meta.env.BASE_URL}plz/profiles/github.svg`} alt="GitHub Copilot" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                                             <div className="w-[1px] h-4 bg-white/10 hidden sm:block" />
-                                                            <img src="/plz/profiles/claude.svg" alt="Claude AI" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                                                            <img src={`${import.meta.env.BASE_URL}plz/profiles/claude.svg`} alt="Claude AI" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                                         </div>
                                                         <p className="text-gray-400 text-sm font-light leading-relaxed italic">
                                                             {data.architect.techStack.match(/\(([^)]+)\)/)?.[1] || data.architect.techStack}
@@ -193,16 +206,15 @@ const WebPlzProfilesPage = () => {
                                 >
                                     <HoverBadge color="#19687A" x={devHover.x} y={devHover.y} active={devHover.active} />
 
-                                    {/* Floating Expert Image */}
-                                    <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-full h-[600px] -z-20 pointer-events-none group-hover:-translate-y-6 transition-transform duration-700 ease-out">
-                                        <img
-                                            src="/plz/profiles/02.png"
-                                            alt={data.developer.name}
-                                            className="w-full h-full object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.6)]"
-                                        />
-                                    </div>
-
                                     <Link to="/clever-ai-developer" className="block h-full cursor-pointer">
+                                        {/* Floating Expert Image */}
+                                        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-full h-[600px] -z-20 group-hover:-translate-y-6 transition-transform duration-700 ease-out pointer-events-none">
+                                            <img
+                                                src={`${import.meta.env.BASE_URL}plz/profiles/02.png`}
+                                                alt={data.developer.name}
+                                                className="w-full h-full object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.6)]"
+                                            />
+                                        </div>
                                         <div className="relative h-full bg-black/[0.7] border border-white/10 rounded-[2rem] p-8 lg:p-10 pt-20 backdrop-blur-xl transition-all group-hover:bg-black/[0.9] group-hover:border-white/20 shadow-2xl">
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#19687A]/10 blur-[60px] rounded-full group-hover:bg-[#19687A]/20 transition-all pointer-events-none" />
 
@@ -239,9 +251,9 @@ const WebPlzProfilesPage = () => {
                                                     </h4>
                                                     <div className="bg-[#19687A]/5 p-6 rounded-2xl border border-[#19687A]/10 transition-all group-hover:bg-[#19687A]/10">
                                                         <div className="flex flex-wrap items-center gap-6 mb-4">
-                                                            <img src="/plz/profiles/github.svg" alt="GitHub Copilot" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                                                            <img src={`${import.meta.env.BASE_URL}plz/profiles/github.svg`} alt="GitHub Copilot" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                                             <div className="w-[1px] h-4 bg-white/10 hidden sm:block" />
-                                                            <img src="/plz/profiles/claude.svg" alt="Claude AI" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                                                            <img src={`${import.meta.env.BASE_URL}plz/profiles/claude.svg`} alt="Claude AI" className="h-5 md:h-6 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                                         </div>
                                                         <p className="text-gray-400 text-sm font-light leading-relaxed italic">
                                                             {data.developer.techStack.match(/\(([^)]+)\)/)?.[1] || data.developer.techStack}
@@ -360,7 +372,7 @@ const WebPlzProfilesPage = () => {
                                     <Link
                                         to="/contact"
                                         state={{ reasonIndex: 2 }}
-                                        className="px-8 py-4 bg-[#3cdb7c] text-white rounded-xl font-bold transition-all hover:bg-[#2fb164] active:scale-95 shadow-xl shadow-[#3cdb7c]/20 min-w-[250px]"
+                                        className="px-8 py-4 bg-[#19687A] text-white rounded-xl font-bold transition-all hover:bg-[#17BBCD] active:scale-95 shadow-xl shadow-[#19687A]/20 min-w-[250px]"
                                     >
                                         {language === 'es' ? 'Comenzar una Alianza' : 'Start a Partnership'}
                                     </Link>

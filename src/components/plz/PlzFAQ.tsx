@@ -32,10 +32,6 @@ const PlzFAQ = () => {
             question: t.faq.question6.q,
             answer: t.faq.question6.a,
         },
-        {
-            question: t.faq.question7.q,
-            answer: t.faq.question7.a,
-        },
     ];
 
     return (

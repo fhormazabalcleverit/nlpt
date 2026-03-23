@@ -131,7 +131,7 @@ const WebPlzContactPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
             <DynamicSEO
-                title={`${t.plzContact.title} | Pulzen AI`}
+                title={`${t.plzContact.title} | CleverIT AI`}
                 description={t.plzContact.subtitle}
                 url={window.location.href}
             />
@@ -380,43 +380,7 @@ const WebPlzContactPage = () => {
                     </FadeIn>
                 </div>
 
-                {/* Quote CTA Banner */}
-                <FadeIn delay={0.6}>
-                    <div className="relative z-10 max-w-7xl mx-auto w-full px-2 sm:px-6 lg:px-8 mb-24">
-                        <div className="relative overflow-hidden border border-white/5 bg-[#0A0F11] rounded-2xl group transition-all duration-500 hover:border-white/10">
-                            {/* SVG Background Layer */}
-                            <div
-                                className="absolute inset-0 opacity-100 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
-                                style={{
-                                    backgroundImage: "url('/plz/brand/background-hero.svg')",
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                }}
-                            />
 
-                            <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 text-left">
-                                <div className="flex-grow max-w-xl">
-                                    <h2 className="text-xl md:text-2xl font-normal text-white mb-4">
-                                        {t.plzContact.quoteBanner.title}
-                                    </h2>
-                                    <p className="text-gray-400 text-md font-light leading-relaxed">
-                                        {t.plzContact.quoteBanner.subtitle}
-                                    </p>
-                                </div>
-                                <div className="flex-shrink-0">
-                                    <a
-                                        href="https://phoenix.cleveritgroup.ai/chat/XfbwQq3kX8tVV8C1?offering=llmapps"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center px-8 py-4 bg-transparent border border-[#19687A] text-[#17BBCD] group-hover:bg-[#19687A] group-hover:text-white rounded-md text-lg font-medium transition-all shadow-xl hover:shadow-[#17BBCD]/10 active:scale-[0.98] whitespace-nowrap"
-                                    >
-                                        {t.plzContact.quoteBanner.cta}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </FadeIn>
 
                 {/* FAQ Section */}
                 <FadeIn delay={0.8}>

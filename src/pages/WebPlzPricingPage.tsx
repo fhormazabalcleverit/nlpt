@@ -17,7 +17,7 @@ const WebPlzPricingPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
             <DynamicSEO
-                title={`${data.title} | Pulzen AI`}
+                title={`${data.title} | CleverIT AI`}
                 description={data.subtitle}
                 url={window.location.href}
             />

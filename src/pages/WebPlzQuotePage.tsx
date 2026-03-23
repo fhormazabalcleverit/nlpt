@@ -16,7 +16,7 @@ const WebPlzQuotePage = () => {
     return (
         <div className="min-h-screen bg-[#040809] font-sansation flex flex-col uppercase-fade-in">
             <DynamicSEO 
-                title={`${t.plzQuote.title} | Pulzen AI`}
+                title={`${t.plzQuote.title} | CleverIT AI`}
                 description={t.plzQuote.subtitle}
                 url={window.location.href}
             />

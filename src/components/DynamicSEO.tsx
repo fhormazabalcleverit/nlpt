@@ -10,10 +10,10 @@ interface DynamicSEOProps {
 
 // Valores por defecto para SEO
 const defaultSEO = {
-  title: 'Pulzen AI by CleverIT | Generative AI and Business Automation Solutions',
-  description: 'Boost your business with Pulzen AI by CleverIT — intelligent assistants that combine generative AI, automation, and data-driven insights. Chat with your information and enhance productivity through AI-powered solutions.',
-  keywords: 'IA, Inteligencia Artificial, Pulzen, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos',
-  image: '/meta/pulzen-cover.png?v=pulzen'
+  title: 'CleverIT AI | Generative AI and Business Automation Solutions',
+  description: 'Boost your business with CleverIT AI — intelligent assistants that combine generative AI, automation, and data-driven insights. Chat with your information and enhance productivity through AI-powered solutions.',
+  keywords: 'IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos',
+  image: '/meta/cleverit-cover.png'
 };
 
 const DynamicSEO: React.FC<DynamicSEOProps> = ({
@@ -62,7 +62,7 @@ const DynamicSEO: React.FC<DynamicSEOProps> = ({
 
       // Actualizar Open Graph tags
       updateMetaTag('og:type', 'website', true);
-      updateMetaTag('og:site_name', 'Pulzen AI by CleverIT', true);
+      updateMetaTag('og:site_name', 'CleverIT AI', true);
       updateMetaTag('og:locale', 'es_ES', true);
       updateMetaTag('og:url', currentUrl, true);
       updateMetaTag('og:title', finalTitle, true);

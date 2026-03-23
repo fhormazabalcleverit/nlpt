@@ -13,7 +13,7 @@ const PlzFooter = () => {
                     {/* Logo & Description */}
                     <div className="flex flex-col items-center md:items-start gap-4">
                         <Link to="/" className="text-white font-bold text-xl tracking-tight flex items-center gap-1">
-                            <img src="/plz/brand/cleveritai-logotipo.svg" alt="CleverIT AI Logo" className="h-8 w-auto" />
+                            <img src={`${import.meta.env.BASE_URL}plz/brand/cleveritai-logotipo.svg`} alt="CleverIT AI Logo" className="h-8 w-auto" />
                         </Link>
                         <p className="text-gray-400 text-sm font-light text-center md:text-left max-w-sm leading-relaxed">
                             {t.plzFooter.description}

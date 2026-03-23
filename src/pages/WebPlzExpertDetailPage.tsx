@@ -21,7 +21,7 @@ const WebPlzExpertDetailPage = () => {
 
     const Icon = isArchitect ? Shield : Code;
     const accentColor = isArchitect ? '#9333ea' : '#19687A';
-    const expertImg = isArchitect ? '/plz/profiles/01.png' : '/plz/profiles/02.png';
+    const expertImg = isArchitect ? `${import.meta.env.BASE_URL}plz/profiles/01.png` : `${import.meta.env.BASE_URL}plz/profiles/02.png`;
 
     return (
         <div className={`min-h-screen bg-[#040809] text-white selection:bg-${isArchitect ? 'purple' : 'cyan'}-500/30 font-sansation overflow-hidden`}>
