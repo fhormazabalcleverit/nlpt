@@ -13,7 +13,7 @@ const PlzFooter = () => {
                     {/* Logo & Description */}
                     <div className="flex flex-col items-center md:items-start gap-4">
                         <Link to="/" className="text-white font-bold text-xl tracking-tight flex items-center gap-1">
-                            <img src="/plz/brand/logotipoplz.svg" alt="Pulzen AI Logo" className="h-8 w-auto" />
+                            <img src="/plz/brand/cleveritai-logotipo.svg" alt="CleverIT AI Logo" className="h-8 w-auto" />
                         </Link>
                         <p className="text-gray-400 text-sm font-light text-center md:text-left max-w-sm leading-relaxed">
                             {t.plzFooter.description}
@@ -43,7 +43,7 @@ const PlzFooter = () => {
 
                 {/* Bottom Bar: Copyright & Links */}
                 <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-light text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Pulzen AI. {t.plzFooter.rights}</p>
+                    <p>&copy; {new Date().getFullYear()} CleverIT AI. {t.plzFooter.rights}</p>
                     <div className="flex gap-6">
                         <Link to="/privacy" className="hover:text-gray-300 transition-colors">{t.plzFooter.privacy}</Link>
                         <Link to="/terms" className="hover:text-gray-300 transition-colors">{t.plzFooter.terms}</Link>

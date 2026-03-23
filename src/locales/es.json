@@ -9,7 +9,9 @@
   "plzNavbar": {
     "platform": "Plataforma",
     "cases": "Casos aplicados",
+    "experts": "Perfiles IA",
     "about": "Sobre nosotros",
+    "pricing": "Precios",
     "contact": "Contacto",
     "quote": "Quiero cotizar"
   },
@@ -399,6 +401,102 @@
       "q": "¿Qué diferencias hay entre Soporte Medio y Pro?",
       "a": "**Soporte Medio (USD 4,000/mes):**\nSoporte Básico + **20 horas mensuales** para mejoras, monitoreo quincenal, optimización de prompts y agentes, ajustes funcionales.\n\n**Soporte Pro (USD 5,000/mes):**\nSoporte Medio + **30 horas adicionales (50 hrs totales)**, fine-tuning de modelos, ampliación de datasets, observabilidad avanzada con dashboards, alertas personalizadas y reportes analíticos."
     }
+  },
+  "plzPricing": {
+    "badge": "Planes",
+    "title": "Escala tu negocio con el poder de Pulzen AI",
+    "subtitle": "Elige el plan que mejor se adapte a tus necesidades operacionales, desde entornos de desarrollo hasta operaciones a gran escala.",
+    "plans": [
+      {
+        "name": "For Developers",
+        "price": "Gratis",
+        "period": "0 USD/mes",
+        "description": "Ideal para experimentar, prototipar y construir tus primeros agentes sobre el framework Mastra.",
+        "features": [
+          "1 Agente IA",
+          "10,000 consultas mensuales",
+          "Conexión con fuentes básicas",
+          "Soporte de la comunidad"
+        ],
+        "cta": "Empezar gratis"
+      },
+      {
+        "name": "For Everyone",
+        "price": "$2,500",
+        "period": "USD/mes",
+        "description": "La solución completa para empresas que requieren infraestructura, múltiples agentes y soporte especializado.",
+        "setupLabel": "Setup",
+        "setupValue": "USD 4,200 (pago único)",
+        "features": [
+          "Agentes ilimitados",
+          "Consultas escalables",
+          "Infraestructura Azure incluida",
+          "Soporte Pro 24/7",
+          "Evals y monitoreo activo"
+        ],
+        "cta": "Hablar con un experto"
+      }
+    ],
+    "comparison": {
+      "headers": [
+        "Capacidad",
+        "For Developers",
+        "For Everyone"
+      ],
+      "rows": [
+        {
+          "dimension": "Nº Agentes",
+          "dev": "1",
+          "everyone": "Ilimitados"
+        },
+        {
+          "dimension": "Infraestructura",
+          "dev": "Cloud Compartido",
+          "everyone": "Azure Dedicado"
+        },
+        {
+          "dimension": "Soporte",
+          "dev": "Comunidad",
+          "everyone": "SLA Garantizado"
+        },
+        {
+          "dimension": "Monitoreo",
+          "dev": "Básico",
+          "everyone": "Avanzado / Evals"
+        }
+      ]
+    },
+    "targetsTitle": "Soluciones diseñadas para cada perfil",
+    "targets": [
+      {
+        "title": "Desarrolladores y Tech Leads",
+        "items": [
+          "Acceso completo al framework Mastra",
+          "Pruebas de concepto rápidas",
+          "Integración local y sandbox"
+        ]
+      },
+      {
+        "title": "Operaciones y Negocios",
+        "items": [
+          "Automatización de procesos críticos",
+          "Gobernanza de datos y seguridad",
+          "Soporte estratégico y de ingeniería"
+        ]
+      }
+    ],
+    "faqTitle": "Preguntas de Precios",
+    "faqSubtitle": "Si tienes dudas específicas sobre facturación o implementación, estamos aquí para ayudar.",
+    "faqs": [
+      {
+        "q": "¿Qué incluye el pago de setup inicial?",
+        "a": "El setup de USD 4,200 incluye la configuración de la infraestructura base en Azure, el despliegue de la plataforma Pulzen y la creación del primer agente especializado totalmente funcional."
+      },
+      {
+        "q": "¿Puedo escalar la cantidad de usuarios?",
+        "a": "Sí, nuestros planes están diseñados para crecer con tu negocio. Puedes añadir usuarios adicionales con un costo escalonado que disminuye a medida que aumenta el volumen."
+      }
+    ]
   },
   "pricing": {
     "badge": "Planes",
@@ -1336,6 +1434,115 @@
         "performance": "Performance Tiendas",
         "customer_intelligence": "Customer Intelligence"
       }
+    }
+  },
+  "plzExperts": {
+    "hero": {
+      "title": "La visión del arquitecto,",
+      "subtitle": "No elijas entre estrategia o ejecución. Obtén un ecosistema de IA diseñado para la gobernanza empresarial y construido para el rendimiento en tiempo real.",
+      "cta": "Explorar Expertos"
+    },
+    "architect": {
+      "name": "Clever AI Architect",
+      "tagline": "Diseñando la estrategia y escalabilidad del futuro de tu negocio.",
+      "summary": "Estratega de sistemas IA robustos y seguros.",
+      "responsibilities": [
+        "Diseño de Soluciones (LLMs/Agentes)",
+        "Stack Tecnológico",
+        "Seguridad/Gobernanza",
+        "Liderazgo Técnico"
+      ],
+      "techStack": "GitHub Copilot Enterprise + Claude (Superpoder de análisis estratégico)"
+    },
+    "developer": {
+      "name": "Clever AI Developer",
+      "tagline": "Transformando conceptos en soluciones de IA tangibles y eficientes.",
+      "summary": "Motor de ejecución y código limpio.",
+      "responsibilities": [
+        "Integración de APIs (OpenAI/Gemini)",
+        "Prompt Engineering",
+        "Desarrollo RAG",
+        "Despliegue/Costos"
+      ],
+      "techStack": "GitHub Copilot Enterprise + Claude (Superpoder de desarrollo 10x)"
+    },
+    "workflow": {
+      "title": "AI-Augmented Workflow",
+      "description": "Nuestra metodología utiliza GitHub Copilot Enterprise y Claude para garantizar una reducción drástica del Time-to-Market sin comprometer la calidad del código, asegurando soluciones robustas y escalables desde el primer día."
+    }
+  },
+  "plzArchitectPage": {
+    "title": "Clever AI Architect",
+    "tagline": "Diseñando la estrategia y escalabilidad del futuro de tu negocio.",
+    "profile": {
+      "title": "Perfil del Rol",
+      "desc": "El Clever AI Architect es el estratega detrás de la transformación inteligente. Su objetivo es diseñar sistemas de Inteligencia Artificial robustos, seguros y escalables que se alineen perfectamente con los objetivos de negocio. No solo entiende la tecnología actual, sino que define la arquitectura fundacional para que la IA escale a nivel empresarial."
+    },
+    "responsibilities": {
+      "title": "Responsabilidades Clave",
+      "items": [
+        {
+          "title": "Diseño de Soluciones",
+          "desc": "Creación de arquitecturas de sistemas para la integración de LLMs (Large Language Models) y agentes autónomos."
+        },
+        {
+          "title": "Selección de Stack Tecnológico",
+          "desc": "Evaluación y selección de los modelos, bases de datos vectoriales y frameworks más adecuados para cada caso de uso."
+        },
+        {
+          "title": "Seguridad y Gobernanza",
+          "desc": "Garantizar la privacidad de los datos, el cumplimiento normativo (compliance) y la mitigación de alucinaciones en los modelos."
+        },
+        {
+          "title": "Liderazgo Técnico",
+          "desc": "Guiar a los equipos de desarrollo y definir las mejores prácticas para el ciclo de vida de la IA."
+        }
+      ]
+    },
+    "techStack": {
+      "title": "Tech Stack & Superpoderes",
+      "content": "🚀 Equipado con GitHub Copilot Enterprise + Claude: Capacidad de análisis de sistemas complejos acelerada por IA, permitiendo la revisión de arquitecturas y la toma de decisiones estratégicas en tiempo récord."
+    },
+    "idealFor": {
+      "title": "Ideal para",
+      "desc": "Proyectos de modernización profunda, empresas que necesitan un roadmap de IA desde cero, o ecosistemas tecnológicos de alta complejidad."
+    }
+  },
+  "plzDeveloperPage": {
+    "title": "Clever AI Developer",
+    "tagline": "Transformando conceptos en soluciones de IA tangibles y eficientes.",
+    "profile": {
+      "title": "Perfil del Rol",
+      "desc": "El Clever AI Developer es el motor de ejecución. Un ingeniero de software altamente especializado en llevar la arquitectura a la realidad mediante código limpio, integración de APIs y optimización de modelos. Su enfoque está en el desarrollo ágil, la experimentación iterativa y la puesta en producción de funcionalidades impulsadas por IA."
+    },
+    "responsibilities": {
+      "title": "Responsabilidades Clave",
+      "items": [
+        {
+          "title": "Integración de Modelos",
+          "desc": "Conexión de aplicaciones con APIs de OpenAI, Anthropic, Gemini o modelos open-source."
+        },
+        {
+          "title": "Ingeniería de Prompts",
+          "desc": "Refinamiento y optimización de instrucciones para maximizar la precisión y utilidad de las respuestas de la IA."
+        },
+        {
+          "title": "Desarrollo de Agentes y RAG",
+          "desc": "Construcción de sistemas de Generación Aumentada por Recuperación (RAG) para conectar la IA con los datos internos de tu empresa."
+        },
+        {
+          "title": "Despliegue y Pruebas",
+          "desc": "Puesta en producción de las soluciones, monitoreo de latencia y optimización de costos de consumo (tokens)."
+        }
+      ]
+    },
+    "techStack": {
+      "title": "Tech Stack & Superpoderes",
+      "content": "⚡ Equipado con GitHub Copilot Enterprise + Claude: Ciclos de desarrollo hiper-acelerados. Copilot asistiendo directamente en el IDE y Claude actuando como el compañero perfecto para el debugging profundo, refactorización y escritura de código complejo."
+    },
+    "idealFor": {
+      "title": "Ideal para",
+      "desc": "Ejecución rápida de MVPs, integración de funcionalidades 'smart' en plataformas existentes, o automatización de flujos de trabajo internos."
     }
   }
 }

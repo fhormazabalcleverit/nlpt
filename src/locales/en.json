@@ -9,7 +9,9 @@
   "plzNavbar": {
     "platform": "Platform",
     "cases": "Case Studies",
+    "experts": "AI Profiles",
     "about": "About Us",
+    "pricing": "Pricing",
     "contact": "Contact",
     "quote": "Get a Quote"
   },
@@ -399,6 +401,102 @@
       "q": "What are the differences between Medium and Pro Support?",
       "a": "**Medium Support (USD 4,000/month):**\nBasic Support + **20 monthly hours** for improvements, bi-weekly monitoring, prompt and agent optimization, functional adjustments.\n\n**Pro Support (USD 5,000/month):**\nMedium Support + **30 additional hours (50 hrs total)**, AI model fine-tuning, dataset expansion, advanced observability with dashboards, custom alerts, and analytical reports."
     }
+  },
+  "plzPricing": {
+    "badge": "Plans",
+    "title": "Scale your business with the power of Pulzen AI",
+    "subtitle": "Choose the plan that best fits your operational needs, from development environments to large-scale operations.",
+    "plans": [
+      {
+        "name": "For Developers",
+        "price": "Free",
+        "period": "0 USD/month",
+        "description": "Ideal for experimenting, prototyping, and building your first agents on the Mastra framework.",
+        "features": [
+          "1 AI Agent",
+          "10,000 monthly queries",
+          "Basic source connection",
+          "Community support"
+        ],
+        "cta": "Start for free"
+      },
+      {
+        "name": "For Everyone",
+        "price": "$2,500",
+        "period": "USD/month",
+        "description": "Complete solution for companies requiring infrastructure, multiple agents, and specialized support.",
+        "setupLabel": "Setup",
+        "setupValue": "USD 4,200 (one-time payment)",
+        "features": [
+          "Unlimited agents",
+          "Scalable queries",
+          "Azure infrastructure included",
+          "Pro Support 24/7",
+          "Active Evals and Monitoring"
+        ],
+        "cta": "Talk with an expert"
+      }
+    ],
+    "comparison": {
+      "headers": [
+        "Capacity",
+        "For Developers",
+        "For Everyone"
+      ],
+      "rows": [
+        {
+          "dimension": "Nº of Agents",
+          "dev": "1",
+          "everyone": "Unlimited"
+        },
+        {
+          "dimension": "Infrastructure",
+          "dev": "Shared Cloud",
+          "everyone": "Dedicated Azure"
+        },
+        {
+          "dimension": "Support",
+          "dev": "Community",
+          "everyone": "Guaranteed SLA"
+        },
+        {
+          "dimension": "Monitoring",
+          "dev": "Basic",
+          "everyone": "Advanced / Evals"
+        }
+      ]
+    },
+    "targetsTitle": "Solutions designed for every profile",
+    "targets": [
+      {
+        "title": "Developers and Tech Leads",
+        "items": [
+          "Full access to the Mastra framework",
+          "Fast proofs of concept",
+          "Local and sandbox integration"
+        ]
+      },
+      {
+        "title": "Operations and Business",
+        "items": [
+          "Critical process automation",
+          "Data governance and security",
+          "Strategic and engineering support"
+        ]
+      }
+    ],
+    "faqTitle": "Pricing Questions",
+    "faqSubtitle": "If you have specific questions about billing or implementation, we're here to help.",
+    "faqs": [
+      {
+        "q": "What does the initial setup fee include?",
+        "a": "The USD 4,200 setup includes basic infrastructure configuration in Azure, Pulzen platform deployment, and creation of the first fully functional specialized agent."
+      },
+      {
+        "q": "Can I scale the number of users?",
+        "a": "Yes, our plans are designed to grow with your business. You can add additional users with a tiered cost that decreases as volume increases."
+      }
+    ]
   },
   "pricing": {
     "badge": "Plans",
@@ -1351,6 +1449,115 @@
         "performance": "Store Performance",
         "customer_intelligence": "Customer Intelligence"
       }
+    }
+  },
+  "plzExperts": {
+    "hero": {
+      "title": "The Architect's Vision. The Developer's Strength.",
+      "subtitle": "Don't choose between strategy or execution. Get an AI ecosystem designed for enterprise governance and built for real-time performance.",
+      "cta": "Explore Experts"
+    },
+    "architect": {
+      "name": "Clever AI Architect",
+      "tagline": "Designing the strategy and scalability of your business's future.",
+      "summary": "Strategist of robust and secure AI systems.",
+      "responsibilities": [
+        "Solution Design (LLMs/Agents)",
+        "Technology Stack",
+        "Security/Governance",
+        "Technical Leadership"
+      ],
+      "techStack": "GitHub Copilot Enterprise + Claude (Strategic Analysis Superpower)"
+    },
+    "developer": {
+      "name": "Clever AI Developer",
+      "tagline": "Transforming concepts into tangible and efficient AI solutions.",
+      "summary": "Execution engine and clean code.",
+      "responsibilities": [
+        "API Integration (OpenAI/Gemini)",
+        "Prompt Engineering",
+        "RAG Development",
+        "Deployment/Costs"
+      ],
+      "techStack": "GitHub Copilot Enterprise + Claude (10x Development Superpower)"
+    },
+    "workflow": {
+      "title": "AI-Augmented Workflow",
+      "description": "Our methodology utilizes GitHub Copilot Enterprise and Claude to guarantee a drastic reduction in Time-to-Market without compromising code quality, ensuring robust and scalable solutions from day one."
+    }
+  },
+  "plzArchitectPage": {
+    "title": "Clever AI Architect",
+    "tagline": "Designing the strategy and scalability of your business's future.",
+    "profile": {
+      "title": "Role Profile",
+      "desc": "The Clever AI Architect is the strategist behind the intelligent transformation. Their goal is to design robust, secure, and scalable AI systems that align perfectly with business objectives. They don't just understand current technology; they define the foundational architecture for AI to scale at the enterprise level."
+    },
+    "responsibilities": {
+      "title": "Key Responsibilities",
+      "items": [
+        {
+          "title": "Solution Design",
+          "desc": "Creation of system architectures for the integration of LLMs (Large Language Models) and autonomous agents."
+        },
+        {
+          "title": "Technology Stack Selection",
+          "desc": "Evaluation and selection of the most suitable models, vector databases, and frameworks for each use case."
+        },
+        {
+          "title": "Security and Governance",
+          "desc": "Ensuring data privacy, regulatory compliance, and mitigation of hallucinations in models."
+        },
+        {
+          "title": "Technical Leadership",
+          "desc": "Guiding development teams and defining best practices for the AI life cycle."
+        }
+      ]
+    },
+    "techStack": {
+      "title": "Tech Stack & Superpowers",
+      "content": "🚀 Equipped with GitHub Copilot Enterprise + Claude: AI-accelerated complex system analysis capability, allowing for architecture review and strategic decision-making in record time."
+    },
+    "idealFor": {
+      "title": "Ideal for",
+      "desc": "Deep modernization projects, companies needing an AI roadmap from scratch, or highly complex technological ecosystems."
+    }
+  },
+  "plzDeveloperPage": {
+    "title": "Clever AI Developer",
+    "tagline": "Transforming concepts into tangible and efficient AI solutions.",
+    "profile": {
+      "title": "Role Profile",
+      "desc": "The Clever AI Developer is the execution engine. A software engineer highly specialized in bringing architecture to reality through clean code, API integration, and model optimization. Their focus is on agile development, iterative experimentation, and putting AI-driven features into production."
+    },
+    "responsibilities": {
+      "title": "Key Responsibilities",
+      "items": [
+        {
+          "title": "Model Integration",
+          "desc": "Connecting applications with OpenAI, Anthropic, Gemini APIs, or open-source models."
+        },
+        {
+          "title": "Prompt Engineering",
+          "desc": "Refining and optimizing instructions to maximize the accuracy and utility of AI responses."
+        },
+        {
+          "title": "Agent and RAG Development",
+          "desc": "Building Retrieval Augmented Generation (RAG) systems to connect AI with your company's internal data."
+        },
+        {
+          "title": "Deployment and Testing",
+          "desc": "Putting solutions into production, latency monitoring, and consumption cost optimization (tokens)."
+        }
+      ]
+    },
+    "techStack": {
+      "title": "Tech Stack & Superpowers",
+      "content": "⚡ Equipped with GitHub Copilot Enterprise + Claude: Hyper-accelerated development cycles. Copilot assisting directly in the IDE and Claude acting as the perfect companion for deep debugging, refactoring, and complex code writing."
+    },
+    "idealFor": {
+      "title": "Ideal for",
+      "desc": "Rapid MVP execution, integration of 'smart' features into existing platforms, or automation of internal workflows."
     }
   }
 }
