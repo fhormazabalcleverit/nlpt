@@ -49,8 +49,8 @@ const WebPlzProfilesPage = () => {
     return (
         <div className="min-h-screen bg-[#040809] text-white selection:bg-[#19687A]/30 font-sansation">
             <DynamicSEO
-                title={data.hero.title}
-                description={data.hero.subtitle}
+                title={data.hero.seoTitle}
+                description={data.hero.seoSubtitle}
             />
             <PlzNavbar />
 

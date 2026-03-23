@@ -26,8 +26,8 @@ const WebPlzExpertDetailPage = () => {
     return (
         <div className={`min-h-screen bg-[#040809] text-white selection:bg-${isArchitect ? 'purple' : 'cyan'}-500/30 font-sansation overflow-hidden`}>
             <DynamicSEO
-                title={data.title}
-                description={data.tagline}
+                title={data.seoTitle}
+                description={data.seoDescription}
             />
             <PlzNavbar />
 

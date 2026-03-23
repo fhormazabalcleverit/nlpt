@@ -1453,6 +1453,8 @@
   },
   "plzExperts": {
     "hero": {
+      "seoTitle": "Enterprise AI Experts & Autonomous Agents | Cleverit AI",
+      "seoSubtitle": "Transform your business with scalable AI architectures, LLM integration, and autonomous agents. Expert consulting for governance and real-time execution.",
       "title": "The Architect's Vision. The Developer's Strength.",
       "subtitle": "Don't choose between strategy or execution. Get an AI ecosystem designed for enterprise governance and built for real-time performance.",
       "cta": "Explore Experts"
@@ -1487,8 +1489,10 @@
     }
   },
   "plzArchitectPage": {
+    "seoTitle": "Expert AI Architect & LLM Strategy | Cleverit AI",
+    "seoDescription": "Expert consulting on AI architecture design, data governance, and large language model (LLM) deployment for enterprises. Scale your strategy with robust AI systems.",
     "title": "Clever AI Architect",
-    "tagline": "Designing the strategy and scalability of your business's future.",
+    "tagline": "Designing the strategy and scalability of your business future.",
     "profile": {
       "title": "Role Profile",
       "desc": "The Clever AI Architect is the strategist behind the intelligent transformation. Their goal is to design robust, secure, and scalable AI systems that align perfectly with business objectives. They don't just understand current technology; they define the foundational architecture for AI to scale at the enterprise level."
@@ -1524,6 +1528,8 @@
     }
   },
   "plzDeveloperPage": {
+    "seoTitle": "AI Developer, Agents & RAG Systems | Cleverit AI",
+    "seoDescription": "Specialist in agile AI development, prompt engineering, and building autonomous agents and efficient RAG systems. Intelligent code in record time.",
     "title": "Clever AI Developer",
     "tagline": "Transforming concepts into tangible and efficient AI solutions.",
     "profile": {

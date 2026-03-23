@@ -1438,7 +1438,9 @@
   },
   "plzExperts": {
     "hero": {
-      "title": "La visión del arquitecto,",
+      "seoTitle": "Expertos en Inteligencia Artificial y Agentes Autónomos | Cleverit AI",
+      "seoSubtitle": "Transforme su negocio con arquitecturas de IA escalables, integración de LLMs y agentes autónomos. Consultoría experta para la gobernanza y ejecución en tiempo real.",
+      "title": "La Visión del Arquitecto. La Fuerza del Developer.",
       "subtitle": "No elijas entre estrategia o ejecución. Obtén un ecosistema de IA diseñado para la gobernanza empresarial y construido para el rendimiento en tiempo real.",
       "cta": "Explorar Expertos"
     },
@@ -1472,6 +1474,8 @@
     }
   },
   "plzArchitectPage": {
+    "seoTitle": "Arquitecto de IA y Estrategia LLM Corporativa | Cleverit AI",
+    "seoDescription": "Consultoría experta en diseño de arquitecturas de IA, gobernanza de datos y despliegue de modelos de lenguaje (LLM) para empresas. Potencia tu estrategia con IA escalable.",
     "title": "Clever AI Architect",
     "tagline": "Diseñando la estrategia y escalabilidad del futuro de tu negocio.",
     "profile": {
@@ -1509,6 +1513,8 @@
     }
   },
   "plzDeveloperPage": {
+    "seoTitle": "Desarrollador de IA, Agentes y Sistemas RAG | Cleverit AI",
+    "seoDescription": "Especialista en desarrollo ágil de soluciones de IA, ingeniería de prompts y construcción de agentes autónomos y sistemas RAG eficientes. Código inteligente en tiempo récord.",
     "title": "Clever AI Developer",
     "tagline": "Transformando conceptos en soluciones de IA tangibles y eficientes.",
     "profile": {
