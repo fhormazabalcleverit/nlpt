@@ -183,17 +183,17 @@ const WebPlzExpertDetailPage = () => {
                                         title: language === 'es' ? 'Despliegue y Pruebas' : 'Deployment and Testing',
                                         desc: language === 'es' ? 'Puesta en producción de las soluciones, monitoreo de latencia y optimización de costos de consumo (tokens).' : 'Deploying solutions into production, monitoring latency, and optimizing consumption costs (tokens).'
                                     }
-                                ]).map((card: any, i: number) => (
+                                ]).map((item: { title: string, desc: string }, i: number) => (
                                     <StaggerItem key={i}>
                                         <div className="p-6 bg-[#0A0A0B]/50 border border-white/5 rounded-[1rem] hover:border-white/10 transition-all group h-full">
                                             <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                                 <Layers className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                                             </div>
                                             <h4 className="text-lg md:text-xl text-white font-bold mb-3">
-                                                {card.title}
+                                                {item.title}
                                             </h4>
                                             <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
-                                                {card.desc}
+                                                {item.desc}
                                             </p>
                                         </div>
                                     </StaggerItem>
@@ -263,7 +263,7 @@ const WebPlzExpertDetailPage = () => {
                                 title: language === 'es' ? 'Automatización de Flujos Internos' : 'Internal Workflow Automation',
                                 desc: language === 'es' ? 'Eliminamos cuellos de botella mediante la construcción de agentes que ejecutan tareas repetitivas, optimizando el tiempo y los recursos de tu equipo.' : 'We eliminate bottlenecks by building agents that execute repetitive tasks, optimizing your team\'s time and resources.'
                             }
-                        ]).map((card: any, i: number) => {
+                        ]).map((item: { tag: string, title: string, desc: string }, i: number) => {
                             const icons = [Zap, Rocket, Shield];
                             const IconComp = icons[i];
 
@@ -272,15 +272,15 @@ const WebPlzExpertDetailPage = () => {
                                     <div className="h-full bg-[#0A0A0B]/50 backdrop-blur-xl border border-white/5 rounded-[1.5rem] p-8 lg:p-10 hover:border-white/10 transition-all duration-500 group">
                                         <div className="flex items-center justify-between mb-8">
                                             <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
-                                                {card.tag}
+                                                {item.tag}
                                             </span>
                                             <IconComp className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
                                         </div>
                                         <h3 className="text-2xl font-light text-white mb-6 leading-tight group-hover:translate-x-1 transition-transform">
-                                            {card.title}
+                                            {item.title}
                                         </h3>
                                         <p className="text-gray-400 font-light leading-relaxed">
-                                            {card.desc}
+                                            {item.desc}
                                         </p>
                                     </div>
                                 </StaggerItem>

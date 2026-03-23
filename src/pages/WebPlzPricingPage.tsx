@@ -62,7 +62,7 @@ const WebPlzPricingPage = () => {
 
                     {/* Pricing Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-32 w-full">
-                        {data.plans.map((plan: any, index: number) => {
+                        {data.plans.map((plan: { name: string, price: string, period: string, description: string, features: string[], cta: string, setupLabel?: string, setupValue?: string }, index: number) => {
                             const Icon = icons[index];
                             const isDark = index === 1; // Second plan
 
@@ -159,7 +159,7 @@ const WebPlzPricingPage = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-white/5">
-                                        {data.comparison.rows.map((row: any, i: number) => (
+                                        {data.comparison.rows.map((row: { dimension: string, dev: string, everyone: string }, i: number) => (
                                             <tr key={i} className="group hover:bg-white/[0.02] transition-colors">
                                                 <td className="py-6 pr-6 text-md font-light text-gray-400 group-hover:text-gray-300 transition-colors">
                                                     {row.dimension}
@@ -187,7 +187,7 @@ const WebPlzPricingPage = () => {
                             </h2>
                         </FadeIn>
                         <div className="space-y-12">
-                            {data.targets.map((target: any, index: number) => {
+                            {data.targets.map((target: { title: string, items: string[] }, index: number) => {
                                 const isReversed = index % 2 !== 0;
                                 const imagePath = index === 0
                                     ? "/pricing_devs.png"

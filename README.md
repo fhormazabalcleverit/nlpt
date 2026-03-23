@@ -1,291 +1,89 @@
-# 🤖 LLMApps by CleverIT
+# 🤖 Cleverit AI | Perfiles de Inteligencia Artificial
 
-Una aplicación web moderna construida con React, TypeScript y Vite que presenta las soluciones de inteligencia artificial y aplicaciones LLM de CleverIT. La plataforma permite a las empresas transformar sus operaciones mediante IA avanzada, automatización y análisis inteligente de datos.
+Una plataforma web de última generación diseñada para presentar el ecosistema de **Perfiles de IA** de Cleverit. Este proyecto no es solo una landing page; es el resultado de nuestra metodología **AI-Augmented Workflow**, utilizando herramientas de élite como GitHub Copilot Enterprise y Claude para acelerar la entrega de soluciones de software robustas y escalables.
 
-![LLMApps by CleverIT](https://img.shields.io/badge/LLMApps-by%20CleverIT-blue)
-![React](https://img.shields.io/badge/React-18.3.1-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue)
-![Vite](https://img.shields.io/badge/Vite-5.4.2-orange)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.1-teal)
-
-[![Deploy Vite site to GitHub Pages](https://github.com/CleveritDemo/LLMApps-by-CleverIT/actions/workflows/deploy.yml/badge.svg)](https://github.com/CleveritDemo/LLMApps-by-CleverIT/actions/workflows/deploy.yml)
-[![GitHub Pages](https://img.shields.io/github/deployments/CleveritDemo/LLMApps-by-CleverIT/github-pages?label=pages%20deploy)](https://github.com/CleveritDemo/LLMApps-by-CleverIT/deployments/github-pages)
-
-**🌐 Sitio en vivo:** [https://llmapps.cleveritgroup.ai/](https://llmapps.cleveritgroup.ai/)
-
-## 🌟 Características Principales
-
-- **🎨 Diseño Moderno**: Interfaz elegante con efectos visuales aurora y gradientes dinámicos
-- **🌐 Multiidioma**: Soporte completo para español e inglés con contexto de localización
-- **📱 Responsive**: Diseño completamente adaptable para dispositivos móviles y desktop
-- **⚡ Performance**: Optimizada con Vite para carga rápida y hot reload
-- **🎯 SEO Optimizado**: Meta tags dinámicos y configuración SEO completa
-- **🔄 SPA Routing**: Navegación fluida con React Router DOM
-- **🎭 Animaciones**: Efectos de scroll y transiciones suaves personalizadas
-- **💫 Efectos Visuales**: Componente Aurora personalizado con WebGL
-
-## 🏗️ Arquitectura del Proyecto
-
-```
-src/
-├── components/          # Componentes reutilizables
-│   ├── Aurora.tsx       # Efecto visual aurora con WebGL
-│   ├── ChatInterface.tsx# Interfaz de chat simulada
-│   ├── Hero.tsx         # Sección principal de landing
-│   ├── Navbar.tsx       # Navegación principal
-│   ├── Footer.tsx       # Pie de página
-│   ├── SEO.tsx          # Component para meta tags
-│   ├── MastraHighlight.tsx # Destaque de tecnología Mastra
-│   ├── Benefits.tsx     # Sección de beneficios
-│   ├── Testimonials.tsx # Testimonios de clientes
-│   ├── FAQ.tsx          # Preguntas frecuentes
-│   ├── Process.tsx      # Proceso de implementación
-│   ├── NewProcess.tsx   # Nuevo proceso visualizado
-│   ├── Pricing.tsx      # Planes y precios
-│   └── QuoteForm.tsx    # Formulario de cotización
-├── pages/               # Páginas de la aplicación
-│   ├── PricingPage.tsx  # Página de planes y precios
-│   ├── QuotePage.tsx    # Página de cotización
-│   ├── TeamPage.tsx     # Página del equipo
-│   ├── UseCasesPage.tsx # Casos de uso
-│   └── UseCaseDetailPage.tsx # Detalle de casos de uso
-├── context/             # Contextos de React
-│   └── LanguageContext.tsx # Manejo de idiomas
-├── hooks/               # Custom hooks
-│   └── useScrollAnimation.ts # Hook para animaciones
-├── locales/             # Archivos de traducción
-│   ├── es.json         # Español
-│   └── en.json         # Inglés
-├── lib/                # Utilidades
-│   └── utils.ts        # Funciones utilitarias
-└── App.tsx             # Componente principal
-```
-
-## 🚀 Tecnologías Utilizadas
-
-### Frontend Core
-- **React 18.3.1** - Biblioteca de UI con hooks y componentes funcionales
-- **TypeScript 5.5.3** - Tipado estático para JavaScript
-- **Vite 5.4.2** - Build tool y dev server ultrarrápido
-
-### Estilizado y UI
-- **Tailwind CSS 3.4.1** - Framework CSS utility-first
-- **Tailwind Animate** - Animaciones CSS personalizadas
-- **Class Variance Authority** - Manejo de variantes de clases
-- **Lucide React** - Iconos SVG modernos
-
-### Navegación y SEO
-- **React Router DOM 7.8.2** - Enrutamiento SPA
-- **React Helmet Async** - Manejo dinámico de meta tags
-
-### Desarrollo y Calidad
-- **ESLint 9.9.1** - Linting y calidad de código
-- **TypeScript ESLint** - Reglas específicas para TypeScript
-- **PostCSS & Autoprefixer** - Procesamiento de CSS
-
-### Efectos Visuales
-- **OGL 1.0.11** - Biblioteca WebGL para efectos aurora
-- **CSS Custom Properties** - Variables CSS dinámicas
-
-## 📦 Instalación y Configuración
-
-### Prerrequisitos
-- Node.js 18+ 
-- npm o yarn
-
-### Instalación
-
-1. **Clonar el repositorio**
-```bash
-git clone https://github.com/CleveritDemo/LLMApps-by-CleverIT.git
-cd LLMApps-by-CleverIT
-```
-
-2. **Instalar dependencias**
-```bash
-npm install
-```
-
-3. **Configurar variables de entorno** (opcional)
-```bash
-cp .env.example .env.local
-```
-
-4. **Ejecutar en desarrollo**
-```bash
-npm run dev
-```
-
-La aplicación estará disponible en `http://localhost:5173`
-
-### Scripts Disponibles
-
-```bash
-# Desarrollo
-npm run dev          # Servidor de desarrollo con hot reload
-
-# Construcción
-npm run build        # Build para producción
-
-# Linting
-npm run lint         # Ejecutar ESLint
-
-# Preview
-npm run preview      # Preview del build de producción
-```
-
-## 🌐 Despliegue
-
-### GitHub Pages (Configurado)
-El proyecto incluye un workflow de GitHub Actions para despliegue automático:
-
-```yaml
-# .github/workflows/deploy.yml
-- Despliegue automático en cada push a main  
-- Build con Vite
-- Configuración SPA con 404.html
-- Deploy a GitHub Pages
-```
-
-### Configuración Base URL
-```typescript
-// vite.config.ts
-export default defineConfig({
-  base: '/LLMApps-by-CleverIT/', // Configurado para GitHub Pages
-})
-```
-
-### Otros Proveedores
-- **Vercel**: Conectar directamente el repositorio
-- **Netlify**: Subir carpeta `dist/` después de `npm run build`
-- **AWS S3**: Configurar bucket estático con `dist/`
-
-## 🎨 Personalización
-
-### Colores y Tema
-```javascript
-// tailwind.config.js
-colors: {
-  backblack: '#040809',    // Color de fondo principal
-  // Gradientes personalizados desde pink-500 a purple-600
-}
-```
-
-### Fuentes
-```css
-/* Google Fonts - Plus Jakarta Sans */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800');
-```
-
-### Efectos Aurora
-```typescript
-// Personalizar en componentes/Aurora.tsx
-<Aurora 
-  colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-  speed={0.6}
-  blend={0.5}
-  amplitude={1.2}
-/>
-```
-
-## 📝 Contenido y Localización
-
-### Agregar Nuevos Idiomas
-1. Crear archivo en `src/locales/[idioma].json`
-2. Actualizar `LanguageContext.tsx`
-3. Agregar tipo al union type `Language`
-
-### Estructura de Traducciones
-```json
-{
-  "navbar": { "team": "...", "useCases": "..." },
-  "hero": { "title": "...", "description": "..." },
-  "pricing": { "starter": { "name": "...", "features": [...] } }
-}
-```
-
-## 📊 Casos de Uso Incluidos
-
-La aplicación presenta tres casos de uso principales:
-
-1. **Production Insight** 🏭
-   - Optimización de procesos manufactureros
-   - Análisis predictivo de producción
-   - Dashboard en tiempo real
-
-2. **Mining Intelligence** ⛏️
-   - Monitoreo de operaciones mineras
-   - Análisis de seguridad y eficiencia
-   - Gestión de recursos
-
-3. **Development Metrics** 📈
-   - Métricas de desarrollo de software
-   - KPIs de equipos de desarrollo
-   - Análisis de productividad
-
-## 🔧 Configuración de Desarrollo
-
-### VS Code Extensions Recomendadas
-```json
-{
-  "recommendations": [
-    "bradlc.vscode-tailwindcss",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "ms-vscode.vscode-typescript-next"
-  ]
-}
-```
-
-### Configuración de TypeScript
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  }
-}
-```
-
-## 🤝 Contribución
-
-1. Fork el proyecto
-2. Crear rama feature (`git checkout -b feature/AmazingFeature`)
-3. Commit cambios (`git commit -m 'Add: Amazing Feature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir Pull Request
-
-### Convenciones de Código
-- Usar TypeScript para todos los archivos
-- Seguir convenciones de ESLint configuradas
-- Componentes en PascalCase
-- Hooks personalizados con prefijo `use`
-- Archivos de páginas con sufijo `Page`
-
-## 📄 Licencia
-
-Este proyecto es propiedad de CleverIT Group. Todos los derechos reservados.
-
-## 📞 Contacto
-
-- **Email**: info@llmaps.com
-- **Website**: [CleverIT Group](https://www.cleveritgroup.com)
-- **Demo**: [LLMApps Demo](https://phoenix.cleveritgroup.ai/)
+![Cleverit AI](https://img.shields.io/badge/Cleverit-AI--Experts-3cdb7c)
+![React](https://img.shields.io/badge/React-18.3.1-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6)
+![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind--CSS-3.4.1-38B2AC)
 
 ---
 
-**Desarrollado con ❤️ por CleverIT Group - 2025**
+## 🚀 AI-Augmented Workflow
 
-> Transformando negocios a través de la inteligencia artificial y aplicaciones LLM innovadoras.
+Nuestra propuesta de valor diferencial reside en cómo construimos software. Todos nuestros proyectos son impulsados por:
+- **GitHub Copilot Enterprise:** Integración profunda en el ciclo de vida del desarrollo.
+- **Claude (Anthropic):** Superpoder de análisis y resolución de problemas complejos.
+- **Reducción del Time-to-Market:** Logramos una entrega hasta 10x más rápida sin comprometer la calidad del código.
+
+## 🌟 Roles de Expertos en IA
+
+Presentamos dos perfiles clave que lideran la transformación digital:
+
+1. **Clever AI Architect** 🏗️
+   - **Misión:** Diseñar la estrategia y escalabilidad del ecosistema de IA corporativo.
+   - **Enfoque:** Gobernanza, seguridad, selección de stack tecnológico y arquitecturas de LLMs.
+
+2. **Clever AI Developer** 💻
+   - **Misión:** Transformar conceptos en soluciones de IA tangibles y eficientes.
+   - **Enfoque:** Integración de APIs (OpenAI, Anthropic, Gemini), Sistemas RAG, Ingeniería de Prompts y Agentes Autónomos.
+
+## 🛠️ Stack Tecnológico
+
+- **Core:** React 18, TypeScript, Vite.
+- **Estilos:** Tailwind CSS con un sistema de diseño premium (Dark Mode, Glassmorphism).
+- **Animaciones:** Framer Motion (PlzMotion) para efectos de scroll y transiciones suaves.
+- **SEO:** Optimización dinámica para buscadores (DynamicSEO) en múltiples idiomas.
+- **Internacionalización:** Soporte nativo para Español e Inglés (LanguageContext).
+
+## 🏗️ Estructura del Proyecto
+
+```
+src/
+├── components/plz/      # Componentes premium exclusivos
+│   ├── PlzNavbar.tsx    # Navegación con selector de idioma
+│   ├── PlzFooter.tsx    # Pie de página con marca Cleverit AI
+│   ├── PlzMotion.tsx    # Envoltorios de Framer Motion para animaciones
+│   ├── PlzTechStackCard.tsx # Tarjetas de stack tecnológico IA
+│   └── ...              # Componentes de UI (Bento, Cases, FAQ)
+├── pages/               # Páginas principales del sitio
+│   ├── WebPlzProfilesPage.tsx    # Landing principal de perfiles (Home)
+│   ├── WebPlzExpertDetailPage.tsx # Plantilla dinámica de detalle (Architect/Developer)
+│   ├── WebPlzContactPage.tsx    # Formulario de contacto inteligente
+│   └── ...                      # Páginas de industria (Mining, Retail, Performance)
+├── locales/             # Diccionarios de traducción
+│   ├── es.json          # Soporte para Español
+│   └── en.json          # Soporte para Inglés
+└── App.tsx              # Configuración de rutas y contextos
+```
+
+## 📦 Instalación y Desarrollo
+
+1. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+2. **Ejecutar servidor local:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Construir para producción:**
+   ```bash
+   npm run build
+   ```
+
+## 🌐 Despliegue en GitHub Pages
+
+El proyecto está configurado con **GitHub Actions** para un despliegue continuo (CI/CD):
+- Repositorio: `nlpt`
+- URL: `https://fhormazabalcleverit.github.io/nlpt/`
+
+> **Nota:** La configuración de `base` en `vite.config.ts` es dinámica para permitir tanto el desarrollo local (`/`) como el despliegue en GitHub (`/nlpt/`).
+
+---
+
+**Desarrollado con ❤️ por el equipo de Cleverit AI - 2026**  
+*Transformando el futuro del desarrollo de software a través de la Inteligencia Artificial.*
