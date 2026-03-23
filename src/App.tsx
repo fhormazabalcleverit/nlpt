@@ -18,7 +18,7 @@ import WebPlzExpertDetailPage from './pages/WebPlzExpertDetailPage';
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <Routes>
           {/* Main Version (WebPlz) */}
