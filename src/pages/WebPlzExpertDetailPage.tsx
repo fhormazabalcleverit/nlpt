@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import PlzNavbar from '../components/plz/PlzNavbar';
 import PlzFooter from '../components/plz/PlzFooter';
 import { useLanguage } from '../context/LanguageContext';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
+import { motion } from 'framer-motion';
 import DynamicSEO from '../components/DynamicSEO';
-import { Shield, ChevronLeft, Layers, Code, Zap, Rocket } from 'lucide-react';
+import { Shield, ChevronLeft, Layers, Code, Zap, Rocket, Download } from 'lucide-react';
 import PlzTechStackCard from '../components/plz/PlzTechStackCard';
+import PlzExpertPDF from '../components/plz/PlzExpertPDF';
 
 const WebPlzExpertDetailPage = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -22,14 +27,79 @@ const WebPlzExpertDetailPage = () => {
     const Icon = isArchitect ? Shield : Code;
     const accentColor = isArchitect ? '#9333ea' : '#19687A';
     const expertImg = isArchitect ? `${import.meta.env.BASE_URL}plz/profiles/01.png` : `${import.meta.env.BASE_URL}plz/profiles/02.png`;
+ 
+    const [isDownloading, setIsDownloading] = useState(false);
+    const [downloadProgress, setDownloadProgress] = useState(0);
+
+    const handleDownloadPDF = async () => {
+        setIsDownloading(true);
+        setDownloadProgress(0);
+        
+        const timer = setInterval(() => {
+            setDownloadProgress((prev) => {
+                if (prev >= 90) return prev;
+                return prev + 5;
+            });
+        }, 100);
+
+        try {
+            const element = document.getElementById('pdf-content');
+            if (!element) {
+                console.error("PDF target element not found");
+                return;
+            }
+
+            const canvas = await html2canvas(element, {
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                backgroundColor: '#ffffff',
+                windowWidth: 1000
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+            const imgProps = (new jsPDF()).getImageProperties(imgData);
+            const pdfWidth = 210; // A4 width in mm
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            // Create PDF with dynamic height to fit all content on one page
+            const pdf = new jsPDF('p', 'mm', [pdfWidth, pdfHeight]);
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            const fileName = data.title.toLowerCase().replace(/\s+/g, '-');
+            pdf.save(`${fileName}.pdf`);
+
+            setDownloadProgress(100);
+            setTimeout(() => {
+                setIsDownloading(false);
+            }, 600);
+        } catch (error) {
+            console.error('Error generating PDF:', error);
+            setIsDownloading(false);
+        } finally {
+            clearInterval(timer);
+        }
+    };
 
     return (
         <div className={`min-h-screen bg-[#040809] text-white selection:bg-${isArchitect ? 'purple' : 'cyan'}-500/30 font-sansation overflow-hidden`}>
             <DynamicSEO
-                title={data.seoTitle}
-                description={data.seoDescription}
-            />
-            <PlzNavbar />
+                 title={data.seoTitle}
+                 description={data.seoDescription}
+             />
+             
+             {/* Progress Bar for PDF Generation */}
+             {isDownloading && (
+                 <div className="fixed top-0 left-0 w-full h-[10px] z-[9999] bg-white/5">
+                     <motion.div 
+                         initial={{ width: 0 }}
+                         animate={{ width: `${downloadProgress}%` }}
+                         className="h-full"
+                         style={{ backgroundColor: accentColor }}
+                     />
+                 </div>
+             )}
+
+             <PlzNavbar />
 
             {/* Background Glows */}
             <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none">
@@ -76,6 +146,26 @@ const WebPlzExpertDetailPage = () => {
                                 <p className="text-sm md:text-xl text-gray-400 font-light leading-relaxed max-w-2xl">
                                     {isArchitect ? t.plzExperts.architect.summary : t.plzExperts.developer.summary}
                                 </p>
+
+                                {/* Download Button */}
+                                 <motion.button
+                                     whileHover={{ scale: 1.05 }}
+                                     whileTap={{ scale: 0.95 }}
+                                     onClick={handleDownloadPDF}
+                                     disabled={isDownloading}
+                                     className={`mt-8 px-8 py-4 rounded-xl font-bold flex items-center gap-3 backdrop-blur-md shadow-2xl transition-all border border-white/10 ${isDownloading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                     style={{ 
+                                         backgroundColor: `${accentColor}dd`,
+                                         boxShadow: `0 20px 40px -10px ${accentColor}40`
+                                     }}
+                                 >
+                                     <Download className={`w-5 h-5 text-white ${isDownloading ? 'animate-bounce' : ''}`} />
+                                     <span className="text-white whitespace-nowrap">
+                                         {isDownloading 
+                                             ? (language === 'es' ? 'Generando...' : 'Generating...') 
+                                             : (language === 'es' ? 'Descargar PDF' : 'Download PDF')}
+                                     </span>
+                                 </motion.button>
                             </div>
                         </FadeIn>
 
@@ -90,15 +180,15 @@ const WebPlzExpertDetailPage = () => {
                                 {/* Ambient Glow */}
                                 <div className={`absolute inset-0 bg-gradient-to-t from-${isArchitect ? 'purple-600' : '[#19687A]'}/20 to-transparent blur-[120px] -z-10 scale-150 transition-transform duration-700 group-hover:scale-[1.6]`} />
 
-                                {/* Image with mask (fade bottom) */}
-                                <div className="w-full h-full [mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)]">
-                                    <img
-                                        src={expertImg}
-                                        alt={data.title}
-                                        className="w-full h-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)] transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                </div>
-                            </div>
+                                 {/* Image with mask (fade bottom) */}
+                                 <div className="w-full h-full [mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)]">
+                                     <img
+                                         src={expertImg}
+                                         alt={data.title}
+                                         className="w-full h-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)] transition-transform duration-700 group-hover:scale-105"
+                                     />
+                                 </div>
+                             </div>
                         </FadeIn>
 
                         {/* Tech Stack will be moved to its own section below */}
@@ -290,8 +380,19 @@ const WebPlzExpertDetailPage = () => {
                 </section>
             </main>
 
-            <PlzFooter />
-        </div>
+             <PlzFooter />
+
+             {/* Hidden PDF Template Container */}
+             <div className="absolute opacity-0 pointer-events-none -left-[9999px] top-0 overflow-hidden">
+                <PlzExpertPDF 
+                    data={data}
+                    isArchitect={isArchitect}
+                    accentColor={accentColor}
+                    expertImg={expertImg}
+                    language={language}
+                />
+             </div>
+         </div>
     );
 };
 

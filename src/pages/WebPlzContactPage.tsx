@@ -76,7 +76,6 @@ const WebPlzContactPage = () => {
                     method: "POST",
                     headers: {
                         "x-api-key": "550e8400-e29b-41d4-a716-446655440000",
-                        origin: "https://llmapps.cleveritgroup.com",
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
@@ -89,21 +88,30 @@ const WebPlzContactPage = () => {
             );
 
             if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error("Server error response:", errorData);
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
+            console.log("Form submitted successfully!");
 
             // Success
             setNotification({
                 type: "success",
-                message: t.plzContact.form.successMessage || "¡Formulario enviado con éxito!",
+                message: t.plzContact.form.defaultSuccess || "¡Formulario enviado con éxito!",
             });
 
-            // Reset form
-            setReason('');
+            // Reset only inputs, keep reason to show success message if needed 
+            // OR keep inputs and show success UI
             setName('');
             setEmail('');
             setIndustry('');
             setContactMethod('');
+            
+            // Note: If we want the form to persist the success message, 
+            // we might want to NOT reset reason immediately or handle UI differently.
+            // For now, let's keep the reason so the message from line 371 stays visible.
+            // setReason(''); 
         } catch (error) {
             console.error("Error sending email:", error);
             setNotification({
@@ -359,18 +367,18 @@ const WebPlzContactPage = () => {
                                                     {isSubmitting ? 'Enviando...' : t.plzContact.form.submit}
                                                 </button>
                                                 {/* phases  */}
-                                                <AnimatePresence mode="wait">
-                                                    <motion.p
-                                                        key={reason}
-                                                        initial={{ opacity: 0, y: 10 }}
-                                                        animate={{ opacity: 1, y: 0 }}
-                                                        exit={{ opacity: 0, y: -10 }}
-                                                        transition={{ duration: 0.3 }}
-                                                        className="mt-6 text-center text-md text-gray-400 font-light max-w-lg mx-auto leading-relaxed"
-                                                    >
-                                                        {reasonMessages[reason] || t.plzContact.form.successMessage}
-                                                    </motion.p>
-                                                </AnimatePresence>
+                                                 <AnimatePresence mode="wait">
+                                                     <motion.p
+                                                         key={reason}
+                                                         initial={{ opacity: 0, y: 10 }}
+                                                         animate={{ opacity: 1, y: 0 }}
+                                                         exit={{ opacity: 0, y: -10 }}
+                                                         transition={{ duration: 0.3 }}
+                                                         className="mt-6 text-center text-md text-gray-400 font-light max-w-lg mx-auto leading-relaxed"
+                                                     >
+                                                         {reasonMessages[reason] || t.plzContact.form.defaultSuccess}
+                                                     </motion.p>
+                                                 </AnimatePresence>
                                             </div>
                                         </motion.div>
                                     )}

@@ -1455,7 +1455,7 @@
     "hero": {
       "seoTitle": "Enterprise AI Experts & Autonomous Agents | Cleverit AI",
       "seoSubtitle": "Transform your business with scalable AI architectures, LLM integration, and autonomous agents. Expert consulting for governance and real-time execution.",
-      "title": "The Architect's Vision.",
+      "title": "The Architect's vision.",
       "subtitle": "Don't choose between strategy or execution. Get an AI ecosystem designed for enterprise governance and built for real-time performance.",
       "cta": "Explore experts"
     },
@@ -1519,7 +1519,7 @@
       ]
     },
     "techStack": {
-      "title": "Tech Stack & Superpowers",
+      "title": "Tech Stack",
       "content": "🚀 Equipped with GitHub Copilot Enterprise + Claude: AI-accelerated complex system analysis capability, allowing for architecture review and strategic decision-making in record time."
     },
     "idealFor": {
@@ -1558,7 +1558,7 @@
       ]
     },
     "techStack": {
-      "title": "Tech Stack & Superpowers",
+      "title": "Tech Stack",
       "content": "⚡ Equipped with GitHub Copilot Enterprise + Claude: Hyper-accelerated development cycles. Copilot assisting directly in the IDE and Claude acting as the perfect companion for deep debugging, refactoring, and complex code writing."
     },
     "idealFor": {

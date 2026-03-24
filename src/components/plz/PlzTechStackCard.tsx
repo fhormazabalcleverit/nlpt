@@ -23,7 +23,7 @@ const PlzTechStackCard: React.FC<PlzTechStackCardProps> = ({ isArchitect, langua
                     </div>
                 </FadeIn>
             </div>
-            
+
             <div className="lg:col-span-8">
                 <FadeIn delay={0.2}>
                     <div className="bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[1.5rem] p-8 lg:p-12 shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden group w-full">
@@ -43,11 +43,11 @@ const PlzTechStackCard: React.FC<PlzTechStackCardProps> = ({ isArchitect, langua
                         <div className="space-y-6">
                             <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
                                 {isArchitect
-                                    ? (language === 'es' 
-                                        ? 'Capacidad de análisis de sistemas complejos acelerada por IA, permitiendo la revisión de arquitecturas y la toma de decisiones estratégicas en tiempo récord.' 
+                                    ? (language === 'es'
+                                        ? 'Capacidad de análisis de sistemas complejos acelerada por IA, permitiendo la revisión de arquitecturas y la toma de decisiones estratégicas en tiempo récord.'
                                         : 'AI-accelerated complex system analysis capability, enabling architectural review and strategic decision-making in record time.')
-                                    : (language === 'es' 
-                                        ? 'Ciclos de desarrollo hiper-acelerados. Copilot asistiendo directamente en el IDE y Claude actuando como el compañero perfecto para el debugging profundo, refactorización y escritura de código complejo.' 
+                                    : (language === 'es'
+                                        ? 'Ciclos de desarrollo hiper-acelerados. Copilot asistiendo directamente en el IDE y Claude actuando como el compañero perfecto para el debugging profundo, refactorización y escritura de código complejo.'
                                         : 'Hyper-accelerated development cycles. Copilot assisting directly in the IDE and Claude acting as the perfect companion for deep debugging, refactoring, and writing complex code.')
                                 }
                             </p>
