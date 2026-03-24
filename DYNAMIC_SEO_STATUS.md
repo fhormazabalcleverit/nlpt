@@ -52,7 +52,7 @@ Tu componente `DynamicSEO` ha sido revisado, optimizado y ahora está funcionand
 <DynamicSEO 
   title="LLMApps by CleverIT | Generative AI and Business Automation Solutions"
   description="Transformamos tu negocio con LLM Apps..."
-  image="/meta/thumbnail.jpg"
+  image="/meta/org-imagen.png"
   keywords="IA, Inteligencia Artificial, LLM, ChatGPT..."
   url={window.location.href}
 />

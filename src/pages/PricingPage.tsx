@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 const PricingPage = () => {
   return (
     <div className="min-h-screen bg-backblack">
-      <SEO 
+      <SEO
         title="Planes y Precios"
         description="Elige el plan perfecto para tu negocio. Desde startups hasta grandes corporaciones, tenemos la solución de IA que se adapta a tus necesidades y presupuesto."
         keywords="precios, planes, tarifas, startup, professional, enterprise, IA, LLM Apps, CleverIT"

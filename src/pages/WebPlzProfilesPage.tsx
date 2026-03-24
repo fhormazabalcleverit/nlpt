@@ -13,11 +13,11 @@ const HoverBadge = ({ color, x, y, active }: { color: string, x: number, y: numb
         <motion.div
             className="pointer-events-none absolute z-50"
             initial={false}
-            animate={{ 
-                x, 
-                y, 
-                opacity: active ? 1 : 0, 
-                scale: active ? 1 : 0.5 
+            animate={{
+                x,
+                y,
+                opacity: active ? 1 : 0,
+                scale: active ? 1 : 0.5
             }}
             transition={{
                 type: 'spring',
@@ -353,19 +353,31 @@ const WebPlzProfilesPage = () => {
                 </section>
 
                 {/* Final CTA Section */}
-                <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5 mb-20">
+                <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5 mb-20">
                     <FadeIn>
-                        <div className="bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 rounded-[2rem] p-12 lg:p-20 text-center relative overflow-hidden group">
+                        {/* Team Image Header */}
+                        <div className="relative -z-20 -mb-24 md:-mb-24 lg:-mb-80 scale-110 md:scale-100 ">
+                            <img
+                                src={`${import.meta.env.BASE_URL}plz/profiles/teamsCleverAI.png`}
+                                alt="CleverIT AI Team"
+                                className="w-full max-w-5xl mx-auto drop-shadow-[0_45px_100px_rgba(0,0,0,0.9)] transition-transform duration-700 hover:scale-[1.02]"
+                            />
+                        </div>
+
+                        <div className="bg-gradient-to-br from-black to-black/80 border border-white/10 rounded-[2rem] p-12 lg:p-20 text-center shadow-3xl shadow-black/90 relative overflow-hidden group">
                             {/* Animated Background Element */}
                             <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-600/10 blur-[100px] rounded-full group-hover:bg-purple-600/20 transition-all duration-700" />
                             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#19687A]/10 blur-[100px] rounded-full group-hover:bg-[#19687A]/20 transition-all duration-700" />
+                            <div className="absolute inset-0 bg-white/[0.01] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                             <div className="relative z-10 max-w-3xl mx-auto">
-                                <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white mb-8">
-                                    {language === 'es' ? '¿Listo para desplegar el futuro?' : 'Ready to deploy the future?'}
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-8">
+                                    {language === 'es' ? 'Construyamos juntos el equipo del futuro.' : "Let's build the team of the future together."}
                                 </h2>
                                 <p className="text-xl text-gray-400 mb-12 font-light leading-relaxed">
-                                    {language === 'es' ? 'Agenda una sesión estratégica con nuestros expertos y descubre cómo la IA puede transformar tu arquitectura hoy mismo.' : 'Schedule a strategic session with our experts and discover how AI can transform your architecture today.'}
+                                    {language === 'es'
+                                        ? '¿Tienes un desafío tecnológico complejo? Nuestros expertos en IA y Software Engineering están diseñados para aportar valor desde el primer día.'
+                                        : 'Do you have a complex technological challenge? Our AI and Software Engineering experts are designed to deliver value from day one.'}
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

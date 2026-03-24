@@ -27,7 +27,7 @@ When `dynamic={true}` is set, the component will:
   title="Inicio"
   description="..."
   keywords="..."
-  ogImage="/meta/home-thumbnail.png"
+  ogImage="/meta/org-imagen.png"
   ogUrl={window.location.href}
   dynamic={true}  // 🔥 Dynamic enabled
 />
@@ -39,7 +39,7 @@ When `dynamic={true}` is set, the component will:
   title="Conoce al Equipo"
   description="..."
   keywords="..."
-  ogImage="/meta/team-thumbnail.png"
+  ogImage="/meta/org-imagen.png"
   ogUrl={window.location.href}
   dynamic={true}  // 🔥 Dynamic enabled
 />
@@ -51,7 +51,7 @@ When `dynamic={true}` is set, the component will:
   title="Casos de Uso"
   description="..."
   keywords="..."
-  ogImage="/meta/use-cases-thumbnail.png"
+  ogImage="/meta/org-imagen.png"
   ogUrl={window.location.href}
   dynamic={true}  // 🔥 Dynamic enabled
 />
@@ -76,7 +76,7 @@ When `dynamic={true}` is set, the component will:
   title="Planes y Precios"
   description="..."
   keywords="..."
-  ogImage="/meta/pricing-thumbnail.png"
+  ogImage="/meta/org-imagen.png.png"
   ogUrl={window.location.href}
   dynamic={true}  // 🔥 Dynamic enabled
 />
@@ -88,7 +88,7 @@ When `dynamic={true}` is set, the component will:
   title="Estemos en Contacto"
   description="..."
   keywords="..."
-  ogImage="/meta/contact-thumbnail.png"
+  ogImage="/meta/org-imagen.png"
   ogUrl={window.location.href}
   dynamic={true}  // 🔥 Dynamic enabled
 />
