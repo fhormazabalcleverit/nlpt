@@ -21,7 +21,7 @@ const PlzBentoGrid = () => {
                         {/* Image Background */}
                         <div className="lg:h-auto flex-grow w-full rounded-2xl bg-gradient-to-br from-blue-900/10 to-black border border-white/5 flex items-center justify-center lg:min-h-[250px] relative overflow-hidden">
                             <img
-                                src="/plz/platform/agente.png"
+                                src={`${import.meta.env.BASE_URL}plz/platform/agente.png`}
                                 alt="Agent Orchestration"
                                 className="absolute  inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-all duration-500 transform group-hover:scale-[1.1]"
                             />
@@ -57,7 +57,7 @@ const PlzBentoGrid = () => {
                         {/* Image Background */}
                         <div className="h-[230px] lg:h-auto flex-grow w-full rounded-2xl bg-gradient-to-tr from-purple-900/10 to-black border border-white/5 flex items-center justify-center lg:min-h-[250px] relative overflow-hidden">
                             <img
-                                src="/plz/platform/datadriven.png"
+                                src={`${import.meta.env.BASE_URL}plz/platform/datadriven.png`}
                                 alt="Data-Driven Decisions"
                                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-all duration-500"
                             />
@@ -77,7 +77,7 @@ const PlzBentoGrid = () => {
                         {/* Image Background */}
                         <div className="h-[230px] lg:h-auto flex-grow w-full rounded-2xl bg-gradient-to-br from-blue-900/10 to-black border border-white/5 flex items-center justify-center lg:min-h-[250px] relative overflow-hidden">
                             <img
-                                src="/plz/platform/mastra.png"
+                                src={`${import.meta.env.BASE_URL}plz/platform/mastra.png`}
                                 alt="Mastra Framework"
                                 className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-500 "
                             />

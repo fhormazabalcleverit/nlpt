@@ -190,8 +190,8 @@ const WebPlzPricingPage = () => {
                             {data.targets.map((target: { title: string, items: string[] }, index: number) => {
                                 const isReversed = index % 2 !== 0;
                                 const imagePath = index === 0
-                                    ? "/pricing_devs.png"
-                                    : "/pricing_everyone.png";
+                                    ? `${import.meta.env.BASE_URL}pricing_devs.png`
+                                    : `${import.meta.env.BASE_URL}pricing_everyone.png`;
 
                                 return (
                                     <FadeIn key={target.title} delay={0.2 + index * 0.1}>

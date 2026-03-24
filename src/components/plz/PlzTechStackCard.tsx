@@ -32,11 +32,11 @@ const PlzTechStackCard: React.FC<PlzTechStackCardProps> = ({ isArchitect, langua
 
                         <div className="flex flex-wrap items-center gap-6 md:gap-12 mb-10">
                             <div className="flex items-center">
-                                <img src="/plz/profiles/github.svg" alt="GitHub Copilot" className="h-6 md:h-8 object-contain" />
+                                <img src={`${import.meta.env.BASE_URL}plz/profiles/github.svg`} alt="GitHub Copilot" className="h-6 md:h-8 object-contain" />
                             </div>
                             <div className="hidden md:block w-[1px] h-12 bg-white/10" />
                             <div className="flex items-center">
-                                <img src="/plz/profiles/claude.svg" alt="Claude AI" className="h-6 md:h-8 object-contain" />
+                                <img src={`${import.meta.env.BASE_URL}plz/profiles/claude.svg`} alt="Claude AI" className="h-6 md:h-8 object-contain" />
                             </div>
                         </div>
 

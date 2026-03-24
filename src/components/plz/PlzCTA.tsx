@@ -54,7 +54,7 @@ const PlzCTA = () => {
             <motion.div
                 className="absolute inset-0  bg-cover bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: "url('/plz/brand/background-cta.svg')",
+                    backgroundImage: `url('${import.meta.env.BASE_URL}plz/brand/background-cta.svg')`,
                     x: useTransform(x, (v) => v * 0.2),
                     y: useTransform(y, (v) => v * 0.2),
                     scale: 1.2
@@ -123,7 +123,7 @@ const PlzCTA = () => {
                             ))}
 
                             <img
-                                src="/plz/brand/isotipo.svg"
+                                src={`${import.meta.env.BASE_URL}plz/brand/isotipo.svg`}
                                 alt="Pulzen Isotipo"
                                 className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_20px_rgba(23,187,205,0.1)] select-none pointer-events-none"
                             />

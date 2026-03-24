@@ -68,7 +68,7 @@ const PlzChatSimulation = () => {
                 {/* AI Response 1 */}
                 <motion.div variants={itemVariants} className="flex gap-3">
                     <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#19687A]/20 flex items-center justify-center">
-                        <img src="/plz/brand/isotipo.svg" alt="AI Agent" className="w-full h-full object-contain" />
+                        <img src={`${import.meta.env.BASE_URL}plz/brand/isotipo.svg`} alt="AI Agent" className="w-full h-full object-contain" />
                     </div>
                     <div className="flex flex-col gap-4 max-w-[90%]">
                         <p className="text-gray-300 text-[13px] font-light leading-relaxed">
@@ -122,7 +122,7 @@ const PlzChatSimulation = () => {
                 {/* AI Response 2 */}
                 <motion.div variants={itemVariants} className="flex gap-3 pb-8">
                     <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#19687A]/20 flex items-center justify-center">
-                        <img src="/plz/brand/isotipo.svg" alt="AI Agent" className="w-full h-full object-contain" />
+                        <img src={`${import.meta.env.BASE_URL}plz/brand/isotipo.svg`} alt="AI Agent" className="w-full h-full object-contain" />
                     </div>
                     <div className="flex flex-col gap-4 w-full max-w-[90%]">
                         <p className="text-gray-300 text-[13px] font-light leading-relaxed">

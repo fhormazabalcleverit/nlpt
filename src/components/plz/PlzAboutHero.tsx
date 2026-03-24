@@ -32,13 +32,13 @@ const PlzAboutHero = () => {
             <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Placeholder images */}
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-96 relative group">
-                    <img src="/plz/about/01.png" alt="Team collaborating" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                    <img src={`${import.meta.env.BASE_URL}plz/about/01.png`} alt="Team collaborating" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-96 relative group">
-                    <img src="/plz/about/02.png" alt="Networking" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                    <img src={`${import.meta.env.BASE_URL}plz/about/02.png`} alt="Networking" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] md:aspect-auto md:h-96 relative group">
-                    <img src="/plz/about/03.png" alt="Presentation" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
+                    <img src={`${import.meta.env.BASE_URL}plz/about/03.png`} alt="Presentation" className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500" />
                 </div>
             </div>
 
@@ -52,7 +52,7 @@ const PlzAboutHero = () => {
                     <div className="relative">
                         <div className="absolute inset-0 bg-[#17BBCD]/20 blur-2xl rounded-full"></div>
                         <img
-                            src="/plz/about/carlosgallado.png"
+                            src={`${import.meta.env.BASE_URL}plz/about/carlosgallado.png`}
                             alt="Carlos Gallardo"
                             className="w-20 h-20 rounded-full object-cover relative z-10 border border-white/10"
                         />

@@ -19,7 +19,7 @@ const PlzHero = () => {
         <section
             className="relative w-full bg-[#040809] pt-32 pb-20 lg:pt-80 lg:pb-32 font-sansation overflow-hidden"
             style={{
-                backgroundImage: "url('/plz/brand/background-hero.svg')",
+                backgroundImage: `url('${import.meta.env.BASE_URL}plz/brand/background-hero.svg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'

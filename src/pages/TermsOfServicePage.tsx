@@ -23,7 +23,7 @@ const TermsOfServicePage = () => {
                 <div
                     className="h-full bg-[#040809] font-sansation pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden"
                     style={{
-                        backgroundImage: "url('/plz/brand/background-hero.svg')",
+                        backgroundImage: `url('${import.meta.env.BASE_URL}plz/brand/background-hero.svg')`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat'

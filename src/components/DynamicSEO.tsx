@@ -13,7 +13,7 @@ const defaultSEO = {
   title: 'CleverIT AI | Generative AI and Business Automation Solutions',
   description: 'Boost your business with CleverIT AI — intelligent assistants that combine generative AI, automation, and data-driven insights. Chat with your information and enhance productivity through AI-powered solutions.',
   keywords: 'IA, Inteligencia Artificial, LLM, ChatGPT, Automatización, CleverIT, Apps IA, Machine Learning, Productividad, Datos',
-  image: '/meta/cleverit-cover.png'
+  image: `${import.meta.env.BASE_URL}meta/cleverit-cover.png`
 };
 
 const DynamicSEO: React.FC<DynamicSEOProps> = ({

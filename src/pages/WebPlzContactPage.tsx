@@ -202,7 +202,7 @@ const WebPlzContactPage = () => {
                 {/* SVG Background Decoration */}
                 <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-100 flex justify-center items-start">
                     <img
-                        src="/plz/contact/bg-contact.png"
+                        src={`${import.meta.env.BASE_URL}plz/contact/bg-contact.png`}
                         alt=""
                         className="w-[1200px] min-w-[1200px] h-auto object-contain"
                     />

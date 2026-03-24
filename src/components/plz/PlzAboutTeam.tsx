@@ -11,28 +11,28 @@ const PlzAboutTeam = () => {
         {
             name: 'Carlos Gallardo',
             role: members?.carlos?.role || 'Master Chief Product Officer',
-            image: '/plz/about/carlos-gallardo.png',
+            image: `${import.meta.env.BASE_URL}plz/about/carlos-gallardo.png`,
             linkedin: members?.carlos?.linkedin,
             github: members?.carlos?.github,
         },
         {
             name: 'Francisco Maldonado',
             role: members?.francisco?.role || 'Head of Engineering & Engineering IA',
-            image: '/plz/about/francisco-maldonado.png',
+            image: `${import.meta.env.BASE_URL}plz/about/francisco-maldonado.png`,
             linkedin: members?.francisco?.linkedin,
             github: members?.francisco?.github,
         },
         {
             name: 'Julio Ferreira',
             role: members?.julio?.role || 'Fullstack Development - Innovation & AI',
-            image: '/plz/about/julio-ferrerira.png',
+            image: `${import.meta.env.BASE_URL}plz/about/julio-ferrerira.png`,
             linkedin: members?.julio?.linkedin,
             github: members?.julio?.github,
         },
         {
             name: 'Jesus Rangel',
             role: members?.jesus?.role || 'Fullstack Development - Innovation & AI',
-            image: '/plz/about/jesus-rangel.png',
+            image: `${import.meta.env.BASE_URL}plz/about/jesus-rangel.png`,
             linkedin: members?.jesus?.linkedin,
             github: members?.jesus?.github,
         }

@@ -81,7 +81,7 @@ const WebPlzPlatformPage = () => {
                                 className="rounded-2xl overflow-hidden shadow-3xl shadow-blue-900/20 relative"
                             >
                                 <img
-                                    src="/plz/platform/platform-ui.png"
+                                    src={`${import.meta.env.BASE_URL}plz/platform/platform-ui.png`}
                                     alt="Platform UI Overview"
                                     className="w-full h-auto object-cover"
                                 />
