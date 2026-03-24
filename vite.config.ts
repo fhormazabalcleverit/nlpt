@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 export default defineConfig(({ command }) => {
   return {
     plugins: [react()],
-    base: command === 'build' ? '/nlpt/' : '/',
+    base: command === 'build' ? '/' : '/',
     optimizeDeps: {
       exclude: ['lucide-react'],
     },
