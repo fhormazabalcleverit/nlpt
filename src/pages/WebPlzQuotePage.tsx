@@ -8,6 +8,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import DynamicSEO from '../components/DynamicSEO';
 
+interface QuotePlan {
+    id: string;
+    price: string;
+    desc: string;
+}
+
 const WebPlzQuotePage = () => {
     const { t } = useLanguage();
     
@@ -358,7 +364,7 @@ const WebPlzQuotePage = () => {
                                         {t.plzQuote.form.supportLabel}
                                     </label>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                        {t.plzQuote.form.plans.map((plan: any) => (
+                                        {t.plzQuote.form.plans.map((plan: QuotePlan) => (
                                             <button
                                                 key={plan.id}
                                                 type="button"

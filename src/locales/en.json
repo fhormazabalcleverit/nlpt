@@ -498,6 +498,32 @@
       }
     ]
   },
+  "plzCommandCenter": {
+    "title": "Total Visibility: The Command Center for your AI Talent.",
+    "subtitle": "Monitor in real-time the performance, efficiency, and interactions of your agents through our exclusive platform.",
+    "kpis": {
+      "velocity": {
+        "title": "AI Velocity Boost",
+        "value": "+45%",
+        "desc": "Acceleration in code delivery vs traditional"
+      },
+      "tokens": {
+        "title": "Token Efficiency",
+        "value": "98%",
+        "desc": "AI budget optimization"
+      },
+      "health": {
+        "title": "Agent Health",
+        "value": "Online",
+        "desc": "Status of autonomous agents"
+      },
+      "integrity": {
+        "title": "Architecture Integrity",
+        "value": "Compliant",
+        "desc": "Security standards"
+      }
+    }
+  },
   "pricing": {
     "badge": "Plans",
     "title": "Choose the perfect plan for your business",

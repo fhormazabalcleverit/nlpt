@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import Pricing from '../components/Pricing';
-import FAQ from '../components/FAQ';
-import SEO from '../components/SEO';
+import FAQ from '../components/plz/PlzFAQ';
+import SEO from '../components/DynamicSEO';
 
 const PricingPage = () => {
   return (
@@ -9,10 +9,6 @@ const PricingPage = () => {
       <SEO
         title="Planes y Precios"
         description="Elige el plan perfecto para tu negocio. Desde startups hasta grandes corporaciones, tenemos la solución de IA que se adapta a tus necesidades y presupuesto."
-        keywords="precios, planes, tarifas, startup, professional, enterprise, IA, LLM Apps, CleverIT"
-        ogImage="/meta/pricing-thumbnail.png"
-        ogUrl={window.location.href}
-        dynamic={true}
       />
       <Pricing />
       <FAQ />

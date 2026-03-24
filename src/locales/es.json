@@ -37,12 +37,11 @@
     "evolutionSubtitle": "para la escalabilidad de cada servicio",
     "button": "Conocer más",
     "benefits": [
-      "Mejora continua",
-      "Automatización",
       "Reducción tiempos",
       "Identificación de riesgos",
       "Optimización de costos",
-      "Insights accionables"
+      "Insights accionables",
+      "Automatización"
     ],
     "cards": [
       {
@@ -497,6 +496,32 @@
         "a": "Sí, nuestros planes están diseñados para crecer con tu negocio. Puedes añadir usuarios adicionales con un costo escalonado que disminuye a medida que aumenta el volumen."
       }
     ]
+  },
+  "plzCommandCenter": {
+    "title": "Visibilidad Total: El Centro de Comando de tu Talento AI.",
+    "subtitle": "Monitorea en tiempo real el performance, la eficiencia y las interacciones de tus agentes a través de nuestra plataforma exclusiva.",
+    "kpis": {
+      "velocity": {
+        "title": "Visualización de Performance",
+        "value": "LIVE",
+        "desc": "Análisis de rendimiento y calidad en tiempo real"
+      },
+      "tokens": {
+        "title": "Token Efficiency",
+        "value": "98%",
+        "desc": "Optimización del presupuesto de IA"
+      },
+      "health": {
+        "title": "Agent Health",
+        "value": "Online",
+        "desc": "Estado de agentes autónomos"
+      },
+      "integrity": {
+        "title": "Architecture Integrity",
+        "value": "Compliant",
+        "desc": "Estándares de seguridad"
+      }
+    }
   },
   "pricing": {
     "badge": "Planes",

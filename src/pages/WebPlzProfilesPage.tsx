@@ -7,6 +7,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
 import DynamicSEO from '../components/DynamicSEO';
 import { Shield, Code, Zap, Lightbulb, Cpu, Layers, ArrowUpRight } from 'lucide-react';
+import PlzCommandCenter from '../components/plz/PlzCommandCenter';
 
 const HoverBadge = ({ color, x, y, active }: { color: string, x: number, y: number, active: boolean }) => {
     return (
@@ -307,6 +308,9 @@ const WebPlzProfilesPage = () => {
                         </div>
                     </FadeIn>
                 </section>
+
+                {/* Command Center Section */}
+                <PlzCommandCenter />
 
                 {/* Use Cases Section */}
                 <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">

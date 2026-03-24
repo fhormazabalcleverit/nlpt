@@ -6,7 +6,6 @@ import PlzFooter from '../components/plz/PlzFooter';
 import PlzPricingFAQ from '../components/plz/PlzPricingFAQ';
 import DynamicSEO from '../components/DynamicSEO';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/plz/PlzMotion';
-import Pricing from '../components/Pricing'; // Import old pricing
 
 const WebPlzPricingPage = () => {
     const { t } = useLanguage();
@@ -135,10 +134,6 @@ const WebPlzPricingPage = () => {
                         })}
                     </div>
 
-                    {/* OLD PRICING SECTION */}
-                    <div className="w-full mb-32">
-                        <Pricing />
-                    </div>
 
                     {/* Comparison Table */}
                     <FadeIn delay={0.6} className="w-full max-w-4xl mx-auto mb-32">
@@ -215,7 +210,7 @@ const WebPlzPricingPage = () => {
                                                 <img
                                                     src={imagePath}
                                                     alt={target.title}
-                                                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                                                    className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-[#040809]/80 to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
                                             </div>

@@ -1,19 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import { FadeIn, StaggerContainer, StaggerItem } from './PlzMotion';
+
+interface FeatureBullet {
+    title: string;
+    subItems: string[];
+}
+
+interface Feature {
+    id: string;
+    shortTitle: string;
+    title: string;
+    desc: string;
+    bullets: (string | FeatureBullet)[];
+    highlightText: string;
+    image: string;
+}
 
 const PlzMiningFeatures = () => {
     const { t } = useLanguage();
 
     // Map JSON data to the component's expected structure
     const apps = t.useCases?.case2?.applications || {};
-    const miningFeatures = [
+    const miningFeatures = useMemo<Feature[]>(() => [
         {
             id: 'supervision',
             shortTitle: t.plzIndustry?.mining?.nav?.supervision || 'Supervisión Inteligente',
             title: apps.app1?.title,
             desc: apps.app1?.challenge + '\n\n' + apps.app1?.capabilities,
-            bullets: apps.app1?.features?.map((f: any) => ({
+            bullets: apps.app1?.features?.map((f: { main: string; sub?: string[] }) => ({
                 title: f.main,
                 subItems: f.sub || []
             })) || [],
@@ -68,7 +83,7 @@ const PlzMiningFeatures = () => {
             highlightText: apps.app5?.value,
             image: ''
         }
-    ];
+    ], [apps, t.plzIndustry?.mining?.nav]);
 
     const [activeSection, setActiveSection] = useState(miningFeatures[0].id);
 
@@ -143,7 +158,7 @@ const PlzMiningFeatures = () => {
                                     {/* Advanced Bullets */}
                                     {feat.bullets && feat.bullets.length > 0 && (
                                         <StaggerContainer className="flex flex-col gap-5 mb-8" staggerChildren={0.05}>
-                                            {feat.bullets.map((bullet: any, i: number) => {
+                                        {feat.bullets.map((bullet: string | FeatureBullet, i: number) => {
                                                 if (typeof bullet === 'string') {
                                                     return (
                                                         <StaggerItem key={`bullet-${i}`}>

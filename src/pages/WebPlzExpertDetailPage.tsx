@@ -22,14 +22,14 @@ const WebPlzExpertDetailPage = () => {
     const isArchitect = currentSlug === 'clever-ai-architect';
     const data = isArchitect ? t.plzArchitectPage : t.plzDeveloperPage;
 
+    const [isDownloading, setIsDownloading] = useState(false);
+    const [downloadProgress, setDownloadProgress] = useState(0);
+
     if (!data) return null;
 
     const Icon = isArchitect ? Shield : Code;
     const accentColor = isArchitect ? '#9333ea' : '#19687A';
     const expertImg = isArchitect ? `${import.meta.env.BASE_URL}plz/profiles/01.png` : `${import.meta.env.BASE_URL}plz/profiles/02.png`;
- 
-    const [isDownloading, setIsDownloading] = useState(false);
-    const [downloadProgress, setDownloadProgress] = useState(0);
 
     const handleDownloadPDF = async () => {
         setIsDownloading(true);
