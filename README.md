@@ -1,3 +1,5 @@
+![Screenshot](public/screenshot.png)
+
 # 🤖 Cleverit AI | Perfiles de Inteligencia Artificial
 
 Una plataforma web de última generación diseñada para presentar el ecosistema de **Perfiles de IA** de Cleverit. Este proyecto no es solo una landing page; es el resultado de nuestra metodología **AI-Augmented Workflow**, utilizando herramientas de élite como GitHub Copilot Enterprise y Claude para acelerar la entrega de soluciones de software robustas y escalables.
@@ -85,5 +87,5 @@ El proyecto está configurado con **GitHub Actions** para un despliegue continuo
 
 ---
 
-**Desarrollado con ❤️ por el equipo de Cleverit AI - 2026**  
+**Creado por el team "UX Engineer" en "Cleverit AI - 2026"**  
 *Transformando el futuro del desarrollo de software a través de la Inteligencia Artificial.*
